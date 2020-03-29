@@ -1,0 +1,9 @@
+C:\Users\braia\Documents\.NET\tp2\TP2\UI.Desktop\bin\Debug\UI.Desktop.exe.config
+C:\Users\braia\Documents\.NET\tp2\TP2\UI.Desktop\bin\Debug\UI.Desktop.exe
+C:\Users\braia\Documents\.NET\tp2\TP2\UI.Desktop\bin\Debug\UI.Desktop.pdb
+C:\Users\braia\Documents\.NET\tp2\TP2\UI.Desktop\obj\Debug\UI.Desktop.csprojAssemblyReference.cache
+C:\Users\braia\Documents\.NET\tp2\TP2\UI.Desktop\obj\Debug\UI.Desktop.Properties.Resources.resources
+C:\Users\braia\Documents\.NET\tp2\TP2\UI.Desktop\obj\Debug\UI.Desktop.csproj.GenerateResource.cache
+C:\Users\braia\Documents\.NET\tp2\TP2\UI.Desktop\obj\Debug\UI.Desktop.csproj.CoreCompileInputs.cache
+C:\Users\braia\Documents\.NET\tp2\TP2\UI.Desktop\obj\Debug\UI.Desktop.exe
+C:\Users\braia\Documents\.NET\tp2\TP2\UI.Desktop\obj\Debug\UI.Desktop.pdb
