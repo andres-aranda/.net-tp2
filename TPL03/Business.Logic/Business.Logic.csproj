@@ -55,5 +55,8 @@
       <Name>Util</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="ClasesLogic.cd" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
