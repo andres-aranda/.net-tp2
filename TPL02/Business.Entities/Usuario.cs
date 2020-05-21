@@ -13,7 +13,6 @@ namespace Business.Entities
         private String _NombreUsuario;
         private System.Net.Mail.MailAddress _Email;
         private string _Clave;
-        private bool _Estado;
 
         public string Apellido
         {
@@ -32,14 +31,6 @@ namespace Business.Entities
         }
 
         public System.Net.Mail.MailAddress Email
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public bool Estado
         {
             get => default;
             set

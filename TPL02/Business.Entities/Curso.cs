@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Business.Entities
 {
-    public class Curso
+    public class Curso : BusinessEntity
     {
         private int _AñoCalendario;
         private int _Cupo;

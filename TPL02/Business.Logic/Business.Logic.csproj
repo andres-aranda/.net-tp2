@@ -7,8 +7,8 @@
     <ProjectGuid>{0E59225A-6DB5-4478-B9C2-76750C83A2C1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Business.Logic</RootNamespace>
-    <AssemblyName>Business.Logic</AssemblyName>
+    <RootNamespace>Academia.Business.Logic</RootNamespace>
+    <AssemblyName>Academia.Business.Logic</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

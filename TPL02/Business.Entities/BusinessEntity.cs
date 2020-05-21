@@ -9,8 +9,8 @@ namespace Business.Entities
     public class BusinessEntity
     {
         private int _Id;
-        private Business.Entities.BusinessEntity.State _Estado;
-        public enum State
+        private Business.Entities.BusinessEntity.Estados _State;
+        public enum Estados
         {
             Deleted, 
             New, 
@@ -26,7 +26,7 @@ namespace Business.Entities
             }
         }
 
-        public State Estado
+        public Estados State
         {
             get => default;
             set
