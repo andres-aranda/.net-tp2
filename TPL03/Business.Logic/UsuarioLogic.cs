@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Data.Database;
+
 
 namespace Academia.Business.Logic
 {
@@ -13,14 +15,14 @@ namespace Academia.Business.Logic
         {
             this.UsuarioData = UsuarioData;
         }
+
         public Data.Database.UsuarioAdapter UsuarioData
         {
             get => default;
             set
             {
-              GetAll();
+                GetAll();
             }
-
 
         }
         public List<Usuario> GetAll()
