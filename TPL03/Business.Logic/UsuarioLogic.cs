@@ -11,12 +11,8 @@ namespace Academia.Business.Logic
 {
     public class UsuarioLogic : BusinessLogic
     {
-        public UsuarioLogic()
-        {
-            this.UsuarioData = UsuarioData;
-        }
 
-        public Data.Database.UsuarioAdapter UsuarioData
+        public UsuarioAdapter UsuarioData
         {
             get => default;
             set
@@ -25,24 +21,30 @@ namespace Academia.Business.Logic
             }
 
         }
+
+        public UsuarioLogic(Data.Database.UsuarioAdapter u)
+        {
+            this.UsuarioData = u;
+        }
+
         public List<Usuario> GetAll()
         {
-            throw new System.NotImplementedException();
+            return UsuarioData.GetAll();
         }
 
-        public void GetOne()
+        public Usuario GetOne(int id)
         {
-            throw new System.NotImplementedException();
+            return UsuarioData.GetOne(id);
         }
 
-        public void Save()
+        public void Save(Usuario u)
         {
-            throw new System.NotImplementedException();
+            UsuarioData.Save(u);
         }
 
-        public void Delete()
+        public void Delete(int id)
         {
-            throw new System.NotImplementedException();
+            UsuarioData.Delete(id);
         }
     }
 }

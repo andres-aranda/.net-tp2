@@ -11,8 +11,9 @@ namespace Business.Entities
         private string _Apellido;
         private String _Nombre;
         private String _NombreUsuario;
-        private System.Net.Mail.MailAddress _Email;
+        private String _Email;
         private string _Clave;
+        private bool _Habilitado;
 
         public string Apellido
         {
@@ -30,7 +31,7 @@ namespace Business.Entities
             }
         }
 
-        public System.Net.Mail.MailAddress Email
+        public String Email
         {
             get => default;
             set
@@ -47,6 +48,14 @@ namespace Business.Entities
         }
 
         public string NombreUsuario
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public bool Habilitado
         {
             get => default;
             set

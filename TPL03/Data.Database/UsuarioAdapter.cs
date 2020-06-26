@@ -21,18 +21,18 @@ namespace Data.Database
                     _Usuarios = new List<Business.Entities.Usuario>();
                     Business.Entities.Usuario usr;
                     usr = new Business.Entities.Usuario();
-                    usr.ID = 1;
+                    usr.Id = 1;
                     usr.State = Business.Entities.BusinessEntity.Estados.Unmodified;
                     usr.Nombre = "Casimiro";
                     usr.Apellido = "Cegado";
                     usr.NombreUsuario = "casicegado";
                     usr.Clave = "miro";
                     usr.Email = "casimirocegado@gmail.com";
-                    //usr.Habilitado = true;
+                    usr.Habilitado = true;
                     _Usuarios.Add(usr);
 
                     usr = new Business.Entities.Usuario();
-                    usr.ID = 2;
+                    usr.Id = 2;
                     usr.State = Business.Entities.BusinessEntity.Estados.Unmodified;
                     usr.Nombre = "Armando Esteban";
                     usr.Apellido = "Quito";
@@ -43,13 +43,13 @@ namespace Data.Database
                     _Usuarios.Add(usr);
 
                     usr = new Business.Entities.Usuario();
-                    usr.ID = 3;
-                    usr.State = Business.Entities.BusinessEntity.States.Unmodified;
+                    usr.Id = 3;
+                    usr.State = Business.Entities.BusinessEntity.Estados.Unmodified;
                     usr.Nombre = "Alan";
                     usr.Apellido = "Brado";
                     usr.NombreUsuario = "alanbrado";
                     usr.Clave = "abrete sesamo";
-                    usr.EMail = "alanbrado@gmail.com";
+                    usr.Email = "alanbrado@gmail.com";
                     usr.Habilitado = true;
                     _Usuarios.Add(usr);
 
@@ -64,40 +64,40 @@ namespace Data.Database
             return new List<Usuario>(Usuarios);
         }
 
-        public Business.Entities.Usuario GetOne(int ID)
+        public Business.Entities.Usuario GetOne(int Id)
         {
-            return Usuarios.Find(delegate(Usuario u) { return u.ID == ID; });
+            return Usuarios.Find(delegate(Usuario u) { return u.Id == Id; });
         }
 
-        public void Delete(int ID)
+        public void Delete(int Id)
         {
-            Usuarios.Remove(this.GetOne(ID));
+            Usuarios.Remove(this.GetOne(Id));
         }
 
         public void Save(Usuario usuario)
         {
-            if (usuario.State == BusinessEntity.States.New)
+            if (usuario.State == BusinessEntity.Estados.New)
             {
-                int NextID = 0;
+                int NextId = 0;
                 foreach (Usuario usr in Usuarios)
                 {
-                    if (usr.ID > NextID)
+                    if (usr.Id > NextId)
                     {
-                        NextID = usr.ID;
+                        NextId = usr.Id;
                     }
                 }
-                usuario.ID = NextID + 1;
+                usuario.Id = NextId + 1;
                 Usuarios.Add(usuario);
             }
-            else if (usuario.State == BusinessEntity.States.Deleted)
+            else if (usuario.State == BusinessEntity.Estados.Deleted)
             {
-                this.Delete(usuario.ID);
+                this.Delete(usuario.Id);
             }
-            else if (usuario.State == BusinessEntity.States.Modified)
+            else if (usuario.State == BusinessEntity.Estados.Modified)
             {
-                Usuarios[Usuarios.FindIndex(delegate(Usuario u) { return u.ID == usuario.ID; })]=usuario;
+                Usuarios[Usuarios.FindIndex(delegate(Usuario u) { return u.Id == usuario.Id; })]=usuario;
             }
-            usuario.State = BusinessEntity.States.Unmodified;            
+            usuario.State = BusinessEntity.Estados.Unmodified;            
         }
     }
 }
