@@ -11,7 +11,10 @@ namespace Academia.Business.Logic
 {
     public class UsuarioLogic : BusinessLogic
     {
+        public UsuarioLogic()
+        {
 
+        }
         public UsuarioAdapter UsuarioData
         {
             get => default;

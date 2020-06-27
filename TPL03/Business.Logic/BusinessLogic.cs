@@ -8,5 +8,9 @@ namespace Academia.Business.Logic
 {
     public class BusinessLogic
     {
+        BusinessLogic()
+        {
+
+        }
     }
 }
