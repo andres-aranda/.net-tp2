@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace Academia.Business.Entities
+namespace Business.Entities
 {
     public class Usuario: BusinessEntity
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Academia.Business.Entities
+namespace Business.Entities
 {
     public class BusinessEntity
     {

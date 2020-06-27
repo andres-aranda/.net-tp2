@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Academia.Business.Logic
+namespace Business.Logic
 {
     public class BusinessLogic
     {
