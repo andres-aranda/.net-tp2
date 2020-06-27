@@ -107,50 +107,38 @@ namespace Business.Entities
         }
         public string Apellido
         {
-            get => default;
-            set
-            {
-            }
+            get { return _Apellido; }
+            set { _Apellido = value; }
         }
 
         public string Clave
         {
-            get => default;
-            set
-            {
-            }
+            get { return _Clave; }
+            set { _Clave = value; }
         }
 
         public String Email
         {
-            get => default;
-            set
-            {
-            }
+            get { return _Email; }
+            set { _Email = value; }
         }
 
         public string Nombre
         {
-            get => default;
-            set
-            {
-            }
+            get { return _Nombre; }
+            set { _Nombre = value; }
         }
 
         public string NombreUsuario
         {
-            get => default;
-            set
-            {
-            }
+            get { return _NombreUsuario; }
+            set { _NombreUsuario = value; }
         }
 
         public bool Habilitado
         {
-            get => default;
-            set
-            {
-            }
+            get { return _Habilitado; }
+            set { _Habilitado = value; }
         }
     }
 }

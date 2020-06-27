@@ -20,18 +20,14 @@ namespace Business.Entities
 
         public int Id
         {
-            get => default;
-            set
-            {
-            }
+            get { return _Id; }
+            set { _Id = value; }
         }
 
         public Estados State
         {
-            get => default;
-            set
-            {
-            }
+            get { return _State; }
+            set { _State = value; }
         }
     }
 }

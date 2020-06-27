@@ -11,19 +11,11 @@ namespace Business.Logic
 {
     public class UsuarioLogic : BusinessLogic
     {
-        public UsuarioAdapter UsuarioData
-        {
-            get => default;
-            set
-            {
-                GetAll();
-            }
+        public UsuarioAdapter UsuarioData  { get;  set;}
 
-        }
-
-        public UsuarioLogic(Data.Database.UsuarioAdapter u)
+        public UsuarioLogic()
         {
-            this.UsuarioData = u;
+            UsuarioData = new UsuarioAdapter();
         }
 
         public List<Usuario> GetAll()

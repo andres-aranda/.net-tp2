@@ -18,12 +18,11 @@ namespace UI.Consola
         }
         public void Menu()
         {
-            Console.WriteLine("ghkdhgkdbhgons"); Console.ReadKey();
             ConsoleKeyInfo rta;
             do
             {
                 System.Console.Clear();
-                System.Console.Write("MENU \n1- Listado General \n2- Consulta \n3- Agregar \n4- Modificar \n5- Eliminar \n6- Salir");
+                System.Console.Write("MENU \n1- Listado General \n2- Consulta \n3- Agregar \n4- Modificar \n5- Eliminar \n6- Salir \n");
                 do
                 {
                     rta = System.Console.ReadKey();
@@ -54,17 +53,17 @@ namespace UI.Consola
             } while (rta.Key != ConsoleKey.D6);
         }
 
-        public void MostrarDatos(Usuario usuario)
-        {
-            System.Console.WriteLine("Usuario: " + usuario.Id); 
-            System.Console.WriteLine("\nNombre: "+ usuario.Nombre);
-            System.Console.WriteLine("\nApellido: " + usuario.Apellido);
-            System.Console.WriteLine("\nNombre de Usuario: " + usuario.NombreUsuario);
-            System.Console.WriteLine("\nClave: " + usuario.Clave);
-            System.Console.WriteLine("\nEmail: " + usuario.Email);
-            System.Console.WriteLine("\nHabilitado: " + usuario.Habilitado);
-            System.Console.WriteLine();
-        }
+              public void MostrarDatos(Usuario usuario)
+              {
+                  System.Console.WriteLine("Usuario: " + usuario.Id); 
+                  System.Console.WriteLine("\nNombre: "+ usuario.Nombre);
+                  System.Console.WriteLine("\nApellido: " + usuario.Apellido);
+                  System.Console.WriteLine("\nNombre de Usuario: " + usuario.NombreUsuario);
+                  System.Console.WriteLine("\nClave: " + usuario.Clave);
+                  System.Console.WriteLine("\nEmail: " + usuario.Email);
+                  System.Console.WriteLine("\nHabilitado: " + usuario.Habilitado);
+                  System.Console.WriteLine();
+              }
 
         public void ListadoGeneral()
         {
@@ -96,7 +95,7 @@ namespace UI.Consola
 
         public void Agregar()
         {
- /*           try
+            try
             {
                 System.Console.Clear();
                 Usuario usuario = new Usuario();
@@ -112,19 +111,19 @@ namespace UI.Consola
                 usuario.Email = System.Console.ReadLine();
                 System.Console.Write("Ingrese Habilitación de Usuario (1-Si/Otro-NO): ");
                 usuario.Habilitado = (System.Console.ReadLine() == "1");
-                usuario.State = Business.Entities.Estados.New;
+                usuario.State = BusinessEntity.Estados.New;
                 UsuarioNegocio.Save(usuario);
                 System.Console.WriteLine("El ID del usuario creado es: {0}", usuario.Id);
             }
             catch (Exception e)
             {
                 System.Console.WriteLine(e.Message);
-            } */
+            } 
         }
 
         public void Modificar()
         {
-           /* try
+            try
             {
                 System.Console.Clear();
                 System.Console.Write("Ingrese ID de la persona: ");
@@ -142,7 +141,7 @@ namespace UI.Consola
                 usuario.Email = System.Console.ReadLine();
                 System.Console.Write("Ingrese Habilitación de Usuario (1-Si/Otro-NO): ");
                 usuario.Habilitado = (System.Console.ReadLine() == "1");
-                usuario.State = BusinessEntities.States.Modified;
+                usuario.State = BusinessEntity.Estados.Modified;
                 UsuarioNegocio.Save(usuario);
             }
             catch (FormatException fe)
@@ -152,7 +151,7 @@ namespace UI.Consola
             catch (Exception e)
             {
                 System.Console.WriteLine(e.Message);
-            }*/
+            }
         }
 
         public void Eliminar()
