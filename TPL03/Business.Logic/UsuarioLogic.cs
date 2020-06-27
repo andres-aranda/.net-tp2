@@ -7,14 +7,10 @@ using System.Threading.Tasks;
 using Data.Database;
 
 
-namespace Academia.Business.Logic
+namespace Business.Logic
 {
     public class UsuarioLogic : BusinessLogic
     {
-        public UsuarioLogic()
-        {
-
-        }
         public UsuarioAdapter UsuarioData
         {
             get => default;

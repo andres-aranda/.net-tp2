@@ -8,7 +8,7 @@ namespace Business.Logic
 {
     public class BusinessLogic
     {
-        BusinessLogic()
+        public BusinessLogic()
         {
 
         }

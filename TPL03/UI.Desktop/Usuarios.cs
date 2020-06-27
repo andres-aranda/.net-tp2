@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Business.Entities;
-using Academia.Business.Logic;
+using Business.Logic;
 
 namespace Academia.UI.Desktop
 {
@@ -18,20 +18,21 @@ namespace Academia.UI.Desktop
         {
             InitializeComponent();
         }
-        public void Listar()
+        // ARREGLAR
+        /*public void Listar()
         {
             UsuarioLogic ul = new UsuarioLogic();
             this.dgvUsuarios.DataSource = ul.GetAll();
-        }
+        }*/
 
         private void Usuarios_Load(object sender, EventArgs e)
         {
-            Listar();
+            //Listar();
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            Listar();
+            //Listar();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
