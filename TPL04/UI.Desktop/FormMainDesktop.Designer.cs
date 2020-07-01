@@ -38,11 +38,12 @@
             // 
             // mnsPrincipal
             // 
+            this.mnsPrincipal.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mnsPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuArchivo});
             this.mnsPrincipal.Location = new System.Drawing.Point(0, 0);
             this.mnsPrincipal.Name = "mnsPrincipal";
-            this.mnsPrincipal.Size = new System.Drawing.Size(800, 24);
+            this.mnsPrincipal.Size = new System.Drawing.Size(1067, 30);
             this.mnsPrincipal.TabIndex = 1;
             this.mnsPrincipal.Text = "menuStrip1";
             // 
@@ -52,40 +53,42 @@
             this.mnuSalir,
             this.listaUsuariosToolStripMenuItem});
             this.mnuArchivo.Name = "mnuArchivo";
-            this.mnuArchivo.Size = new System.Drawing.Size(60, 20);
+            this.mnuArchivo.Size = new System.Drawing.Size(73, 24);
             this.mnuArchivo.Text = "Archivo";
             this.mnuArchivo.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // mnuSalir
             // 
             this.mnuSalir.Name = "mnuSalir";
-            this.mnuSalir.Size = new System.Drawing.Size(146, 22);
+            this.mnuSalir.Size = new System.Drawing.Size(224, 26);
             this.mnuSalir.Text = "Salir";
             this.mnuSalir.Click += new System.EventHandler(this.mnuSalir_Click);
             // 
             // listaUsuariosToolStripMenuItem
             // 
             this.listaUsuariosToolStripMenuItem.Name = "listaUsuariosToolStripMenuItem";
-            this.listaUsuariosToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.listaUsuariosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.listaUsuariosToolStripMenuItem.Text = "Lista Usuarios";
             // 
             // panel1
             // 
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 24);
+            this.panel1.Location = new System.Drawing.Point(0, 30);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 426);
+            this.panel1.Size = new System.Drawing.Size(1067, 524);
             this.panel1.TabIndex = 3;
             // 
             // formMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.mnsPrincipal);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.mnsPrincipal;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "formMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Academia";

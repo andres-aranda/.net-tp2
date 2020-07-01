@@ -18,19 +18,22 @@ namespace Academia.UI.Desktop
         }
         public enum ModoForm{
             Alta, Baja, Modificacion , Consulta };
-        public virtual void MapearDeDatos() { }
-        public virtual void MapearADatos() { }
-        public virtual void GuardarCambios() { }
-        public virtual bool Validar() { return false; }
-        public void Notificar(string titulo, string mensaje, MessageBoxButtons
-        botones, MessageBoxIcon icono)
-        {
-            MessageBox.Show(mensaje, titulo, botones, icono);
-        }
-        public void Notificar(string mensaje, MessageBoxButtons botones,
-        MessageBoxIcon icono)
-        {
-            this.Notificar(this.Text, mensaje, botones, icono);
-        }
+         public virtual void MapearDeDatos()
+         {
+            
+         }
+         public virtual void MapearADatos() { }
+         public virtual void GuardarCambios() { }
+         public virtual bool Validar() { return false; }
+         public void Notificar(string titulo, string mensaje, MessageBoxButtons
+         botones, MessageBoxIcon icono)
+         {
+             MessageBox.Show(mensaje, titulo, botones, icono);
+         }
+         public void Notificar(string mensaje, MessageBoxButtons botones,
+         MessageBoxIcon icono)
+         {
+             this.Notificar(this.Text, mensaje, botones, icono);
+         }
     }
 }

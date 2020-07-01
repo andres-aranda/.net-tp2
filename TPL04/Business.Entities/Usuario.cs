@@ -13,7 +13,7 @@ namespace Business.Entities
         public Usuario()
         {
             this.Conn = new SqlConnection(
-            "Data Source=localhost\\SQLEXPRESS;Initial Catalog=academia;Integrated Security=true;");
+            "Data Source=localhost;Initial Catalog=academia;Integrated Security=true;");
             /*
              * Este connection string es para conectarse con la base de datos academia en el servidor
              * del departamento sistemas desde una PC de los laboratorios de sistemas,
