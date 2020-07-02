@@ -14,7 +14,7 @@ namespace Academia.UI.Desktop
     {
         public UsuarioDesktop()
         {
-            
+            InitializeComponent();
         }
         public  void MapearDeDatos() { }
         public  void MapearADatos() { }
@@ -31,6 +31,9 @@ namespace Academia.UI.Desktop
             this.Notificar(this.Text, mensaje, botones, icono);
         }
 
-       
+        private void UsuarioDesktop_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -12,27 +12,27 @@ using Business.Logic;
 
 namespace Academia.UI.Desktop
 {
-    public partial class Usuarios : Form
+    public partial class Usuarios : ApplicationForm
     {
         public Usuarios()
         {
             InitializeComponent();
         }
-        // ARREGLAR
-        /*public void Listar()
+        
+        public void Listar()
         {
             UsuarioLogic ul = new UsuarioLogic();
             this.dgvUsuarios.DataSource = ul.GetAll();
-        }*/
+        }
 
         private void Usuarios_Load(object sender, EventArgs e)
         {
-            //Listar();
+            Listar();
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            //Listar();
+            Listar();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

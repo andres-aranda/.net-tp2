@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Academia.UI.Desktop;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace UI.Desktop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formListaUsuarios());
+            Application.Run(new UsuarioDesktop());
         }
     }
 }
