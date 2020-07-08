@@ -93,6 +93,9 @@
     <EmbeddedResource Include="FormListaUsuarios.resx">
       <DependentUpon>FormListaUsuarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormLoginDesktop.resx">
+      <DependentUpon>FormLoginDesktop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UsuarioDesktop.resx">
       <DependentUpon>UsuarioDesktop.cs</DependentUpon>
     </EmbeddedResource>

@@ -16,7 +16,7 @@ namespace Academia.UI.Desktop
     {
         public Usuario UsuarioActual { get; set; }
 
-        #region Constructures
+        
         public UsuarioDesktop()
         {
             InitializeComponent();
@@ -40,9 +40,8 @@ namespace Academia.UI.Desktop
 
             this.SetFormName(modo);
         }
-        #endregion
+        
 
-        #region Eventos
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             if (this.Validar())
@@ -56,7 +55,7 @@ namespace Academia.UI.Desktop
         {
             this.Close();
         }
-        #endregion
+     
 
         public override void MapearDeDatos()
         {

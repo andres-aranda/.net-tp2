@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI.Desktop;
 
-namespace UI.Desktop
+namespace Academia.UI.Desktop
 {
     static class Program
     {

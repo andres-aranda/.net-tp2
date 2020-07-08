@@ -7,19 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI.Desktop;
 
-namespace UI.Desktop
+namespace Academia.UI.Desktop
 {
-    public partial class formMain : Form
+    public partial class FormMainDesktop : Form
     {
-        public formMain()
+        public FormMainDesktop()
         {
             InitializeComponent();
-        }
-
-        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void mnuSalir_Click(object sender, EventArgs e)
@@ -37,6 +33,12 @@ namespace UI.Desktop
             else
                 this.WindowState = FormWindowState.Maximized;
 
+        }
+
+        private void listaUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Usuarios usuarios = new Usuarios();
+            usuarios.ShowDialog(this);
         }
     }
 }

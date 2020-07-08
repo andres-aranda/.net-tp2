@@ -12,7 +12,7 @@ using Business.Logic;
 
 namespace Academia.UI.Desktop
 {
-    public partial class Usuarios : ApplicationForm
+    public partial class Usuarios : Form    
     {
         public Usuarios()
         {
@@ -23,7 +23,15 @@ namespace Academia.UI.Desktop
         private void Listar()
         {
             UsuarioLogic ul = new UsuarioLogic();
-            this.dgvUsuarios.DataSource = ul.GetAll();
+
+            try
+            {
+                this.dgvUsuarios.DataSource = ul.GetAll();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void formUsuarios_Load(object sender, EventArgs e)
