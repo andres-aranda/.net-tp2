@@ -194,5 +194,10 @@ namespace Academia.UI.Desktop
                     break;
             }
         }
+
+        private void btnAceptar_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
