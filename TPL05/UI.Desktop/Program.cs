@@ -17,6 +17,7 @@ namespace Academia.UI.Desktop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new UsuarioDesktop());
             Application.Run(new Usuarios());
         }
     }

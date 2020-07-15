@@ -86,7 +86,6 @@
             this.tlUsuarios.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlUsuarios.Size = new System.Drawing.Size(649, 312);
             this.tlUsuarios.TabIndex = 0;
-            this.tlUsuarios.Paint += new System.Windows.Forms.PaintEventHandler(this.tlUsuarios_Paint);
             // 
             // dgvUsuarios
             // 
@@ -179,7 +178,7 @@
             this.tsbEliminar});
             this.tsUsuarios.Location = new System.Drawing.Point(3, 0);
             this.tsUsuarios.Name = "tsUsuarios";
-            this.tsUsuarios.Size = new System.Drawing.Size(81, 25);
+            this.tsUsuarios.Size = new System.Drawing.Size(112, 25);
             this.tsUsuarios.TabIndex = 0;
             // 
             // tsbNuevo
@@ -190,6 +189,7 @@
             this.tsbNuevo.Name = "tsbNuevo";
             this.tsbNuevo.Size = new System.Drawing.Size(23, 22);
             this.tsbNuevo.Text = "Nuevo";
+            this.tsbNuevo.Click += new System.EventHandler(this.tsbNuevo_Click);
             // 
             // tsbEditar
             // 
@@ -217,7 +217,6 @@
             this.Controls.Add(this.tscUsuarios);
             this.Name = "Usuarios";
             this.Text = "Usuarios";
-            this.Load += new System.EventHandler(this.Listar);
             this.tscUsuarios.ContentPanel.ResumeLayout(false);
             this.tscUsuarios.TopToolStripPanel.ResumeLayout(false);
             this.tscUsuarios.TopToolStripPanel.PerformLayout();
