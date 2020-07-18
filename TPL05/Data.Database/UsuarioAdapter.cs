@@ -119,7 +119,7 @@ namespace Data.Database
                 }
 
                 drUsuario.Close();
-                this.CloseConnection();
+                //this.CloseConnection();
             }
             catch (Exception Ex)
             {
@@ -139,7 +139,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdDelete = new SqlCommand("DELETE usuarios WHERE id_usuarios = @id", Sqlconn);
+                SqlCommand cmdDelete = new SqlCommand("DELETE usuarios WHERE id_usuario = @id", Sqlconn);
                 cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = Id;
                 cmdDelete.ExecuteNonQuery();
             }

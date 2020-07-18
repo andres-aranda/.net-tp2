@@ -41,7 +41,6 @@ namespace Academia.UI.Desktop
             this.SetFormName(modo);
         }
 
-
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             if (this.Validar())
@@ -87,12 +86,10 @@ namespace Academia.UI.Desktop
 
         public override void MapearADatos()
         {
-
             switch (this.modoForm)
             {
                 case ModoForm.Alta:
                     this.UsuarioActual = new Usuario();
-
                     this.UsuarioActual.Id = 0;
                     this.UsuarioActual.Habilitado = this.chkHabilitado.Checked;
                     this.UsuarioActual.Nombre = this.txtNombre.Text;
@@ -106,7 +103,7 @@ namespace Academia.UI.Desktop
                     break;
 
                 case ModoForm.Modificacion:
-                    this.UsuarioActual.Id = Int32.Parse(this.txtId.Text.ToString());
+                    this.UsuarioActual.Id = int.Parse(this.txtId.Text.ToString());
                     this.UsuarioActual.Habilitado = this.chkHabilitado.Checked;
                     this.UsuarioActual.Nombre = this.txtNombre.Text;
                     this.UsuarioActual.Apellido = this.txtApellido.Text;
