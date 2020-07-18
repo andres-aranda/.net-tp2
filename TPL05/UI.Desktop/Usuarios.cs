@@ -36,12 +36,12 @@ namespace Academia.UI.Desktop
 
         private void formUsuarios_Load(object sender, EventArgs e)
         {
-            Listar();
+            this.Listar();
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            Listar();
+            this.Listar();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -58,13 +58,7 @@ namespace Academia.UI.Desktop
 
         private void TsbModificarUsuario_Click(object sender, EventArgs e)
         {
-            if (this.dgvUsuarios.SelectedRows.Count > 0)
-            {
-                int ID = ((Business.Entities.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).Id;
-                UsuarioDesktop usuarioDesktop = new UsuarioDesktop(ID, ApplicationForm.ModoForm.Modificacion);
-                usuarioDesktop.ShowDialog();
-            }
-            this.Listar();
+
         }
 
         private void TsbBorrarUsuario_Click(object sender, EventArgs e)
