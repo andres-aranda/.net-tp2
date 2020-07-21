@@ -26,6 +26,8 @@ namespace Data.Database
                     m.HsSemanales = (int)drMaterias["hs_semanales"];
                     m.HsTotales = (int)drMaterias["hs_totales"];
                     m.IdPlan = (int)drMaterias["id_plan"];
+
+                    materias.Add(m);
                 }
                 drMaterias.Close();
             }
