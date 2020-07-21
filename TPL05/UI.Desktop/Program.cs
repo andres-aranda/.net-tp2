@@ -1,8 +1,4 @@
-﻿using Academia.UI.Desktop;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
 namespace Academia.UI.Desktop
@@ -17,7 +13,7 @@ namespace Academia.UI.Desktop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Usuarios());
+            Application.Run(new Planes());
         }
     }
 }
