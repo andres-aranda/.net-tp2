@@ -192,9 +192,6 @@ namespace Academia.UI.Desktop
             }
         }
 
-        private void btnAceptar_Click_1(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }

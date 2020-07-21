@@ -58,11 +58,11 @@
             // tscUsuarios.ContentPanel
             // 
             this.tscUsuarios.ContentPanel.Controls.Add(this.tlUsuarios);
-            this.tscUsuarios.ContentPanel.Size = new System.Drawing.Size(649, 312);
+            this.tscUsuarios.ContentPanel.Size = new System.Drawing.Size(380, 248);
             this.tscUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tscUsuarios.Location = new System.Drawing.Point(0, 0);
             this.tscUsuarios.Name = "tscUsuarios";
-            this.tscUsuarios.Size = new System.Drawing.Size(649, 337);
+            this.tscUsuarios.Size = new System.Drawing.Size(380, 273);
             this.tscUsuarios.TabIndex = 0;
             this.tscUsuarios.Text = "toolStripContainer1";
             // 
@@ -84,7 +84,7 @@
             this.tlUsuarios.RowCount = 2;
             this.tlUsuarios.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlUsuarios.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlUsuarios.Size = new System.Drawing.Size(649, 312);
+            this.tlUsuarios.Size = new System.Drawing.Size(380, 248);
             this.tlUsuarios.TabIndex = 0;
             // 
             // dgvUsuarios
@@ -104,7 +104,7 @@
             this.dgvUsuarios.Location = new System.Drawing.Point(3, 3);
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.ReadOnly = true;
-            this.dgvUsuarios.Size = new System.Drawing.Size(643, 277);
+            this.dgvUsuarios.Size = new System.Drawing.Size(374, 213);
             this.dgvUsuarios.TabIndex = 0;
             // 
             // id
@@ -152,7 +152,7 @@
             // btnActualizar
             // 
             this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizar.Location = new System.Drawing.Point(490, 286);
+            this.btnActualizar.Location = new System.Drawing.Point(221, 222);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 23);
             this.btnActualizar.TabIndex = 1;
@@ -162,7 +162,7 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(571, 286);
+            this.btnSalir.Location = new System.Drawing.Point(302, 222);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 2;
@@ -216,7 +216,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(649, 337);
+            this.ClientSize = new System.Drawing.Size(380, 273);
             this.Controls.Add(this.tscUsuarios);
             this.Name = "Usuarios";
             this.Text = "Usuarios";

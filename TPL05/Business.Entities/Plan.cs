@@ -3,28 +3,59 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
+
 
 namespace Business.Entities
 {
-    class Plan : BusinessEntity
+    public class Plan : BusinessEntity
     {
+        public Plan() 
+        {
+
+        }
+
         private string _Descripcion;
         private int _IdEspecialidad;
 
-        public string Descripcion
+        protected SqlDataAdapter _daPlanes;
+
+        public SqlDataAdapter daPlanes
         {
-            get => default;
-            set
-            {
-            }
+            get { return _daPlanes; }
+            set { _daPlanes = value; }
         }
 
+        protected SqlConnection _conn;
+
+        public SqlConnection Conn
+        {
+            get { return _conn; }
+            set { _conn = value; }
+        }
+
+        public DataTable GetAll()
+        {
+            DataTable dtPlanes = new DataTable();
+            this.daPlanes.Fill(dtPlanes);
+            return dtPlanes;
+        }
+        public void GuardarCambios(DataTable dtPlanes)
+        {
+            this.daPlanes.Update(dtPlanes);
+            dtPlanes.AcceptChanges();
+        }
+        public string Descripcion
+        {
+            get { return _Descripcion; }
+            set { _Descripcion = value; }
+        }
         public int IdEspecialidad
         {
-            get => default;
-            set
-            {
-            }
+            get { return _IdEspecialidad; }
+            set { _IdEspecialidad = value; }
         }
+    
     }
 }
