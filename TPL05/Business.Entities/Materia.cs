@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 
 namespace Business.Entities
@@ -14,34 +15,26 @@ namespace Business.Entities
 
         public string Descripcion
         {
-            get => default;
-            set
-            {
-            }
+            get => _Descripcion;
+            set => _Descripcion = value;
         }
 
         public int HsSemanales
         {
-            get => default;
-            set
-            {
-            }
+            get => _HsSemanales;
+            set => _HsSemanales = value;
         }
 
         public int HsTotales
         {
-            get => default;
-            set
-            {
-            }
+            get => _HsTotales;
+            set => _HsTotales = value;
         }
 
         public int IdPlan
         {
-            get => default;
-            set
-            {
-            }
+            get => _IdPlan;
+            set => _IdPlan = value;
         }
     }
 }

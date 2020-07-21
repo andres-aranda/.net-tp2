@@ -9,7 +9,6 @@ namespace Data.Database
 {
     public  class PlanAdapter:Adapter
     {
-
         public List<Plan> GetAll()
         {
             List<Plan> planes = new List<Plan>();
