@@ -47,5 +47,42 @@ namespace Academia.UI.Desktop
         {
             Listar();
         }
+
+        private void tsbNuevo_Click(object sender, EventArgs e)
+        {
+            MateriaDesktop md = new MateriaDesktop(ApplicationForm.ModoForm.Alta);
+            md.ShowDialog();
+
+        }
+
+        private void tsbEditar_Click(object sender, EventArgs e)
+        {
+            if (dgvMaterias.SelectedRows.Count > 0)
+            {
+                int id = ((Business.Entities.Materia)dgvMaterias.SelectedRows[0].DataBoundItem).Id;
+                MateriaDesktop materiaDesktop = new MateriaDesktop(id, ApplicationForm.ModoForm.Modificacion);
+                materiaDesktop.ShowDialog();
+            }
+            Listar();
+        }
+
+        private void tsbEliminar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Desea eliminar la materia?", "Eliminar materia", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (dgvMaterias.SelectedRows.Count > 0)
+                {
+                    int id = ((Business.Entities.Materia)dgvMaterias.SelectedRows[0].DataBoundItem).Id;
+                    MateriaLogic materiaLogic = new MateriaLogic();
+                    materiaLogic.Delete(id);
+                }
+            }
+            Listar();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

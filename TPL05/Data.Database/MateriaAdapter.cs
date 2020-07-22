@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -10,12 +11,84 @@ namespace Data.Database
 {
     public class MateriaAdapter : Adapter
     {
+        public void Insert(Materia m)
+        {
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmd = new SqlCommand("INSERT INTO materias (desc_materia, hs_semanales, hs_totales, id_plan)" +
+                    " VALUES (@desc_materia, @hs_semanales, @hs_totales, @id_plan)" +
+                    " SELECT @@identity", Sqlconn);
+
+                cmd.Parameters.Add("@desc_materia", SqlDbType.VarChar, 50).Value = m.Descripcion;
+                cmd.Parameters.Add("@hs_semanales", SqlDbType.Int).Value = m.HsSemanales;
+                cmd.Parameters.Add("@hs_totales", SqlDbType.Int).Value = m.HsTotales;
+                cmd.Parameters.Add("@id_plan", SqlDbType.Int).Value = m.IdPlan;
+                m.Id = decimal.ToInt32((decimal)cmd.ExecuteScalar());
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
+
+        public void Save(Materia m)
+        {
+            if (m.State == BusinessEntity.Estados.New)
+            {
+                this.Insert(m);
+            }
+            else if (m.State == BusinessEntity.Estados.Deleted)
+            {
+                //this.Delete(m.Id);
+            }
+            else if (m.State == BusinessEntity.Estados.Modified)
+            {
+                //this.Update(m);
+            }
+            m.State = BusinessEntity.Estados.Unmodified;
+        }
+
+        public Materia GetOne(int id)
+        {
+            Materia materia = new Materia();
+            try
+            {
+                OpenConnection();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM materias WHERE id_materia = @id", Sqlconn);
+                cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    materia.Id = (int)dr["id_materia"];
+                    materia.Descripcion = (string)dr["desc_materia"];
+                    materia.HsSemanales = (int)dr["hs_semanales"];
+                    materia.HsTotales = (int)dr["hs_totales"];
+                    materia.IdPlan = (int)dr["id_plan"];
+                }
+                dr.Close();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+            return materia;
+        }
+
         public List<Materia> GetAll()
         {
             List<Materia> materias = new List<Materia>();
             try
             {
-                this.OpenConnection();
+                OpenConnection();
                 SqlCommand cmdMaterias = new SqlCommand("SELECT * FROM materias", Sqlconn);
                 SqlDataReader drMaterias = cmdMaterias.ExecuteReader();
                 while (drMaterias.Read())
@@ -38,9 +111,28 @@ namespace Data.Database
             }
             finally
             {
-                this.CloseConnection();
+                CloseConnection();
             }
             return materias;
+        }
+
+        public void Delete(int id)
+        {
+            try
+            {
+                OpenConnection();
+                SqlCommand cmd = new SqlCommand("DELETE materias WHERE id_materia = @id", Sqlconn);
+                cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                CloseConnection();
+            }
         }
     }
 }

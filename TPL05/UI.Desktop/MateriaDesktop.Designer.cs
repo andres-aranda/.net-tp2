@@ -55,6 +55,7 @@
             // 
             this.txtId.Location = new System.Drawing.Point(108, 13);
             this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(108, 20);
             this.txtId.TabIndex = 1;
             // 
@@ -131,7 +132,7 @@
             this.btnCancelar.TabIndex = 10;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.button1_Click);
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
@@ -141,6 +142,7 @@
             this.btnAceptar.TabIndex = 11;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // MateriaDesktop
             // 

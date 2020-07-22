@@ -21,5 +21,20 @@ namespace Business.Logic
         {
             return MateriaData.GetAll();
         }
+
+        public Materia GetOne(int id)
+        {
+            return MateriaData.GetOne(id);
+        }
+
+        public void Save(Materia m)
+        {
+            MateriaData.Save(m);
+        }
+
+        public void Delete(int id)
+        {
+            MateriaData.Delete(id);
+        }
     }
 }
