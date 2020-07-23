@@ -44,13 +44,38 @@ namespace Data.Database
             }
             else if (m.State == BusinessEntity.Estados.Deleted)
             {
-                //this.Delete(m.Id);
+                this.Delete(m.Id);
             }
             else if (m.State == BusinessEntity.Estados.Modified)
             {
-                //this.Update(m);
+                this.Update(m);
             }
             m.State = BusinessEntity.Estados.Unmodified;
+        }
+
+        public void Update(Materia materia)
+        {
+            try
+            {
+                OpenConnection();
+                SqlCommand cmd = new SqlCommand("UPDATE materias SET desc_materia = @desc_materia, hs_semanales = @hs_semanales," +
+                    " hs_totales = @hs_totales, id_plan = @id_plan" +
+                    " WHERE id_usuario = @id", Sqlconn);
+                cmd.Parameters.Add("@id", SqlDbType.Int).Value = materia.Id;
+                cmd.Parameters.Add("@desc_materia", SqlDbType.VarChar).Value = materia.Descripcion;
+                cmd.Parameters.Add("@hs_semanales", SqlDbType.Int).Value = materia.HsSemanales;
+                cmd.Parameters.Add("@hs_totales", SqlDbType.Int).Value = materia.HsTotales;
+                cmd.Parameters.Add("@id_plan", SqlDbType.Int).Value = materia.IdPlan;
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                CloseConnection();
+            }
         }
 
         public Materia GetOne(int id)

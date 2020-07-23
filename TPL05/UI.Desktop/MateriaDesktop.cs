@@ -15,6 +15,7 @@ namespace Academia.UI.Desktop
     public partial class MateriaDesktop : ApplicationForm
     {
         public Materia Materia { get; set; }
+        PlanLogic pl = new PlanLogic();
 
         public MateriaDesktop()
         {
@@ -25,6 +26,7 @@ namespace Academia.UI.Desktop
         {
             modoForm = modo;
             SetFormName(modo);
+            FillPlanes();
         }
 
         public MateriaDesktop(int id, ModoForm modo) : this()
@@ -91,7 +93,7 @@ namespace Academia.UI.Desktop
                 Materia.Descripcion = txtNombre.Text;
                 Materia.HsSemanales = int.Parse(txtHsSemanales.Text);
                 Materia.HsTotales = int.Parse(txtHsTotales.Text);
-                Materia.IdPlan = 2; // REEMPLAZAR
+                Materia.IdPlan = (int)cboIdPlan.SelectedValue;
 
                 Materia.State = Materia.Estados.New;
             }
@@ -102,6 +104,14 @@ namespace Academia.UI.Desktop
             MapearADatos();
             MateriaLogic ml = new MateriaLogic();
             ml.Save(Materia);
+        }
+
+        public void FillPlanes()
+        {
+            cboIdPlan.DataSource = pl.GetAll();
+            cboIdPlan.DisplayMember = "Descripcion";
+            cboIdPlan.ValueMember = "Id";
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
