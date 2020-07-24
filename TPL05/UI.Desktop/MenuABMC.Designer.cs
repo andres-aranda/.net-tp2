@@ -34,6 +34,7 @@
             this.btnEspecialidades = new System.Windows.Forms.Button();
             this.btnModulos = new System.Windows.Forms.Button();
             this.btnPlanes = new System.Windows.Forms.Button();
+            this.btnComisiones = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -109,11 +110,24 @@
             this.btnPlanes.UseVisualStyleBackColor = true;
             this.btnPlanes.Click += new System.EventHandler(this.btnPlanes_Click);
             // 
+            // btnComisiones
+            // 
+            this.btnComisiones.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnComisiones.Location = new System.Drawing.Point(15, 183);
+            this.btnComisiones.Name = "btnComisiones";
+            this.btnComisiones.Size = new System.Drawing.Size(289, 23);
+            this.btnComisiones.TabIndex = 6;
+            this.btnComisiones.Text = "Comisiones";
+            this.btnComisiones.UseVisualStyleBackColor = true;
+            this.btnComisiones.Click += new System.EventHandler(this.btnComisiones_Click);
+            // 
             // MenuABMC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(316, 192);
+            this.ClientSize = new System.Drawing.Size(316, 213);
+            this.Controls.Add(this.btnComisiones);
             this.Controls.Add(this.btnPlanes);
             this.Controls.Add(this.btnModulos);
             this.Controls.Add(this.btnEspecialidades);
@@ -136,5 +150,6 @@
         private System.Windows.Forms.Button btnEspecialidades;
         private System.Windows.Forms.Button btnModulos;
         private System.Windows.Forms.Button btnPlanes;
+        private System.Windows.Forms.Button btnComisiones;
     }
 }

@@ -46,5 +46,11 @@ namespace Academia.UI.Desktop
             Planes p = new Planes();
             p.ShowDialog();
         }
+
+        private void btnComisiones_Click(object sender, EventArgs e)
+        {
+            Comisiones c = new Comisiones();
+            c.ShowDialog();
+        }
     }
 }
