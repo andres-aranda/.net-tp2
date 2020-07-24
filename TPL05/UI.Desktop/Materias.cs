@@ -52,7 +52,7 @@ namespace Academia.UI.Desktop
         {
             MateriaDesktop md = new MateriaDesktop(ApplicationForm.ModoForm.Alta);
             md.ShowDialog();
-
+            Listar();
         }
 
         private void tsbEditar_Click(object sender, EventArgs e)
@@ -68,9 +68,9 @@ namespace Academia.UI.Desktop
 
         private void tsbEliminar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Desea eliminar la materia?", "Eliminar materia", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (dgvMaterias.SelectedRows.Count > 0)
             {
-                if (dgvMaterias.SelectedRows.Count > 0)
+                if (MessageBox.Show("¿Desea eliminar la materia?", "Eliminar materia", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     int id = ((Business.Entities.Materia)dgvMaterias.SelectedRows[0].DataBoundItem).Id;
                     MateriaLogic materiaLogic = new MateriaLogic();

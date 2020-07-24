@@ -60,7 +60,7 @@ namespace Data.Database
                 OpenConnection();
                 SqlCommand cmd = new SqlCommand("UPDATE materias SET desc_materia = @desc_materia, hs_semanales = @hs_semanales," +
                     " hs_totales = @hs_totales, id_plan = @id_plan" +
-                    " WHERE id_usuario = @id", Sqlconn);
+                    " WHERE id_materia = @id", Sqlconn);
                 cmd.Parameters.Add("@id", SqlDbType.Int).Value = materia.Id;
                 cmd.Parameters.Add("@desc_materia", SqlDbType.VarChar).Value = materia.Descripcion;
                 cmd.Parameters.Add("@hs_semanales", SqlDbType.Int).Value = materia.HsSemanales;

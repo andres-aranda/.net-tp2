@@ -1,4 +1,5 @@
-﻿using Business.Logic;
+﻿using Business.Entities;
+using Business.Logic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,6 +46,38 @@ namespace Academia.UI.Desktop
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void tsbNuevo_Click(object sender, EventArgs e)
+        {
+            ComisionDesktop cd = new ComisionDesktop();
+            cd.ShowDialog();
+            Listar();
+        }
+
+        private void tsbEditar_Click(object sender, EventArgs e)
+        {
+            if (dgvComisiones.SelectedRows.Count > 0)
+            {
+                int id = ((Business.Entities.Comision)dgvComisiones.SelectedRows[0].DataBoundItem).Id;
+                ComisionDesktop cd = new ComisionDesktop(id, ApplicationForm.ModoForm.Modificacion);
+                cd.ShowDialog();
+            }
+            Listar();
+        }
+
+        private void tsbEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvComisiones.SelectedRows.Count > 0)
+            {
+                if (MessageBox.Show("¿Seguro que desea eliminar la comisión?", "Eliminar comisión", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    ComisionLogic cl = new ComisionLogic();
+                    int id = ((Business.Entities.Comision)dgvComisiones.SelectedRows[0].DataBoundItem).Id;
+                    cl.Delete(id);
+                }
+            }
+            Listar();
         }
     }
 }

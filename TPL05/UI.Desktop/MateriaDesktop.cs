@@ -15,18 +15,17 @@ namespace Academia.UI.Desktop
     public partial class MateriaDesktop : ApplicationForm
     {
         public Materia Materia { get; set; }
-        PlanLogic pl = new PlanLogic();
 
         public MateriaDesktop()
         {
             InitializeComponent();
+            FillPlanes();
         }
 
         public MateriaDesktop(ModoForm modo) : this()
         {
             modoForm = modo;
             SetFormName(modo);
-            FillPlanes();
         }
 
         public MateriaDesktop(int id, ModoForm modo) : this()
@@ -44,6 +43,7 @@ namespace Academia.UI.Desktop
             txtNombre.Text = Materia.Descripcion;
             txtHsSemanales.Text = Materia.HsSemanales.ToString();
             txtHsTotales.Text = Materia.HsTotales.ToString();
+            
         }
 
         public override bool Validar()
@@ -86,16 +86,18 @@ namespace Academia.UI.Desktop
 
         public override void MapearADatos()
         {
+            Materia = new Materia();
+            Materia.Id = 0;
+            Materia.Descripcion = txtNombre.Text;
+            Materia.HsSemanales = int.Parse(txtHsSemanales.Text);
+            Materia.HsTotales = int.Parse(txtHsTotales.Text);
+            Materia.IdPlan = (int)cboIdPlan.SelectedValue;
             if (modoForm == ModoForm.Alta)
-            {
-                Materia = new Materia();
-                Materia.Id = 0;
-                Materia.Descripcion = txtNombre.Text;
-                Materia.HsSemanales = int.Parse(txtHsSemanales.Text);
-                Materia.HsTotales = int.Parse(txtHsTotales.Text);
-                Materia.IdPlan = (int)cboIdPlan.SelectedValue;
-
                 Materia.State = Materia.Estados.New;
+            else if (modoForm == ModoForm.Modificacion)
+            {
+                Materia.Id = int.Parse(txtId.Text);
+                Materia.State = Materia.Estados.Modified;
             }
         }
 
@@ -108,6 +110,7 @@ namespace Academia.UI.Desktop
 
         public void FillPlanes()
         {
+            PlanLogic pl = new PlanLogic();
             cboIdPlan.DataSource = pl.GetAll();
             cboIdPlan.DisplayMember = "Descripcion";
             cboIdPlan.ValueMember = "Id";

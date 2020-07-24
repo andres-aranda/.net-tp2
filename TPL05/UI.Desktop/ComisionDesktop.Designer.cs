@@ -34,10 +34,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtAñoEspecialidad = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtPlan = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.cboPlan = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -55,6 +55,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtID.Location = new System.Drawing.Point(121, 12);
             this.txtID.Name = "txtID";
+            this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(113, 20);
             this.txtID.TabIndex = 1;
             // 
@@ -94,15 +95,6 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Año de especialidad";
             // 
-            // txtPlan
-            // 
-            this.txtPlan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPlan.Location = new System.Drawing.Point(121, 90);
-            this.txtPlan.Name = "txtPlan";
-            this.txtPlan.Size = new System.Drawing.Size(113, 20);
-            this.txtPlan.TabIndex = 7;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -120,6 +112,7 @@
             this.btnAceptar.TabIndex = 8;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
@@ -129,15 +122,24 @@
             this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // cboPlan
+            // 
+            this.cboPlan.FormattingEnabled = true;
+            this.cboPlan.Location = new System.Drawing.Point(121, 90);
+            this.cboPlan.Name = "cboPlan";
+            this.cboPlan.Size = new System.Drawing.Size(113, 21);
+            this.cboPlan.TabIndex = 10;
             // 
             // ComisionDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(246, 170);
+            this.Controls.Add(this.cboPlan);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.txtPlan);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtAñoEspecialidad);
             this.Controls.Add(this.label3);
@@ -160,9 +162,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtAñoEspecialidad;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtPlan;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.ComboBox cboPlan;
     }
 }

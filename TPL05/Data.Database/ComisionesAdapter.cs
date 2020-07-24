@@ -48,7 +48,7 @@ namespace Data.Database
             try
             {
                 OpenConnection();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM comisiones WHERE id = @id", Sqlconn);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM comisiones WHERE id_comision = @id", Sqlconn);
                 cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
@@ -97,7 +97,7 @@ namespace Data.Database
                 OpenConnection();
                 SqlCommand cmd = new SqlCommand("UPDATE comisiones SET desc_comision = @desc_comision," +
                     " anio_especialidad = @año, id_plan = @id_plan" +
-                    " WHERE id_comision = @id");
+                    " WHERE id_comision = @id", Sqlconn);
                 cmd.Parameters.Add("@id", SqlDbType.Int).Value = c.Id;
                 cmd.Parameters.Add("@desc_comision", SqlDbType.VarChar).Value = c.Descripcion;
                 cmd.Parameters.Add("@año", SqlDbType.Int).Value = c.AñoEspecialidad;
@@ -125,7 +125,7 @@ namespace Data.Database
                 cmd.Parameters.Add("@desc_comision", SqlDbType.VarChar).Value = c.Descripcion;
                 cmd.Parameters.Add("@año", SqlDbType.Int).Value = c.AñoEspecialidad;
                 cmd.Parameters.Add("@id_plan", SqlDbType.Int).Value = c.IdPlan;
-                c.Id = (int)cmd.ExecuteScalar();
+                c.Id = decimal.ToInt32((decimal)cmd.ExecuteScalar());
             }
             catch (SqlException e)
             {
