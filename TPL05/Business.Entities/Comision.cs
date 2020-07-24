@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Business.Entities
 {
-    class Comision : BusinessEntity
+    public class Comision : BusinessEntity
     {
         private int _AñoEspecialidad;
         private string _Descripcion;
@@ -14,26 +14,20 @@ namespace Business.Entities
 
         public int AñoEspecialidad
         {
-            get => default;
-            set
-            {
-            }
+            get => _AñoEspecialidad;
+            set => _AñoEspecialidad = value;
         }
 
         public string Descripcion
         {
-            get => default;
-            set
-            {
-            }
+            get => _Descripcion;
+            set => _Descripcion = value;
         }
 
         public int IdPlan
         {
-            get => default;
-            set
-            {
-            }
+            get => _IdPlan;
+            set => _IdPlan = value;
         }
     }
 }

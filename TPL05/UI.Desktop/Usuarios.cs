@@ -65,7 +65,6 @@ namespace Academia.UI.Desktop
                 usuarioDesktop.ShowDialog();
             }
             
-            
             this.Listar();
         }
 

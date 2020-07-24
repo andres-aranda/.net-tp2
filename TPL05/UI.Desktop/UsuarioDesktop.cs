@@ -43,10 +43,10 @@ namespace Academia.UI.Desktop
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (this.Validar())
+            if (Validar())
             {
-                this.GuardarCambios();
-                this.Close();
+                GuardarCambios();
+                Close();
             }
         }
 
