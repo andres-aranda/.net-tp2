@@ -9,7 +9,7 @@ namespace Academia.UI.Desktop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MenuABMC());
+            Application.Run(new Main());
         }
     }
 }

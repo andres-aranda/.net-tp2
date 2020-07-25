@@ -79,6 +79,12 @@
     <Compile Include="Especialidades.Designer.cs">
       <DependentUpon>Especialidades.cs</DependentUpon>
     </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
     <Compile Include="MateriaDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,6 +219,9 @@
       <Project>{b2225aa0-986c-40c2-843b-ed1954da0e9b}</Project>
       <Name>Util</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconoAcademia.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

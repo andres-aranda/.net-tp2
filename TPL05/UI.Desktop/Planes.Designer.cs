@@ -32,15 +32,15 @@
             this.tscUsuarios = new System.Windows.Forms.ToolStripContainer();
             this.tlModulos = new System.Windows.Forms.TableLayoutPanel();
             this.dgvPlanes = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdEspecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.tsModulos = new System.Windows.Forms.ToolStrip();
             this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdEspecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tscUsuarios.ContentPanel.SuspendLayout();
             this.tscUsuarios.TopToolStripPanel.SuspendLayout();
             this.tscUsuarios.SuspendLayout();
@@ -65,10 +65,12 @@
             // 
             // tscUsuarios.TopToolStripPanel
             // 
+            this.tscUsuarios.TopToolStripPanel.BackColor = System.Drawing.Color.IndianRed;
             this.tscUsuarios.TopToolStripPanel.Controls.Add(this.tsModulos);
             // 
             // tlModulos
             // 
+            this.tlModulos.BackColor = System.Drawing.Color.IndianRed;
             this.tlModulos.ColumnCount = 2;
             this.tlModulos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlModulos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -88,6 +90,7 @@
             // 
             this.dgvPlanes.AllowUserToAddRows = false;
             this.dgvPlanes.AllowUserToDeleteRows = false;
+            this.dgvPlanes.BackgroundColor = System.Drawing.Color.Firebrick;
             this.dgvPlanes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPlanes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -100,6 +103,27 @@
             this.dgvPlanes.ReadOnly = true;
             this.dgvPlanes.Size = new System.Drawing.Size(477, 228);
             this.dgvPlanes.TabIndex = 0;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "Id";
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // descripcion
+            // 
+            this.descripcion.DataPropertyName = "Descripcion";
+            this.descripcion.HeaderText = "Descripcion";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            // 
+            // IdEspecialidad
+            // 
+            this.IdEspecialidad.DataPropertyName = "IdEspecialidad";
+            this.IdEspecialidad.HeaderText = "ID especialidad";
+            this.IdEspecialidad.Name = "IdEspecialidad";
+            this.IdEspecialidad.ReadOnly = true;
             // 
             // btnActualizar
             // 
@@ -163,27 +187,6 @@
             this.tsbEliminar.Size = new System.Drawing.Size(23, 22);
             this.tsbEliminar.Text = "Eliminar";
             this.tsbEliminar.Click += new System.EventHandler(this.TsbBorrarPlan_Click);
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "Id";
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // descripcion
-            // 
-            this.descripcion.DataPropertyName = "Descripcion";
-            this.descripcion.HeaderText = "Descripcion";
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
-            // 
-            // IdEspecialidad
-            // 
-            this.IdEspecialidad.DataPropertyName = "IdEspecialidad";
-            this.IdEspecialidad.HeaderText = "ID especialidad";
-            this.IdEspecialidad.Name = "IdEspecialidad";
-            this.IdEspecialidad.ReadOnly = true;
             // 
             // Planes
             // 

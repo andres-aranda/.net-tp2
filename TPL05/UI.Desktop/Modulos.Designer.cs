@@ -65,10 +65,12 @@
             // 
             // tscModulos.TopToolStripPanel
             // 
+            this.tscModulos.TopToolStripPanel.BackColor = System.Drawing.Color.PaleGreen;
             this.tscModulos.TopToolStripPanel.Controls.Add(this.tsModulos);
             // 
             // tlModulos
             // 
+            this.tlModulos.BackColor = System.Drawing.Color.PaleGreen;
             this.tlModulos.ColumnCount = 2;
             this.tlModulos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlModulos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -88,6 +90,7 @@
             // 
             this.dgvModulos.AllowUserToAddRows = false;
             this.dgvModulos.AllowUserToDeleteRows = false;
+            this.dgvModulos.BackgroundColor = System.Drawing.Color.LimeGreen;
             this.dgvModulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvModulos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,

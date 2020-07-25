@@ -65,10 +65,12 @@
             // 
             // tscUsuarios.TopToolStripPanel
             // 
+            this.tscUsuarios.TopToolStripPanel.BackColor = System.Drawing.Color.Aquamarine;
             this.tscUsuarios.TopToolStripPanel.Controls.Add(this.tsEspecialidades);
             // 
             // tlEspecialidades
             // 
+            this.tlEspecialidades.BackColor = System.Drawing.Color.Aquamarine;
             this.tlEspecialidades.ColumnCount = 2;
             this.tlEspecialidades.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlEspecialidades.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -88,6 +90,7 @@
             // 
             this.dgvEspecialidades.AllowUserToAddRows = false;
             this.dgvEspecialidades.AllowUserToDeleteRows = false;
+            this.dgvEspecialidades.BackgroundColor = System.Drawing.Color.LightSeaGreen;
             this.dgvEspecialidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEspecialidades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -152,7 +155,7 @@
             this.tsbEliminar});
             this.tsEspecialidades.Location = new System.Drawing.Point(3, 0);
             this.tsEspecialidades.Name = "tsEspecialidades";
-            this.tsEspecialidades.Size = new System.Drawing.Size(112, 25);
+            this.tsEspecialidades.Size = new System.Drawing.Size(81, 25);
             this.tsEspecialidades.TabIndex = 0;
             // 
             // tsbNuevo
