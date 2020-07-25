@@ -61,11 +61,8 @@ namespace Academia.UI.Desktop.Properties {
         }
         
         /// <summary>
-<<<<<<< HEAD
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-=======
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
->>>>>>> fix
         /// </summary>
         internal static System.Drawing.Bitmap iconoAcademia {
             get {

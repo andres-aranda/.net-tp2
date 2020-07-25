@@ -57,8 +57,5 @@ namespace Academia.UI.Desktop
             AbrirFormularioHijo(new Especialidades());
         }
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> fix
+

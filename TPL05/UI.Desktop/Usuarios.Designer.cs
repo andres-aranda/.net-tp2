@@ -72,11 +72,6 @@
             this.tscUsuarios.TopToolStripPanel.Controls.Add(this.tsUsuarios);
             // 
             // tlUsuarios
-<<<<<<< HEAD
-            // 
-=======
-            //
->>>>>>> fix
             this.tlUsuarios.BackColor = System.Drawing.Color.Indigo;
             this.tlUsuarios.ColumnCount = 2;
             this.tlUsuarios.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));

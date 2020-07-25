@@ -79,8 +79,6 @@
     <Compile Include="Especialidades.Designer.cs">
       <DependentUpon>Especialidades.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-=======
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,7 +103,6 @@
     <Compile Include="MenuABMC.Designer.cs">
       <DependentUpon>MenuABMC.cs</DependentUpon>
     </Compile>
->>>>>>> fix
     <Compile Include="ModuloDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
