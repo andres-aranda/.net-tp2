@@ -70,6 +70,8 @@ namespace Academia.UI.Desktop
         {
             this.txtId.Text = this.PlanActual.Id.ToString();
             this.txtDescripcion.Text = this.PlanActual.Descripcion;
+            
+        
 
             switch (this.modoForm)
             {

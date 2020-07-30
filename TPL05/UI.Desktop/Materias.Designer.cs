@@ -32,11 +32,11 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
-            this.hsTotales = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hsSemanales = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvMaterias = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hsSemanales = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hsTotales = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.tsbComisiones = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -53,24 +53,24 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
-            this.tableLayoutPanel1.Controls.Add(this.btnSalir, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnActualizar, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.dgvMaterias, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnSalir, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(784, 383);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(775, 385);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // btnSalir
             // 
-            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSalir.Location = new System.Drawing.Point(706, 357);
+            this.btnSalir.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSalir.Location = new System.Drawing.Point(697, 359);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 1;
@@ -81,41 +81,13 @@
             // btnActualizar
             // 
             this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizar.Location = new System.Drawing.Point(465, 357);
+            this.btnActualizar.Location = new System.Drawing.Point(616, 359);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 23);
             this.btnActualizar.TabIndex = 2;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
-            // 
-            // hsTotales
-            // 
-            this.hsTotales.DataPropertyName = "hsTotales";
-            this.hsTotales.HeaderText = "Horas totales";
-            this.hsTotales.Name = "hsTotales";
-            this.hsTotales.ReadOnly = true;
-            // 
-            // hsSemanales
-            // 
-            this.hsSemanales.DataPropertyName = "hsSemanales";
-            this.hsSemanales.HeaderText = "Horas semanales";
-            this.hsSemanales.Name = "hsSemanales";
-            this.hsSemanales.ReadOnly = true;
-            // 
-            // descripcion
-            // 
-            this.descripcion.DataPropertyName = "descripcion";
-            this.descripcion.HeaderText = "Descripción";
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "ID";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
             // 
             // dgvMaterias
             // 
@@ -127,13 +99,42 @@
             this.descripcion,
             this.hsSemanales,
             this.hsTotales});
+            this.tableLayoutPanel1.SetColumnSpan(this.dgvMaterias, 2);
             this.dgvMaterias.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMaterias.Location = new System.Drawing.Point(3, 3);
             this.dgvMaterias.Name = "dgvMaterias";
             this.dgvMaterias.ReadOnly = true;
-            this.dgvMaterias.Size = new System.Drawing.Size(537, 343);
+            this.dgvMaterias.Size = new System.Drawing.Size(769, 350);
             this.dgvMaterias.TabIndex = 0;
             this.dgvMaterias.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMaterias_CellContentClick);
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "ID";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            // 
+            // descripcion
+            // 
+            this.descripcion.DataPropertyName = "descripcion";
+            this.descripcion.HeaderText = "Descripción";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            // 
+            // hsSemanales
+            // 
+            this.hsSemanales.DataPropertyName = "hsSemanales";
+            this.hsSemanales.HeaderText = "Horas semanales";
+            this.hsSemanales.Name = "hsSemanales";
+            this.hsSemanales.ReadOnly = true;
+            // 
+            // hsTotales
+            // 
+            this.hsTotales.DataPropertyName = "hsTotales";
+            this.hsTotales.HeaderText = "Horas totales";
+            this.hsTotales.Name = "hsTotales";
+            this.hsTotales.ReadOnly = true;
             // 
             // toolStripContainer1
             // 
@@ -141,11 +142,11 @@
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.tableLayoutPanel1);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(784, 383);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(775, 385);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(784, 408);
+            this.toolStripContainer1.Size = new System.Drawing.Size(775, 410);
             this.toolStripContainer1.TabIndex = 3;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
@@ -155,12 +156,12 @@
             // 
             // tsbComisiones
             // 
-            this.tsbComisiones.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tsbComisiones.Dock = System.Windows.Forms.DockStyle.None;
             this.tsbComisiones.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
             this.tsbEditar,
             this.tsbEliminar});
-            this.tsbComisiones.Location = new System.Drawing.Point(35, 0);
+            this.tsbComisiones.Location = new System.Drawing.Point(4, 0);
             this.tsbComisiones.Name = "tsbComisiones";
             this.tsbComisiones.Size = new System.Drawing.Size(81, 25);
             this.tsbComisiones.TabIndex = 3;
@@ -200,7 +201,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 408);
+            this.ClientSize = new System.Drawing.Size(775, 410);
             this.Controls.Add(this.toolStripContainer1);
             this.Name = "Materias";
             this.Text = "Materias";
