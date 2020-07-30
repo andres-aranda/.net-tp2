@@ -56,6 +56,16 @@ namespace Academia.UI.Desktop
         {
             AbrirFormularioHijo(new Especialidades());
         }
+
+        private void btnMaterias_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new Materias());
+        }
+
+        private void btnComisones_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new Comisiones());
+        }
     }
 }
 
