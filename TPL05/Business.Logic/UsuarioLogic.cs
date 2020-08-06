@@ -37,5 +37,10 @@ namespace Business.Logic
         {
             UsuarioData.Delete(id);
         }
+
+        public Usuario Loguearse(String nombreUsuario, String password)
+        {
+            return UsuarioData.Loguearse(nombreUsuario, password);
+        }
     }
 }

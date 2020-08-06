@@ -7,13 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Business.Entities;
 
 namespace Academia.UI.Desktop
 {
     public partial class Main : Form
     {
-        public Main()
+        Usuario usuario;
+        public Main(Usuario usuarioLogueado)
         {
+            usuario = usuarioLogueado;
             InitializeComponent();
         }
         private Form formularioActual;

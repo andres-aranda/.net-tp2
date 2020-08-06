@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnMaterias = new System.Windows.Forms.Button();
+            this.btnComisones = new System.Windows.Forms.Button();
             this.btnEspecialidades = new System.Windows.Forms.Button();
             this.btnPlanes = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnModulos = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblTituloFormulario = new System.Windows.Forms.Label();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.btnComisones = new System.Windows.Forms.Button();
-            this.btnMaterias = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -62,6 +62,36 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 450);
             this.panel1.TabIndex = 0;
+            // 
+            // btnMaterias
+            // 
+            this.btnMaterias.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMaterias.FlatAppearance.BorderSize = 0;
+            this.btnMaterias.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSalmon;
+            this.btnMaterias.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SandyBrown;
+            this.btnMaterias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaterias.Location = new System.Drawing.Point(0, 303);
+            this.btnMaterias.Name = "btnMaterias";
+            this.btnMaterias.Size = new System.Drawing.Size(200, 38);
+            this.btnMaterias.TabIndex = 6;
+            this.btnMaterias.Text = "Materias";
+            this.btnMaterias.UseVisualStyleBackColor = true;
+            this.btnMaterias.Click += new System.EventHandler(this.btnMaterias_Click);
+            // 
+            // btnComisones
+            // 
+            this.btnComisones.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnComisones.FlatAppearance.BorderSize = 0;
+            this.btnComisones.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSalmon;
+            this.btnComisones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SandyBrown;
+            this.btnComisones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnComisones.Location = new System.Drawing.Point(0, 265);
+            this.btnComisones.Name = "btnComisones";
+            this.btnComisones.Size = new System.Drawing.Size(200, 38);
+            this.btnComisones.TabIndex = 5;
+            this.btnComisones.Text = "Comisiones";
+            this.btnComisones.UseVisualStyleBackColor = true;
+            this.btnComisones.Click += new System.EventHandler(this.btnComisones_Click);
             // 
             // btnEspecialidades
             // 
@@ -144,6 +174,16 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Academia";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Academia.UI.Desktop.Properties.Resources.iconoAcademia;
+            this.pictureBox1.Location = new System.Drawing.Point(41, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.SandyBrown;
@@ -173,46 +213,6 @@
             this.panelDesktop.Size = new System.Drawing.Size(600, 387);
             this.panelDesktop.TabIndex = 2;
             // 
-            // btnComisones
-            // 
-            this.btnComisones.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnComisones.FlatAppearance.BorderSize = 0;
-            this.btnComisones.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSalmon;
-            this.btnComisones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SandyBrown;
-            this.btnComisones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnComisones.Location = new System.Drawing.Point(0, 265);
-            this.btnComisones.Name = "btnComisones";
-            this.btnComisones.Size = new System.Drawing.Size(200, 38);
-            this.btnComisones.TabIndex = 5;
-            this.btnComisones.Text = "Comisiones";
-            this.btnComisones.UseVisualStyleBackColor = true;
-            this.btnComisones.Click += new System.EventHandler(this.btnComisones_Click);
-            // 
-            // btnMaterias
-            // 
-            this.btnMaterias.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMaterias.FlatAppearance.BorderSize = 0;
-            this.btnMaterias.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSalmon;
-            this.btnMaterias.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SandyBrown;
-            this.btnMaterias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaterias.Location = new System.Drawing.Point(0, 303);
-            this.btnMaterias.Name = "btnMaterias";
-            this.btnMaterias.Size = new System.Drawing.Size(200, 38);
-            this.btnMaterias.TabIndex = 6;
-            this.btnMaterias.Text = "Materias";
-            this.btnMaterias.UseVisualStyleBackColor = true;
-            this.btnMaterias.Click += new System.EventHandler(this.btnMaterias_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Academia.UI.Desktop.Properties.Resources.iconoAcademia;
-            this.pictureBox1.Location = new System.Drawing.Point(41, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -226,9 +226,9 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
