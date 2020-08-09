@@ -9,14 +9,31 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Business.Entities;
 
+
 namespace Academia.UI.Desktop
 {
     public partial class Main : Form
     {
-        Usuario usuario;
-        public Main(Usuario usuarioLogueado)
+        void contraerMenuLateral()
         {
-            usuario = usuarioLogueado;
+            if (lblAcacemia.Visible)
+            {
+                menuLateral.Width = 60;
+                panel2.Height = 63;
+                menuAbierto.Visible = false;
+                lblAcacemia.Visible = false;
+            }
+            else
+            {
+                menuLateral.Width = 200;
+                panel2.Height = 100;
+                menuAbierto.Visible = true;
+                lblAcacemia.Visible = true;
+            }
+        }
+        Usuario usuarioActual;
+        public Main()
+        {
             InitializeComponent();
         }
         private Form formularioActual;
@@ -39,7 +56,22 @@ namespace Academia.UI.Desktop
             FormularoHijo.Show();
             lblTituloFormulario.Text = FormularoHijo.Text;
         }
-
+        
+        private void formMain_Shown(object sender, EventArgs e)
+        {
+            
+            Login appLogin = new Login();
+            if (appLogin.ShowDialog() != DialogResult.OK)
+            {
+                this.Dispose();
+            }
+            else
+                contraerMenuLateral();
+                usuarioActual = appLogin.UsuarioLogeado;
+                appLogin.Close();
+                this.WindowState = FormWindowState.Maximized;
+            
+        }
         private void btnModulos_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo(new Modulos());
@@ -68,6 +100,17 @@ namespace Academia.UI.Desktop
         private void btnComisones_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo(new Comisiones());
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            contraerMenuLateral();
+
         }
     }
 }

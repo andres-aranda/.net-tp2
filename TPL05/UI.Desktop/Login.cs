@@ -14,13 +14,20 @@ namespace Academia.UI.Desktop
 {
     public partial class Login : Form
     {
-        Usuario usuario;
-        List<Usuario> usuarios = new List<Usuario>();
+        Usuario _usuarioLogeado;
         UsuarioLogic ul = new UsuarioLogic();
+        public Usuario UsuarioLogeado
+        {
+            get { return _usuarioLogeado; }
+            set { _usuarioLogeado = value; }
+        }
         public Login()
         {
             InitializeComponent();
-            usuarios = ul.GetAll();
+            this.Text = string.Empty;
+            this.ControlBox = false;
+            this.DoubleBuffered = true;
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
 
         private void lnkRegistro_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -31,15 +38,18 @@ namespace Academia.UI.Desktop
 
         private void btnContinuar_Click(object sender, EventArgs e)
         {
-            usuario = ul.Loguearse(txtUsuario.Text, txtPassword.Text);
-            if (usuario != null)
+            this.UsuarioLogeado = ul.Loguearse(txtUsuario.Text, txtPassword.Text);
+            if (this.UsuarioLogeado != null)
             {
-                Main main = new Main(usuario);
-                this.Visible = false;
-                main.ShowDialog();
+                this.DialogResult = DialogResult.OK;
             }
             else
                 MessageBox.Show("Usuario incorrecto", "Usuario incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
