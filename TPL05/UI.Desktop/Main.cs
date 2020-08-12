@@ -101,7 +101,7 @@ namespace Academia.UI.Desktop
         {
             AbrirFormularioHijo(new Comisiones());
         }
-
+       
         private void Main_Load(object sender, EventArgs e)
         {
 
@@ -112,6 +112,7 @@ namespace Academia.UI.Desktop
             contraerMenuLateral();
 
         }
+
     }
 }
 

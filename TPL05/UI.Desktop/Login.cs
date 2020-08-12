@@ -51,5 +51,7 @@ namespace Academia.UI.Desktop
         {
             Application.Exit();
         }
+
+
     }
 }

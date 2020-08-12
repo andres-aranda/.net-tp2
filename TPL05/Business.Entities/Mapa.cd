@@ -24,28 +24,28 @@
   <Class Name="Business.Entities.Especialidad" Collapsed="true">
     <Position X="10.75" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAgAAAAAAAABAIBAAAAAAAEAgAAEAAAAEA=</HashCode>
       <FileName>Especialidad.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Business.Entities.Modulo">
     <Position X="2" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAgADBABAAAAAAgEAgAAEAAAAEA=</HashCode>
       <FileName>Modulo.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Business.Entities.Plan" Collapsed="true">
-    <Position X="2.5" Y="0.5" Width="1.5" />
+  <Class Name="Business.Entities.Plan">
+    <Position X="3.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAQAAAAAAAAAAAAAEABAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAQAAAAAAAAAAAABEABAAAAAAAEAgAQEAAEAEA=</HashCode>
       <FileName>Plan.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Business.Entities.Usuario">
     <Position X="8.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAABACAAAAAEAAAAgAAAIAEAAAAAAIAAAAAAFAA=</HashCode>
+      <HashCode>AAAgAAABACAAAAAEAAAAhAAAIAEAABEAA4AAEAAAFEA=</HashCode>
       <FileName>Usuario.cs</FileName>
     </TypeIdentifier>
   </Class>
