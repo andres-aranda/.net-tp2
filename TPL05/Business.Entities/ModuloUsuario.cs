@@ -61,5 +61,21 @@ namespace Business.Entities
             {
             }
         }
+
+        public int IdModuloUsuario
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public Usuario Usuario
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

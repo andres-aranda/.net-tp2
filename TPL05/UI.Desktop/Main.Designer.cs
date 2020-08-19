@@ -31,21 +31,37 @@
             this.menuLateral = new System.Windows.Forms.Panel();
             this.menuAbierto = new System.Windows.Forms.Panel();
             this.btn_CerrarSesion = new System.Windows.Forms.Button();
-            this.btnMaterias = new System.Windows.Forms.Button();
-            this.btnPlanes = new System.Windows.Forms.Button();
-            this.btnComisones = new System.Windows.Forms.Button();
             this.btnModulos = new System.Windows.Forms.Button();
-            this.btnEspecialidades = new System.Windows.Forms.Button();
-            this.btnUsuarios = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.seguridadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buscarActualizacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.realizarBackUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.restaurarBackUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.personasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.comisionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.especialidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.materiasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.planesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionDocenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionAlumnoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inscripciónACursarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblAcacemia = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblTituloFormulario = new System.Windows.Forms.Label();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.btn_usuarios = new System.Windows.Forms.Button();
             this.menuLateral.SuspendLayout();
             this.menuAbierto.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -65,20 +81,15 @@
             // 
             // menuAbierto
             // 
-            this.menuAbierto.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.menuAbierto.Controls.Add(this.btn_usuarios);
+            this.menuAbierto.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.menuAbierto.Controls.Add(this.btn_CerrarSesion);
-            this.menuAbierto.Controls.Add(this.btnMaterias);
-            this.menuAbierto.Controls.Add(this.btnPlanes);
-            this.menuAbierto.Controls.Add(this.btnComisones);
             this.menuAbierto.Controls.Add(this.btnModulos);
-            this.menuAbierto.Controls.Add(this.btnEspecialidades);
-            this.menuAbierto.Controls.Add(this.btnUsuarios);
+            this.menuAbierto.Controls.Add(this.menuStrip1);
             this.menuAbierto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.menuAbierto.Location = new System.Drawing.Point(0, 132);
+            this.menuAbierto.Location = new System.Drawing.Point(0, 124);
             this.menuAbierto.Margin = new System.Windows.Forms.Padding(4);
             this.menuAbierto.Name = "menuAbierto";
-            this.menuAbierto.Size = new System.Drawing.Size(267, 422);
+            this.menuAbierto.Size = new System.Drawing.Size(267, 430);
             this.menuAbierto.TabIndex = 7;
             this.menuAbierto.Visible = false;
             // 
@@ -87,67 +98,13 @@
             this.btn_CerrarSesion.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btn_CerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btn_CerrarSesion.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btn_CerrarSesion.Location = new System.Drawing.Point(0, 389);
+            this.btn_CerrarSesion.Location = new System.Drawing.Point(0, 397);
             this.btn_CerrarSesion.Name = "btn_CerrarSesion";
             this.btn_CerrarSesion.Size = new System.Drawing.Size(267, 33);
             this.btn_CerrarSesion.TabIndex = 0;
             this.btn_CerrarSesion.Text = "Cerrar Sesión";
             this.btn_CerrarSesion.UseVisualStyleBackColor = true;
             this.btn_CerrarSesion.Click += new System.EventHandler(this.formMain_Shown);
-            // 
-            // btnMaterias
-            // 
-            this.btnMaterias.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMaterias.FlatAppearance.BorderSize = 0;
-            this.btnMaterias.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSalmon;
-            this.btnMaterias.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SandyBrown;
-            this.btnMaterias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaterias.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMaterias.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnMaterias.Location = new System.Drawing.Point(0, 141);
-            this.btnMaterias.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMaterias.Name = "btnMaterias";
-            this.btnMaterias.Size = new System.Drawing.Size(267, 47);
-            this.btnMaterias.TabIndex = 6;
-            this.btnMaterias.Text = "Materias";
-            this.btnMaterias.UseVisualStyleBackColor = true;
-            this.btnMaterias.Click += new System.EventHandler(this.btnMaterias_Click);
-            // 
-            // btnPlanes
-            // 
-            this.btnPlanes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPlanes.FlatAppearance.BorderSize = 0;
-            this.btnPlanes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSalmon;
-            this.btnPlanes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SandyBrown;
-            this.btnPlanes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPlanes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPlanes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnPlanes.Location = new System.Drawing.Point(0, 94);
-            this.btnPlanes.Margin = new System.Windows.Forms.Padding(4);
-            this.btnPlanes.Name = "btnPlanes";
-            this.btnPlanes.Size = new System.Drawing.Size(267, 47);
-            this.btnPlanes.TabIndex = 3;
-            this.btnPlanes.Text = "Planes";
-            this.btnPlanes.UseVisualStyleBackColor = true;
-            this.btnPlanes.Click += new System.EventHandler(this.btnPlanes_Click);
-            // 
-            // btnComisones
-            // 
-            this.btnComisones.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnComisones.FlatAppearance.BorderSize = 0;
-            this.btnComisones.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSalmon;
-            this.btnComisones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SandyBrown;
-            this.btnComisones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnComisones.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnComisones.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnComisones.Location = new System.Drawing.Point(0, 47);
-            this.btnComisones.Margin = new System.Windows.Forms.Padding(4);
-            this.btnComisones.Name = "btnComisones";
-            this.btnComisones.Size = new System.Drawing.Size(267, 47);
-            this.btnComisones.TabIndex = 5;
-            this.btnComisones.Text = "Comisiones";
-            this.btnComisones.UseVisualStyleBackColor = true;
-            this.btnComisones.Click += new System.EventHandler(this.btnComisones_Click);
             // 
             // btnModulos
             // 
@@ -164,38 +121,168 @@
             this.btnModulos.UseVisualStyleBackColor = true;
             this.btnModulos.Click += new System.EventHandler(this.btnModulos_Click);
             // 
-            // btnEspecialidades
+            // menuStrip1
             // 
-            this.btnEspecialidades.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEspecialidades.FlatAppearance.BorderSize = 0;
-            this.btnEspecialidades.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSalmon;
-            this.btnEspecialidades.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SandyBrown;
-            this.btnEspecialidades.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEspecialidades.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEspecialidades.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEspecialidades.Location = new System.Drawing.Point(0, 0);
-            this.btnEspecialidades.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEspecialidades.Name = "btnEspecialidades";
-            this.btnEspecialidades.Size = new System.Drawing.Size(267, 47);
-            this.btnEspecialidades.TabIndex = 4;
-            this.btnEspecialidades.Text = "Especialidades";
-            this.btnEspecialidades.UseVisualStyleBackColor = true;
-            this.btnEspecialidades.Click += new System.EventHandler(this.btnEspecialidades_Click);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.archivoToolStripMenuItem,
+            this.gestionToolStripMenuItem,
+            this.gestionDocenteToolStripMenuItem,
+            this.gestionAlumnoToolStripMenuItem});
+            this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(267, 102);
+            this.menuStrip1.TabIndex = 8;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // btnUsuarios
+            // archivoToolStripMenuItem
             // 
-            this.btnUsuarios.FlatAppearance.BorderSize = 0;
-            this.btnUsuarios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSalmon;
-            this.btnUsuarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SandyBrown;
-            this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUsuarios.Location = new System.Drawing.Point(25, -28);
-            this.btnUsuarios.Margin = new System.Windows.Forms.Padding(4);
-            this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(267, 47);
-            this.btnUsuarios.TabIndex = 2;
-            this.btnUsuarios.Text = "Usuarios";
-            this.btnUsuarios.UseVisualStyleBackColor = true;
-            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
+            this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.seguridadToolStripMenuItem,
+            this.buscarActualizacionesToolStripMenuItem,
+            this.backUpToolStripMenuItem,
+            this.cerrarSesionToolStripMenuItem,
+            this.salirToolStripMenuItem});
+            this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(260, 24);
+            this.archivoToolStripMenuItem.Text = "Archivo";
+            // 
+            // seguridadToolStripMenuItem
+            // 
+            this.seguridadToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.modulosToolStripMenuItem,
+            this.usuariosToolStripMenuItem});
+            this.seguridadToolStripMenuItem.Name = "seguridadToolStripMenuItem";
+            this.seguridadToolStripMenuItem.Size = new System.Drawing.Size(242, 26);
+            this.seguridadToolStripMenuItem.Text = "Seguridad";
+            // 
+            // modulosToolStripMenuItem
+            // 
+            this.modulosToolStripMenuItem.Name = "modulosToolStripMenuItem";
+            this.modulosToolStripMenuItem.Size = new System.Drawing.Size(150, 26);
+            this.modulosToolStripMenuItem.Text = "Modulos";
+            this.modulosToolStripMenuItem.Click += new System.EventHandler(this.btnModulos_Click);
+            // 
+            // usuariosToolStripMenuItem
+            // 
+            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(150, 26);
+            this.usuariosToolStripMenuItem.Text = "Usuarios";
+            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.btnUsuarios_Click);
+            // 
+            // buscarActualizacionesToolStripMenuItem
+            // 
+            this.buscarActualizacionesToolStripMenuItem.Name = "buscarActualizacionesToolStripMenuItem";
+            this.buscarActualizacionesToolStripMenuItem.Size = new System.Drawing.Size(242, 26);
+            this.buscarActualizacionesToolStripMenuItem.Text = "Buscar Actualizaciones";
+            // 
+            // backUpToolStripMenuItem
+            // 
+            this.backUpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.realizarBackUpToolStripMenuItem,
+            this.restaurarBackUpToolStripMenuItem});
+            this.backUpToolStripMenuItem.Name = "backUpToolStripMenuItem";
+            this.backUpToolStripMenuItem.Size = new System.Drawing.Size(242, 26);
+            this.backUpToolStripMenuItem.Text = "BackUp";
+            // 
+            // realizarBackUpToolStripMenuItem
+            // 
+            this.realizarBackUpToolStripMenuItem.Name = "realizarBackUpToolStripMenuItem";
+            this.realizarBackUpToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
+            this.realizarBackUpToolStripMenuItem.Text = "Realizar BackUp";
+            // 
+            // restaurarBackUpToolStripMenuItem
+            // 
+            this.restaurarBackUpToolStripMenuItem.Name = "restaurarBackUpToolStripMenuItem";
+            this.restaurarBackUpToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
+            this.restaurarBackUpToolStripMenuItem.Text = "Restaurar BackUp";
+            // 
+            // cerrarSesionToolStripMenuItem
+            // 
+            this.cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
+            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(242, 26);
+            this.cerrarSesionToolStripMenuItem.Text = "Cerrar Sesion";
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(242, 26);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.mnuSalir_Click);
+            // 
+            // gestionToolStripMenuItem
+            // 
+            this.gestionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.personasToolStripMenuItem,
+            this.comisionesToolStripMenuItem,
+            this.cursosToolStripMenuItem,
+            this.especialidadesToolStripMenuItem,
+            this.materiasToolStripMenuItem,
+            this.planesToolStripMenuItem});
+            this.gestionToolStripMenuItem.Name = "gestionToolStripMenuItem";
+            this.gestionToolStripMenuItem.Size = new System.Drawing.Size(260, 24);
+            this.gestionToolStripMenuItem.Text = "Gestion Academia";
+            // 
+            // personasToolStripMenuItem
+            // 
+            this.personasToolStripMenuItem.Name = "personasToolStripMenuItem";
+            this.personasToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
+            this.personasToolStripMenuItem.Text = "Personas";
+            // 
+            // comisionesToolStripMenuItem
+            // 
+            this.comisionesToolStripMenuItem.Name = "comisionesToolStripMenuItem";
+            this.comisionesToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
+            this.comisionesToolStripMenuItem.Text = "Comisiones";
+            this.comisionesToolStripMenuItem.Click += new System.EventHandler(this.btnComisones_Click);
+            // 
+            // cursosToolStripMenuItem
+            // 
+            this.cursosToolStripMenuItem.Name = "cursosToolStripMenuItem";
+            this.cursosToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
+            this.cursosToolStripMenuItem.Text = "Cursos";
+            // 
+            // especialidadesToolStripMenuItem
+            // 
+            this.especialidadesToolStripMenuItem.Name = "especialidadesToolStripMenuItem";
+            this.especialidadesToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
+            this.especialidadesToolStripMenuItem.Text = "Especialidades";
+            this.especialidadesToolStripMenuItem.Click += new System.EventHandler(this.btnEspecialidades_Click);
+            // 
+            // materiasToolStripMenuItem
+            // 
+            this.materiasToolStripMenuItem.Name = "materiasToolStripMenuItem";
+            this.materiasToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
+            this.materiasToolStripMenuItem.Text = "Materias";
+            this.materiasToolStripMenuItem.CheckStateChanged += new System.EventHandler(this.btnMaterias_Click);
+            // 
+            // planesToolStripMenuItem
+            // 
+            this.planesToolStripMenuItem.Name = "planesToolStripMenuItem";
+            this.planesToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
+            this.planesToolStripMenuItem.Text = "Planes";
+            this.planesToolStripMenuItem.CheckStateChanged += new System.EventHandler(this.btnPlanes_Click);
+            // 
+            // gestionDocenteToolStripMenuItem
+            // 
+            this.gestionDocenteToolStripMenuItem.Name = "gestionDocenteToolStripMenuItem";
+            this.gestionDocenteToolStripMenuItem.Size = new System.Drawing.Size(260, 24);
+            this.gestionDocenteToolStripMenuItem.Text = "Gestion Docente";
+            // 
+            // gestionAlumnoToolStripMenuItem
+            // 
+            this.gestionAlumnoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.inscripciónACursarToolStripMenuItem});
+            this.gestionAlumnoToolStripMenuItem.Name = "gestionAlumnoToolStripMenuItem";
+            this.gestionAlumnoToolStripMenuItem.Size = new System.Drawing.Size(260, 24);
+            this.gestionAlumnoToolStripMenuItem.Text = "Gestion Alumno";
+            // 
+            // inscripciónACursarToolStripMenuItem
+            // 
+            this.inscripciónACursarToolStripMenuItem.Name = "inscripciónACursarToolStripMenuItem";
+            this.inscripciónACursarToolStripMenuItem.Size = new System.Drawing.Size(218, 26);
+            this.inscripciónACursarToolStripMenuItem.Text = "Inscripción a cursar";
             // 
             // panel2
             // 
@@ -206,7 +293,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(267, 132);
+            this.panel2.Size = new System.Drawing.Size(267, 124);
             this.panel2.TabIndex = 0;
             // 
             // lblAcacemia
@@ -228,7 +315,7 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::Academia.UI.Desktop.Properties.Resources.iconoAcademia;
-            this.pictureBox1.Location = new System.Drawing.Point(73, 17);
+            this.pictureBox1.Location = new System.Drawing.Point(73, 13);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(113, 97);
@@ -271,24 +358,6 @@
             this.panelDesktop.Size = new System.Drawing.Size(800, 476);
             this.panelDesktop.TabIndex = 2;
             // 
-            // btn_usuarios
-            // 
-            this.btn_usuarios.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_usuarios.FlatAppearance.BorderSize = 0;
-            this.btn_usuarios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSalmon;
-            this.btn_usuarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SandyBrown;
-            this.btn_usuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_usuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_usuarios.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_usuarios.Location = new System.Drawing.Point(0, 188);
-            this.btn_usuarios.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_usuarios.Name = "btn_usuarios";
-            this.btn_usuarios.Size = new System.Drawing.Size(267, 47);
-            this.btn_usuarios.TabIndex = 7;
-            this.btn_usuarios.Text = "Usuarios";
-            this.btn_usuarios.UseVisualStyleBackColor = true;
-            this.btn_usuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -297,6 +366,7 @@
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.menuLateral);
+            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Main";
             this.ShowIcon = false;
@@ -306,6 +376,9 @@
             this.Shown += new System.EventHandler(this.formMain_Shown);
             this.menuLateral.ResumeLayout(false);
             this.menuAbierto.ResumeLayout(false);
+            this.menuAbierto.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -318,9 +391,6 @@
         #endregion
 
         private System.Windows.Forms.Panel menuLateral;
-        private System.Windows.Forms.Button btnEspecialidades;
-        private System.Windows.Forms.Button btnPlanes;
-        private System.Windows.Forms.Button btnUsuarios;
         private System.Windows.Forms.Button btnModulos;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
@@ -328,10 +398,28 @@
         private System.Windows.Forms.Label lblTituloFormulario;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblAcacemia;
-        private System.Windows.Forms.Button btnComisones;
-        private System.Windows.Forms.Button btnMaterias;
         private System.Windows.Forms.Panel menuAbierto;
         private System.Windows.Forms.Button btn_CerrarSesion;
-        private System.Windows.Forms.Button btn_usuarios;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem seguridadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modulosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem buscarActualizacionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem backUpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem realizarBackUpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem restaurarBackUpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cerrarSesionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem personasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem comisionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cursosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem especialidadesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem materiasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem planesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionDocenteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionAlumnoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inscripciónACursarToolStripMenuItem;
     }
 }

@@ -52,6 +52,18 @@ namespace Academia.UI.Desktop
             Application.Exit();
         }
 
-
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                this.UsuarioLogeado = ul.Loguearse(txtUsuario.Text, txtPassword.Text);
+                if (this.UsuarioLogeado != null)
+                {
+                    this.DialogResult = DialogResult.OK;
+                }
+                else
+                    MessageBox.Show("Usuario incorrecto", "Usuario incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

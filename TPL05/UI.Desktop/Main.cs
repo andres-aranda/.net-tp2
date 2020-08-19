@@ -113,6 +113,11 @@ namespace Academia.UI.Desktop
 
         }
 
+        private void mnuSalir_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
     }
 }
 
