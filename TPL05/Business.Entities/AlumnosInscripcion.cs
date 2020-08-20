@@ -14,34 +14,22 @@ namespace Business.Entities
 
         public string Condicion
         {
-            get => default;
-            set
-            {
-            }
+            get; set;
         }
 
         public int Nota
         {
-            get => default;
-            set
-            {
-            }
+            get; set;
         }
 
         public int IdCurso
         {
-            get => default;
-            set
-            {
-            }
+            get; set;
         }
 
         public int IdAlumno
         {
-            get => default;
-            set
-            {
-            }
+            get; set;
         }
     }
 }

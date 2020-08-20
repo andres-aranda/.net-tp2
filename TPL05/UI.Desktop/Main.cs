@@ -56,10 +56,10 @@ namespace Academia.UI.Desktop
             FormularoHijo.Show();
             lblTituloFormulario.Text = FormularoHijo.Text;
         }
-        
+
         private void formMain_Shown(object sender, EventArgs e)
         {
-            
+
             Login appLogin = new Login();
             if (appLogin.ShowDialog() != DialogResult.OK)
             {
@@ -67,10 +67,10 @@ namespace Academia.UI.Desktop
             }
             else
                 contraerMenuLateral();
-                usuarioActual = appLogin.UsuarioLogeado;
-                appLogin.Close();
-                this.WindowState = FormWindowState.Maximized;
-            
+            usuarioActual = appLogin.UsuarioLogeado;
+            appLogin.Close();
+            this.WindowState = FormWindowState.Maximized;
+
         }
         private void btnModulos_Click(object sender, EventArgs e)
         {
@@ -101,7 +101,7 @@ namespace Academia.UI.Desktop
         {
             AbrirFormularioHijo(new Comisiones());
         }
-       
+
         private void Main_Load(object sender, EventArgs e)
         {
 
@@ -118,6 +118,12 @@ namespace Academia.UI.Desktop
             this.Dispose();
         }
 
+        private void mnuInscripcionCursos_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new CursosInscripciones(1));
+
+            // COMO IDENTIFICO EL ID DEL ALUMNO LOGUEADO??????????? Donde esta el 1 tiene que ir algo como "IdAlumnoActual"
+        }
     }
 }
 

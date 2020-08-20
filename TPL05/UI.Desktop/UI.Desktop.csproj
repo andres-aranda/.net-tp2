@@ -82,6 +82,18 @@
     <Compile Include="Especialidades.Designer.cs">
       <DependentUpon>Especialidades.cs</DependentUpon>
     </Compile>
+    <Compile Include="CursosInscripciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CursosInscripciones.Designer.cs">
+      <DependentUpon>CursosInscripciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CursoInscripcionDesktop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CursoInscripcionDesktop.Designer.cs">
+      <DependentUpon>CursoInscripcionDesktop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +170,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Comisiones.resx">
       <DependentUpon>Comisiones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CursoInscripcionDesktop.resx">
+      <DependentUpon>CursoInscripcionDesktop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CursosInscripciones.resx">
+      <DependentUpon>CursosInscripciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EspecialidadDesktop.resx">
       <DependentUpon>EspecialidadDesktop.cs</DependentUpon>

@@ -52,7 +52,7 @@
             this.planesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDocenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionAlumnoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inscripciónACursarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnInscripcionCurso = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblAcacemia = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -132,7 +132,7 @@
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(267, 102);
+            this.menuStrip1.Size = new System.Drawing.Size(267, 126);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -273,16 +273,17 @@
             // gestionAlumnoToolStripMenuItem
             // 
             this.gestionAlumnoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.inscripciónACursarToolStripMenuItem});
+            this.btnInscripcionCurso});
             this.gestionAlumnoToolStripMenuItem.Name = "gestionAlumnoToolStripMenuItem";
             this.gestionAlumnoToolStripMenuItem.Size = new System.Drawing.Size(260, 24);
             this.gestionAlumnoToolStripMenuItem.Text = "Gestion Alumno";
             // 
-            // inscripciónACursarToolStripMenuItem
+            // btnInscripcionCurso
             // 
-            this.inscripciónACursarToolStripMenuItem.Name = "inscripciónACursarToolStripMenuItem";
-            this.inscripciónACursarToolStripMenuItem.Size = new System.Drawing.Size(218, 26);
-            this.inscripciónACursarToolStripMenuItem.Text = "Inscripción a cursar";
+            this.btnInscripcionCurso.Name = "btnInscripcionCurso";
+            this.btnInscripcionCurso.Size = new System.Drawing.Size(224, 26);
+            this.btnInscripcionCurso.Text = "Inscripción a cursar";
+            this.btnInscripcionCurso.Click += new System.EventHandler(this.mnuInscripcionCursos_Click);
             // 
             // panel2
             // 
@@ -420,6 +421,6 @@
         private System.Windows.Forms.ToolStripMenuItem planesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDocenteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionAlumnoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem inscripciónACursarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnInscripcionCurso;
     }
 }
