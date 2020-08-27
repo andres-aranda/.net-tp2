@@ -96,6 +96,7 @@ namespace Academia.UI.Web
         {
             if (this.IsEntitySelected)
             {
+                EnableForm(true);
                 this.formPanel.Visible = true;
                 this.FormMode = FormModes.Modificion;
                 this.LoadForm(this.SelectedID);
@@ -116,14 +117,52 @@ namespace Academia.UI.Web
 
         protected void AceptarLinkButton_Click(object sender, EventArgs e)
         {
-            this.Entity = new Usuario();
-            this.Entity.Id = this.SelectedID;
-            this.Entity.State = BusinessEntity.Estados.Modified;
-            this.LoadEntity(this.Entity);
-            this.SaveEntity(this.Entity);
-            this.LoadGrid();
+            switch (this.FormMode)
+            {
+                case FormModes.Baja:
+                    this.DeleteEntity(this.SelectedID);
+                    this.LoadGrid();
+                    break;
+                case FormModes.Modificion:
+                    this.Entity = new Usuario();
+                    this.Entity.Id = this.SelectedID;
+                    this.Entity.State = BusinessEntity.Estados.Modified;
+                    this.LoadEntity(this.Entity);
+                    this.SaveEntity(this.Entity);
+                    this.LoadGrid();
+                    break;
+            }
+            
 
             this.formPanel.Visible = false;
+        }
+
+        private void EnableForm(bool enable)
+        {
+            this.nombreTextBox.Enabled = enable;
+            this.apellidoTextBox.Enabled = enable;
+            this.emailTextBox.Enabled = enable;
+            this.nombreUsuarioTextBox.Enabled = enable;
+            this.claveTextBox.Enabled = enable;
+            this.claveLabel.Visible = enable;
+            this.repetirClaveTextBox.Visible = enable;
+            this.repetirClaveLabel.Visible = enable;
+        }
+
+        protected void EliminarLinkButton_Click(object sender, EventArgs e)
+        {
+            if (this.IsEntitySelected)
+            {
+                this.formPanel.Visible = true;
+                this.FormMode = FormModes.Baja;
+                this.EnableForm(false);
+                this.LoadForm(this.SelectedID);
+            }
+        }
+
+        private void DeleteEntity(int id)
+        {
+            this.Logic.Delete(id);
         }
     }
 }

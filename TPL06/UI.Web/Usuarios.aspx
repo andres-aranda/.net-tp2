@@ -5,6 +5,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Usuarios</title>
+    <style type="text/css">
+        .auto-style1 {
+            height: 26px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -26,16 +31,16 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td class="auto-style1">
                             <asp:Label ID="apellidoLabel" runat="server" Text="Apellido"></asp:Label>
                         </td>
-                        <td>
+                        <td class="auto-style1">
                             <asp:TextBox ID="apellidoTextBox" runat="server"></asp:TextBox>
                         </td>
-                        <td>
+                        <td class="auto-style1">
                             <asp:Label ID="claveLabel" runat="server" Text="Clave"></asp:Label>
                         </td>
-                        <td>
+                        <td class="auto-style1">
                             <asp:TextBox ID="claveTextBox" runat="server"></asp:TextBox>
                         </td>
                     </tr>
@@ -50,12 +55,12 @@
                             <asp:Label ID="repetirClaveLabel" runat="server" Text="Repetir clave"></asp:Label>
                         </td>
                         <td>
-                            <asp:TextBox ID="repetirClaveTextBox" runat="server" OnTextChanged="repetirClaveTextBox_TextChanged"></asp:TextBox>
+                            <asp:TextBox ID="repetirClaveTextBox" runat="server"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <asp:CheckBox ID="habilitadoCheckBox" runat="server" OnCheckedChanged="habilitadoCheckBox_CheckedChanged" Text="Habilitado" TextAlign="Left" />
+                            <asp:CheckBox ID="habilitadoCheckBox" runat="server" Text="Habilitado" TextAlign="Left" />
                         </td>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
@@ -72,7 +77,7 @@
             </asp:Panel>
             &nbsp;<asp:Panel ID="gridActionPanel" runat="server">
                 <asp:LinkButton ID="editarLinkButton" runat="server" OnClick="editarLinkButton_Click">Editar</asp:LinkButton>
-                <asp:LinkButton ID="EliminarLinkButton" runat="server">Eliminar</asp:LinkButton>
+                <asp:LinkButton ID="EliminarLinkButton" runat="server" OnClick="EliminarLinkButton_Click">Eliminar</asp:LinkButton>
                 <asp:LinkButton ID="NuevoLinkButton" runat="server">Nuevo</asp:LinkButton>
             </asp:Panel>
             <asp:Panel ID="gridPanel" runat="server">
