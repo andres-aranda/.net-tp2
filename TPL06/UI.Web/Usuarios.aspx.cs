@@ -122,6 +122,12 @@ namespace Academia.UI.Web
                 case FormModes.Baja:
                     this.DeleteEntity(this.SelectedID);
                     this.LoadGrid();
+                    break; 
+                case FormModes.Alta:
+                    this.Entity = new Usuario();
+                    this.LoadEntity(this.Entity);
+                    this.SaveEntity(this.Entity);
+                    this.LoadGrid();
                     break;
                 case FormModes.Modificion:
                     this.Entity = new Usuario();
@@ -163,6 +169,28 @@ namespace Academia.UI.Web
         private void DeleteEntity(int id)
         {
             this.Logic.Delete(id);
+        }
+
+        protected void NuevoLinkButton_Click(object sender, EventArgs e)
+        {
+            this.formPanel.Visible = true;
+            this.FormMode = FormModes.Alta;
+            this.ClearForm();
+            this.EnableForm(true);
+        }
+
+        private void ClearForm()
+        {
+            this.nombreTextBox.Text = string.Empty;
+            this.apellidoTextBox.Text = string.Empty;
+            this.emailTextBox.Text = string.Empty;
+            this.habilitadoCheckBox.Checked = false;
+            this.nombreUsuarioTextBox.Text = string.Empty;
+        }
+
+        protected void CancelarLinkButton_Click(object sender, EventArgs e)
+        {
+            this.gridPanel.Visible = true;
         }
     }
 }
