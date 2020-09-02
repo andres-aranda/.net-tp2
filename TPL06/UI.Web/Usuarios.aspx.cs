@@ -90,6 +90,7 @@ namespace Academia.UI.Web
             this.emailTextBox.Text = this.Entity.Email;
             this.habilitadoCheckBox.Checked = this.Entity.Habilitado;
             this.nombreUsuarioTextBox.Text = this.Entity.NombreUsuario;
+            this.claveTextBox.Text = this.Entity.Clave;
         }
 
         protected void editarLinkButton_Click(object sender, EventArgs e)
@@ -109,6 +110,7 @@ namespace Academia.UI.Web
             usuario.Email = this.emailTextBox.Text;
             usuario.NombreUsuario = this.nombreUsuarioTextBox.Text;
             usuario.Habilitado = this.habilitadoCheckBox.Checked;
+            usuario.Clave = this.claveTextBox.Text;
         }
         private void SaveEntity(Usuario usuario)
         {
@@ -125,6 +127,7 @@ namespace Academia.UI.Web
                     break; 
                 case FormModes.Alta:
                     this.Entity = new Usuario();
+                    this.Entity.State = BusinessEntity.Estados.New;
                     this.LoadEntity(this.Entity);
                     this.SaveEntity(this.Entity);
                     this.LoadGrid();

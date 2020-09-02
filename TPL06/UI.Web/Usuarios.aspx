@@ -41,7 +41,7 @@
                             <asp:Label ID="claveLabel" runat="server" Text="Clave"></asp:Label>
                         </td>
                         <td class="auto-style1">
-                            <asp:TextBox ID="claveTextBox" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="claveTextBox" runat="server" TextMode="Password"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -55,7 +55,7 @@
                             <asp:Label ID="repetirClaveLabel" runat="server" Text="Repetir clave"></asp:Label>
                         </td>
                         <td>
-                            <asp:TextBox ID="repetirClaveTextBox" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="repetirClaveTextBox" runat="server" TextMode="Password"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
