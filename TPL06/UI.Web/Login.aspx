@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Academia.UI.Web.Logun" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Academia.UI.Web.Login" %>
 
 <!DOCTYPE html>
 
@@ -11,16 +11,20 @@
     <form id="form1" runat="server">
         <div>
         </div>
-        <asp:Panel ID="txtUsuario" runat="server" Height="152px" Width="427px">
+        <asp:Panel ID="panel" runat="server" Height="152px" Width="427px">
             <br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Usuario&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txtUsuario" runat="server"></asp:TextBox>
             <br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Contraseña&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="txtContraseña" runat="server"></asp:TextBox>
             <br />
             <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a id="btnAceptar" href="javascript:__doPostBack('LinkButton1','')">Aceptar</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a id="btnCancelar" href="javascript:__doPostBack('LinkButton2','')">Cancelar</a></asp:Panel>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:LinkButton ID="lbtAceptar" runat="server" OnClick="lbtAceptar_Click">Aceptar</asp:LinkButton>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:LinkButton ID="lbtCancelar" runat="server">Cancelar</asp:LinkButton>
+            <asp:Label ID="lblPrueba" runat="server" Text="Label"></asp:Label>
+        </asp:Panel>
     </form>
 </body>
 </html>
