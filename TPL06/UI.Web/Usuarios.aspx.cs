@@ -97,10 +97,9 @@ namespace Academia.UI.Web
         {
             if (this.IsEntitySelected)
             {
-                EnableForm(true);
-                this.formPanel.Visible = true;
-                this.FormMode = FormModes.Modificion;
-                this.LoadForm(this.SelectedID);
+                Session["idSeleccionada"] = SelectedID;
+                Session["formMode"] = FormModes.Modificion;
+                Page.Response.Redirect("~/UsuarioForm.aspx");
             }
         }
         protected void LoadEntity(Usuario usuario)
