@@ -77,7 +77,7 @@ namespace Academia.UI.Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            LoadGrid();
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)

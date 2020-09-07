@@ -71,6 +71,7 @@
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="MateriaForm.aspx" />
     <Content Include="Materias.aspx" />
     <Content Include="UsuarioForm.aspx" />
     <Content Include="Usuarios.aspx" />
@@ -100,6 +101,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MateriaForm.aspx.cs">
+      <DependentUpon>MateriaForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MateriaForm.aspx.designer.cs">
+      <DependentUpon>MateriaForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Materias.aspx.cs">
       <DependentUpon>Materias.aspx</DependentUpon>

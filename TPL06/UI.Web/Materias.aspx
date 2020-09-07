@@ -1,75 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Materias.aspx.cs" Inherits="Academia.UI.Web.Materias" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true"  MasterPageFile="~/Site.Master" CodeBehind="Materias.aspx.cs" Inherits="Academia.UI.Web.Materias" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-            <asp:Panel ID="formPanel" runat="server" Height="114px" Visible="False">
-                <table style="width:100%;">
-                    <tr>
-                        <td>
-                            <asp:Label ID="nombreLabel" runat="server" Text="Nombre"></asp:Label>
-                        </td>
-                        <td>
-                            <asp:TextBox ID="nombreTextBox" runat="server"></asp:TextBox>
-                        </td>
-                        <td>
-                            <asp:Label ID="nombreUsuarioLabel" runat="server" Text="Nombre de usuario"></asp:Label>
-                        </td>
-                        <td>
-                            <asp:TextBox ID="nombreUsuarioTextBox" runat="server"></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="auto-style1">
-                            <asp:Label ID="apellidoLabel" runat="server" Text="Apellido"></asp:Label>
-                        </td>
-                        <td class="auto-style1">
-                            <asp:TextBox ID="apellidoTextBox" runat="server"></asp:TextBox>
-                        </td>
-                        <td class="auto-style1">
-                            <asp:Label ID="claveLabel" runat="server" Text="Clave"></asp:Label>
-                        </td>
-                        <td class="auto-style1">
-                            <asp:TextBox ID="claveTextBox" runat="server" TextMode="Password"></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:Label ID="emailLabel" runat="server" Text="Email"></asp:Label>
-                        </td>
-                        <td>
-                            <asp:TextBox ID="emailTextBox" runat="server"></asp:TextBox>
-                        </td>
-                        <td>
-                            <asp:Label ID="repetirClaveLabel" runat="server" Text="Repetir clave"></asp:Label>
-                        </td>
-                        <td>
-                            <asp:TextBox ID="repetirClaveTextBox" runat="server" TextMode="Password"></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:CheckBox ID="habilitadoCheckBox" runat="server" Text="Habilitado" TextAlign="Left" />
-                        </td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                </table>
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-            </asp:Panel>
+<asp:Content ID="Content2" ContentPlaceHolderID="PageContent" runat="server">
+  <div>
             &nbsp;<asp:Panel ID="gridActionPanel" runat="server">
                 <asp:LinkButton ID="editarLinkButton" runat="server">Editar</asp:LinkButton>
                 <asp:LinkButton ID="EliminarLinkButton" runat="server">Eliminar</asp:LinkButton>
@@ -79,13 +11,12 @@
                 <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="GridView1_SelectedIndexChanged"
                     SelectedRowStyle-BackColor="Black"
                     SelectedRowStyle-ForeColor="White"
-                    DataKeyNames="ID">
+                    DataKeyNames="Id">
                     <Columns>
-                        <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
-                        <asp:BoundField HeaderText="Apellido" DataField="Apellido" />
-                        <asp:BoundField HeaderText="Mail" DataField="EMail" />
-                        <asp:BoundField HeaderText="Usuario" DataField="NombreUsuario" />
-                        <asp:BoundField HeaderText="Habilitado" DataField="Habilitado" />
+                        <asp:BoundField HeaderText="Descripcion" DataField="Descripcion" />
+                        <asp:BoundField HeaderText="HsSemanales" DataField="HsSemanales" />
+                        <asp:BoundField HeaderText="HsTotales" DataField="HsTotales" />
+                        <asp:BoundField HeaderText="IdPlan" DataField="IdPlan" />
                         <asp:CommandField SelectText="Seleccionar" ShowSelectButton="True" />
                     </Columns>
                 </asp:GridView>
@@ -95,6 +26,4 @@
             <asp:LinkButton ID="AceptarLinkButton" runat="server">Aceptar</asp:LinkButton>
             <asp:LinkButton ID="CancelarLinkButton" runat="server">Cancelar</asp:LinkButton>
         </asp:Panel>
-    </form>
-</body>
-</html>
+ </asp:Content>

@@ -1,0 +1,105 @@
+﻿using Business.Entities;
+using Business.Logic;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace Academia.UI.Web
+{
+    public partial class MateriaForm : System.Web.UI.Page
+    {
+        private MateriaLogic _logic;
+
+        private MateriaLogic Logic
+        {
+            get
+            {
+                if (_logic == null)
+                    _logic = new MateriaLogic();
+                return _logic;
+            }
+        }
+        private Materia Entity
+        {
+            get;
+            set;
+        }
+
+        public enum FormModes { Alta, Baja, Modificion }
+
+        public FormModes FormMode
+        {
+            get
+            {
+                return (FormModes)this.ViewState["formMode"];
+            }
+            set
+            {
+                this.ViewState["formMode"] = value;
+            }
+        }
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            int variable = (int)Session["idSeleccionado"];
+            if (Session["modoForm"] != null)
+            {
+                if (Session["idSeleccionada"] != null)
+                    LoadForm((int)Session["idSeleccionada"]);
+
+                FormMode = (FormModes)Session["modoForm"];
+            }
+        }
+
+        private void LoadForm(int id)
+        {
+            this.Entity = this.Logic.GetOne(id);
+            this.descripcionTextBox.Text = this.Entity.Descripcion;
+            this.hsSemanalesTextBox.Text = this.Entity.HsSemanales.ToString();
+            this.hsTotalesTextBox.Text = this.Entity.HsTotales.ToString();
+            this.idPlanTextBox.Text = this.Entity.IdPlan.ToString();
+        }
+
+        protected void LoadEntity(Materia usuario)
+        {
+            usuario.Descripcion = this.descripcionTextBox.Text;
+            usuario.HsTotales = int.Parse(this.hsTotalesTextBox.Text);
+            usuario.HsSemanales = int.Parse(this.hsSemanalesTextBox.Text);
+            usuario.IdPlan = int.Parse(this.idPlanTextBox.Text);
+        }
+        private void SaveEntity(Materia usuario)
+        {
+            this.Logic.Save(usuario);
+        }
+        private void DeleteEntity(int id)
+        {
+            this.Logic.Delete(id);
+        }
+
+        protected void AceptarLinkButton_Click(object sender, EventArgs e)
+        {
+            switch (this.FormMode)
+            {
+                case FormModes.Alta:
+                    this.Entity = new Materia();
+                    this.Entity.State = BusinessEntity.Estados.New;
+                    this.LoadEntity(this.Entity);
+                    this.SaveEntity(this.Entity);
+                    break;
+                case FormModes.Modificion:
+                    this.Entity = new Materia();
+                    this.Entity.Id = (int)Session["idSeleccionada"];
+                    this.Entity.State = BusinessEntity.Estados.Modified;
+                    this.LoadEntity(this.Entity);
+                    this.SaveEntity(this.Entity);
+                    break;
+            }
+        }
+    }
+
+     
+    }
+}
