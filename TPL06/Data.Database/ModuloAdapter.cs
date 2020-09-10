@@ -23,7 +23,6 @@ namespace Data.Database
                     Modulo mod = new Modulo();
                     mod.Id = (int)drModulos["id_modulo"];
                     mod.Descripcion = (string)drModulos["desc_modulo"];
-                    mod.Ejecuta = (string)drModulos["ejecuta"];
                    
                     modulos.Add(mod);
                 }
@@ -54,7 +53,6 @@ namespace Data.Database
                 {
                     mod.Id = (int)drModulo["id_modulo"];
                     mod.Descripcion = (string)drModulo["desc_modulo"];
-                    mod.Ejecuta = (string)drModulo["ejecuta"];
                 }
 
                 drModulo.Close();
@@ -103,7 +101,6 @@ namespace Data.Database
                     " WHERE id_modulo = @id", Sqlconn);
                 cmd.Parameters.Add("@id", SqlDbType.Int).Value = modulo.Id;
                 cmd.Parameters.Add("@desc_modulo", SqlDbType.VarChar, 50).Value = modulo.Descripcion;
-                cmd.Parameters.Add("@ejecuta", SqlDbType.VarChar, 50).Value = modulo.Ejecuta;
                 cmd.ExecuteNonQuery();
             }
             catch (Exception Ex)
@@ -127,7 +124,6 @@ namespace Data.Database
                     " SELECT @@identity", Sqlconn);
 
                 cmd.Parameters.Add("@desc_modulo", SqlDbType.VarChar, 50).Value = modulo.Descripcion;
-                cmd.Parameters.Add("@ejecuta", SqlDbType.VarChar, 50).Value = modulo.Ejecuta;
                 modulo.Id = decimal.ToInt32((decimal)cmd.ExecuteScalar());
             }
             catch (Exception Ex)
@@ -158,5 +154,40 @@ namespace Data.Database
             modulo.State = BusinessEntity.Estados.Unmodified;
         }
 
+        public List<Modulo> GetById(int idUsuario)
+        {
+            List<Modulo> modulos = new List<Modulo>();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmd = new SqlCommand(
+                    "SELECT * " +
+                    "FROM modulos m " +
+                    "INNER JOIN modulos_usuarios mu ON m.id_modulo = mu.id_modulo " +
+                    "WHERE mu.id_usuario = @id_usuario",
+                    Sqlconn);
+                cmd.Parameters.Add("@id_usuario", SqlDbType.Int).Value = idUsuario;
+                SqlDataReader drModulos = cmd.ExecuteReader();
+                while (drModulos.Read())
+                {
+                    Modulo mod = new Modulo();
+                    mod.Id = (int)drModulos["id_modulo"];
+                    mod.Descripcion = (string)drModulos["desc_modulo"];
+
+                    modulos.Add(mod);
+                }
+
+                drModulos.Close();
+                this.CloseConnection();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+                    new Exception("Error al recuperar lista de modulos", Ex);
+                throw ExcepcionManejada;
+            }
+
+            return modulos;
+        }
     }
 }

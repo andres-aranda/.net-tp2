@@ -20,6 +20,7 @@ namespace Business.Entities
         private String _Email;
         private string _Clave;
         private bool _Habilitado;
+        private List<Modulo> modulo;
 
         protected SqlDataAdapter _daUsuarios;
 
@@ -82,6 +83,12 @@ namespace Business.Entities
         {
             get { return _Habilitado; }
             set { _Habilitado = value; }
+        }
+
+        public List<Modulo> Modulo
+        {
+            get => modulo;
+            set => modulo = value;
         }
     }
 }

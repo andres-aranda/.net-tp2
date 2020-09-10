@@ -16,10 +16,8 @@ namespace Business.Entities
 
         public int IdModulo
         {
-            get => default;
-            set
-            {
-            }
+            get => _IdModulo;
+            set => _IdModulo = value;
         }
 
         public int IdUsuario

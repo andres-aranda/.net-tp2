@@ -15,7 +15,6 @@ namespace Business.Entities
 
         }
         private string _Descripcion;
-        private string _Ejecuta;
 
         protected SqlDataAdapter _daModulos;
 
@@ -48,11 +47,6 @@ namespace Business.Entities
         {
             get { return _Descripcion; }
             set { _Descripcion = value; }
-        }
-        public string Ejecuta
-        {
-            get { return _Ejecuta; }
-            set { _Ejecuta = value; }
         }
     }
 }

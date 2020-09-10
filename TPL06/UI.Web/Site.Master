@@ -27,6 +27,9 @@
                     <tr> 
                         <td><a href="Usuarios.aspx">Usuarios</a></td> 
                     </tr>
+                    <tr> 
+                        <td><a href="Materias.aspx">Materias</a></td> 
+                    </tr>
                 </table> 
             </td> 
              
