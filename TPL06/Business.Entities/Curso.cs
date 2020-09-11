@@ -12,7 +12,20 @@ namespace Business.Entities
         private string _Descripcion;
         private int _IdComision;
         private int _IdMateria;
+        private Materia _Materia;
+        private Comision _Comision;
 
+        public Comision Comision
+        {
+            get => _Comision;
+            set => _Comision = value;
+        }
+        public Materia Materia
+        {
+            get => _Materia;
+            set => _Materia = value;
+        }
+        
         public int AñoCalendario
         {
             get => default;
