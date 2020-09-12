@@ -43,14 +43,15 @@ namespace Academia.UI.Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            int variable = (int)Session["idSeleccionado"];
-            if (Session["modoForm"] != null )
-            {
-                if (Session["idSeleccionada"] != null)
-                    LoadForm((int)Session["idSeleccionada"]);
+             //   int variable = (int)Session["idSeleccionado"];
+                if (Session["modoForm"] != null)
+                {
+                    if (Session["idSeleccionada"] != null)
+                        LoadForm((int)Session["idSeleccionada"]);
 
-                FormMode = (FormModes)Session["modoForm"];
-            }
+                    FormMode = (FormModes)Session["modoForm"];
+                }
+           
         }
 
         private void LoadForm(int id)
