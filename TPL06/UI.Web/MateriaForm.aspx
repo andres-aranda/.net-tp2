@@ -50,6 +50,6 @@
     </table>
     <asp:Panel ID="formActionPanel" runat="server">
         <asp:LinkButton ID="AceptarLinkButton" runat="server" OnClick="AceptarLinkButton_Click">Aceptar</asp:LinkButton>
-        <asp:LinkButton ID="CancelarLinkButton" runat="server">Cancelar</asp:LinkButton>
+        <asp:LinkButton ID="CancelarLinkButton" runat="server" OnClick="CancelarLinkButton_Click">Cancelar</asp:LinkButton>
     </asp:Panel>
 </asp:Content>

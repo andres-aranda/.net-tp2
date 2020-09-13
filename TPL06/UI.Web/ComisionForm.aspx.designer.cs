@@ -11,62 +11,35 @@ namespace Academia.UI.Web
 {
 
 
-    public partial class Materias
+    public partial class ComisionForm
     {
 
         /// <summary>
-        /// Control gridActionPanel.
+        /// Control descComtxt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel gridActionPanel;
+        protected global::System.Web.UI.WebControls.TextBox descComtxt;
 
         /// <summary>
-        /// Control editarLinkButton.
+        /// Control añoEspeTextBox.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton editarLinkButton;
+        protected global::System.Web.UI.WebControls.TextBox añoEspeTextBox;
 
         /// <summary>
-        /// Control EliminarLinkButton.
+        /// Control idPlanTextBox.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton EliminarLinkButton;
-
-        /// <summary>
-        /// Control NuevoLinkButton.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton NuevoLinkButton;
-
-        /// <summary>
-        /// Control gridPanel.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel gridPanel;
-
-        /// <summary>
-        /// Control gridView.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gridView;
+        protected global::System.Web.UI.WebControls.TextBox idPlanTextBox;
 
         /// <summary>
         /// Control formActionPanel.
@@ -76,5 +49,23 @@ namespace Academia.UI.Web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel formActionPanel;
+
+        /// <summary>
+        /// Control AceptarLinkButton.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton AceptarLinkButton;
+
+        /// <summary>
+        /// Control CancelarLinkButton.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton CancelarLinkButton;
     }
 }

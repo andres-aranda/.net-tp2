@@ -44,12 +44,11 @@ namespace Academia.UI.Web
         protected void Page_Load(object sender, EventArgs e)
         {
              //   int variable = (int)Session["idSeleccionado"];
-                if (Session["modoForm"] != null)
+                if (Session["formMode"] != null)
                 {
+                    FormMode = (FormModes)Session["formMode"];
                     if (Session["idSeleccionada"] != null)
                         LoadForm((int)Session["idSeleccionada"]);
-
-                    FormMode = (FormModes)Session["modoForm"];
                 }
            
         }
@@ -101,6 +100,11 @@ namespace Academia.UI.Web
                     this.SaveEntity(this.Entity);
                     break;
             }
+        }
+
+        protected void CancelarLinkButton_Click(object sender, EventArgs e)
+        {
+            Page.Response.Redirect("~/Usuarios.aspx");
         }
     }
 }

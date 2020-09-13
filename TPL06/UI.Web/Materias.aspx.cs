@@ -11,7 +11,7 @@ namespace Academia.UI.Web
 {
     public partial class Materias : System.Web.UI.Page
     {
-        
+
         MateriaLogic _logic;
         private MateriaLogic Logic
         {
@@ -73,8 +73,6 @@ namespace Academia.UI.Web
             this.gridView.DataBind();
         }
 
-
-
         protected void Page_Load(object sender, EventArgs e)
         {
             LoadGrid();
@@ -84,5 +82,36 @@ namespace Academia.UI.Web
         {
             this.SelectedID = (int)this.gridView.SelectedValue;
         }
+        protected void editarLinkButton_Click(object sender, EventArgs e)
+        {
+            if (this.IsEntitySelected)
+            {
+                Session["idSeleccionada"] = SelectedID;
+                Session["formMode"] = FormModes.Modificion;
+                Page.Response.Redirect("~/MateriaForm.aspx");
+            }
+        }
+        protected void EliminarLinkButton_Click(object sender, EventArgs e)
+        {
+            if (this.IsEntitySelected)
+            {
+                DeleteEntity(SelectedID);
+                LoadGrid();
+            }
+        }
+
+        private void DeleteEntity(int id)
+        {
+            this.Logic.Delete(id);
+        }
+        protected void NuevoLinkButton_Click(object sender, EventArgs e)
+        {
+            Session["idSeleccionada"] = null;
+            Session["formMode"] = FormModes.Alta;
+            Page.Response.Redirect("~/MateriaForm.aspx");
+
+
+        }
+
     }
 }
