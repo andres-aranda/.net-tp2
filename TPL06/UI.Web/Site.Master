@@ -13,8 +13,13 @@
     <table border="1" cellpadding="0" cellspacing="0" width="100%" height="100%"> 
         <!-- site header --> 
         <tr> 
-            <td colspan="2" align="center" class="wrapper">
+            <td  align="left" class="wrapper">
                 <h1>Academia</h1>
+            </td>
+            <td align="right" class="wrapper">
+               
+                <asp:Label ID="lblUsuarioLogeado" runat="server" Text="Label"></asp:Label>
+               
             </td> 
         </tr> 
         <tr> 
@@ -29,6 +34,9 @@
                     </tr>
                     <tr> 
                         <td><a href="Materias.aspx">Materias</a></td> 
+                    </tr>
+                    <tr> 
+                        <td><a href="Comisiones.aspx">Comisiones</a></td> 
                     </tr>
                 </table> 
             </td> 
