@@ -55,13 +55,11 @@
             // tscUsuarios.ContentPanel
             // 
             this.tscUsuarios.ContentPanel.Controls.Add(this.tlEspecialidades);
-            this.tscUsuarios.ContentPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tscUsuarios.ContentPanel.Size = new System.Drawing.Size(756, 412);
+            this.tscUsuarios.ContentPanel.Size = new System.Drawing.Size(567, 333);
             this.tscUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tscUsuarios.Location = new System.Drawing.Point(0, 0);
-            this.tscUsuarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tscUsuarios.Name = "tscUsuarios";
-            this.tscUsuarios.Size = new System.Drawing.Size(756, 443);
+            this.tscUsuarios.Size = new System.Drawing.Size(567, 360);
             this.tscUsuarios.TabIndex = 2;
             this.tscUsuarios.Text = "toolStripContainer1";
             // 
@@ -69,6 +67,7 @@
             // 
             this.tscUsuarios.TopToolStripPanel.BackColor = System.Drawing.Color.Aquamarine;
             this.tscUsuarios.TopToolStripPanel.Controls.Add(this.tsEspecialidades);
+            this.tscUsuarios.TopToolStripPanel.Click += new System.EventHandler(this.tscUsuarios_TopToolStripPanel_Click);
             // 
             // tlEspecialidades
             // 
@@ -81,12 +80,11 @@
             this.tlEspecialidades.Controls.Add(this.btnSalir, 1, 1);
             this.tlEspecialidades.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlEspecialidades.Location = new System.Drawing.Point(0, 0);
-            this.tlEspecialidades.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tlEspecialidades.Name = "tlEspecialidades";
             this.tlEspecialidades.RowCount = 2;
             this.tlEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlEspecialidades.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlEspecialidades.Size = new System.Drawing.Size(756, 412);
+            this.tlEspecialidades.Size = new System.Drawing.Size(567, 333);
             this.tlEspecialidades.TabIndex = 0;
             // 
             // dgvEspecialidades
@@ -101,12 +99,11 @@
             this.ejecuta});
             this.tlEspecialidades.SetColumnSpan(this.dgvEspecialidades, 2);
             this.dgvEspecialidades.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvEspecialidades.Location = new System.Drawing.Point(4, 4);
-            this.dgvEspecialidades.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvEspecialidades.Location = new System.Drawing.Point(3, 3);
             this.dgvEspecialidades.Name = "dgvEspecialidades";
             this.dgvEspecialidades.ReadOnly = true;
             this.dgvEspecialidades.RowHeadersWidth = 51;
-            this.dgvEspecialidades.Size = new System.Drawing.Size(748, 368);
+            this.dgvEspecialidades.Size = new System.Drawing.Size(561, 298);
             this.dgvEspecialidades.TabIndex = 0;
             // 
             // id
@@ -120,8 +117,8 @@
             // 
             // descripcion
             // 
-            this.descripcion.DataPropertyName = "Descripcion";
-            this.descripcion.HeaderText = "Descripcion";
+            this.descripcion.DataPropertyName = "DescripcionComision";
+            this.descripcion.HeaderText = "DescripcionComision";
             this.descripcion.MinimumWidth = 6;
             this.descripcion.Name = "descripcion";
             this.descripcion.ReadOnly = true;
@@ -139,10 +136,9 @@
             // btnActualizar
             // 
             this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizar.Location = new System.Drawing.Point(544, 380);
-            this.btnActualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnActualizar.Location = new System.Drawing.Point(408, 307);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(100, 28);
+            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
             this.btnActualizar.TabIndex = 1;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
@@ -150,10 +146,9 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(652, 380);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalir.Location = new System.Drawing.Point(489, 307);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(100, 28);
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -169,7 +164,7 @@
             this.tsbEliminar});
             this.tsEspecialidades.Location = new System.Drawing.Point(4, 0);
             this.tsEspecialidades.Name = "tsEspecialidades";
-            this.tsEspecialidades.Size = new System.Drawing.Size(139, 27);
+            this.tsEspecialidades.Size = new System.Drawing.Size(84, 27);
             this.tsEspecialidades.TabIndex = 0;
             // 
             // tsbNuevo
@@ -178,7 +173,7 @@
             this.tsbNuevo.Image = ((System.Drawing.Image)(resources.GetObject("tsbNuevo.Image")));
             this.tsbNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbNuevo.Name = "tsbNuevo";
-            this.tsbNuevo.Size = new System.Drawing.Size(29, 24);
+            this.tsbNuevo.Size = new System.Drawing.Size(24, 24);
             this.tsbNuevo.Text = "Nuevo";
             this.tsbNuevo.Click += new System.EventHandler(this.tsbNuevo_Click);
             // 
@@ -188,7 +183,7 @@
             this.tsbEditar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEditar.Image")));
             this.tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEditar.Name = "tsbEditar";
-            this.tsbEditar.Size = new System.Drawing.Size(29, 24);
+            this.tsbEditar.Size = new System.Drawing.Size(24, 24);
             this.tsbEditar.Text = "Editar";
             this.tsbEditar.Click += new System.EventHandler(this.TsbModificarEspecialidad_Click);
             // 
@@ -198,17 +193,16 @@
             this.tsbEliminar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEliminar.Image")));
             this.tsbEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEliminar.Name = "tsbEliminar";
-            this.tsbEliminar.Size = new System.Drawing.Size(29, 24);
+            this.tsbEliminar.Size = new System.Drawing.Size(24, 24);
             this.tsbEliminar.Text = "Eliminar";
             this.tsbEliminar.Click += new System.EventHandler(this.TsbBorrarEspecialidad_Click);
             // 
             // Especialidades
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(756, 443);
+            this.ClientSize = new System.Drawing.Size(567, 360);
             this.Controls.Add(this.tscUsuarios);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Especialidades";
             this.Text = "Especialidades";
             this.Load += new System.EventHandler(this.Especialidades_Load);

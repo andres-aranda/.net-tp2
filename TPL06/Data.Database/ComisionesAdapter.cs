@@ -24,7 +24,7 @@ namespace Data.Database
                     Comision c = new Comision
                     {
                         Id = (int)dr["id_comision"],
-                        Descripcion = (string)dr["desc_comision"],
+                        DescripcionComision = (string)dr["desc_comision"],
                         AñoEspecialidad = (int)dr["anio_especialidad"],
                         IdPlan = (int)dr["id_plan"]
                     };
@@ -53,7 +53,7 @@ namespace Data.Database
                 if (dr.Read())
                 {
                     c.Id = (int)dr["id_comision"];
-                    c.Descripcion = (string)dr["desc_comision"];
+                    c.DescripcionComision = (string)dr["desc_comision"];
                     c.AñoEspecialidad = (int)dr["anio_especialidad"];
                     c.IdPlan = (int)dr["id_plan"];
                 }
@@ -98,7 +98,7 @@ namespace Data.Database
                     " anio_especialidad = @año, id_plan = @id_plan" +
                     " WHERE id_comision = @id", Sqlconn);
                 cmd.Parameters.Add("@id", SqlDbType.Int).Value = c.Id;
-                cmd.Parameters.Add("@desc_comision", SqlDbType.VarChar).Value = c.Descripcion;
+                cmd.Parameters.Add("@desc_comision", SqlDbType.VarChar).Value = c.DescripcionComision;
                 cmd.Parameters.Add("@año", SqlDbType.Int).Value = c.AñoEspecialidad;
                 cmd.Parameters.Add("@id_plan", SqlDbType.Int).Value = c.IdPlan;
                 cmd.ExecuteNonQuery();
@@ -121,7 +121,7 @@ namespace Data.Database
                 SqlCommand cmd = new SqlCommand("INSERT INTO comisiones (desc_comision, anio_especialidad, id_plan)" +
                     " VALUES (@desc_comision, @año, @id_plan)" +
                     " SELECT @@identity", Sqlconn);
-                cmd.Parameters.Add("@desc_comision", SqlDbType.VarChar).Value = c.Descripcion;
+                cmd.Parameters.Add("@desc_comision", SqlDbType.VarChar).Value = c.DescripcionComision;
                 cmd.Parameters.Add("@año", SqlDbType.Int).Value = c.AñoEspecialidad;
                 cmd.Parameters.Add("@id_plan", SqlDbType.Int).Value = c.IdPlan;
                 c.Id = decimal.ToInt32((decimal)cmd.ExecuteScalar());

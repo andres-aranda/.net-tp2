@@ -77,5 +77,10 @@ namespace Academia.UI.Desktop
             }
             this.Listar();
         }
+
+        private void tscUsuarios_TopToolStripPanel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

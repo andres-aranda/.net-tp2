@@ -140,6 +140,39 @@ namespace Data.Database
             }
             return materias;
         }
+        public List<Materia> GetByPlan(int IdPlan)
+        {
+            List<Materia> materias = new List<Materia>();
+            try
+            {
+                OpenConnection();
+                SqlCommand cmdMaterias = new SqlCommand("SELECT * FROM materias WHERE id_plan=@idPlan", Sqlconn);
+                cmdMaterias.Parameters.Add("@idPlan", SqlDbType.Int).Value = IdPlan;
+                SqlDataReader drMaterias = cmdMaterias.ExecuteReader();
+                while (drMaterias.Read())
+                {
+                    Materia m = new Materia();
+                    m.Id = (int)drMaterias["id_materia"];
+                    m.Descripcion = (string)drMaterias["desc_materia"];
+                    m.HsSemanales = (int)drMaterias["hs_semanales"];
+                    m.HsTotales = (int)drMaterias["hs_totales"];
+                    m.IdPlan = (int)drMaterias["id_plan"];
+
+                    materias.Add(m);
+                }
+                drMaterias.Close();
+            }
+            catch (Exception e)
+            {
+                Exception ex = new Exception("Error al recuperar la lista de materias", e);
+                throw ex;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+            return materias;
+        }
 
         public void Delete(int id)
         {

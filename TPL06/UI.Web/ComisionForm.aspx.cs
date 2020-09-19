@@ -56,7 +56,7 @@ namespace Academia.UI.Web
             private void LoadForm(int id)
             {
                 this.Entity = this.Logic.GetOne(id);
-                this.descComtxt.Text = this.Entity.Descripcion;
+                this.descComtxt.Text = this.Entity.DescripcionComision;
                 this.idPlanTextBox.Text = this.Entity.IdPlan.ToString();
                 this.añoEspeTextBox.Text = this.Entity.AñoEspecialidad.ToString();
 
@@ -64,7 +64,7 @@ namespace Academia.UI.Web
 
             protected void LoadEntity(Comision comision)
             {
-                comision.Descripcion = this.descComtxt.Text;
+                comision.DescripcionComision = this.descComtxt.Text;
                 comision.AñoEspecialidad = int.Parse(this.añoEspeTextBox.Text);
                 comision.IdPlan = int.Parse(this.idPlanTextBox.Text);
             }

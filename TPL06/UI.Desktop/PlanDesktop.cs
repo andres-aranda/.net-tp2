@@ -22,7 +22,7 @@ namespace Academia.UI.Desktop
         private void comboBox()
         {
             this.cmbEsp.DataSource = el.GetAll();
-            this.cmbEsp.DisplayMember = "Descripcion";
+            this.cmbEsp.DisplayMember = "DescripcionComision";
             this.cmbEsp.ValueMember = "Id";
         }
         public PlanDesktop()

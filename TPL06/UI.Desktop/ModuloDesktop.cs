@@ -59,7 +59,7 @@ namespace Academia.UI.Desktop
         {
             this.txtId.Text = this.ModuloActual.Id.ToString();
             this.txtDescripcion.Text = this.ModuloActual.Descripcion;
-            this.txtEjecuta.Text = this.ModuloActual.Ejecuta;
+  
            
             switch (this.modoForm)
             {
@@ -85,7 +85,7 @@ namespace Academia.UI.Desktop
                     this.ModuloActual = new Modulo();
                     this.ModuloActual.Id = 0;
                     this.ModuloActual.Descripcion = this.txtDescripcion.Text;
-                    this.ModuloActual.Ejecuta = this.txtEjecuta.Text;
+                  //  this.ModuloActual.Ejecuta = this.txtEjecuta.Text;
 
                     this.ModuloActual.State = BusinessEntity.Estados.New;
                     break;
@@ -93,7 +93,7 @@ namespace Academia.UI.Desktop
                 case ModoForm.Modificacion:
                     this.ModuloActual.Id = int.Parse(this.txtId.Text.ToString());
                     this.ModuloActual.Descripcion = this.txtDescripcion.Text;
-                    this.ModuloActual.Ejecuta = this.txtEjecuta.Text;
+                  //  this.ModuloActual.Ejecuta = this.txtEjecuta.Text;
 
                     this.ModuloActual.State = BusinessEntity.Estados.Modified;
                     break;

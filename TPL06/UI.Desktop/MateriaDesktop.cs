@@ -112,7 +112,7 @@ namespace Academia.UI.Desktop
         {
             PlanLogic pl = new PlanLogic();
             cboIdPlan.DataSource = pl.GetAll();
-            cboIdPlan.DisplayMember = "Descripcion";
+            cboIdPlan.DisplayMember = "DescripcionComision";
             cboIdPlan.ValueMember = "Id";
             
         }

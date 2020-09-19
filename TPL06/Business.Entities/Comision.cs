@@ -18,7 +18,7 @@ namespace Business.Entities
             set => _AñoEspecialidad = value;
         }
 
-        public string Descripcion
+        public string DescripcionComision
         {
             get => _Descripcion;
             set => _Descripcion = value;

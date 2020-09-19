@@ -15,6 +15,7 @@ namespace Business.Entities
         private Materia _Materia;
         private Comision _Comision;
 
+
         public Comision Comision
         {
             get => _Comision;

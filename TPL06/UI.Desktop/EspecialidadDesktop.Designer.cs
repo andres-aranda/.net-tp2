@@ -117,7 +117,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(96, 17);
             this.label7.TabIndex = 16;
-            this.label7.Text = "Descripcion";
+            this.label7.Text = "DescripcionComision";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtDescripcion

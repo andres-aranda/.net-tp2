@@ -75,7 +75,7 @@ namespace Academia.UI.Desktop
         public override void MapearDeDatos()
         {
             txtID.Text = ComisionActual.Id.ToString();
-            txtDescripcion.Text = ComisionActual.Descripcion;
+            txtDescripcion.Text = ComisionActual.DescripcionComision;
             txtAñoEspecialidad.Text = ComisionActual.AñoEspecialidad.ToString();
             cboPlan.Text = ComisionActual.IdPlan.ToString();
             switch(this.modoForm)
@@ -108,7 +108,7 @@ namespace Academia.UI.Desktop
         {
             ComisionActual = new Comision();
             ComisionActual.Id = 0;
-            ComisionActual.Descripcion = txtDescripcion.Text;
+            ComisionActual.DescripcionComision = txtDescripcion.Text;
             ComisionActual.AñoEspecialidad = int.Parse(txtAñoEspecialidad.Text);
             ComisionActual.IdPlan = (int)cboPlan.SelectedValue;
             if (modoForm == ModoForm.Alta)
@@ -131,7 +131,7 @@ namespace Academia.UI.Desktop
         {
             PlanLogic pl = new PlanLogic();
             cboPlan.DataSource = pl.GetAll();
-            cboPlan.DisplayMember = "Descripcion";
+            cboPlan.DisplayMember = "DescripcionComision";
             cboPlan.ValueMember = "Id";
         }
     }
