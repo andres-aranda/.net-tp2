@@ -64,12 +64,9 @@ namespace Academia.UI.Web
 
             protected void LoadEntity(Comision comision)
             {
-           //     comision.Nombre = this.nombreTextBox.Text;
-           //     comision.Apellido = this.apellidoTextBox.Text;
-           //     comision.Email = this.emailTextBox.Text;
-           //     comision.NombreComision = this.nombreComisionTextBox.Text;
-            //    comision.Habilitado = this.habilitadoCheckBox.Checked;
-           //     comision.Clave = this.claveTextBox.Text;
+                comision.Descripcion = this.descComtxt.Text;
+                comision.AñoEspecialidad = int.Parse(this.añoEspeTextBox.Text);
+                comision.IdPlan = int.Parse(this.idPlanTextBox.Text);
             }
             private void SaveEntity(Comision comision)
             {
@@ -96,6 +93,7 @@ namespace Academia.UI.Web
                         this.Entity.State = BusinessEntity.Estados.Modified;
                         this.LoadEntity(this.Entity);
                         this.SaveEntity(this.Entity);
+                        Page.Response.Redirect("~/Comisiones.aspx");
                         break;
                 }
             }
