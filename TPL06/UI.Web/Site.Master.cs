@@ -14,6 +14,17 @@ namespace Academia.UI.Web
         {
             Usuario usuarioLog = (Usuario)Session["usuarioLogueado"];
             this.lblUsuarioLogeado.Text = "Bienbenido " + usuarioLog.Nombre + " ";
+            //foreach (Modulo m in usuarioLog.Modulo)
+            //{
+            //    if (m.Descripcion == "Alumno" || m.Descripcion == "Administrador")
+            //        Menu1.Items.Add( new MenuItem("")) ;
+            //    if (m.Descripcion == "Docente" || m.Descripcion == "Administrador")
+            //        btnComisiones.Visible = true;
+            //    if (m.Descripcion == "NoDocente" || m.Descripcion == "Administrador")
+            //        btnUsuarios.Visible = true;
+
+            //}
         }
+
     }
 }

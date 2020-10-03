@@ -178,6 +178,7 @@ namespace Data.Database
         public Usuario Loguearse(String nombreUsuario, String password)
         {
             Usuario usuario = new Usuario();
+            ModuloAdapter md = new ModuloAdapter();
             try
             {
                 this.OpenConnection();
@@ -194,6 +195,7 @@ namespace Data.Database
                     usuario.Nombre = (string)drUsuario["nombre"];
                     usuario.Apellido = (string)drUsuario["apellido"];
                     usuario.Email = (string)drUsuario["email"];
+                    usuario.Modulo = md.GetById(usuario.Id);
                 }
                 drUsuario.Close();
             }

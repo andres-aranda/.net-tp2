@@ -59,7 +59,9 @@ namespace Academia.UI.Desktop
 
         private void formMain_Shown(object sender, EventArgs e)
         {
-
+            tsmgestionAcademia.Visible = false;
+            tsmgestionAlumno.Visible = false;
+            tsmgestionDocente.Visible = false;
             Login appLogin = new Login();
             if (appLogin.ShowDialog() != DialogResult.OK)
             {
@@ -67,9 +69,19 @@ namespace Academia.UI.Desktop
             }
             else
                 contraerMenuLateral();
-            usuarioActual = appLogin.UsuarioLogeado;
+            usuarioActual = (Usuario) appLogin.UsuarioLogeado;
             appLogin.Close();
             this.WindowState = FormWindowState.Maximized;
+            foreach (Modulo m in usuarioActual.Modulo)
+            {
+              if (m.Descripcion == "Alumno" || m.Descripcion == "Administrador") 
+                       tsmgestionAlumno.Visible = true ;
+                if (m.Descripcion == "Docente" || m.Descripcion == "Administrador")
+                        tsmgestionDocente.Visible = true;
+                 if (m.Descripcion == "NoDocente" || m.Descripcion == "Administrador")
+                         tsmgestionAcademia.Visible = true;
+
+            }
 
         }
         private void btnModulos_Click(object sender, EventArgs e)
