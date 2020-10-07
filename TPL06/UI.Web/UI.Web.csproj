@@ -67,14 +67,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\android-chrome-192x192.png" />
+    <Content Include="Resources\android-chrome-512x512.png" />
+    <Content Include="Resources\apple-touch-icon.png" />
+    <Content Include="Resources\browserconfig.xml" />
     <Content Include="Default.aspx" />
+    <Content Include="Resources\favicon-16x16.png" />
+    <Content Include="Resources\favicon-32x32.png" />
+    <Content Include="Resources\favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="MateriaForm.aspx" />
     <Content Include="Materias.aspx" />
     <Content Include="ComisionForm.aspx" />
+    <Content Include="Resources\mstile-144x144.png" />
+    <Content Include="Resources\mstile-150x150.png" />
+    <Content Include="Resources\mstile-310x150.png" />
+    <Content Include="Resources\mstile-310x310.png" />
+    <Content Include="Resources\mstile-70x70.png" />
     <Content Include="PaginaNoPermitida.aspx" />
+    <Content Include="Resources\safari-pinned-tab.svg" />
+    <Content Include="styles.css" />
     <Content Include="UsuarioForm.aspx" />
     <Content Include="Usuarios.aspx" />
     <Content Include="Web.config" />
@@ -165,6 +179,7 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Site.Master" />
+    <Content Include="Resources\site.webmanifest" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

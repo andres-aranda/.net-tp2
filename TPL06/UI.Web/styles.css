@@ -1,0 +1,57 @@
+﻿:root {
+    --color-claro: #EEF0EB;
+    --color-primario: #1D201F;
+    --color-secundario: #DF928E;
+}
+
+html, body {
+    font-family: 'Noto Sans JP', sans-serif;
+    margin: 0;
+    background: var(--color-claro);
+    height: 100%;
+}
+
+table {
+    border: none;
+    margin: 0;
+}
+
+td {
+    padding: 0rem 2rem 0rem 2rem;
+    border: none;
+}
+
+#sidebar-row, #main-table, #form1, #sidebar {
+    height: 100%;
+}
+
+#sidebar, #site-logo {
+    background: var(--color-primario);
+    color: var(--color-claro);
+}
+
+ul {
+    padding: 0;
+}
+li {
+    list-style-type: none;
+}
+a:hover {
+    color: var(--color-secundario);
+}
+
+h1 {
+    font-family: 'Zilla Slab', serif;
+    font-weight: 600;
+}
+
+#icon {
+    fill: white;
+    color: white;
+    float: left;
+    margin: .25rem 1rem .25rem 0;
+}
+
+#logo {
+    vertical-align: middle;
+}
