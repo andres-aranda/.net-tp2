@@ -12,7 +12,7 @@
             width: 393px;
         }
     </style>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="Styles/master-styles.css" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="Resources/apple-touch-icon.png">

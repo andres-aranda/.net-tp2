@@ -88,7 +88,8 @@
     <Content Include="Resources\mstile-70x70.png" />
     <Content Include="PaginaNoPermitida.aspx" />
     <Content Include="Resources\safari-pinned-tab.svg" />
-    <Content Include="styles.css" />
+    <Content Include="Styles\login-styles.css" />
+    <Content Include="Styles\master-styles.css" />
     <Content Include="UsuarioForm.aspx" />
     <Content Include="Usuarios.aspx" />
     <Content Include="Web.config" />
