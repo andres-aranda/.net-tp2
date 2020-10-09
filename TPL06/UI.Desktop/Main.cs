@@ -74,12 +74,12 @@ namespace Academia.UI.Desktop
             this.WindowState = FormWindowState.Maximized;
             foreach (Modulo m in usuarioActual.Modulo)
             {
-              if (m.Descripcion == "Alumno" || m.Descripcion == "Administrador") 
-                       tsmgestionAlumno.Visible = true ;
+                if (m.Descripcion == "Alumno" || m.Descripcion == "Administrador") 
+                    tsmgestionAlumno.Visible = true ;
                 if (m.Descripcion == "Docente" || m.Descripcion == "Administrador")
-                        tsmgestionDocente.Visible = true;
-                 if (m.Descripcion == "NoDocente" || m.Descripcion == "Administrador")
-                         tsmgestionAcademia.Visible = true;
+                    tsmgestionDocente.Visible = true;
+                if (m.Descripcion == "No docente" || m.Descripcion == "Administrador")
+                    tsmgestionAcademia.Visible = true;
 
             }
 
