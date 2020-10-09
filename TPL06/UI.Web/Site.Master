@@ -7,11 +7,6 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-    <style type="text/css">
-        .auto-style1 {
-            width: 393px;
-        }
-    </style>
     <link rel="stylesheet" href="Styles/master-styles.css" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -48,15 +43,18 @@
         <tr id="sidebar-row"> 
             <!-- site navigation --> 
             <td id="sidebar" valign="top" width="150">
-                <div>
+                <div id="menuArchivo" runat="server">
                 <h3>Archivo</h3>
-                    <asp:BulletedList ID="BulletedList1" runat="server" Height="69px">
+                    <h4><a href="Materias.aspx" id="hlikMateria" runat="server">Modulo</a></h4>
+                    <h4><a href="Usuarios.aspx">Usuario</a></h4>
+                    <h4><a href="Login.aspx">Cerar Sesion</a></h4>
+                    <asp:BulletedList ID="BulletedList1" runat="server" Height="107px">
                         <asp:ListItem>Modulo</asp:ListItem>
                         <asp:ListItem>Usuario</asp:ListItem>
                         <asp:ListItem>Cerrar Sesion</asp:ListItem>  
                     </asp:BulletedList>
                 </div>
-                <div>
+                <div id="gestionAcademica" runat="server">
                 <h3>Gestión académica</h3>
                     <asp:BulletedList ID="BulletedList2" runat="server"  Height="137px" Width="241px">
                         <asp:ListItem>Personas</asp:ListItem>
@@ -67,10 +65,10 @@
                         <asp:ListItem>Planes</asp:ListItem>
                     </asp:BulletedList>
                 </div>
-                <div>
+                <div id="gestionDocente" runat="server">
                     <h3>Gestión docente</h3>
                 </div>
-                <div>
+                <div id="gestionAlumno" runat="server">
                     <h3>Gestión de alumno</h3>
                     <asp:BulletedList ID="BulletedList4" runat="server"  Height="32px">
                         <asp:ListItem>Inscripcion a cursar</asp:ListItem>    

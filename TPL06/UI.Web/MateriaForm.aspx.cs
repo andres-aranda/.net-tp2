@@ -44,7 +44,16 @@ namespace Academia.UI.Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
-    //        int variable = (int)Session["idSeleccionado"];
+           
+                Usuario usuarioLog = (Usuario)Session["usuarioLogueado"];
+
+                foreach (Modulo m in usuarioLog.Modulo)
+                {
+                    if (!(m.Descripcion == "Administrador"))
+                        Page.Response.Redirect("~/PaginaNoPermitida2.aspx");
+                }
+
+            
             if (Session["formMode"] != null)
             {
                 if (Session["idSeleccionada"] != null)

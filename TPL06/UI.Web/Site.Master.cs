@@ -12,18 +12,25 @@ namespace Academia.UI.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+            this.menuArchivo.Visible = false;
+            this.gestionAcademica.Visible = false;
+            this.gestionAlumno.Visible = false;
+            this.gestionDocente.Visible = false;
             Usuario usuarioLog = (Usuario)Session["usuarioLogueado"];
-            this.lblUsuarioLogeado.Text = "Bienbenido " + usuarioLog.Nombre + " ";
-            //foreach (Modulo m in usuarioLog.Modulo)
-            //{
-            //    if (m.Descripcion == "Alumno" || m.Descripcion == "Administrador")
-            //        Menu1.Items.Add( new MenuItem("")) ;
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "printHello();", true);
+            this.lblUsuarioLogeado.Text = "Bienvenido " + usuarioLog.Nombre + " ";
+            foreach (Modulo m in usuarioLog.Modulo)
+            {
+                if ((m.Descripcion == "NoDocente") || (m.Descripcion == "Administrador"))
+                this.menuArchivo.Visible = true; //ESTO FUNCIONA
+                
             //    if (m.Descripcion == "Docente" || m.Descripcion == "Administrador")
             //        btnComisiones.Visible = true;
             //    if (m.Descripcion == "NoDocente" || m.Descripcion == "Administrador")
             //        btnUsuarios.Visible = true;
 
-            //}
+            }
         }
 
     }

@@ -22,7 +22,7 @@ namespace Academia.UI.Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            Session["usuarioLogueado"] = null;
         }
 
         protected void btnAceptar_Click(object sender, EventArgs e)
@@ -34,5 +34,7 @@ namespace Academia.UI.Web
                 Page.Response.Redirect("~/Home.aspx");
             }
         }
+
+
     }
 }
