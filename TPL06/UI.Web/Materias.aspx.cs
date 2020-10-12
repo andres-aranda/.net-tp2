@@ -79,7 +79,7 @@ namespace Academia.UI.Web
 
             foreach (Modulo m in usuarioLog.Modulo)
             {
-                if (!(m.Descripcion == "Administrador"))
+                if (!(m.Descripcion == "Alumno" || m.Descripcion == "Administrador"))
                     Page.Response.Redirect("~/PaginaNoPermitida2.aspx");
             }
             LoadGrid();

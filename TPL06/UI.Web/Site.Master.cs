@@ -12,8 +12,6 @@ namespace Academia.UI.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-            this.menuArchivo.Visible = false;
             this.gestionAcademica.Visible = false;
             this.gestionAlumno.Visible = false;
             this.gestionDocente.Visible = false;
@@ -22,14 +20,12 @@ namespace Academia.UI.Web
             this.lblUsuarioLogeado.Text = "Bienvenido " + usuarioLog.Nombre + " ";
             foreach (Modulo m in usuarioLog.Modulo)
             {
-                if ((m.Descripcion == "NoDocente") || (m.Descripcion == "Administrador"))
-                this.menuArchivo.Visible = true; //ESTO FUNCIONA
-                
-            //    if (m.Descripcion == "Docente" || m.Descripcion == "Administrador")
-            //        btnComisiones.Visible = true;
-            //    if (m.Descripcion == "NoDocente" || m.Descripcion == "Administrador")
-            //        btnUsuarios.Visible = true;
-
+                if (m.Descripcion == "Alumno" || m.Descripcion == "Administrador")
+                    this.gestionAlumno.Visible = true;
+                if (m.Descripcion == "Docente" || m.Descripcion == "Administrador")
+                    this.gestionDocente.Visible = true;
+                if (m.Descripcion == "No docente" || m.Descripcion == "Administrador")
+                    this.gestionAcademica.Visible = true;
             }
         }
 

@@ -45,35 +45,29 @@
             <td id="sidebar" valign="top" width="150">
                 <div id="menuArchivo" runat="server">
                 <h3>Archivo</h3>
-                    <h4><a href="Materias.aspx" id="hlikMateria" runat="server">Modulo</a></h4>
+                    <h4><a href="" id="hlikMateria" runat="server">Modulo</a></h4>
                     <h4><a href="Usuarios.aspx">Usuario</a></h4>
                     <h4><a href="Login.aspx">Cerar Sesion</a></h4>
-                    <asp:BulletedList ID="BulletedList1" runat="server" Height="107px">
-                        <asp:ListItem>Modulo</asp:ListItem>
-                        <asp:ListItem>Usuario</asp:ListItem>
-                        <asp:ListItem>Cerrar Sesion</asp:ListItem>  
-                    </asp:BulletedList>
+                    <h4><a href="http://www.google.com"> Salir</a></h4>
+
                 </div>
                 <div id="gestionAcademica" runat="server">
                 <h3>Gestión académica</h3>
-                    <asp:BulletedList ID="BulletedList2" runat="server"  Height="137px" Width="241px">
-                        <asp:ListItem>Personas</asp:ListItem>
-                        <asp:ListItem>Comisiones</asp:ListItem>
-                        <asp:ListItem>Cursos</asp:ListItem>
-                        <asp:ListItem>Especialidades</asp:ListItem>
-                        <asp:ListItem>Materias</asp:ListItem>
-                        <asp:ListItem>Planes</asp:ListItem>
-                    </asp:BulletedList>
+                    <h4><a href="">Personas</a></h4>
+                    <h4><a href="Comisiones.aspx">Comisiones</a></h4>
+                    <h4><a href="">Cursos</a></h4>
+                    <h4><a href="">Especialidades</a></h4>
+                    <h4><a href="Materias.aspx">Materias</a></h4>
+                    <h4><a href="">Planes</a></h4>
                 </div>
                 <div id="gestionDocente" runat="server">
-                    <h3>Gestión docente</h3>
+                <h3>Gestión docente</h3>
+                    <h4><a href="">No definido</a></h4>
                 </div>
                 <div id="gestionAlumno" runat="server">
-                    <h3>Gestión de alumno</h3>
-                    <asp:BulletedList ID="BulletedList4" runat="server"  Height="32px">
-                        <asp:ListItem>Inscripcion a cursar</asp:ListItem>    
-                    </asp:BulletedList>
-                </div>
+                <h3>Gestión de alumno</h3>
+                    <h4><a href="">Inscripcion a cursar</a></h4>
+                    </div>
             </td> 
              
             <td valign="top" align="left">              

@@ -60,15 +60,6 @@ namespace Academia.UI.Web
         protected global::System.Web.UI.HtmlControls.HtmlAnchor hlikMateria;
 
         /// <summary>
-        /// Control BulletedList1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.BulletedList BulletedList1;
-
-        /// <summary>
         /// Control gestionAcademica.
         /// </summary>
         /// <remarks>
@@ -76,15 +67,6 @@ namespace Academia.UI.Web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl gestionAcademica;
-
-        /// <summary>
-        /// Control BulletedList2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.BulletedList BulletedList2;
 
         /// <summary>
         /// Control gestionDocente.
@@ -103,15 +85,6 @@ namespace Academia.UI.Web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl gestionAlumno;
-
-        /// <summary>
-        /// Control BulletedList4.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.BulletedList BulletedList4;
 
         /// <summary>
         /// Control PageContent.
