@@ -22,6 +22,10 @@ namespace Academia.UI.Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["usuarioLogueado"] != null)
+            {
+                Page.Response.Redirect("~/Home.aspx");
+            }
             Session["usuarioLogueado"] = null;
         }
 

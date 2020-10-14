@@ -12,10 +12,10 @@ namespace Academia.UI.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Usuario usuarioLog = (Usuario)Session["usuarioLogueado"];
             this.gestionAcademica.Visible = false;
             this.gestionAlumno.Visible = false;
             this.gestionDocente.Visible = false;
-            Usuario usuarioLog = (Usuario)Session["usuarioLogueado"];
             ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "printHello();", true);
             this.lblUsuarioLogeado.Text = "Bienvenido " + usuarioLog.Nombre + " ";
             foreach (Modulo m in usuarioLog.Modulo)
