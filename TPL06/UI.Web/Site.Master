@@ -7,7 +7,7 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-    <link rel="stylesheet" href="Styles/master-styles.css" />
+    <link rel="stylesheet" href="master-style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="Resources/apple-touch-icon.png">
@@ -44,30 +44,35 @@
             <!-- site navigation --> 
             <td id="sidebar" valign="top" width="150">
                 <div id="menuArchivo" runat="server">
-                <h3>Archivo</h3>
-                    <h4><a href="" id="hlikMateria" runat="server">Modulo</a></h4>
-                    <h4><a href="Usuarios.aspx">Usuario</a></h4>
-                    <h4><a href="Login.aspx">Cerar Sesion</a></h4>
-                    <h4><a href="http://www.google.com"> Salir</a></h4>
-
+                    <ul>
+                        <li><a href="Login.aspx">Cerrar Sesión</a></li>
+                        <li><a href="Usuarios.aspx">Usuarios</a></li>
+                    </ul>
+                    
                 </div>
                 <div id="gestionAcademica" runat="server">
-                <h3>Gestión académica</h3>
-                    <h4><a href="">Personas</a></h4>
-                    <h4><a href="Comisiones.aspx">Comisiones</a></h4>
-                    <h4><a href="">Cursos</a></h4>
-                    <h4><a href="">Especialidades</a></h4>
-                    <h4><a href="Materias.aspx">Materias</a></h4>
-                    <h4><a href="">Planes</a></h4>
+                    <h3>Gestión académica</h3>
+                    <ul>
+                    <li><a href="">Personas</a></li>
+                    <li><a href="Comisiones.aspx">Comisiones</a></li>
+                    <li><a href="">Cursos</a></li>
+                    <li><a href="">Especialidades</a></li>
+                    <li><a href="Materias.aspx">Materias</a></li>
+                    <li><a href="">Planes</a></li>
+                    </ul>
                 </div>
                 <div id="gestionDocente" runat="server">
-                <h3>Gestión docente</h3>
-                    <h4><a href="">No definido</a></h4>
+                    <h3>Gestión docente</h3>
+                    <ul>
+                        <li><a href="">No definido</a></li>
+                    </ul>
                 </div>
                 <div id="gestionAlumno" runat="server">
-                <h3>Gestión de alumno</h3>
-                    <h4><a href="">Inscripcion a cursar</a></h4>
-                    </div>
+                    <h3>Gestión de alumno</h3>
+                    <ul>
+                        <li><a href="">Inscripcion a cursar</a></li>
+                    </ul>
+                </div>
             </td> 
              
             <td valign="top" align="left">              

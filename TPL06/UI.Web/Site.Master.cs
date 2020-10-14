@@ -17,7 +17,21 @@ namespace Academia.UI.Web
             this.gestionAlumno.Visible = false;
             this.gestionDocente.Visible = false;
             ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "printHello();", true);
-            this.lblUsuarioLogeado.Text = "Bienvenido " + usuarioLog.Nombre + " ";
+            string text;
+            TimeSpan now = DateTime.Now.TimeOfDay;
+            if (now >= TimeSpan.Parse("05:00") && now < TimeSpan.Parse("13:00"))
+            {
+                text = "Buenos días, ";
+            }
+            else if (now >= TimeSpan.Parse("13:00") && now < TimeSpan.Parse("18:00"))
+            {
+                text = "Buenas tardes, ";
+            }
+            else
+            {
+                text = "Buenas noches, ";
+            }
+            this.lblUsuarioLogeado.Text =  text + usuarioLog.Nombre;
             foreach (Modulo m in usuarioLog.Modulo)
             {
                 if (m.Descripcion == "Alumno" || m.Descripcion == "Administrador")

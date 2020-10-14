@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="master-style.css" />
     <Content Include="PaginaNoPermitida.aspx" />
     <Content Include="Resources\alto.gif" />
     <Content Include="Resources\android-chrome-192x192.png" />
@@ -90,7 +91,6 @@
     <Content Include="Resources\mstile-70x70.png" />
     <Content Include="Resources\safari-pinned-tab.svg" />
     <Content Include="Styles\login-styles.css" />
-    <Content Include="Styles\master-styles.css" />
     <Content Include="Styles\no-permitido.css" />
     <Content Include="UsuarioForm.aspx" />
     <Content Include="Usuarios.aspx" />

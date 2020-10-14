@@ -18,14 +18,12 @@
     width: 150px;
 }
 a {
-    border-radius: 50px;
-    background: cornflowerblue;
+    border-radius: .1rem;
+    font-size: 1.25rem;
+    background: #1D201F;
     color: white;
     margin-top: 5px;
-    padding-bottom: 5px;
-    padding-top: 3px;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding: .75rem 1.5rem .75rem 1.5rem;
     text-decoration: blink;
 }
 

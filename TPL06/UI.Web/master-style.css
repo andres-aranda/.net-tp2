@@ -19,6 +19,7 @@ table {
 td {
     padding: 0rem 2rem 0rem 2rem;
     border: none;
+    min-width: 15rem;
 }
 
 #sidebar-row, #main-table, #form1, #sidebar {
@@ -33,16 +34,33 @@ td {
 ul {
     padding: 0;
 }
+
 li {
     list-style-type: none;
 }
-a:hover {
-    color: var(--color-secundario);
+
+a {
+    color: var(--color-claro);
+    text-decoration: none;
+    transition: font-weight .3s ease-in-out;
+    transition: font-size .3s ease-in-out;
 }
+
+    a:hover {
+        color: var(--color-secundario);
+        font-weight: 700;
+        font-size: 1.25rem;
+    }
 
 h1 {
     font-family: 'Zilla Slab', serif;
     font-weight: 600;
+}
+
+h3 {
+    font-weight: 900;
+    margin-bottom: 0;
+    padding-bottom:0;
 }
 
 #icon {
