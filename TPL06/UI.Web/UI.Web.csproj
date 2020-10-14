@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="PaginaNoPermitida2.aspx" />
+    <Content Include="Resources\alto.gif" />
     <Content Include="Resources\android-chrome-192x192.png" />
     <Content Include="Resources\android-chrome-512x512.png" />
     <Content Include="Resources\apple-touch-icon.png" />
@@ -91,6 +92,7 @@
     <Content Include="Resources\safari-pinned-tab.svg" />
     <Content Include="Styles\login-styles.css" />
     <Content Include="Styles\master-styles.css" />
+    <Content Include="Styles\no-permitido.css" />
     <Content Include="UsuarioForm.aspx" />
     <Content Include="Usuarios.aspx" />
     <Content Include="Web.config" />

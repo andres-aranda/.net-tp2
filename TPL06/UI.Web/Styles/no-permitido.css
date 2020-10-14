@@ -1,0 +1,31 @@
+﻿body {
+
+}
+.containerNoPermitido {
+   
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 40% ;
+    width: 100% !important;
+}
+.containerNoPermitido, p {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: larger;
+}
+.containerNoPermitido, img {
+    width: 150px;
+}
+a {
+    border-radius: 50px;
+    background: cornflowerblue;
+    color: white;
+    margin-top: 5px;
+    padding-bottom: 5px;
+    padding-top: 3px;
+    padding-right: 15px;
+    padding-left: 15px;
+    text-decoration: blink;
+}
+
