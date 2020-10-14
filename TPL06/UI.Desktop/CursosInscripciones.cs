@@ -55,7 +55,7 @@ namespace Academia.UI.Desktop
 
         private void CrearInscripcion()
         {
-           
+
         }
 
         private void ModificarInscripcion()
