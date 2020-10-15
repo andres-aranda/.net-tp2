@@ -1,6 +1,6 @@
 ﻿namespace Academia.UI.Desktop
 {
-    partial class CursosInscripciones
+    partial class Inscripciones
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CursosInscripciones));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inscripciones));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsbCrearAlumnoInscripciones = new System.Windows.Forms.ToolStripButton();
             this.tsbModificarAlumnoInscripciones = new System.Windows.Forms.ToolStripButton();
@@ -59,7 +59,7 @@
             this.tsbEliminarAlumnoInscripciones});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(800, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(600, 27);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -69,7 +69,7 @@
             this.tsbCrearAlumnoInscripciones.Image = ((System.Drawing.Image)(resources.GetObject("tsbCrearAlumnoInscripciones.Image")));
             this.tsbCrearAlumnoInscripciones.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbCrearAlumnoInscripciones.Name = "tsbCrearAlumnoInscripciones";
-            this.tsbCrearAlumnoInscripciones.Size = new System.Drawing.Size(29, 24);
+            this.tsbCrearAlumnoInscripciones.Size = new System.Drawing.Size(24, 24);
             this.tsbCrearAlumnoInscripciones.Text = "Nuevo";
             this.tsbCrearAlumnoInscripciones.Click += new System.EventHandler(this.tsbCrearAlumnoInscripciones_Click);
             // 
@@ -79,7 +79,7 @@
             this.tsbModificarAlumnoInscripciones.Image = ((System.Drawing.Image)(resources.GetObject("tsbModificarAlumnoInscripciones.Image")));
             this.tsbModificarAlumnoInscripciones.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbModificarAlumnoInscripciones.Name = "tsbModificarAlumnoInscripciones";
-            this.tsbModificarAlumnoInscripciones.Size = new System.Drawing.Size(29, 28);
+            this.tsbModificarAlumnoInscripciones.Size = new System.Drawing.Size(24, 24);
             this.tsbModificarAlumnoInscripciones.Text = "Editar";
             this.tsbModificarAlumnoInscripciones.Click += new System.EventHandler(this.tsbModificarAlumnoInscripciones_Click);
             // 
@@ -89,7 +89,7 @@
             this.tsbEliminarAlumnoInscripciones.Image = ((System.Drawing.Image)(resources.GetObject("tsbEliminarAlumnoInscripciones.Image")));
             this.tsbEliminarAlumnoInscripciones.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEliminarAlumnoInscripciones.Name = "tsbEliminarAlumnoInscripciones";
-            this.tsbEliminarAlumnoInscripciones.Size = new System.Drawing.Size(29, 28);
+            this.tsbEliminarAlumnoInscripciones.Size = new System.Drawing.Size(24, 24);
             this.tsbEliminarAlumnoInscripciones.Text = "Eliminar";
             this.tsbEliminarAlumnoInscripciones.Click += new System.EventHandler(this.tsbEliminarAlumnoInscripciones_Click);
             // 
@@ -106,13 +106,12 @@
             this.NotaColumn});
             this.dgvAlumnoInscripciones.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvAlumnoInscripciones.Location = new System.Drawing.Point(0, 27);
-            this.dgvAlumnoInscripciones.Margin = new System.Windows.Forms.Padding(4);
             this.dgvAlumnoInscripciones.Name = "dgvAlumnoInscripciones";
             this.dgvAlumnoInscripciones.ReadOnly = true;
             this.dgvAlumnoInscripciones.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvAlumnoInscripciones.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvAlumnoInscripciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAlumnoInscripciones.Size = new System.Drawing.Size(800, 423);
+            this.dgvAlumnoInscripciones.Size = new System.Drawing.Size(600, 339);
             this.dgvAlumnoInscripciones.TabIndex = 2;
             // 
             // CursoColumn
@@ -145,10 +144,9 @@
             // btnActualizar
             // 
             this.btnActualizar.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnActualizar.Location = new System.Drawing.Point(588, 391);
-            this.btnActualizar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnActualizar.Location = new System.Drawing.Point(441, 313);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(100, 28);
+            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
             this.btnActualizar.TabIndex = 1;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
@@ -158,10 +156,9 @@
             // 
             this.btnSalir.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnSalir.Location = new System.Drawing.Point(696, 391);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSalir.Location = new System.Drawing.Point(522, 313);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(100, 28);
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -177,12 +174,11 @@
             this.tlAlumnoInscripciones.Controls.Add(this.btnSalir, 1, 1);
             this.tlAlumnoInscripciones.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlAlumnoInscripciones.Location = new System.Drawing.Point(0, 27);
-            this.tlAlumnoInscripciones.Margin = new System.Windows.Forms.Padding(4);
             this.tlAlumnoInscripciones.Name = "tlAlumnoInscripciones";
             this.tlAlumnoInscripciones.RowCount = 2;
             this.tlAlumnoInscripciones.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlAlumnoInscripciones.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlAlumnoInscripciones.Size = new System.Drawing.Size(800, 423);
+            this.tlAlumnoInscripciones.Size = new System.Drawing.Size(600, 339);
             this.tlAlumnoInscripciones.TabIndex = 3;
             // 
             // dataGridView1
@@ -198,14 +194,13 @@
             this.dataGridViewTextBoxColumn3});
             this.tlAlumnoInscripciones.SetColumnSpan(this.dataGridView1, 2);
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(4, 4);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(792, 379);
+            this.dataGridView1.Size = new System.Drawing.Size(594, 304);
             this.dataGridView1.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn1
@@ -235,16 +230,17 @@
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 125;
             // 
-            // CursosInscripciones
+            // Inscripciones
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.tlAlumnoInscripciones);
             this.Controls.Add(this.dgvAlumnoInscripciones);
             this.Controls.Add(this.toolStrip1);
-            this.Name = "CursosInscripciones";
-            this.Text = "Inscripciones Cursos";
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Name = "Inscripciones";
+            this.Text = "Inscripciones";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnoInscripciones)).EndInit();

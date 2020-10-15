@@ -82,23 +82,11 @@
     <Compile Include="Especialidades.Designer.cs">
       <DependentUpon>Especialidades.cs</DependentUpon>
     </Compile>
-    <Compile Include="CursosInscripciones.cs">
+    <Compile Include="Inscripciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CursosInscripciones.Designer.cs">
-      <DependentUpon>CursosInscripciones.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CursoInscripcionDesktop.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CursoInscripcionDesktop.Designer.cs">
-      <DependentUpon>CursoInscripcionDesktop.cs</DependentUpon>
-    </Compile>
-    <Compile Include="InscripcionMateria.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InscripcionMateria.Designer.cs">
-      <DependentUpon>InscripcionMateria.cs</DependentUpon>
+    <Compile Include="Inscripciones.Designer.cs">
+      <DependentUpon>Inscripciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -177,20 +165,14 @@
     <EmbeddedResource Include="Comisiones.resx">
       <DependentUpon>Comisiones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CursoInscripcionDesktop.resx">
-      <DependentUpon>CursoInscripcionDesktop.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CursosInscripciones.resx">
-      <DependentUpon>CursosInscripciones.cs</DependentUpon>
+    <EmbeddedResource Include="Inscripciones.resx">
+      <DependentUpon>Inscripciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EspecialidadDesktop.resx">
       <DependentUpon>EspecialidadDesktop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Especialidades.resx">
       <DependentUpon>Especialidades.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InscripcionMateria.resx">
-      <DependentUpon>InscripcionMateria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

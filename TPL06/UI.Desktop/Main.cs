@@ -132,7 +132,7 @@ namespace Academia.UI.Desktop
 
         private void mnuInscripcionCursos_Click(object sender, EventArgs e)
         {
-            AbrirFormularioHijo(new CursosInscripciones(1));
+            AbrirFormularioHijo(new Inscripciones(1));
 
             // COMO IDENTIFICO EL ID DEL ALUMNO LOGUEADO??????????? Donde esta el 1 tiene que ir algo como "IdAlumnoActual"
         }

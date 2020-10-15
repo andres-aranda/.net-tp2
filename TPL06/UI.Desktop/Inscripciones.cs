@@ -12,10 +12,10 @@ using Business.Logic;
 
 namespace Academia.UI.Desktop
 {
-    public partial class CursosInscripciones : Form
+    public partial class Inscripciones : Form
     {
         private int IdAlumno;
-        public CursosInscripciones(int IdAlumno)
+        public Inscripciones(int IdAlumno)
         {
             InitializeComponent();
             this.IdAlumno = IdAlumno;

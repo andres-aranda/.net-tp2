@@ -13,7 +13,7 @@
   <Class Name="Business.Entities.Comision">
     <Position X="8.5" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAEAABAEBAAAAAAAEEAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAEAABAEAAAAAAAAEEAAAAAAEAAA=</HashCode>
       <FileName>Comision.cs</FileName>
     </TypeIdentifier>
   </Class>
