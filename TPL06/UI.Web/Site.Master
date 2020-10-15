@@ -45,13 +45,7 @@
         <tr id="sidebar-row"> 
             <!-- site navigation --> 
             <td id="sidebar" valign="top" width="150">
-                <div id="menuArchivo" runat="server">
-                    <ul>
-                        <li><a href="Login.aspx" runat="server" onserverclick="LogOut_ServerClick">Cerrar Sesión</a></li>
-                        <li><a href="Usuarios.aspx">Usuarios</a></li>
-                    </ul>
-                    
-                </div>
+
                 <div id="gestionAcademica" runat="server">
                     <h3>Gestión académica</h3>
                     <ul>
@@ -74,6 +68,15 @@
                     <ul>
                         <li><a href="">Inscripcion a cursar</a></li>
                     </ul>
+                </div>
+                <hr>
+                   <div id="menuArchivo" runat="server">
+                    <ul>
+                        <li><a href="Login.aspx" runat="server" onserverclick="LogOut_ServerClick">Cerrar Sesión</a></li>
+                        <li><a href="Usuarios.aspx">Usuarios</a></li>
+                        <li><a href="https://www.google.com">Salir</a></li>
+                    </ul>
+                    
                 </div>
             </td> 
              

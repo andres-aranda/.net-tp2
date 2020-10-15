@@ -42,7 +42,7 @@ namespace Academia.UI.Web
                     this.gestionAlumno.Visible = true;
                 if (m.Descripcion == "Docente" || m.Descripcion == "Administrador")
                     this.gestionDocente.Visible = true;
-                if (m.Descripcion == "No docente" || m.Descripcion == "Administrador")
+                if (m.Descripcion == "NoDocente" || m.Descripcion == "Administrador")
                     this.gestionAcademica.Visible = true;
             }
         }
