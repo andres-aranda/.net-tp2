@@ -45,7 +45,7 @@
             <td id="sidebar" valign="top" width="150">
                 <div id="menuArchivo" runat="server">
                     <ul>
-                        <li><a href="Login.aspx">Cerrar Sesión</a></li>
+                        <li><a href="Login.aspx" runat="server" onserverclick="LogOut_ServerClick">Cerrar Sesión</a></li>
                         <li><a href="Usuarios.aspx">Usuarios</a></li>
                     </ul>
                     

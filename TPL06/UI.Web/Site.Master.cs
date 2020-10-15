@@ -13,6 +13,10 @@ namespace Academia.UI.Web
         protected void Page_Load(object sender, EventArgs e)
         {
             Usuario usuarioLog = (Usuario)Session["usuarioLogueado"];
+            if (usuarioLog == null)
+            {
+                Page.Response.Redirect("~/Login.aspx");
+            }
             this.gestionAcademica.Visible = false;
             this.gestionAlumno.Visible = false;
             this.gestionDocente.Visible = false;
@@ -43,5 +47,10 @@ namespace Academia.UI.Web
             }
         }
 
+        protected void LogOut_ServerClick(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Page.Response.Redirect("~/Login.aspx");
+        }
     }
 }
