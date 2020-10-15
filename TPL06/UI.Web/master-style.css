@@ -46,11 +46,11 @@ a {
     transition: font-size .3s ease-in-out;
 }
 
-    a:hover {
-        color: var(--color-secundario);
-        font-weight: 700;
-        font-size: 1.25rem;
-    }
+li a:hover {
+    color: var(--color-secundario);
+    font-weight: 700;
+    font-size: 1.25rem;
+}
 
 h1 {
     font-family: 'Zilla Slab', serif;
