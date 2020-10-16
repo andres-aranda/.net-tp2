@@ -1,5 +1,5 @@
 ## GENERAL  
-1. Refactorización de Persona y Usuario  
+1. Refactorización de Persona y Usuario
   * Los métodos que ya funcionan del ABMC Usuario tienen que trasladarse a Persona, usando INNER JOINs de usuarios y personas cuando se necesite.  
   * La clase Usuario tiene que tener sólo: ID, NombreUsuario, Clave.  
   * Si hace falta, la clase Usuario puede recuperar Apellido, Nombre, etc., pero en el fondo eso tiene que funcionar con queries a tabla personas.  
