@@ -1,17 +1,17 @@
 ## GENERAL  
 1. Refactorización de Persona y Usuario
-  * Los métodos que ya funcionan del ABMC Usuario tienen que trasladarse a Persona, usando INNER JOINs de usuarios y personas cuando se necesite.  
-  * La clase Usuario tiene que tener sólo: ID, NombreUsuario, Clave.  
-  * Si hace falta, la clase Usuario puede recuperar Apellido, Nombre, etc., pero en el fondo eso tiene que funcionar con queries a tabla personas.  
-  * La tabla usuarios tiene que tener sólo: id_usuario, nombre_usuario, clave, id_persona.  
-2. Perfil del usuario que inició sesión  
-  * Mostrar información personal.  
-  * Editar información personal.  
-3. Desktop: Funcionalidad del botón Cerrar sesión.  
-4. Desktop: Reemplazar la visualización de todos los IDs por información más relevante o no mostrarlos directamente.  
-5. Web: El logo tiene que llevar al Home.  
-6. Desktop: Arreglar categorías del menú lateral para que coincidan con las del PDF.  
-7. Web: Arreglar categorías del menú lateral para que coincidan con las del PDF.  
+  * Los métodos que ya funcionan del ABMC Usuario tienen que trasladarse a Persona, usando INNER JOINs de usuarios y personas cuando se necesite.
+  * La clase Usuario tiene que tener sólo: ID, NombreUsuario, Clave.
+  * Si hace falta, la clase Usuario puede recuperar Apellido, Nombre, etc., pero en el fondo eso tiene que funcionar con queries a tabla personas.
+  * La tabla usuarios tiene que tener sólo: id_usuario, nombre_usuario, clave, id_persona.
+2. Perfil del usuario que inició sesión
+  * Mostrar información personal.
+  * Editar información personal. 
+3. Desktop: Funcionalidad del botón Cerrar sesión.
+4. Desktop: Reemplazar la visualización de todos los IDs por información más relevante o no mostrarlos directamente.
+5. Web: El logo tiene que llevar al Home.
+6. Desktop: Arreglar categorías del menú lateral para que coincidan con las del PDF.
+7. Web: Arreglar categorías del menú lateral para que coincidan con las del PDF.
 
 
 ## ALUMNOS  
