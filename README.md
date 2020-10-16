@@ -1,10 +1,10 @@
 ## GENERAL  
-1. Refactorización de Persona y Usuario
+1. Refactorización de Persona y Usuario:
   * Los métodos que ya funcionan del ABMC Usuario tienen que trasladarse a Persona, usando INNER JOINs de usuarios y personas cuando se necesite.
   * La clase Usuario tiene que tener sólo: ID, NombreUsuario, Clave.
   * Si hace falta, la clase Usuario puede recuperar Apellido, Nombre, etc., pero en el fondo eso tiene que funcionar con queries a tabla personas.
   * La tabla usuarios tiene que tener sólo: id_usuario, nombre_usuario, clave, id_persona.
-2. Perfil del usuario que inició sesión
+2. Perfil del usuario que inició sesión:
   * Mostrar información personal.
   * Editar información personal. 
 3. Desktop: Funcionalidad del botón Cerrar sesión.
@@ -22,12 +22,12 @@
   * Confirmar.  
 
 ## PROFESORES  
-10. Ver cursos  
+10. Ver cursos:
   * Mostrar DataGrid de Cursos del profesor.  
   * El profesor selecciona un curso:  
    * Mostrar alumnos del curso (el profesor puede editar condición y nota del alumno)  
 
-11. Ver alumnos  
+11. Ver alumnos:
   * Mostar DataGrid de Alumnos del profesor.  
   * El profesor selecciona un alumno:  
    * Mostrar todos los cursos del alumno con ese profesor (el profesor puede editar condición y nota del alumno)  
