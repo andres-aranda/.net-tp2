@@ -58,6 +58,7 @@ namespace Data.Database
                 if (drUsuario.Read())
                 {
                     usr.Id = (int)drUsuario["id_usuario"];
+                    usr.IdPersona = (int)drUsuario["id_persona"];
                     usr.NombreUsuario = (string)drUsuario["nombre_usuario"];
                     usr.Clave = (string)drUsuario["clave"];
                     usr.Habilitado = (bool)drUsuario["habilitado"];

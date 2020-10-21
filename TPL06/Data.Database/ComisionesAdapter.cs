@@ -135,7 +135,40 @@ namespace Data.Database
                 CloseConnection();
             }
         }
+        public List<Comision> GetByMateria(int IdMateria)
+        {
+            List<Comision> comisiones = new List<Comision>();
+            try
+            {
+                OpenConnection();
+                SqlCommand cmdComisions = new SqlCommand("select * from materias mat" +
+                "inner join cursos cur on cur.id_materia = mat.id_materia " +
+                "inner join comisiones com on com.id_comision = cur.id_comision;" +
+                " WHERE id_materia=@idMateria"
+                 , Sqlconn);
+                cmdComisions.Parameters.Add("@idMateria", SqlDbType.Int).Value = IdMateria;
+                SqlDataReader dr = cmdComisions.ExecuteReader();
+                while (dr.Read())
+                {
+                    Comision c = new Comision
+                    {
+                        Id = (int)dr["id_comision"],
+                        DescripcionComision = (string)dr["desc_comision"],
+                        AñoEspecialidad = (int)dr["anio_especialidad"],
+                        IdPlan = (int)dr["id_plan"]
+                    };
+                    comisiones.Add(c);
+                }
 
+                dr.Close();
+                CloseConnection();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            return comisiones;
+        }
         public void Save(Comision c)
         {
             if (c.State == BusinessEntity.Estados.New)

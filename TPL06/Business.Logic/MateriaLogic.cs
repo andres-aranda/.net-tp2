@@ -21,6 +21,12 @@ namespace Business.Logic
         {
             return MateriaData.GetAll();
         }
+        
+        public List<Materia> GetByPlan(int idPLan)
+        {
+            return MateriaData.GetByPlan(idPLan);
+        }  
+    
 
         public Materia GetOne(int id)
         {

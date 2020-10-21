@@ -66,6 +66,7 @@
                 <div id="gestionAlumno" runat="server">
                     <h3>Gestión de alumno</h3>
                     <ul>
+                        <li><a href="MateriasDisponibles">Materias del plan</a></li>
                         <li><a href="">Inscripcion a cursar</a></li>
                     </ul>
                 </div>

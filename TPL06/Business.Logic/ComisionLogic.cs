@@ -36,5 +36,9 @@ namespace Business.Logic
         {
             ComisionData.Delete(id);
         }
+        public List<Comision> GetByMateria(int idMateria)
+        {
+            return ComisionData.GetByMateria(idMateria);
+        }
     }
 }

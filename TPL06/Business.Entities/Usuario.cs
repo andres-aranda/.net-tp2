@@ -19,6 +19,7 @@ namespace Business.Entities
         private String _NombreUsuario;
         private String _Email;
         private string _Clave;
+        private int _IdPersona;
         private bool _Habilitado;
         private List<Modulo> modulo;
 
@@ -59,6 +60,11 @@ namespace Business.Entities
         {
             get { return _Clave; }
             set { _Clave = value; }
+        }
+        public int IdPersona
+        {
+            get { return _IdPersona; }
+            set { _IdPersona = value; }
         }
 
         public String Email

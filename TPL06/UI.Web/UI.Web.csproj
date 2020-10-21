@@ -90,7 +90,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CursosDocente.aspx" />
+    <Content Include="InscripcionCursado.aspx" />
     <Content Include="master-style.css" />
+    <Content Include="MateriasDisponibles.aspx" />
     <Content Include="PaginaNoPermitida.aspx" />
     <Content Include="Resources\alto.gif" />
     <Content Include="Resources\android-chrome-192x192.png" />
@@ -158,6 +160,13 @@
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="InscripcionCursado.aspx.cs">
+      <DependentUpon>InscripcionCursado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InscripcionCursado.aspx.designer.cs">
+      <DependentUpon>InscripcionCursado.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -171,6 +180,13 @@
     </Compile>
     <Compile Include="MateriaForm.aspx.designer.cs">
       <DependentUpon>MateriaForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MateriasDisponibles.aspx.cs">
+      <DependentUpon>MateriasDisponibles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MateriasDisponibles.aspx.designer.cs">
+      <DependentUpon>MateriasDisponibles.aspx</DependentUpon>
     </Compile>
     <Compile Include="Materias.aspx.cs">
       <DependentUpon>Materias.aspx</DependentUpon>
