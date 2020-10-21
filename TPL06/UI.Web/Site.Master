@@ -50,24 +50,38 @@
                     <h3>Gestión académica</h3>
                     <ul>
                     <li><a href="">Personas</a></li>
-                    <li><a href="Comisiones.aspx">Comisiones</a></li>
-                    <li><a href="">Cursos</a></li>
+                    <li><a href="">Usuarios</a></li>
+                    <li><a href="">Planes</a></li>
                     <li><a href="">Especialidades</a></li>
                     <li><a href="Materias.aspx">Materias</a></li>
-                    <li><a href="">Planes</a></li>
-                    </ul>
+                    <li><a href="Comisiones.aspx">Comisiones</a></li>
+                    <li><a href="">Cursos</a></li>                 
+                  </ul>
                 </div>
                 <div id="gestionDocente" runat="server">
                     <h3>Gestión docente</h3>
                     <ul>
-                        <li><a href="">No definido</a></li>
+                        <li><a href="">Cursos</a></li>
+                    </ul>
+                </div>
+                <div id="docente" runat="server">
+                    <h3>Docente</h3>
+                    <ul>
+                        <li><a href="">Mis cursos</a></li>
+                        <li><a href="">Mis alumnos</a></li>
+                    </ul>
+                </div>
+                <div id="alumno" runat="server">
+                    <h3>Alumno</h3>
+                    <ul>
+                        <li><a href="">Mis cursos</a></li>
+                        <li><a href="InscripcionCursado.aspx">Inscripcion a cursar</a></li>
                     </ul>
                 </div>
                 <div id="gestionAlumno" runat="server">
-                    <h3>Gestión de alumno</h3>
+                    <h3>Gestion Alumno</h3>
                     <ul>
-                        <li><a href="MateriasDisponibles">Materias del plan</a></li>
-                        <li><a href="">Inscripcion a cursar</a></li>
+                        <li><a href="">Inscripciones</a></li>
                     </ul>
                 </div>
                 <hr>

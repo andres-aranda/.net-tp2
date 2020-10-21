@@ -60,6 +60,24 @@ namespace Academia.UI.Web
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl gestionDocente;
 
         /// <summary>
+        /// Control docente.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl docente;
+
+        /// <summary>
+        /// Control alumno.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alumno;
+
+        /// <summary>
         /// Control gestionAlumno.
         /// </summary>
         /// <remarks>

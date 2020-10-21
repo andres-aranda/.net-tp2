@@ -19,7 +19,9 @@ namespace Academia.UI.Web
             }
             this.gestionAcademica.Visible = false;
             this.gestionAlumno.Visible = false;
+            this.alumno.Visible = false;
             this.gestionDocente.Visible = false;
+            this.docente.Visible = false;
             ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "printHello();", true);
             string text;
             TimeSpan now = DateTime.Now.TimeOfDay;
@@ -38,12 +40,16 @@ namespace Academia.UI.Web
             this.lblUsuarioLogeado.Text =  text + usuarioLog.Nombre;
             foreach (Modulo m in usuarioLog.Modulo)
             {
-                if (m.Descripcion == "Alumno" || m.Descripcion == "Administrador")
-                    this.gestionAlumno.Visible = true;
-                if (m.Descripcion == "Docente" || m.Descripcion == "Administrador")
-                    this.gestionDocente.Visible = true;
+                if (m.Descripcion == "Alumno" )
+                    this.alumno.Visible = true;
+                if (m.Descripcion == "Docente" )
+                    this.docente.Visible = true;
                 if (m.Descripcion == "NoDocente" || m.Descripcion == "Administrador")
+                {
                     this.gestionAcademica.Visible = true;
+                    this.gestionAlumno.Visible = true;
+                    this.gestionDocente.Visible = true;
+                }
             }
         }
 

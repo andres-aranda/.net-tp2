@@ -11,9 +11,36 @@ namespace Academia.UI.Web
 {
     public partial class InscripcionCursado : System.Web.UI.Page
     {
+        MateriaLogic _logic;
+        private MateriaLogic Logic
+        {
+            get
+            {
+                if (_logic == null)
+                {
+                    _logic = new MateriaLogic();
+                }
+                return _logic;
+            }
+        }
+        PersonaLogic _logicPer;
+        private PersonaLogic LogicPer
+        {
+            get
+            {
+                if (_logicPer == null)
+                {
+                    _logicPer = new PersonaLogic();
+                }
+                return _logicPer;
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
-
+        Usuario usuario = (Usuario)Session["usuarioLogueado"];
+        int idPersona = usuario.IdPersona;
+        Persona per = LogicPer.GetOne(idPersona);
+       buscarMaterias(per.IdPlan);
         }
         private List<Comision> buscarComisiones(int idMateria){
             ComisionLogic comLog = new ComisionLogic();
@@ -25,5 +52,12 @@ namespace Academia.UI.Web
             cmbComision.DataSource = buscarComisiones(idMateria);
             cmbComision.DataBind();
         }
+       
+    
+    private void buscarMaterias(int idPlan)
+    {
+        this.cmbMateria.DataSource = Logic.GetByPlan(idPlan);
+        this.cmbMateria.DataBind();
     }
+}
 }

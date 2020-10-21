@@ -56,11 +56,13 @@
             // tscUsuarios.ContentPanel
             // 
             this.tscUsuarios.ContentPanel.Controls.Add(this.tlModulos);
-            this.tscUsuarios.ContentPanel.Size = new System.Drawing.Size(467, 221);
+            this.tscUsuarios.ContentPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tscUsuarios.ContentPanel.Size = new System.Drawing.Size(623, 251);
             this.tscUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tscUsuarios.Location = new System.Drawing.Point(0, 0);
+            this.tscUsuarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tscUsuarios.Name = "tscUsuarios";
-            this.tscUsuarios.Size = new System.Drawing.Size(467, 246);
+            this.tscUsuarios.Size = new System.Drawing.Size(623, 303);
             this.tscUsuarios.TabIndex = 2;
             this.tscUsuarios.Text = "toolStripContainer1";
             // 
@@ -80,11 +82,12 @@
             this.tlModulos.Controls.Add(this.btnSalir, 1, 1);
             this.tlModulos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlModulos.Location = new System.Drawing.Point(0, 0);
+            this.tlModulos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tlModulos.Name = "tlModulos";
             this.tlModulos.RowCount = 2;
             this.tlModulos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlModulos.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlModulos.Size = new System.Drawing.Size(467, 221);
+            this.tlModulos.Size = new System.Drawing.Size(623, 251);
             this.tlModulos.TabIndex = 0;
             // 
             // dgvPlanes
@@ -99,39 +102,48 @@
             this.IdEspecialidad});
             this.tlModulos.SetColumnSpan(this.dgvPlanes, 2);
             this.dgvPlanes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvPlanes.Location = new System.Drawing.Point(3, 3);
+            this.dgvPlanes.Location = new System.Drawing.Point(4, 4);
+            this.dgvPlanes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvPlanes.Name = "dgvPlanes";
             this.dgvPlanes.ReadOnly = true;
-            this.dgvPlanes.Size = new System.Drawing.Size(461, 186);
+            this.dgvPlanes.RowHeadersWidth = 51;
+            this.dgvPlanes.Size = new System.Drawing.Size(615, 207);
             this.dgvPlanes.TabIndex = 0;
             // 
             // id
             // 
             this.id.DataPropertyName = "Id";
             this.id.HeaderText = "ID";
+            this.id.MinimumWidth = 6;
             this.id.Name = "id";
             this.id.ReadOnly = true;
+            this.id.Width = 125;
             // 
             // descripcion
             // 
             this.descripcion.DataPropertyName = "DescripcionComision";
             this.descripcion.HeaderText = "DescripcionComision";
+            this.descripcion.MinimumWidth = 6;
             this.descripcion.Name = "descripcion";
             this.descripcion.ReadOnly = true;
+            this.descripcion.Width = 125;
             // 
             // IdEspecialidad
             // 
             this.IdEspecialidad.DataPropertyName = "IdEspecialidad";
             this.IdEspecialidad.HeaderText = "ID especialidad";
+            this.IdEspecialidad.MinimumWidth = 6;
             this.IdEspecialidad.Name = "IdEspecialidad";
             this.IdEspecialidad.ReadOnly = true;
+            this.IdEspecialidad.Width = 125;
             // 
             // btnActualizar
             // 
             this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizar.Location = new System.Drawing.Point(308, 195);
+            this.btnActualizar.Location = new System.Drawing.Point(411, 219);
+            this.btnActualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizar.Size = new System.Drawing.Size(100, 28);
             this.btnActualizar.TabIndex = 1;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
@@ -139,9 +151,10 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(389, 195);
+            this.btnSalir.Location = new System.Drawing.Point(519, 219);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.Size = new System.Drawing.Size(100, 28);
             this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -150,13 +163,14 @@
             // tsModulos
             // 
             this.tsModulos.Dock = System.Windows.Forms.DockStyle.None;
+            this.tsModulos.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.tsModulos.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbNuevo,
             this.tsbEditar,
             this.tsbEliminar});
-            this.tsModulos.Location = new System.Drawing.Point(3, 0);
+            this.tsModulos.Location = new System.Drawing.Point(4, 0);
             this.tsModulos.Name = "tsModulos";
-            this.tsModulos.Size = new System.Drawing.Size(81, 25);
+            this.tsModulos.Size = new System.Drawing.Size(100, 27);
             this.tsModulos.TabIndex = 0;
             // 
             // tsbNuevo
@@ -165,7 +179,7 @@
             this.tsbNuevo.Image = ((System.Drawing.Image)(resources.GetObject("tsbNuevo.Image")));
             this.tsbNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbNuevo.Name = "tsbNuevo";
-            this.tsbNuevo.Size = new System.Drawing.Size(23, 22);
+            this.tsbNuevo.Size = new System.Drawing.Size(29, 24);
             this.tsbNuevo.Text = "Nuevo";
             this.tsbNuevo.Click += new System.EventHandler(this.tsbNuevo_Click);
             // 
@@ -175,7 +189,7 @@
             this.tsbEditar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEditar.Image")));
             this.tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEditar.Name = "tsbEditar";
-            this.tsbEditar.Size = new System.Drawing.Size(23, 22);
+            this.tsbEditar.Size = new System.Drawing.Size(29, 24);
             this.tsbEditar.Text = "Editar";
             this.tsbEditar.Click += new System.EventHandler(this.TsbModificarPlan_Click);
             // 
@@ -185,7 +199,7 @@
             this.tsbEliminar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEliminar.Image")));
             this.tsbEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEliminar.Name = "tsbEliminar";
-            this.tsbEliminar.Size = new System.Drawing.Size(23, 22);
+            this.tsbEliminar.Size = new System.Drawing.Size(29, 24);
             this.tsbEliminar.Text = "Eliminar";
             this.tsbEliminar.Click += new System.EventHandler(this.TsbBorrarPlan_Click);
             // 
@@ -199,10 +213,11 @@
             // 
             // Planes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(467, 246);
+            this.ClientSize = new System.Drawing.Size(623, 303);
             this.Controls.Add(this.tscUsuarios);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Planes";
             this.Text = "Planes";
             this.Load += new System.EventHandler(this.Planes_Load);

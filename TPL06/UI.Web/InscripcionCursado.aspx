@@ -5,14 +5,14 @@
     <div id="seleccionMateria">
  <p>
         Seleccione Materia:&nbsp;
-        <asp:DropDownList ID="cmbMateria" runat="server" OnSelectedIndexChanged="cmbMateria_SelectedIndexChanged">
+        <asp:DropDownList ID="cmbMateria" runat="server" OnSelectedIndexChanged="cmbMateria_SelectedIndexChanged" DataTextField="Descripcion" DataValueField="Id">
         </asp:DropDownList>
     </p>
     </div>
     <div id="seleccionMateria">
  <p>
         Seleccione Comision:&nbsp;
-        <asp:DropDownList ID="cmbComision" runat="server">
+        <asp:DropDownList ID="cmbComision" runat="server" DataTextField="Descripcion" DataValueField="Id">
         </asp:DropDownList>
     </p>
     </div>

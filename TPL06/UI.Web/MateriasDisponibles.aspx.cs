@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 namespace Academia.UI.Web
 {
     public partial class Materias_disponibles : System.Web.UI.Page
-    {  
+    {
         #region Datos
         MateriaLogic _logic;
         private MateriaLogic Logic
@@ -23,7 +23,7 @@ namespace Academia.UI.Web
                 }
                 return _logic;
             }
-        } 
+        }
         PersonaLogic _logicPer;
         private PersonaLogic LogicPer
         {
@@ -82,5 +82,6 @@ namespace Academia.UI.Web
             this.gridView.DataSource = Logic.GetByPlan(IdPlan);
             this.gridView.DataBind();
         }
-    
+
     }
+}
