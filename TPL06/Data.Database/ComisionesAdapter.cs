@@ -141,10 +141,10 @@ namespace Data.Database
             try
             {
                 OpenConnection();
-                SqlCommand cmdComisions = new SqlCommand("select * from materias mat" +
+                SqlCommand cmdComisions = new SqlCommand("select * from materias mat " +
                 "inner join cursos cur on cur.id_materia = mat.id_materia " +
-                "inner join comisiones com on com.id_comision = cur.id_comision;" +
-                " WHERE id_materia=@idMateria"
+                "inner join comisiones com on com.id_comision = cur.id_comision" +
+                " WHERE mat.id_materia=@idMateria;"
                  , Sqlconn);
                 cmdComisions.Parameters.Add("@idMateria", SqlDbType.Int).Value = IdMateria;
                 SqlDataReader dr = cmdComisions.ExecuteReader();

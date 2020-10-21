@@ -59,5 +59,6 @@ namespace Academia.UI.Web
         this.cmbMateria.DataSource = Logic.GetByPlan(idPlan);
         this.cmbMateria.DataBind();
     }
-}
+
+    }
 }

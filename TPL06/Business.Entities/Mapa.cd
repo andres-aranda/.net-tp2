@@ -50,7 +50,7 @@
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAgAAABACAAAAAEAAAAhAAAIAEAABEAA4AAGAAAFEg=</HashCode>
+      <HashCode>AAAgAAABQCAAAAAEAAAAhAAAIAEAABEAA4IAGAAAFEg=</HashCode>
       <FileName>Usuario.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -66,9 +66,6 @@
   </Class>
   <Class Name="Business.Entities.Persona">
     <Position X="3.5" Y="5" Width="1.5" />
-    <Compartments>
-      <Compartment Name="Properties" Collapsed="true" />
-    </Compartments>
     <NestedTypes>
       <Enum Name="Business.Entities.Persona.TiposPersonas" Collapsed="true">
         <TypeIdentifier>

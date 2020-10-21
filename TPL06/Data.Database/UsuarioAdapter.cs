@@ -23,6 +23,7 @@ namespace Data.Database
                 {
                     Usuario usr = new Usuario();
                     usr.Id = (int)drUsuarios["id_usuario"];
+                    usr.IdPersona = (int)drUsuarios["id_persona"];
                     usr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
                     usr.Clave = (string)drUsuarios["clave"];
                     usr.Habilitado = (bool)drUsuarios["habilitado"];
@@ -190,6 +191,7 @@ namespace Data.Database
                 if (drUsuario.Read())
                 {
                     usuario.Id = (int)drUsuario["id_usuario"];
+                    usuario.IdPersona = (int)drUsuario["id_persona"];
                     usuario.NombreUsuario = (string)drUsuario["nombre_usuario"];
                     usuario.Clave = (string)drUsuario["clave"];
                     usuario.Habilitado = (bool)drUsuario["habilitado"];

@@ -5,8 +5,9 @@
     <div id="seleccionMateria">
  <p>
         Seleccione Materia:&nbsp;
-        <asp:DropDownList ID="cmbMateria" runat="server" OnSelectedIndexChanged="cmbMateria_SelectedIndexChanged" DataTextField="Descripcion" DataValueField="Id">
+        <asp:DropDownList ID="cmbMateria" runat="server" DataTextField="Descripcion" DataValueField="Id">
         </asp:DropDownList>
+        <asp:Button ID="Button1" runat="server" OnClick="cmbMateria_SelectedIndexChanged" Text="Refresh" />
     </p>
     </div>
     <div id="seleccionMateria">

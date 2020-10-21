@@ -26,74 +26,56 @@ namespace Business.Entities
         }
         public string Apellido
         {
-            get => default;
-            set
-            {
-            }
+            get { return _Apellido; }
+            set { _Apellido = value; }
         }
 
         public string Direccion
         {
-            get => default;
-            set
-            {
-            }
+            get { return _Direccion; }
+            set { _Direccion = value; }
         }
 
         public System.Net.Mail.MailAddress Email
         {
-            get => default;
-            set
-            {
-            }
+            get { return _Email; }
+            set { _Email = value; }
         }
 
         public DateTime FechaDeNacimiento
         {
-            get => default;
-            set
-            {
-            }
+            get { return _FechaNacimiento; }
+            set { _FechaNacimiento = value; }
         }
 
         public int IdPlan
         {
-            get => default;
-            set
-            {
-            }
+            get { return _IdPlan; }
+            set { _IdPlan = value; }
         }
 
         public int Legajo
         {
-            get => default;
-            set
-            {
-            }
+            get { return _Legajo; }
+            set { _Legajo = value; }
         }
 
         public string Nombre
         {
-            get => default;
-            set
-            {
-            }
+            get { return _Nombre; }
+            set { _Nombre = value; }
         }
 
         public string Telefono
         {
-            get => default;
-            set
-            {
-            }
+            get { return _Telefono; }
+            set { _Telefono = value; }
         }
 
         public TiposPersonas TipoPersona
         {
-            get => default;
-            set
-            {
-            }
+            get { return _TipoPersona; }
+            set { _TipoPersona = value; }
         }
     }
 }
