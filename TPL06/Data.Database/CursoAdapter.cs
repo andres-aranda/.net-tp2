@@ -111,6 +111,42 @@ namespace Data.Database
             return curso;
         }
 
+        public Curso GetByMateriaCom(int idComision, int idMateria )
+        {
+            Curso curso = new Curso();
+            MateriaAdapter matAdapt = new MateriaAdapter();
+            ComisionesAdapter comAdapt = new ComisionesAdapter();
+            try
+            {
+                OpenConnection();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM cursos WHERE id_materia = @idMateria and id_comision = @idComision", Sqlconn);
+                cmd.Parameters.Add("@idMateria", SqlDbType.Int).Value = idMateria;
+                cmd.Parameters.Add("@idMateria", SqlDbType.Int).Value = idComision;
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    curso.Id = (int)dr["id_curso"];
+                    curso.Cupo = (int)dr["cupo"];
+                    curso.IdMateria = (int)dr["id_materia"];
+                    curso.IdComision = (int)dr["id_comision"];
+                    curso.AñoCalendario = (int)dr["anio_calendario"];
+
+                    curso.Materia = matAdapt.GetOne((int)dr["id_materia"]);
+                    curso.Comision = comAdapt.GetOne((int)dr["id_comision"]);
+                }
+                dr.Close();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+            return curso;
+        }
+
         public List<Curso> GetAll()
         {
             List<Curso> cursos = new List<Curso>();

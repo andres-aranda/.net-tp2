@@ -26,6 +26,10 @@ namespace Business.Logic
         {
             return CursoData.GetOne(id);
         }
+        public Curso GetByComisionMateria(int idCom, int idMat )
+        {
+            return CursoData.GetByMateriaCom(idCom, idMat);
+        }
 
         public void Save(Curso m)
         {

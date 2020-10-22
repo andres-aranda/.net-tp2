@@ -10,8 +10,8 @@ namespace Business.Entities
         private int _AñoCalendario;
         private int _Cupo;
         private string _Descripcion;
-        private int _IdComision;
-        private int _IdMateria;
+        private int _IdComision; //TODO "segun brian borrar luego"
+        private int _IdMateria; // segun brian borrar luego 
         private Materia _Materia;
         private Comision _Comision;
 
@@ -29,42 +29,32 @@ namespace Business.Entities
         
         public int AñoCalendario
         {
-            get => default;
-            set
-            {
-            }
+            get => _AñoCalendario;
+            set => _AñoCalendario = value;
         }
 
         public int Cupo
         {
-            get => default;
-            set
-            {
-            }
+            get => _Cupo;
+            set => _Cupo = value;
         }
 
         public string Descripcion
         {
-            get => default;
-            set
-            {
-            }
+            get => _Descripcion;
+            set => _Descripcion = value;
         }
 
         public int IdComision
         {
-            get => default;
-            set
-            {
-            }
+            get => _IdComision;
+            set => _IdComision = value;
         }
 
         public int IdMateria
         {
-            get => default;
-            set
-            {
-            }
+            get => _IdMateria;
+            set => _IdMateria = value;
         }
     }
 }

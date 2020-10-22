@@ -11,7 +11,7 @@
 4. Desktop: Reemplazar la visualización de todos los IDs por información más relevante o no mostrarlos directamente.
 5. Web: El logo tiene que llevar al Home.
 6. Desktop: Arreglar categorías del menú lateral para que coincidan con las del PDF.
-7. Web: Arreglar categorías del menú lateral para que coincidan con las del PDF.
+7. Web: Arreglar categorías del menú lateral para que coincidan con las del PDF.(HECHO)
 
 
 ## ALUMNOS  

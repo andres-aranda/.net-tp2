@@ -5,7 +5,7 @@
     <div id="seleccionMateria">
  <p>
         Seleccione Materia:&nbsp;
-        <asp:DropDownList ID="cmbMateria" runat="server" DataTextField="Descripcion" DataValueField="Id">
+        <asp:DropDownList ID="cmbMateria" runat="server" DataTextField="Descripcion" DataValueField="Id" AutoPostBack="True" OnSelectedIndexChanged="cmbMateria_SelectedIndexChanged">
         </asp:DropDownList>
         <asp:Button ID="Button1" runat="server" OnClick="cmbMateria_SelectedIndexChanged" Text="Refresh" />
     </p>
@@ -13,16 +13,16 @@
     <div id="seleccionMateria">
  <p>
         Seleccione Comision:&nbsp;
-        <asp:DropDownList ID="cmbComision" runat="server" DataTextField="Descripcion" DataValueField="Id">
+        <asp:DropDownList ID="cmbComision" runat="server" DataTextField="DescripcionComision" DataValueField="Id" OnSelectedIndexChanged="cmbComision_SelectedIndexChanged">
         </asp:DropDownList>
     </p>
     </div>
-    <asp:DetailsView ID="detallesInscripcion" runat="server" Height="50px" Width="125px" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellPadding="3" CellSpacing="1" GridLines="None">
+    <asp:DetailsView ID="detallesInscripcion" runat="server" Height="39px" Width="125px" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellPadding="3" CellSpacing="1" GridLines="None">
         <EditRowStyle BackColor="#9471DE" Font-Bold="True" ForeColor="White" />
         <Fields>
             <asp:BoundField DataField="nombreMateria" HeaderText="Materia:" ReadOnly="True" SortExpression="nombreMateria" />
             <asp:BoundField DataField="nombreComison" HeaderText="Comision:" ReadOnly="True" SortExpression="nombreComison" />
-            <asp:BoundField DataField="turnoComision" HeaderText="Turno:" ReadOnly="True" SortExpression="turnoComision" />
+            <asp:BoundField DataField="añoCurso" HeaderText="Año:" ReadOnly="True" SortExpression="turnoComision" />
         </Fields>
         <FooterStyle BackColor="#C6C3C6" ForeColor="Black" />
         <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#E7E7FF" />
@@ -30,12 +30,4 @@
         <RowStyle BackColor="#DEDFDE" ForeColor="Black" />
     </asp:DetailsView>
     <asp:Button ID="inscripcion" runat="server" Text="Solicitar inscripcion" />
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
-        <Columns>
-            <asp:BoundField DataField="Descripcion" HeaderText="Materia"></asp:BoundField>
-            <asp:BoundField DataField="HsSemanales" HeaderText="Horas semanales"></asp:BoundField>
-            <asp:BoundField DataField="HsTotales" HeaderText="Horas totales"></asp:BoundField>
-            <asp:HyperLinkField NavigateUrl="https://gogole.com" Text="Inscribirse" />
-        </Columns>
-    </asp:GridView>
     </asp:Content>

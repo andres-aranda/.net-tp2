@@ -11,6 +11,8 @@ namespace Academia.UI.Web
 {
     public partial class Materias_disponibles : System.Web.UI.Page
     {
+
+
         #region Datos
         MateriaLogic _logic;
         private MateriaLogic Logic
@@ -36,11 +38,7 @@ namespace Academia.UI.Web
                 return _logicPer;
             }
         }
-        private Materia Entity
-        {
-            get;
-            set;
-        }
+            
         private int SelectedID
         {
             get
