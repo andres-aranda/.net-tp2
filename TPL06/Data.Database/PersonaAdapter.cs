@@ -164,5 +164,44 @@ namespace Data.Database
                 CloseConnection();
             }
         }
+
+        public List<Materia> GetMateriasPlan(int idPersona)
+        {
+            List<Materia> materias = new List<Materia>();
+            try
+            {
+                OpenConnection();
+                SqlCommand cmd = new SqlCommand("SELECT m.* " +
+                    "FROM personas per " +
+                    "LEFT JOIN planes p ON per.id_plan = p.id_plan " +
+                    "LEFT JOIN materias m ON p.id_plan = m.id_plan " +
+                    "WHERE per.id_persona = @id_persona;", Sqlconn);
+                cmd.Parameters.Add("@id_persona", SqlDbType.Int).Value = idPersona;
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Materia m = new Materia
+                    {
+                        Id = (int)dr["id_materia"],
+                        Descripcion = (string)dr["desc_materia"],
+                        HsSemanales = (int)dr["hs_semanales"],
+                        HsTotales = (int)dr["hs_totales"],
+                        IdPlan = (int)dr["id_plan"]
+                    };
+                    materias.Add(m);
+                }
+                dr.Close();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+            return materias;
+        }
+
     }
 }

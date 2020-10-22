@@ -30,4 +30,12 @@
         <RowStyle BackColor="#DEDFDE" ForeColor="Black" />
     </asp:DetailsView>
     <asp:Button ID="inscripcion" runat="server" Text="Solicitar inscripcion" />
-</asp:Content>
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
+        <Columns>
+            <asp:BoundField DataField="Descripcion" HeaderText="Materia"></asp:BoundField>
+            <asp:BoundField DataField="HsSemanales" HeaderText="Horas semanales"></asp:BoundField>
+            <asp:BoundField DataField="HsTotales" HeaderText="Horas totales"></asp:BoundField>
+            <asp:HyperLinkField NavigateUrl="https://gogole.com" Text="Inscribirse" />
+        </Columns>
+    </asp:GridView>
+    </asp:Content>

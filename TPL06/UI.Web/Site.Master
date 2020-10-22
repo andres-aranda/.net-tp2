@@ -17,6 +17,12 @@
     <link rel="mask-icon" href="Resources/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="Resources/msapplication-TileColor" content="#000000">
     <meta name="Resources/theme-color" content="#ffffff">
+    <style>
+        td > a {
+            background-color: black;
+            border-radius: .1rem;
+        }
+    </style>
     </head>
 <body>
    <form id="form1" runat="server"> 

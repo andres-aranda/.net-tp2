@@ -7,36 +7,40 @@ using Business.Entities;
 using Data.Database;
 
 namespace Business.Logic
+{
+    public class PersonaLogic : BusinessLogic
     {
-        public class PersonaLogic : BusinessLogic
+        public PersonaAdapter PersonaData { get; set; }
+
+        public PersonaLogic()
         {
-            public PersonaAdapter PersonaData { get; set; }
+            PersonaData = new PersonaAdapter();
+        }
 
-            public PersonaLogic()
-            {
-                PersonaData = new PersonaAdapter();
-            }
+        public List<Persona> GetAll()
+        {
+            return PersonaData.GetAll();
+        }
 
-            public List<Persona> GetAll()
-            {
-                return PersonaData.GetAll();
-            }
+        public Persona GetOne(int id)
+        {
+            return PersonaData.GetOne(id);
+        }
 
-            public Persona GetOne(int id)
-            {
-                return PersonaData.GetOne(id);
-            }
+        public void Save(Persona m)
+        {
+            PersonaData.Save(m);
+        }
 
-            public void Save(Persona m)
-            {
-                PersonaData.Save(m);
-            }
+        public void Delete(int id)
+        {
+            PersonaData.Delete(id);
+        }
 
-            public void Delete(int id)
-            {
-                PersonaData.Delete(id);
-            }
-        
+        public List<Materia> GetMateriasPlan(int idPersona)
+        {
+            return PersonaData.GetMateriasPlan(idPersona);
         }
     }
+}
 

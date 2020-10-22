@@ -37,10 +37,12 @@ namespace Academia.UI.Web
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-        Usuario usuario = (Usuario)Session["usuarioLogueado"];
-        int idPersona = usuario.IdPersona;
-        Persona per = LogicPer.GetOne(idPersona);
-       buscarMaterias(per.IdPlan);
+            Usuario usuario = (Usuario)Session["usuarioLogueado"];
+            int idPersona = usuario.IdPersona;
+            Persona per = LogicPer.GetOne(idPersona);
+            buscarMaterias(per.IdPlan);
+            GridView1.DataSource = LogicPer.GetMateriasPlan(idPersona);
+            DataBind();
         }
         private List<Comision> buscarComisiones(int idMateria){
             ComisionLogic comLog = new ComisionLogic();
