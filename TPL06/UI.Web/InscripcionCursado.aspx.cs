@@ -39,7 +39,7 @@ namespace Academia.UI.Web
         {
             public string nombreComision;
             public string nombreMateria;
-            public string añoCurso;
+            public int añoCurso;
         }
 
         Curso _Curso = new Curso();
@@ -86,8 +86,13 @@ namespace Academia.UI.Web
             int idComision = int.Parse(cmbComision.SelectedValue);
             CursoLogic cl = new CursoLogic();
             CursoElegido = cl.GetByComisionMateria(idComision, idMateria);
+            InscripcionCursado inscripcion = new InscripcionCursado
+            {
+                nombreComision = CursoElegido.Comision.DescripcionComision,
+                nombreMateria = CursoElegido.Materia.Descripcion,
+                añoCurso = CursoElegido.AñoCalendario
+            };
             
-            inscripcionCursado.nombreComision = CursoElegido.Comision.DescripcionComision;
         }
     }
 }
