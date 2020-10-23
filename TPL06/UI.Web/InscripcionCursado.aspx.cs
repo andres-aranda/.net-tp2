@@ -92,7 +92,10 @@ namespace Academia.UI.Web
                 nombreMateria = CursoElegido.Materia.Descripcion,
                 añoCurso = CursoElegido.AñoCalendario
             };
-            
+            detallesInscripcion.DataSource = inscripcion;
+            detallesInscripcion.DataBind();
+
+
         }
     }
 }
