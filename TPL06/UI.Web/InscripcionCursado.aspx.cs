@@ -35,7 +35,7 @@ namespace Academia.UI.Web
                 return _logicPer;
             }
         }
-        private struct InscripcionCursado
+        private struct ResumenInscripcion
         {
             public string nombreComision;
             public string nombreMateria;
@@ -86,7 +86,7 @@ namespace Academia.UI.Web
             int idComision = int.Parse(cmbComision.SelectedValue);
             CursoLogic cl = new CursoLogic();
             CursoElegido = cl.GetByComisionMateria(idComision, idMateria);
-            InscripcionCursado inscripcion = new InscripcionCursado
+            ResumenInscripcion inscripcion = new ResumenInscripcion
             {
                 nombreComision = CursoElegido.Comision.DescripcionComision,
                 nombreMateria = CursoElegido.Materia.Descripcion,
