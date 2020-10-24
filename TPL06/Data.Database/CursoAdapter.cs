@@ -233,5 +233,40 @@ namespace Data.Database
                 CloseConnection();
             }
         }
+        public List <Inscripcion> GetMateriasInscripciones(int id)
+        {
+            List<Inscripcion> insc = new List<Inscripcion>();
+            try
+            {                 
+                this.OpenConnection();
+                SqlCommand cmdCurso = new SqlCommand("select	desc_materia, desc_comision, nota, anio_calendario from personas pe inner join alumnos_inscripciones alu_ins on alu_ins.id_alumno = pe.id_persona inner join cursos cur on cur.id_curso = alu_ins.id_curso inner join materias mat on mat.id_materia = cur.id_materia inner join comisiones com on com.id_comision = cur.id_comision WHERE id_persona = @id",Sqlconn);
+                cmdCurso.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                SqlDataReader drCurso = cmdCurso.ExecuteReader();
+                while (drCurso.Read())
+                {
+                    Inscripcion ii = new Inscripcion();
+                    ii.Curso = new Curso();
+                    ii.Curso.Materia = new Materia();
+                    ii.Curso.Comision = new Comision();
+                    ii.Curso.Materia.Descripcion = (string)drCurso["desc_materia"];
+                    ii.Curso.Comision.DescripcionComision = (string)drCurso["desc_comision"];
+                    ii.Nota = (int)drCurso["nota"];
+                    ii.Curso.AñoCalendario = (int)drCurso["anio_calendario"];
+                    insc.Add(ii);
+                }
+                drCurso.Close();
+            }
+            catch (Exception ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar persona.", ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return insc;
+
+        }
     }
 }

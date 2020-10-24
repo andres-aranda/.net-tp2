@@ -95,9 +95,9 @@ namespace Data.Database
                     persona.Id = (int)dr["id_persona"];
                     persona.Nombre = (string)dr["nombre"];
                     persona.Apellido = (string)dr["apellido"];
-                    persona.Direccion   = (string)dr["direccion"];
+                    persona.Direccion = (string)dr["direccion"];
                     persona.Telefono = (string)dr["telefono"];
-                    persona.Legajo = (int)dr["legajo"];              
+                    persona.Legajo = (int)dr["legajo"];
                     persona.IdPlan = (int)dr["id_plan"];
                 }
                 dr.Close();
@@ -127,7 +127,7 @@ namespace Data.Database
                     m.Id = (int)drPersonas["id_persona"];
                     m.Nombre = (string)drPersonas["nombre"];
                     m.Legajo = (int)drPersonas["legajo"];
-       
+
                     m.IdPlan = (int)drPersonas["id_plan"];
 
                     personas.Add(m);
@@ -202,6 +202,7 @@ namespace Data.Database
             }
             return materias;
         }
+
 
     }
 }

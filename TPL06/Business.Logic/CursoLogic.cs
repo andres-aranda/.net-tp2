@@ -12,6 +12,11 @@ namespace Business.Logic
     {
         public CursoAdapter CursoData { get; set; }
 
+        public List<Inscripcion> GetMateriasInscripciones(int id)
+        {
+            return CursoData.GetMateriasInscripciones(id);
+        }
+
         public CursoLogic()
         {
             CursoData = new CursoAdapter();

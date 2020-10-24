@@ -80,7 +80,7 @@
                 <div id="alumno" runat="server">
                     <h3>Alumno</h3>
                     <ul>
-                        <li><a href="">Mis cursos</a></li>
+                        <li><a href="MisCursos.aspx">Mis cursos</a></li>
                         <li><a href="InscripcionCursado.aspx">Inscripcion a cursar</a></li>
                     </ul>
                 </div>

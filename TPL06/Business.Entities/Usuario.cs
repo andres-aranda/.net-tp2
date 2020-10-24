@@ -12,7 +12,7 @@ namespace Business.Entities
     {
         public Usuario()
         {
-            
+
         }
         private string _Apellido;
         private String _Nombre;
@@ -22,8 +22,16 @@ namespace Business.Entities
         private int _IdPersona;
         private bool _Habilitado;
         private List<Modulo> modulo;
+        private Persona _persona;
 
         protected SqlDataAdapter _daUsuarios;
+
+        public Persona Persona
+        {
+            get => _persona;
+            set => _persona = value;
+
+        }
 
         public SqlDataAdapter daUsuarios
         {
