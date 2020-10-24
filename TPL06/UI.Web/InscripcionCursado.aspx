@@ -10,24 +10,25 @@
         <asp:Button ID="Button1" runat="server" OnClick="cmbMateria_SelectedIndexChanged" Text="Refresh" />
     </p>
     </div>
-    <div id="seleccionMateria">
+    <div id="seleccionComision">
  <p>
         Seleccione Comision:&nbsp;
         <asp:DropDownList ID="cmbComision" runat="server" DataTextField="DescripcionComision" DataValueField="Id" OnSelectedIndexChanged="cmbComision_SelectedIndexChanged">
         </asp:DropDownList>
     </p>
     </div>
-    <asp:DetailsView ID="detallesInscripcion" runat="server" Height="39px" Width="125px" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellPadding="3" CellSpacing="1" GridLines="None">
+    <asp:DetailsView ID="detallesInscripcion" runat="server" Height="39px" Width="125px" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellPadding="3" CellSpacing="1" GridLines="None" Visible="False">
         <EditRowStyle BackColor="#9471DE" Font-Bold="True" ForeColor="White" />
         <Fields>
-            <asp:BoundField DataField="nombreMateria" HeaderText="Materia:" ReadOnly="True" SortExpression="nombreMateria" />
-            <asp:BoundField DataField="nombreComison" HeaderText="Comision:" ReadOnly="True" SortExpression="nombreComison" />
-            <asp:BoundField DataField="añoCurso" HeaderText="Año:" ReadOnly="True" SortExpression="turnoComision" />
+            <asp:BoundField DataField="inscripcion.nombreMateria" HeaderText="Materia:" ReadOnly="True" SortExpression="nombreMateria" />
+            <asp:BoundField DataField="inscripcion.nombreComison" HeaderText="Comision:" ReadOnly="True" SortExpression="nombreComison" />
+            <asp:BoundField DataField="inscripcion.añoCurso" HeaderText="Año:" ReadOnly="True" SortExpression="turnoComision" />
         </Fields>
         <FooterStyle BackColor="#C6C3C6" ForeColor="Black" />
         <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#E7E7FF" />
         <PagerStyle BackColor="#C6C3C6" ForeColor="Black" HorizontalAlign="Right" />
         <RowStyle BackColor="#DEDFDE" ForeColor="Black" />
     </asp:DetailsView>
-    <asp:Button ID="inscripcion" runat="server" Text="Solicitar inscripcion" />
+    <asp:Label ID="MateriaLabel" runat="server"></asp:Label>
+    <asp:Button ID="solicInscripcion" runat="server" Text="Solicitar inscripcion" OnClick="inscripcion_Click" />
     </asp:Content>

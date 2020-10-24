@@ -54,7 +54,6 @@ namespace Academia.UI.Web
             Usuario usuario = (Usuario)Session["usuarioLogueado"];
             int idPersona = usuario.IdPersona;
             Persona per = LogicPer.GetOne(idPersona);
-            
             if (!(Page.IsPostBack)) 
             {
                 buscarMaterias(per.IdPlan);
@@ -85,16 +84,27 @@ namespace Academia.UI.Web
             int idMateria = int.Parse(cmbMateria.SelectedValue);
             int idComision = int.Parse(cmbComision.SelectedValue);
             CursoLogic cl = new CursoLogic();
-            CursoElegido = cl.GetByComisionMateria(idComision, idMateria);
+            CursoElegido = cl.GetByComisionMateria(idComision, idMateria);          
+
+        }
+
+        protected void inscripcion_Click(object sender, EventArgs e)
+        {
+            CursoElegido.Comision = new Comision();
+            CursoElegido.Materia = new Materia();
             ResumenInscripcion inscripcion = new ResumenInscripcion
             {
                 nombreComision = CursoElegido.Comision.DescripcionComision,
                 nombreMateria = CursoElegido.Materia.Descripcion,
                 añoCurso = CursoElegido.AñoCalendario
             };
-            detallesInscripcion.DataSource = inscripcion;
-            detallesInscripcion.DataBind();
+            MateriaLabel.Text = "hola" + CursoElegido.Comision.DescripcionComision;
+            this.detallesInscripcion.Visible = true;
+            this.MateriaLabel.Visible = true;
+        }
 
+        protected void solicInscripcion(object sender, EventArgs e)
+        {
 
         }
     }

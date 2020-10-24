@@ -51,7 +51,16 @@ namespace Academia.UI.Web
         protected global::System.Web.UI.WebControls.DetailsView detallesInscripcion;
 
         /// <summary>
-        /// Control inscripcion.
+        /// Control MateriaLabel.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MateriaLabel;
+
+        /// <summary>
+        /// Control solicInscripcion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
