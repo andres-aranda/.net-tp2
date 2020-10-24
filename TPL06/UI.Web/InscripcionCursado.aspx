@@ -1,5 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="InscripcionCursado.aspx.cs" Inherits="Academia.UI.Web.InscripcionCursado" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+    .auto-style1 {
+        width: 100px;
+    }
+</style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="PageContent" runat="server">
     <div id="seleccionMateria">
@@ -29,6 +34,22 @@
         <PagerStyle BackColor="#C6C3C6" ForeColor="Black" HorizontalAlign="Right" />
         <RowStyle BackColor="#DEDFDE" ForeColor="Black" />
     </asp:DetailsView>
-    <asp:Label ID="MateriaLabel" runat="server"></asp:Label>
     <asp:Button ID="solicInscripcion" runat="server" Text="Solicitar inscripcion" OnClick="inscripcion_Click" />
+    <div id="tablaResumen" runat="server">
+        <p>✔ ¡Inscripción solicitada!</p>
+        <table>
+            <tr>
+                <td><b>Comisión</b></td>
+                <td class="auto-style1"><asp:Label ID="ComisionLabel" runat="server" Text="Label"></asp:Label></td>
+            </tr>
+            <tr>
+                <td><b>Materia</b></td>
+                <td class="auto-style1"><asp:Label ID="MateriaLabel" runat="server"></asp:Label></td>
+            </tr>
+            <tr>
+                <td><b>Año</b></td>
+                <td class="auto-style1"><asp:Label ID="AñoLabel" runat="server" Text="Label"></asp:Label></td>
+            </tr>
+        </table>
+    </div>
     </asp:Content>

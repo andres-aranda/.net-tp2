@@ -11,6 +11,7 @@ namespace Business.Logic
     public class CursoLogic : BusinessLogic
     {
         public CursoAdapter CursoData { get; set; }
+        public InscripcionAdapter InscripcionData { get; set; }
 
         public List<Inscripcion> GetMateriasInscripciones(int id)
         {
@@ -20,6 +21,7 @@ namespace Business.Logic
         public CursoLogic()
         {
             CursoData = new CursoAdapter();
+            InscripcionData = new InscripcionAdapter();
         }
 
         public List<Curso> GetAll()
@@ -48,6 +50,11 @@ namespace Business.Logic
         public List<Curso> GetByMateria(int id)
         {
             return CursoData.GetByMaterias(id);
+        }
+
+        public void Inscribir(int idAlumno, int idCurso)
+        {
+            InscripcionData.Inscribir(idAlumno, idCurso);
         }
     }
 }

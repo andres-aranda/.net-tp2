@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 using Business.Entities;
 
 namespace Data.Database
@@ -151,6 +152,30 @@ namespace Data.Database
                 SqlCommand cmd = new SqlCommand("DELETE alumnos_inscripciones WHERE id_inscripcion = @id", Sqlconn);
                 cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
+
+        public void Inscribir(int idAlumno, int idCurso)
+        {
+            try
+            {
+                OpenConnection();
+                SqlCommand cmd = new SqlCommand(
+                    "INSERT INTO alumnos_inscripciones " +
+                    "   (id_alumno, id_curso, condicion, nota) " +
+                    "VALUES " +
+                    "   (@id_alumno, @id_curso, 'Cursando', NULL)", Sqlconn);
+                cmd.Parameters.Add("@id_alumno", SqlDbType.Int).Value = idAlumno;
+                cmd.Parameters.Add("@id_curso", SqlDbType.Int).Value = idCurso;
+                cmd.ExecuteScalar();
             }
             catch (Exception e)
             {
