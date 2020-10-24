@@ -93,6 +93,7 @@
     <Content Include="InscripcionCursado.aspx" />
     <Content Include="master-style.css" />
     <Content Include="MateriasDisponibles.aspx" />
+    <Content Include="MiInformacion.aspx" />
     <Content Include="MisCursos.aspx" />
     <Content Include="PaginaNoPermitida.aspx" />
     <Content Include="Resources\alto.gif" />
@@ -202,6 +203,13 @@
     </Compile>
     <Compile Include="ComisionForm.aspx.designer.cs">
       <DependentUpon>ComisionForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MiInformacion.aspx.cs">
+      <DependentUpon>MiInformacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MiInformacion.aspx.designer.cs">
+      <DependentUpon>MiInformacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="MisCursos.aspx.cs">
       <DependentUpon>MisCursos.aspx</DependentUpon>

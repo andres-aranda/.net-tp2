@@ -11,7 +11,7 @@
                 <asp:TextBox ID="nombreTextBox" runat="server"></asp:TextBox>
             </td>
             <td __designer:mapid="156">
-                <asp:Label ID="nombreUsuarioLabel" runat="server" Text="Nombre de usuario"></asp:Label>
+                &nbsp;<asp:Label ID="nombreUsuarioLabel" runat="server" Text="Nombre de usuario"></asp:Label>
             </td>
             <td __designer:mapid="158">
                 <asp:TextBox ID="nombreUsuarioTextBox" runat="server"></asp:TextBox>
@@ -47,15 +47,17 @@
         </tr>
         <tr __designer:mapid="16c">
             <td __designer:mapid="16d">
-                <asp:CheckBox ID="habilitadoCheckBox" runat="server" Text="Habilitado" TextAlign="Left" />
+                <asp:CheckBox ID="habilitadoCheckBox" runat="server" Text="Habilitado" TextAlign="Left" BorderColor="Black" ForeColor="Black" />
             </td>
             <td __designer:mapid="16f">&nbsp;</td>
             <td __designer:mapid="170">&nbsp;</td>
             <td __designer:mapid="171">&nbsp;</td>
         </tr>
     </table>
-    <asp:Panel ID="formActionPanel" runat="server">
-        <asp:LinkButton ID="AceptarLinkButton" runat="server" OnClick="AceptarLinkButton_Click">Aceptar</asp:LinkButton>
-        <asp:LinkButton ID="CancelarLinkButton" runat="server" OnClick="CancelarLinkButton_Click">Cancelar</asp:LinkButton>
+    
+
+<asp:Panel ID="formActionPanel" runat="server">
+        <asp:LinkButton ID="AceptarLinkButton" runat="server" OnClick="AceptarLinkButton_Click" BackColor="#99CCFF" BorderColor="Black">Aceptar</asp:LinkButton>
+        <asp:LinkButton ID="CancelarLinkButton" runat="server" OnClick="CancelarLinkButton_Click" BackColor="#99CCFF" BorderColor="Black">Cancelar</asp:LinkButton>
     </asp:Panel>
 </asp:Content>

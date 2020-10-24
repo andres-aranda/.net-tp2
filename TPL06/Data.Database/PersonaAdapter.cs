@@ -27,6 +27,7 @@ namespace Data.Database
                 cmd.Parameters.Add("@legajo", SqlDbType.Int).Value = m.Legajo;
                 cmd.Parameters.Add("@tipo_persona", SqlDbType.Int).Value = m.TipoPersona;
                 cmd.Parameters.Add("@id_plan", SqlDbType.Int).Value = m.IdPlan;
+                cmd.Parameters.Add("@fecha_nac", SqlDbType.Int).Value = m.FechaDeNacimiento;
                 m.Id = decimal.ToInt32((decimal)cmd.ExecuteScalar());
             }
             catch (Exception e)
@@ -69,6 +70,7 @@ namespace Data.Database
                 cmd.Parameters.Add("@legajo", SqlDbType.Int).Value = persona.Legajo;
                 cmd.Parameters.Add("@tipo_persona", SqlDbType.Int).Value = persona.TipoPersona;
                 cmd.Parameters.Add("@id_plan", SqlDbType.Int).Value = persona.IdPlan;
+                cmd.Parameters.Add("@fecha_nac", SqlDbType.Int).Value = persona.FechaDeNacimiento;
                 cmd.ExecuteNonQuery();
             }
             catch (Exception e)
@@ -99,6 +101,7 @@ namespace Data.Database
                     persona.Telefono = (string)dr["telefono"];
                     persona.Legajo = (int)dr["legajo"];
                     persona.IdPlan = (int)dr["id_plan"];
+                    persona.FechaDeNacimiento = (DateTime)dr["fecha_nac"];
                 }
                 dr.Close();
             }

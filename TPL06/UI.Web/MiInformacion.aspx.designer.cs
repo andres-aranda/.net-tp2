@@ -11,151 +11,160 @@ namespace Academia.UI.Web
 {
 
 
-    public partial class UsuarioForm
+    public partial class MiInformacion
     {
 
         /// <summary>
-        /// Control nombreLabel.
+        /// Control Label1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label nombreLabel;
+        protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// Control nombreTextBox.
+        /// Control txtNombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox nombreTextBox;
+        protected global::System.Web.UI.WebControls.TextBox txtNombre;
 
         /// <summary>
-        /// Control nombreUsuarioLabel.
+        /// Control Label2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label nombreUsuarioLabel;
+        protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// Control nombreUsuarioTextBox.
+        /// Control txtNombreUsua.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox nombreUsuarioTextBox;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreUsua;
 
         /// <summary>
-        /// Control apellidoLabel.
+        /// Control Label3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label apellidoLabel;
+        protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
-        /// Control apellidoTextBox.
+        /// Control txtApellido.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox apellidoTextBox;
+        protected global::System.Web.UI.WebControls.TextBox txtApellido;
 
         /// <summary>
-        /// Control claveLabel.
+        /// Control Label4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label claveLabel;
+        protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
-        /// Control claveTextBox.
+        /// Control txtClave.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox claveTextBox;
+        protected global::System.Web.UI.WebControls.TextBox txtClave;
 
         /// <summary>
-        /// Control emailLabel.
+        /// Control emailLabel0.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label emailLabel;
+        protected global::System.Web.UI.WebControls.Label emailLabel0;
 
         /// <summary>
-        /// Control emailTextBox.
+        /// Control txtEmail.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox emailTextBox;
+        protected global::System.Web.UI.WebControls.TextBox txtEmail;
 
         /// <summary>
-        /// Control repetirClaveLabel.
+        /// Control repetirClaveLabel0.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label repetirClaveLabel;
+        protected global::System.Web.UI.WebControls.Label repetirClaveLabel0;
 
         /// <summary>
-        /// Control repetirClaveTextBox.
+        /// Control repetirClave.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox repetirClaveTextBox;
+        protected global::System.Web.UI.WebControls.TextBox repetirClave;
 
         /// <summary>
-        /// Control habilitadoCheckBox.
+        /// Control txtTelefono.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox habilitadoCheckBox;
+        protected global::System.Web.UI.WebControls.TextBox txtTelefono;
 
         /// <summary>
-        /// Control formActionPanel.
+        /// Control txtDireccion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel formActionPanel;
+        protected global::System.Web.UI.WebControls.TextBox txtDireccion;
 
         /// <summary>
-        /// Control AceptarLinkButton.
+        /// Control txtFechaNac.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton AceptarLinkButton;
+        protected global::System.Web.UI.WebControls.TextBox txtFechaNac;
 
         /// <summary>
-        /// Control CancelarLinkButton.
+        /// Control txtPlan.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton CancelarLinkButton;
+        protected global::System.Web.UI.WebControls.TextBox txtPlan;
+
+        /// <summary>
+        /// Control txtLegajo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtLegajo;
     }
 }
