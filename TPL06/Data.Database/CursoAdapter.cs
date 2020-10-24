@@ -163,8 +163,8 @@ namespace Data.Database
                     m.IdMateria = (int)drCursos["id_materia"];
                     m.IdComision = (int)drCursos["id_comision"];
                     m.AñoCalendario = (int)drCursos["anio_calendario"];
-                    if (m.IdMateria != null){ m.Materia = mat.GetOne(m.IdMateria); }
-                    if (m.IdComision != null){  m.Comision = com.GetOne(m.IdComision);}              
+                    if (m.IdMateria != 0){ m.Materia = mat.GetOne(m.IdMateria); }
+                    if (m.IdComision != 0){  m.Comision = com.GetOne(m.IdComision);}              
                     cursos.Add(m);
                 }
                 drCursos.Close();

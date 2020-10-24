@@ -177,7 +177,7 @@ namespace Data.Database
             usuario.State = BusinessEntity.Estados.Unmodified;
         }
 
-        public Usuario Loguearse(String nombreUsuario, String password)
+        public Usuario Loguearse(string nombreUsuario, string password)
         {
             Usuario usuario = new Usuario();
             ModuloAdapter md = new ModuloAdapter();
