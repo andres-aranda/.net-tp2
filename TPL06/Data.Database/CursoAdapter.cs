@@ -121,7 +121,7 @@ namespace Data.Database
                 OpenConnection();
                 SqlCommand cmd = new SqlCommand("SELECT * FROM cursos WHERE id_materia = @idMateria and id_comision = @idComision", Sqlconn);
                 cmd.Parameters.Add("@idMateria", SqlDbType.Int).Value = idMateria;
-                cmd.Parameters.Add("@idMateria", SqlDbType.Int).Value = idComision;
+                cmd.Parameters.Add("@idComision", SqlDbType.Int).Value = idComision;
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {

@@ -11,6 +11,7 @@ namespace Academia.UI.Web
 {
     public partial class InscripcionCursado : System.Web.UI.Page
     {
+        #region DECLARACIONES
         MateriaLogic _logic;
         private MateriaLogic Logic
         {
@@ -49,8 +50,24 @@ namespace Academia.UI.Web
             set => _Curso = value;
         }
 
+        #endregion
+
+        #region BUSCAR
+        private List<Comision> buscarComisiones(int idMateria)
+        {
+            ComisionLogic comLog = new ComisionLogic();
+            return comLog.GetByMateria(idMateria);
+        }
+        private void buscarMaterias(int idPlan)
+        {
+            this.cmbMateria.DataSource = Logic.GetByPlan(idPlan);
+            this.cmbMateria.DataBind();
+        }
+        #endregion
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            tablaResumen.Visible = false;
             Usuario usuario = (Usuario)Session["usuarioLogueado"];
             int idPersona = usuario.IdPersona;
             Persona per = LogicPer.GetOne(idPersona);
@@ -60,25 +77,13 @@ namespace Academia.UI.Web
                 DataBind(); 
             }
         }
-        private List<Comision> buscarComisiones(int idMateria){
-            ComisionLogic comLog = new ComisionLogic();
-            return comLog.GetByMateria(idMateria);
-            }
+
         protected void cmbMateria_SelectedIndexChanged(object sender, EventArgs e)
         {
             int idMateria = int.Parse(cmbMateria.SelectedValue);
             cmbComision.DataSource = buscarComisiones(idMateria);
             cmbComision.DataBind();
         }
-       
-    
-        private void buscarMaterias(int idPlan)
-        {
-            this.cmbMateria.DataSource = Logic.GetByPlan(idPlan);
-            this.cmbMateria.DataBind();
-        }
-
-        
         protected void cmbComision_SelectedIndexChanged(object sender, EventArgs e)
         {
             int idMateria = int.Parse(cmbMateria.SelectedValue);
@@ -90,22 +95,22 @@ namespace Academia.UI.Web
 
         protected void inscripcion_Click(object sender, EventArgs e)
         {
-            CursoElegido.Comision = new Comision();
-            CursoElegido.Materia = new Materia();
+            int idMateria = int.Parse(cmbMateria.SelectedValue);
+            int idComision = int.Parse(cmbComision.SelectedValue);
+            CursoLogic cl = new CursoLogic();
+            CursoElegido = cl.GetByComisionMateria(idComision, idMateria);
             ResumenInscripcion inscripcion = new ResumenInscripcion
             {
                 nombreComision = CursoElegido.Comision.DescripcionComision,
                 nombreMateria = CursoElegido.Materia.Descripcion,
                 añoCurso = CursoElegido.AñoCalendario
             };
-            MateriaLabel.Text = "hola" + CursoElegido.Comision.DescripcionComision;
-            this.detallesInscripcion.Visible = true;
-            this.MateriaLabel.Visible = true;
-        }
-
-        protected void solicInscripcion(object sender, EventArgs e)
-        {
-
+            ComisionLabel.Text = inscripcion.nombreComision;
+            MateriaLabel.Text = inscripcion.nombreMateria;
+            AñoLabel.Text = inscripcion.añoCurso.ToString();
+            tablaResumen.Visible = true;
+            Usuario u = (Usuario)Session["usuarioLogueado"];
+            cl.Inscribir(u.IdPersona, CursoElegido.Id);
         }
     }
 }
