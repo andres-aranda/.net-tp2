@@ -73,7 +73,7 @@
                 <div id="docente" runat="server">
                     <h3>Docente</h3>
                     <ul>
-                        <li><a href="">Mis cursos</a></li>
+                        <li><a href="MisCursosDocente.aspx">Mis cursos</a></li>
                         <li><a href="">Mis alumnos</a></li>
                     </ul>
                 </div>
