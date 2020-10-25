@@ -12,7 +12,7 @@
             <asp:BoundField DataField="Persona.Nombre" HeaderText="Nombre" ReadOnly="True" />
             <asp:BoundField DataField="Persona.Apellido" HeaderText="Apellido" ReadOnly="True" />
             <asp:BoundField DataField="Persona.Legajo" HeaderText="Legajo" ReadOnly="True" />
-            <asp:BoundField DataField="Nota" HeaderText="Nota" ReadOnly="True" />
+            <asp:BoundField DataField="Nota" HeaderText="Nota" />
             <asp:BoundField DataField="Curso.AñoCalendario" HeaderText="Año" />
         </Columns>
                  <HeaderStyle CssClass="cabecera" />
