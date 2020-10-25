@@ -17,6 +17,10 @@ namespace Business.Logic
         {
             return CursoData.GetMateriasInscripciones(id);
         }
+        public List<Inscripcion> GetMateriasInscripcionesDocente(int id)
+        {
+            return CursoData.GetMateriasInscripcionesDocente(id);
+        }
 
         public CursoLogic()
         {

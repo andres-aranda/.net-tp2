@@ -95,6 +95,7 @@
     <Content Include="MateriasDisponibles.aspx" />
     <Content Include="MiInformacion.aspx" />
     <Content Include="MisCursos.aspx" />
+    <Content Include="MisCursosDocente.aspx" />
     <Content Include="PaginaNoPermitida.aspx" />
     <Content Include="Resources\alto.gif" />
     <Content Include="Resources\android-chrome-192x192.png" />
@@ -217,6 +218,13 @@
     </Compile>
     <Compile Include="MisCursos.aspx.designer.cs">
       <DependentUpon>MisCursos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MisCursosDocente.aspx.cs">
+      <DependentUpon>MisCursosDocente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MisCursosDocente.aspx.designer.cs">
+      <DependentUpon>MisCursosDocente.aspx</DependentUpon>
     </Compile>
     <Compile Include="PaginaNoPermitida.aspx.cs">
       <DependentUpon>PaginaNoPermitida.aspx</DependentUpon>
