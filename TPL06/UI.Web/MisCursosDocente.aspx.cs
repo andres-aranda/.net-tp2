@@ -16,7 +16,7 @@ namespace Academia.UI.Web
             CursoLogic cl = new CursoLogic();
             Usuario usuario = (Usuario)Session["usuarioLogueado"];
             int idPersona = usuario.IdPersona;
-            inscripcionesDocente.DataSource = cl.GetMateriasInscripciones(idPersona);
+            inscripcionesDocente.DataSource = cl.GetMateriasInscripcionesDocente(idPersona);
             inscripcionesDocente.DataBind();
         }
     }
