@@ -76,7 +76,7 @@ h3 {
 
 
 .tabla {
-    border-spacing: 1;
+    border-spacing: 1px;
     border-collapse: collapse;
     background: white;
     border-radius: 10px;
@@ -84,6 +84,7 @@ h3 {
     width: 100%;
     margin: 0 auto;
     position: relative;
+    table-layout: fixed;
 }
 .cabecera {
     font-family: OpenSans-Regular;
