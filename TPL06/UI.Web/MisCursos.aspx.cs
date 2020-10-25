@@ -18,6 +18,8 @@ namespace Academia.UI.Web
             int idPersona = usuario.IdPersona;
             inscripcionesAlu.DataSource = cl.GetMateriasInscripciones(idPersona);
             inscripcionesAlu.DataBind();
+       
+         
         }
     }
 }

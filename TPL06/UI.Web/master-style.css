@@ -73,3 +73,44 @@ h3 {
 #logo {
     vertical-align: middle;
 }
+
+
+.tabla {
+    border-spacing: 1;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+.cabecera {
+    font-family: OpenSans-Regular;
+    font-size: 15px;
+    color: #808080;
+    height: 60px;
+    background: #36304a;
+    line-height: 1.2;
+    font-weight: unset;
+    font-family: OpenSans-Regular;
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.2;
+    font-weight: unset;
+
+}
+.filas {
+    font-family: OpenSans-Regular;
+    font-size: 15px;
+    color: #808080;
+    line-height: 1.2;
+    font-weight: unset;
+    height: 50px;
+}
+.filas:hover {
+    color: #555555;
+    background-color: #f5f5f5;
+    cursor: pointer;
+}
+
