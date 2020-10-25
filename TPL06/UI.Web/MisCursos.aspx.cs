@@ -15,6 +15,15 @@ namespace Academia.UI.Web
         {
             CursoLogic cl = new CursoLogic();
             Usuario usuario = (Usuario)Session["usuarioLogueado"];
+            if (usuario == null)
+            {
+                Page.Response.Redirect("~/PaginaNoPermitida.aspx");
+            }
+            foreach (Modulo m in usuario.Modulo)
+            {
+                if (!(m.Descripcion == "Alumno" || m.Descripcion == "Administrador"))
+                    Page.Response.Redirect("~/PaginaNoPermitida.aspx");
+            }
             int idPersona = usuario.IdPersona;
             inscripcionesAlu.DataSource = cl.GetMateriasInscripciones(idPersona);
             inscripcionesAlu.DataBind();

@@ -9,24 +9,24 @@ using System.Web.UI.WebControls;
 
 namespace Academia.UI.Web
 {
-    public partial class MisCursosDocente : System.Web.UI.Page
+    public partial class Alumnos : System.Web.UI.Page
     {
-        CursoLogic cl = new CursoLogic();
-
         protected void Page_Load(object sender, EventArgs e)
         {
-            Usuario usuarioLog = (Usuario)Session["usuarioLogueado"];
-            if (usuarioLog == null)
+            CursoLogic cl = new CursoLogic();
+            Usuario usuario = (Usuario)Session["usuarioLogueado"];
+            if (usuario== null)
             {
                 Page.Response.Redirect("~/PaginaNoPermitida.aspx");
             }
-            foreach (Modulo m in usuarioLog.Modulo)
+            foreach (Modulo m in usuario.Modulo)
             {
                 if (!(m.Descripcion == "Docente" || m.Descripcion == "Administrador"))
                     Page.Response.Redirect("~/PaginaNoPermitida.aspx");
             }
-            cursosDocenteGV.DataSource = cl.GetCursosDocente(usuarioLog.IdPersona);
-            cursosDocenteGV.DataBind();
+            int idPersona = usuario.IdPersona;
+            inscripcionesDocente.DataSource = cl.GetMateriasInscripcionesDocente(idPersona);
+            inscripcionesDocente.DataBind();
         }
     }
 }

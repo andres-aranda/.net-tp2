@@ -69,7 +69,7 @@
                     <h3>Docente</h3>
                     <ul>
                         <li><a href="MisCursosDocente.aspx">Mis cursos</a></li>
-                        <li><a href="">Mis alumnos</a></li>
+                        <li><a href="Alumnos.aspx">Mis alumnos</a></li>
                     </ul>
                 </div>
                 <div id="alumno" runat="server">
