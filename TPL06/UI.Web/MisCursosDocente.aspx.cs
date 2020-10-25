@@ -11,13 +11,22 @@ namespace Academia.UI.Web
 {
     public partial class MisCursosDocente : System.Web.UI.Page
     {
+        CursoLogic cl = new CursoLogic();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            CursoLogic cl = new CursoLogic();
-            Usuario usuario = (Usuario)Session["usuarioLogueado"];
-            int idPersona = usuario.IdPersona;
-            inscripcionesDocente.DataSource = cl.GetMateriasInscripcionesDocente(idPersona);
-            inscripcionesDocente.DataBind();
+            Usuario usuarioLog = (Usuario)Session["usuarioLogueado"];
+            if (usuarioLog == null)
+            {
+                Page.Response.Redirect("~/PaginaNoPermitida.aspx");
+            }
+            foreach (Modulo m in usuarioLog.Modulo)
+            {
+                if (!(m.Descripcion == "Docente" || m.Descripcion == "Administrador"))
+                    Page.Response.Redirect("~/PaginaNoPermitida.aspx");
+            }
+            cursosDocenteGV.DataSource = cl.GetCursosDocente(usuarioLog.IdPersona);
+            cursosDocenteGV.DataBind();
         }
     }
 }

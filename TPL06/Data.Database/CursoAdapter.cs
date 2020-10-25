@@ -313,5 +313,42 @@ namespace Data.Database
             return insc;
 
         }
+        public List<Curso> GetCursosDocente(int id)
+        {
+            List<Curso> curs = new List<Curso>();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdCurso = new SqlCommand("select desc_materia, desc_comision, anio_calendario " +
+                    "from personas pe inner join docentes_cursos doc_cur on doc_cur.id_docente = pe.id_persona " +
+                    "inner join cursos cur on cur.id_curso = doc_cur.id_curso " +
+                    "inner join materias mat on mat.id_materia = cur.id_materia " +
+                    "inner join comisiones com on com.id_comision = cur.id_comision where pe.id_persona = @id", Sqlconn);
+                cmdCurso.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                SqlDataReader drCurso = cmdCurso.ExecuteReader();
+                while (drCurso.Read())
+                {
+                    Curso curso= new Curso();                   
+                    curso.Materia = new Materia();
+                    curso.Comision = new Comision();
+                    curso.Materia.Descripcion = (string)drCurso["desc_materia"];
+                    curso.Comision.DescripcionComision = (string)drCurso["desc_comision"];
+                    curso.AñoCalendario = (int)drCurso["anio_calendario"];
+                    curs.Add(curso);
+                }
+                drCurso.Close();
+            }
+            catch (Exception ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar persona.", ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return curs;
+
+        }
     }
 }

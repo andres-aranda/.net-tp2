@@ -95,6 +95,7 @@
     <Content Include="MateriasDisponibles.aspx" />
     <Content Include="MiInformacion.aspx" />
     <Content Include="MisCursos.aspx" />
+    <Content Include="Alumnos.aspx" />
     <Content Include="MisCursosDocente.aspx" />
     <Content Include="PaginaNoPermitida.aspx" />
     <Content Include="Resources\alto.gif" />
@@ -218,6 +219,13 @@
     </Compile>
     <Compile Include="MisCursos.aspx.designer.cs">
       <DependentUpon>MisCursos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Alumnos.aspx.cs">
+      <DependentUpon>Alumnos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Alumnos.aspx.designer.cs">
+      <DependentUpon>Alumnos.aspx</DependentUpon>
     </Compile>
     <Compile Include="MisCursosDocente.aspx.cs">
       <DependentUpon>MisCursosDocente.aspx</DependentUpon>
