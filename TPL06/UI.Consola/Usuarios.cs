@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Academia.Data.Database;
 using Business.Entities;
 using Business.Logic;
 
@@ -68,9 +69,10 @@ namespace UI.Consola
         public void ListadoGeneral()
         {
             System.Console.Clear();
-            foreach (Usuario usr in UsuarioNegocio.GetAll())
+            EntidadesTP2 e = new EntidadesTP2();
+            foreach (var usr in e.usuarios)
             {
-                this.MostrarDatos(usr);
+                Console.WriteLine(usr.apellido);
             }
         }
 

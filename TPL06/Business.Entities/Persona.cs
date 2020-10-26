@@ -15,15 +15,7 @@ namespace Business.Entities
         private int _Legajo;
         private string _Nombre;
         private string _Telefono;
-        private Business.Entities.Persona.TiposPersonas _TipoPersona;
 
-        public enum TiposPersonas
-        {
-            Deleted,
-            New,
-            Modified,
-            Unmodified
-        }
         public string Apellido
         {
             get { return _Apellido; }
@@ -70,12 +62,6 @@ namespace Business.Entities
         {
             get { return _Telefono; }
             set { _Telefono = value; }
-        }
-
-        public TiposPersonas TipoPersona
-        {
-            get { return _TipoPersona; }
-            set { _TipoPersona = value; }
         }
     }
 }

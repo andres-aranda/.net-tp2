@@ -3,8 +3,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="PageContent" runat="server">
     <div>
-        <table style="width:100%;" __designer:mapid="150">
-        <tr __designer:mapid="151">
+        <table style="width:100%;" __designer:mapid="150" class="tabla">
+        <tr __designer:mapid="151" class="filas">
             <td __designer:mapid="152">
                 <asp:Label ID="Label1" runat="server" Text="Nombre"></asp:Label>
             </td>
@@ -18,7 +18,7 @@
                 <asp:TextBox ID="txtNombreUsua" runat="server" Enabled="False"></asp:TextBox>
             </td>
         </tr>
-        <tr __designer:mapid="15a">
+        <tr __designer:mapid="15a" class="filas">
             <td class="auto-style1" __designer:mapid="15b">
                 <asp:Label ID="Label3" runat="server" Text="Apellido"></asp:Label>
             </td>
@@ -32,7 +32,7 @@
                 <asp:TextBox ID="txtClave" runat="server" TextMode="Password"></asp:TextBox>
             </td>
         </tr>
-        <tr>
+        <tr class="filas">
             <td __designer:mapid="164">
                 <asp:Label ID="emailLabel0" runat="server" Text="Email"></asp:Label>
             </td>
@@ -46,7 +46,7 @@
                 <asp:TextBox ID="repetirClave" runat="server" TextMode="Password"></asp:TextBox>
             </td>
         </tr>
-        <tr>
+        <tr class="filas">
             <td __designer:mapid="164">
                 Telefono</td>
             <td __designer:mapid="166">
@@ -58,7 +58,7 @@
                 <asp:TextBox ID="txtDireccion" runat="server"></asp:TextBox>
             </td>
         </tr>
-        <tr>
+        <tr class="filas">
             <td __designer:mapid="164">
                 Fecha de nacimiento</td>
             <td __designer:mapid="166">
@@ -70,7 +70,7 @@
                 <asp:TextBox ID="txtPlan" runat="server"></asp:TextBox>
             </td>
         </tr>
-        <tr __designer:mapid="163">
+        <tr __designer:mapid="163" class="filas">
             <td __designer:mapid="164">
                 Legajo</td>
             <td __designer:mapid="166">

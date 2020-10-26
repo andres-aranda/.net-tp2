@@ -1,4 +1,5 @@
 ﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -16,6 +17,8 @@
     <OldToolsVersion>2.0</OldToolsVersion>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -37,7 +40,15 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.EntityFramework, Version=8.0.21.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -48,76 +59,71 @@
   <ItemGroup>
     <Compile Include="Adapter.cs" />
     <Compile Include="alumnos_inscripciones.cs">
-      <DependentUpon>ModelTP.tt</DependentUpon>
+      <DependentUpon>ModeloDatos.tt</DependentUpon>
     </Compile>
-    <Compile Include="comisione.cs">
-      <DependentUpon>ModelTP.tt</DependentUpon>
+    <Compile Include="comisiones.cs">
+      <DependentUpon>ModeloDatos.tt</DependentUpon>
     </Compile>
     <Compile Include="ComisionesAdapter.cs" />
-    <Compile Include="curso.cs">
-      <DependentUpon>ModelTP.tt</DependentUpon>
-    </Compile>
     <Compile Include="CursoAdapter.cs" />
+    <Compile Include="cursos.cs">
+      <DependentUpon>ModeloDatos.tt</DependentUpon>
+    </Compile>
     <Compile Include="docentes_cursos.cs">
-      <DependentUpon>ModelTP.tt</DependentUpon>
+      <DependentUpon>ModeloDatos.tt</DependentUpon>
     </Compile>
     <Compile Include="EspecialidadAdapter.cs" />
-    <Compile Include="especialidade.cs">
-      <DependentUpon>ModelTP.tt</DependentUpon>
+    <Compile Include="especialidades.cs">
+      <DependentUpon>ModeloDatos.tt</DependentUpon>
     </Compile>
     <Compile Include="InscripcionAdapter.cs" />
-    <Compile Include="materia.cs">
-      <DependentUpon>ModelTP.tt</DependentUpon>
-    </Compile>
     <Compile Include="MateriaAdapter.cs" />
-    <Compile Include="ModelTP.Context.cs">
+    <Compile Include="materias.cs">
+      <DependentUpon>ModeloDatos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModeloDatos.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelTP.Context.tt</DependentUpon>
+      <DependentUpon>ModeloDatos.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelTP.cs">
+    <Compile Include="ModeloDatos.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelTP.tt</DependentUpon>
+      <DependentUpon>ModeloDatos.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelTP.Designer.cs">
+    <Compile Include="ModeloDatos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelTP.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="modulo.cs">
-      <DependentUpon>ModelTP.tt</DependentUpon>
+      <DependentUpon>ModeloDatos.edmx</DependentUpon>
     </Compile>
     <Compile Include="ModuloAdapter.cs" />
-    <Compile Include="modulos_usuarios.cs">
-      <DependentUpon>ModelTP.tt</DependentUpon>
+    <Compile Include="modulos.cs">
+      <DependentUpon>ModeloDatos.tt</DependentUpon>
     </Compile>
-    <Compile Include="persona.cs">
-      <DependentUpon>ModelTP.tt</DependentUpon>
+    <Compile Include="modulos_usuarios.cs">
+      <DependentUpon>ModeloDatos.tt</DependentUpon>
     </Compile>
     <Compile Include="PersonaAdapter.cs" />
+    <Compile Include="personas.cs">
+      <DependentUpon>ModeloDatos.tt</DependentUpon>
+    </Compile>
     <Compile Include="PlanAdapter.cs" />
-    <Compile Include="plane.cs">
-      <DependentUpon>ModelTP.tt</DependentUpon>
+    <Compile Include="planes.cs">
+      <DependentUpon>ModeloDatos.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>ModelTP.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tp2_netDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>tp2_netDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="usuario.cs">
-      <DependentUpon>ModelTP.tt</DependentUpon>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>ModeloDatos.tt</DependentUpon>
     </Compile>
     <Compile Include="UsuarioAdapter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="usuarios.cs">
+      <DependentUpon>ModeloDatos.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Business.Entities\Business.Entities.csproj">
@@ -126,46 +132,44 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="ModelTP.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelTP.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <None Include="app.config" />
-    <None Include="ModelTP.edmx.diagram">
-      <DependentUpon>ModelTP.edmx</DependentUpon>
+    <EntityDeploy Include="ModeloDatos.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModeloDatos.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ModeloDatos.edmx.diagram">
+      <DependentUpon>ModeloDatos.edmx</DependentUpon>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="tp2_netDataSet.xsc">
-      <DependentUpon>tp2_netDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="tp2_netDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>tp2_netDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="tp2_netDataSet.xss">
-      <DependentUpon>tp2_netDataSet.xsd</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="ModelTP.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelTP.edmx</DependentUpon>
-      <LastGenOutput>ModelTP.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="ModelTP.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelTP.edmx</DependentUpon>
-      <LastGenOutput>ModelTP.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="ModeloDatos.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModeloDatos.edmx</DependentUpon>
+      <LastGenOutput>ModeloDatos.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModeloDatos.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModeloDatos.edmx</DependentUpon>
+      <LastGenOutput>ModeloDatos.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

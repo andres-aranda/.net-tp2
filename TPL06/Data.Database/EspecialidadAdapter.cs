@@ -4,7 +4,7 @@ using System.Text;
 using Business.Entities;
 using System.Data;
 using System.Data.SqlClient;
-
+using Academia.Data.Database;
 
 namespace Data.Database
 {
@@ -14,30 +14,18 @@ namespace Data.Database
         public List<Especialidad> GetAll()
         {
             List<Especialidad> especialidades = new List<Especialidad>();
-            try
+            using (EntidadesTP2 db = new EntidadesTP2())
             {
-                this.OpenConnection();
-                SqlCommand cmdEspecialidades = new SqlCommand("SELECT * FROM especialidades", Sqlconn);
-                SqlDataReader drEspecialidades = cmdEspecialidades.ExecuteReader();
-                while (drEspecialidades.Read())
+                foreach (var e in db.especialidades)
                 {
-                    Especialidad esp = new Especialidad();
-                    esp.Id = (int)drEspecialidades["id_especialidad"];
-                    esp.Descripcion = (string)drEspecialidades["desc_especialidad"];
-
-                    especialidades.Add(esp);
+                    Especialidad especialidad = new Especialidad
+                    {
+                        Id = e.id_especialidad,
+                        Descripcion = e.desc_especialidad
+                    };
+                    especialidades.Add(especialidad);
                 }
-
-                drEspecialidades.Close();
-                this.CloseConnection();
             }
-            catch (Exception Ex)
-            {
-                Exception ExcepcionManejada =
-                    new Exception("Error al recuperar lista de especialidades", Ex);
-                throw ExcepcionManejada;
-            }
-
             return especialidades;
         }
 

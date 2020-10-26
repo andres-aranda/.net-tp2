@@ -13,7 +13,7 @@ namespace Academia.UI.Desktop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Persona());
+            Application.Run(new Personas());
         }
     }
 }

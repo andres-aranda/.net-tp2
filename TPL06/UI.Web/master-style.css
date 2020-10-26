@@ -87,14 +87,12 @@ h3 {
     table-layout: fixed;
 }
 .cabecera {
-    font-family: OpenSans-Regular;
     font-size: 15px;
     color: #808080;
     height: 60px;
     background: #36304a;
     line-height: 1.2;
     font-weight: unset;
-    font-family: OpenSans-Regular;
     font-size: 18px;
     color: #fff;
     line-height: 1.2;
@@ -102,7 +100,6 @@ h3 {
 
 }
 .filas {
-    font-family: OpenSans-Regular;
     font-size: 15px;
     color: #808080;
     line-height: 1.2;
@@ -115,3 +112,18 @@ h3 {
     cursor: pointer;
 }
 
+input[type="text"], input[type="password"] {
+    border-style: none;
+    border-bottom: solid #f0f0f0 1px;
+    background-color: transparent;
+    height: 100%;
+    color: black;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+input[type="text"]:focus, input[type="password"]:focus {
+    border-bottom-color: #36304a;
+    outline: none !important;
+}
+input[type="text"]:disabled, input[type="password"]:disabled {
+    border-style: none;
+}

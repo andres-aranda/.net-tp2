@@ -6,80 +6,63 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Business.Entities;
+using Academia.Data.Database;
+using System.Net.Mail;
+
 
 namespace Data.Database
 {
     public class PersonaAdapter : Adapter
     {
-        public void Insert(Persona m)
+        public void Insert(Persona p)
         {
             try
             {
-                this.OpenConnection();
-                SqlCommand cmd = new SqlCommand("INSERT INTO personas (nombre, legajo, tipo_persona, id_plan)" +
-                    " VALUES (@nombre, @legajo, @tipo_persona, @id_plan)" +
-                    " SELECT @@identity", Sqlconn);
-
-                cmd.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = m.Nombre;
-                cmd.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = m.Apellido;
-                cmd.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = m.Email;
-                cmd.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = m.Nombre;
-                cmd.Parameters.Add("@legajo", SqlDbType.Int).Value = m.Legajo;
-                cmd.Parameters.Add("@tipo_persona", SqlDbType.Int).Value = m.TipoPersona;
-                cmd.Parameters.Add("@id_plan", SqlDbType.Int).Value = m.IdPlan;
-                cmd.Parameters.Add("@fecha_nac", SqlDbType.Int).Value = m.FechaDeNacimiento;
-                m.Id = decimal.ToInt32((decimal)cmd.ExecuteScalar());
+                using (EntidadesTP2 db = new EntidadesTP2())
+                {
+                    personas oPersona = new personas()
+                    {
+                        nombre = p.Nombre,
+                        apellido = p.Apellido,
+                        direccion = p.Direccion,
+                        telefono = p.Telefono,
+                        legajo = p.Legajo,
+                        id_plan = p.IdPlan,
+                        fecha_nac = p.FechaDeNacimiento
+                    };
+                    db.personas.Add(oPersona);
+                    db.SaveChanges();
+                }
             }
             catch (Exception e)
             {
                 throw e;
             }
-            finally
-            {
-                CloseConnection();
-            }
         }
 
-        public void Save(Persona m)
-        {
-            if (m.State == BusinessEntity.Estados.New)
-            {
-                this.Insert(m);
-            }
-            else if (m.State == BusinessEntity.Estados.Deleted)
-            {
-                this.Delete(m.Id);
-            }
-            else if (m.State == BusinessEntity.Estados.Modified)
-            {
-                this.Update(m);
-            }
-            m.State = BusinessEntity.Estados.Unmodified;
-        }
 
-        public void Update(Persona persona)
+
+        public void Update(Persona p)
         {
             try
             {
-                OpenConnection();
-                SqlCommand cmd = new SqlCommand("UPDATE personas SET nombre = @nombre, legajo = @legajo," +
-                    " tipo_persona = @tipo_persona, id_plan = @id_plan" +
-                    " WHERE id_persona = @id", Sqlconn);
-                cmd.Parameters.Add("@id", SqlDbType.Int).Value = persona.Id;
-                cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = persona.Nombre;
-                cmd.Parameters.Add("@legajo", SqlDbType.Int).Value = persona.Legajo;
-                cmd.Parameters.Add("@tipo_persona", SqlDbType.Int).Value = persona.TipoPersona;
-                cmd.Parameters.Add("@id_plan", SqlDbType.Int).Value = persona.IdPlan;
-                cmd.Parameters.Add("@fecha_nac", SqlDbType.Int).Value = persona.FechaDeNacimiento;
-                cmd.ExecuteNonQuery();
+                using (EntidadesTP2 db = new EntidadesTP2())
+                {
+                    personas oPersona = db.personas.Find(p.Id);
+                    oPersona.nombre = p.Nombre;
+                    oPersona.apellido = p.Apellido;
+                    oPersona.direccion = p.Direccion;
+                    oPersona.telefono = p.Telefono;
+                    oPersona.legajo = p.Legajo;
+                    oPersona.id_plan = p.IdPlan;
+                    oPersona.fecha_nac = p.FechaDeNacimiento;
+
+                    db.SaveChanges();
+                }
             }
             catch (Exception e)
             {
                 throw e;
-            }
-            finally
-            {
-                CloseConnection();
             }
         }
 
@@ -88,30 +71,23 @@ namespace Data.Database
             Persona persona = new Persona();
             try
             {
-                OpenConnection();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM personas WHERE id_persona = @id", Sqlconn);
-                cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
-                SqlDataReader dr = cmd.ExecuteReader();
-                if (dr.Read())
+                using (EntidadesTP2 db = new EntidadesTP2())
                 {
-                    persona.Id = (int)dr["id_persona"];
-                    persona.Nombre = (string)dr["nombre"];
-                    persona.Apellido = (string)dr["apellido"];
-                    persona.Direccion = (string)dr["direccion"];
-                    persona.Telefono = (string)dr["telefono"];
-                    persona.Legajo = (int)dr["legajo"];
-                    persona.IdPlan = (int)dr["id_plan"];
-                    persona.FechaDeNacimiento = (DateTime)dr["fecha_nac"];
+                    personas p = db.personas.Find(id);
+                    persona.Id = p.id_persona;
+                    persona.Nombre = p.nombre;
+                    persona.Apellido = p.apellido;
+                    persona.Direccion = p.direccion;
+                    persona.Email = new MailAddress(p.email);
+                    persona.Telefono = p.telefono;
+                    persona.FechaDeNacimiento = p.fecha_nac;
+                    persona.Legajo = (int)p.legajo;
+                    persona.IdPlan = p.id_plan;
                 }
-                dr.Close();
             }
             catch (Exception e)
             {
                 throw e;
-            }
-            finally
-            {
-                CloseConnection();
             }
             return persona;
         }
@@ -119,32 +95,25 @@ namespace Data.Database
         public List<Persona> GetAll()
         {
             List<Persona> personas = new List<Persona>();
-            try
+            using (EntidadesTP2 e = new EntidadesTP2())
             {
-                OpenConnection();
-                SqlCommand cmdPersonas = new SqlCommand("SELECT * FROM personas", Sqlconn);
-                SqlDataReader drPersonas = cmdPersonas.ExecuteReader();
-                while (drPersonas.Read())
+                
+                foreach (var oPersona in e.personas)
                 {
-                    Persona m = new Persona();
-                    m.Id = (int)drPersonas["id_persona"];
-                    m.Nombre = (string)drPersonas["nombre"];
-                    m.Legajo = (int)drPersonas["legajo"];
-
-                    m.IdPlan = (int)drPersonas["id_plan"];
-
-                    personas.Add(m);
+                    Persona per = new Persona
+                    {
+                        Id = oPersona.id_persona,
+                        Nombre = oPersona.nombre,
+                        Apellido = oPersona.apellido,
+                        Direccion = oPersona.direccion,
+                        Email = new MailAddress(oPersona.email),
+                        Telefono = oPersona.telefono,
+                        FechaDeNacimiento = oPersona.fecha_nac,
+                        Legajo = (int)oPersona.legajo,
+                        IdPlan = oPersona.id_plan
+                    };
+                    personas.Add(per);
                 }
-                drPersonas.Close();
-            }
-            catch (Exception e)
-            {
-                Exception ex = new Exception("Error al recuperar la lista de personas", e);
-                throw ex;
-            }
-            finally
-            {
-                CloseConnection();
             }
             return personas;
         }
@@ -153,18 +122,17 @@ namespace Data.Database
         {
             try
             {
-                OpenConnection();
-                SqlCommand cmd = new SqlCommand("DELETE personas WHERE id_persona = @id", Sqlconn);
-                cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
-                cmd.ExecuteNonQuery();
+                using (EntidadesTP2 db = new EntidadesTP2())
+                {
+                    var persona = new personas { id_persona = id };
+                    db.personas.Attach(persona);
+                    db.personas.Remove(persona);
+                    db.SaveChanges();
+                }
             }
             catch (Exception e)
             {
                 throw e;
-            }
-            finally
-            {
-                CloseConnection();
             }
         }
 
@@ -173,39 +141,47 @@ namespace Data.Database
             List<Materia> materias = new List<Materia>();
             try
             {
-                OpenConnection();
-                SqlCommand cmd = new SqlCommand("SELECT m.* " +
-                    "FROM personas per " +
-                    "LEFT JOIN planes p ON per.id_plan = p.id_plan " +
-                    "LEFT JOIN materias m ON p.id_plan = m.id_plan " +
-                    "WHERE per.id_persona = @id_persona;", Sqlconn);
-                cmd.Parameters.Add("@id_persona", SqlDbType.Int).Value = idPersona;
-                SqlDataReader dr = cmd.ExecuteReader();
-                while (dr.Read())
+                using (EntidadesTP2 db = new EntidadesTP2())
                 {
-                    Materia m = new Materia
+                    var materiasPlan = from per in db.personas
+                                       join p in db.planes on per.id_plan equals p.id_plan
+                                       join m in db.materias on p.id_plan equals m.id_plan
+                                       where per.id_persona == idPersona
+                                       select m;
+                    foreach (var m in materiasPlan)
                     {
-                        Id = (int)dr["id_materia"],
-                        Descripcion = (string)dr["desc_materia"],
-                        HsSemanales = (int)dr["hs_semanales"],
-                        HsTotales = (int)dr["hs_totales"],
-                        IdPlan = (int)dr["id_plan"]
-                    };
-                    materias.Add(m);
+                        materias.Add(new Materia()
+                        {
+                            Id = m.id_materia,
+                            Descripcion = m.desc_materia,
+                            HsSemanales = m.hs_semanales,
+                            HsTotales = m.hs_totales,
+                            IdPlan = m.id_plan
+                        });
+                    }
                 }
-                dr.Close();
             }
             catch (Exception e)
             {
                 throw e;
             }
-            finally
-            {
-                CloseConnection();
-            }
             return materias;
         }
-
-
+        public void Save(Persona p)
+        {
+            if (p.State == BusinessEntity.Estados.New)
+            {
+                this.Insert(p);
+            }
+            else if (p.State == BusinessEntity.Estados.Deleted)
+            {
+                this.Delete(p.Id);
+            }
+            else if (p.State == BusinessEntity.Estados.Modified)
+            {
+                this.Update(p);
+            }
+            p.State = BusinessEntity.Estados.Unmodified;
+        }
     }
 }
