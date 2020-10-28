@@ -145,6 +145,12 @@
     <Compile Include="Modulos.Designer.cs">
       <DependentUpon>Modulos.cs</DependentUpon>
     </Compile>
+    <Compile Include="PerosnaDesktop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PerosnaDesktop.Designer.cs">
+      <DependentUpon>PerosnaDesktop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Personas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -265,6 +271,10 @@
     <ProjectReference Include="..\Business.Logic\Business.Logic.csproj">
       <Project>{0e59225a-6db5-4478-b9c2-76750c83a2c1}</Project>
       <Name>Business.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data.Database\Data.Database.csproj">
+      <Project>{18D1C50F-58E0-4D94-B05B-4A95A146E6BB}</Project>
+      <Name>Data.Database</Name>
     </ProjectReference>
     <ProjectReference Include="..\Util\Util.csproj">
       <Project>{b2225aa0-986c-40c2-843b-ed1954da0e9b}</Project>
