@@ -61,12 +61,41 @@ namespace Academia.UI.Desktop.Properties {
         }
         
         /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap add_btn {
+            get {
+                object obj = ResourceManager.GetObject("add-btn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_btn {
+            get {
+                object obj = ResourceManager.GetObject("edit-btn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap iconoAcademia {
             get {
                 object obj = ResourceManager.GetObject("iconoAcademia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap remove_btn {
+            get {
+                object obj = ResourceManager.GetObject("remove-btn", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
