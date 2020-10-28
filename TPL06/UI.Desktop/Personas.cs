@@ -25,8 +25,10 @@ namespace Academia.UI.Desktop
 
         private void Listar()
         {
+
             PersonaLogic pl = new PersonaLogic();
             dgvPersonas.DataSource = pl.GetAll();
+
         }
     }
 }
