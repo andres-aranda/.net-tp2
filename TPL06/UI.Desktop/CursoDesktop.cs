@@ -14,9 +14,18 @@ namespace Academia.UI.Desktop
     public partial class CursoDesktop : Form
     {
         private cursos Curso = new cursos();
-        public CursoDesktop(int idCurso)
+
+        public int idCurso { get; private set; }
+
+        public CursoDesktop(int id)
         {
-            idCurso = 4;
+            idCurso = id;
+            InitializeComponent();
+        }
+
+        public void CursoDesktop_Load(object sender, EventArgs e)
+        {
+
             CargaCombos();
             if (idCurso != 0)
             {
@@ -27,24 +36,22 @@ namespace Academia.UI.Desktop
                 Mapeo();
             }
 
-            InitializeComponent();
-        }
-
-        public void CursoDesktop_Load(object sender, EventArgs e)
-        {
-
         }
 
         public void CargaCombos()
         {
             using (EntidadesTP2 db = new EntidadesTP2())
             {
-                List<comisiones> com = db.comisiones.ToList();
-                this.cmbComision.DataSource = com;
+                this.cmbPlan.DataSource = db.planes.ToList();
+                this.cmbPlan.DisplayMember = "desc_plan";
+                this.cmbPlan.ValueMember = "id_plan";
+
+
+                this.cmbComision.DataSource =  db.comisiones.Where(c => c.id_plan == (int)cmbPlan.SelectedValue).ToList();
                 this.cmbComision.DisplayMember = "desc_comision";
                 this.cmbComision.ValueMember = "id_comision";
 
-                this.cmbMateria.DataSource = db.materias.ToList();
+                this.cmbMateria.DataSource = db.materias.Where(m=>m.id_plan==(int)cmbPlan.SelectedValue).ToList();
                 this.cmbMateria.DisplayMember = "desc_materia";
                 this.cmbMateria.ValueMember = "id_materia";
             }
@@ -54,8 +61,41 @@ namespace Academia.UI.Desktop
             lblId.Text = Curso.id_curso.ToString();
             txtAnio.Text = Curso.anio_calendario.ToString();
             txtCupo.Text = Curso.cupo.ToString();
-            cmbComision.SelectedItem = Curso.id_comision;
+            cmbComision.SelectedValue = Curso.id_comision;
             cmbMateria.SelectedItem = Curso.id_materia;
+        }
+       
+          
+
+        private void cmbPlan_SelectedValueChanged(object sender, EventArgs e)
+        {
+
+             using (EntidadesTP2 db = new EntidadesTP2())
+            {
+                Console.WriteLine(cmbPlan.SelectedValue.GetType());
+                int pla = 0;
+                try
+                {
+            
+                    pla = (int)(cmbPlan.SelectedValue);
+                }
+                catch
+                {
+
+                }
+                if (pla != 0)
+                {
+this.cmbComision.DataSource = db.comisiones.Where(c => c.id_plan == pla).ToList();
+                this.cmbComision.DisplayMember = "desc_comision";
+                this.cmbComision.ValueMember = "id_comision";
+
+                this.cmbMateria.DataSource = db.materias.Where(m => m.id_plan == pla).ToList();
+                this.cmbMateria.DisplayMember = "desc_materia";
+                this.cmbMateria.ValueMember = "id_materia";
+                }
+                
+            }
+      
         }
     }
 }

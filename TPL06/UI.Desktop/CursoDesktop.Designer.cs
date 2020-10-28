@@ -40,6 +40,8 @@
             this.txtCupo = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCanelar = new System.Windows.Forms.Button();
+            this.cmbPlan = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -180,11 +182,34 @@
             this.btnCanelar.Text = "Cancelar";
             this.btnCanelar.UseVisualStyleBackColor = true;
             // 
+            // cmbPlan
+            // 
+            this.cmbPlan.FormattingEnabled = true;
+            this.cmbPlan.Location = new System.Drawing.Point(241, 13);
+            this.cmbPlan.Name = "cmbPlan";
+            this.cmbPlan.Size = new System.Drawing.Size(121, 21);
+            this.cmbPlan.TabIndex = 12;
+            this.cmbPlan.SelectedValueChanged += new System.EventHandler(this.cmbPlan_SelectedValueChanged);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(199, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(28, 13);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Plan";
+            // 
             // CursoDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(389, 176);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cmbPlan);
             this.Controls.Add(this.btnCanelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.txtCupo);
@@ -219,5 +244,7 @@
         private System.Windows.Forms.TextBox txtCupo;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCanelar;
+        private System.Windows.Forms.ComboBox cmbPlan;
+        private System.Windows.Forms.Label label2;
     }
 }
