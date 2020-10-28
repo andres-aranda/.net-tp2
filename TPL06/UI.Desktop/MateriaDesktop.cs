@@ -121,5 +121,10 @@ namespace Academia.UI.Desktop
         {
             Close();
         }
+
+        private void MateriaDesktop_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

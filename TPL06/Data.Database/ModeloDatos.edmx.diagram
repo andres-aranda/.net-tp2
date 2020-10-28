@@ -6,14 +6,14 @@
     <edmx:Diagrams>
       <Diagram DiagramId="f845c6a185954c288ad998d2b57cbcca" Name="Diagram1">
         <EntityTypeShape EntityType="ModeloTP2.alumnos_inscripciones" Width="1.5" PointX="9.75" PointY="6.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="ModeloTP2.comisiones" Width="1.5" PointX="5.25" PointY="3" IsExpanded="true" />
-        <EntityTypeShape EntityType="ModeloTP2.cursos" Width="1.5" PointX="7.5" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloTP2.comisiones" Width="1.5" PointX="4.625" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloTP2.cursos" Width="1.5" PointX="7.75" PointY="1.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ModeloTP2.docentes_cursos" Width="1.5" PointX="12.75" PointY="7.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ModeloTP2.especialidades" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ModeloTP2.materias" Width="1.5" PointX="5.25" PointY="6" IsExpanded="true" />
         <EntityTypeShape EntityType="ModeloTP2.modulos" Width="1.5" PointX="7.5" PointY="14.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ModeloTP2.modulos_usuarios" Width="1.5" PointX="9.75" PointY="9.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ModeloTP2.personas" Width="1.5" PointX="5.25" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloTP2.personas" Width="1.5" PointX="4.75" PointY="9.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ModeloTP2.planes" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ModeloTP2.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ModeloTP2.usuarios" Width="1.5" PointX="7.5" PointY="9.375" IsExpanded="true" />
