@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Academia.Data.Database;
+using System;
 using System.Windows.Forms;
 
 namespace Academia.UI.Desktop
@@ -13,7 +14,7 @@ namespace Academia.UI.Desktop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Personas());
+            Application.Run(new Cursos());
         }
     }
 }

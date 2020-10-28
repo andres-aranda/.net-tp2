@@ -97,6 +97,12 @@
     <Compile Include="Especialidades.Designer.cs">
       <DependentUpon>Especialidades.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cursos.Designer.cs">
+      <DependentUpon>Cursos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inscripciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,11 +151,11 @@
     <Compile Include="Modulos.Designer.cs">
       <DependentUpon>Modulos.cs</DependentUpon>
     </Compile>
-    <Compile Include="PerosnaDesktop.cs">
+    <Compile Include="PerosnaDesktopPendiente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PerosnaDesktop.Designer.cs">
-      <DependentUpon>PerosnaDesktop.cs</DependentUpon>
+    <Compile Include="PerosnaDesktopPendiente.Designer.cs">
+      <DependentUpon>PerosnaDesktopPendiente.cs</DependentUpon>
     </Compile>
     <Compile Include="Personas.cs">
       <SubType>Form</SubType>
@@ -192,6 +198,9 @@
     <EmbeddedResource Include="Comisiones.resx">
       <DependentUpon>Comisiones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Cursos.resx">
+      <DependentUpon>Cursos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inscripciones.resx">
       <DependentUpon>Inscripciones.cs</DependentUpon>
     </EmbeddedResource>
@@ -218,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos.resx">
       <DependentUpon>Modulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PerosnaDesktopPendiente.resx">
+      <DependentUpon>PerosnaDesktopPendiente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Personas.resx">
       <DependentUpon>Personas.cs</DependentUpon>
@@ -250,6 +262,7 @@
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Academia.Data.Database.EntidadesTP2.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
