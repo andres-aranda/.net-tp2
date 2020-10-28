@@ -17,7 +17,7 @@ namespace Academia.Data.Database
     {
         public EntidadesTP2() : base("name=EntidadesTP2")
         {
-            this.Configuration.LazyLoadingEnabled = false;
+            //this.Configuration.LazyLoadingEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

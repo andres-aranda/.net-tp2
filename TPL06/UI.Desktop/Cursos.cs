@@ -29,17 +29,9 @@ namespace Academia.UI.Desktop
         {
             using (EntidadesTP2 db = new EntidadesTP2())
             {
-
                  List<cursos>  cur = db.cursos.Include(x => x.comisiones).Include(x => x.materias).ToList();
                 this.dataGridView1.DataSource = cur;
-                
-                foreach(cursos c in cur)
-                {
-                    MessageBox.Show(c.comisiones.desc_comision);
-                }
-
-
-            }
+           }
         }
     }
 }

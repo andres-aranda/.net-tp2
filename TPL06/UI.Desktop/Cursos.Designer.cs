@@ -35,6 +35,8 @@
             this.comision = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.entidadesTP2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.entidadesTP2BindingSource)).BeginInit();
             this.SuspendLayout();
@@ -87,11 +89,31 @@
             // 
             this.entidadesTP2BindingSource.DataSource = typeof(Academia.Data.Database.EntidadesTP2);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(298, 200);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Editar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(379, 200);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Nuevo";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // Cursos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(475, 235);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Cursos";
             this.Text = "Form1";
@@ -110,5 +132,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn materia;
         private System.Windows.Forms.DataGridViewTextBoxColumn comision;
         private System.Windows.Forms.DataGridViewTextBoxColumn cupo;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
