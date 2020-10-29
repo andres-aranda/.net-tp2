@@ -33,5 +33,15 @@ namespace Academia.UI.Desktop.Reportes
         {
             this.Text = "Reportes " + nombre;
         }
+
+        private void rptReport_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Reporte_Load(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

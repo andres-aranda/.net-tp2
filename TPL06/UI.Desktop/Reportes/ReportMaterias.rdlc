@@ -464,28 +464,6 @@
         <DataSourceName>tp2_netDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
-      <Fields>
-        <Field Name="id_materia">
-          <DataField>id_materia</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="desc_materia">
-          <DataField>desc_materia</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="hs_semanales">
-          <DataField>hs_semanales</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="hs_totales">
-          <DataField>hs_totales</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="id_plan">
-          <DataField>id_plan</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-      </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>tp2_netDataSet</rd:DataSetName>
         <rd:SchemaPath>D:\Mis documentos\Net\braiann\.net-tp2\TPL06\UI.Desktop\tp2_netDataSet1.xsd</rd:SchemaPath>

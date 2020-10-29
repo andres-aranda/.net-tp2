@@ -34,25 +34,28 @@
             // rptReport
             // 
             this.rptReport.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rptReport.LocalReport.ReportEmbeddedResource = "Academia.UI.Desktop.Reportes.ReportMaterias.rdlc";
             this.rptReport.Location = new System.Drawing.Point(0, 0);
-            this.rptReport.Name = "ReportViewer";
+            this.rptReport.Margin = new System.Windows.Forms.Padding(2);
+            this.rptReport.Name = "rptReport";
             this.rptReport.ServerReport.BearerToken = null;
-            this.rptReport.Size = new System.Drawing.Size(800, 450);
+            this.rptReport.Size = new System.Drawing.Size(600, 366);
             this.rptReport.TabIndex = 0;
-            //this.rptReport.Load += new System.EventHandler(this.reportViewer1_Load);
+            this.rptReport.Load += new System.EventHandler(this.rptReport_Load);
             // 
             // Reporte
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.rptReport);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "Reporte";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Name = "Reporte";
             this.Text = "Reporte";
-           // this.Load += new System.EventHandler(this.Reporte_Load);
+            this.Load += new System.EventHandler(this.Reporte_Load);
             this.ResumeLayout(false);
 
         }

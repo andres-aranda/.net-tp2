@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Academia.UI.Desktop.Reportes;
+using System;
 using System.Windows.Forms;
 
 namespace Academia.UI.Desktop
@@ -13,7 +14,7 @@ namespace Academia.UI.Desktop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+            Application.Run(new Reporte());
         }
     }
 }
