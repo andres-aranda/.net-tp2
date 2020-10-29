@@ -141,6 +141,7 @@ namespace Academia.UI.Desktop
         {
             AbrirFormularioHijo(new Personas());
         }
+
     }
 }
 

@@ -9,6 +9,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Business.Entities;
 using Business.Logic;
+using Academia.UI.Desktop.Reportes;
+using Microsoft.Reporting.WinForms;
+
+
 
 namespace Academia.UI.Desktop
 {
@@ -84,5 +88,30 @@ namespace Academia.UI.Desktop
         {
             Close();
         }
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            this.ShowReporteMaterias();
+        }
+        private void ShowReporteMaterias()
+        {
+            MateriaLogic ml = new MateriaLogic(); 
+            try
+            {
+                this.dgvMaterias.DataSource = ml.GetAll();
+                ReportDataSource dtsMateria = new ReportDataSource("dtsMateria", this.dgvMaterias.DataSource);
+                Reporte formReport = new Reporte();
+                formReport.SetFormText("Materias");
+                formReport.rptReport.LocalReport.DataSources.Add(dtsMateria);
+                formReport.rptReport.LocalReport.ReportEmbeddedResource = "Academia.UI.Desktop.Reportes.ReportMaterias.rdlc";
+                formReport.rptReport.RefreshReport();
+                formReport.ShowDialog(this);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }
+    
