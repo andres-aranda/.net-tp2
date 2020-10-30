@@ -1,3 +1,29 @@
+## ABMCs Desktop
+* Modulos
+* Modulos_Usuarios
+* Usuarios
+* Personas
+* Planes
+* Comisiones
+* Especialidades
+* Materias
+* Cursos
+* Alumnos_Inscripciones
+* Docentes_Cursos
+
+## ABMCs Web
+* Modulos
+* Modulos_Usuarios
+* Usuarios
+* Personas
+* Planes
+* Comisiones
+* Especialidades
+* Materias
+* Cursos
+* Alumnos_Inscripciones
+* Docentes_Cursos
+
 ## GENERAL  
 1. Refactorización de Persona y Usuario:
   * Los métodos que ya funcionan del ABMC Usuario tienen que trasladarse a Persona, usando INNER JOINs de usuarios y personas cuando se necesite.
