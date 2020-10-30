@@ -62,6 +62,7 @@ namespace Academia.UI.Desktop
             tsmgestionAcademia.Visible = false;
             tsmgestionAlumno.Visible = false;
             tsmgestionDocente.Visible = false;
+            tsmSeguridad.Visible = false;
             Login appLogin = new Login();
             if (appLogin.ShowDialog() != DialogResult.OK)
             {
@@ -74,12 +75,21 @@ namespace Academia.UI.Desktop
             this.WindowState = FormWindowState.Maximized;
             foreach (Modulo m in usuarioActual.Modulo)
             {
-                if (m.Descripcion == "Alumno" || m.Descripcion == "Administrador") 
-                    tsmgestionAlumno.Visible = true ;
-                if (m.Descripcion == "Docente" || m.Descripcion == "Administrador")
-                    tsmgestionDocente.Visible = true;
+                if (m.Descripcion == "Alumno")
+                    tsmAlumno.Visible = true;
+                if (m.Descripcion == "Docente")
+                    tsmDocente.Visible = true;
                 if (m.Descripcion == "No docente" || m.Descripcion == "Administrador")
+                {
                     tsmgestionAcademia.Visible = true;
+                    tsmgestionAlumno.Visible = true;
+                    tsmgestionDocente.Visible = true;
+                    if (m.Descripcion == "Administrador")
+                    {
+                        tsmSeguridad.Visible = true;
+                    }
+                }
+                   
 
             }
 
