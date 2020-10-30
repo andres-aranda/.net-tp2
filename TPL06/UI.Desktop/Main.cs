@@ -141,6 +141,11 @@ namespace Academia.UI.Desktop
         {
             AbrirFormularioHijo(new Personas());
         }
+
+        private void listadoDeMateriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new Reporte());
+        }
     }
 }
 

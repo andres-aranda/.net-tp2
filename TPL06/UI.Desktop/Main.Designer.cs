@@ -59,6 +59,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblTituloFormulario = new System.Windows.Forms.Label();
             this.panelDesktop = new System.Windows.Forms.Panel();
+            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoDeMateriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuLateral.SuspendLayout();
             this.menuAbierto.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -97,7 +99,7 @@
             this.btn_CerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btn_CerrarSesion.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btn_CerrarSesion.Location = new System.Drawing.Point(0, 322);
-            this.btn_CerrarSesion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_CerrarSesion.Margin = new System.Windows.Forms.Padding(2);
             this.btn_CerrarSesion.Name = "btn_CerrarSesion";
             this.btn_CerrarSesion.Size = new System.Drawing.Size(200, 27);
             this.btn_CerrarSesion.TabIndex = 0;
@@ -219,7 +221,8 @@
             this.cursosToolStripMenuItem,
             this.especialidadesToolStripMenuItem,
             this.materiasToolStripMenuItem,
-            this.planesToolStripMenuItem});
+            this.planesToolStripMenuItem,
+            this.reportesToolStripMenuItem});
             this.tsmgestionAcademia.Name = "tsmgestionAcademia";
             this.tsmgestionAcademia.Size = new System.Drawing.Size(195, 19);
             this.tsmgestionAcademia.Text = "Gestion Academia";
@@ -357,6 +360,21 @@
             this.panelDesktop.Size = new System.Drawing.Size(600, 387);
             this.panelDesktop.TabIndex = 2;
             // 
+            // reportesToolStripMenuItem
+            // 
+            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listadoDeMateriasToolStripMenuItem});
+            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.reportesToolStripMenuItem.Text = "Reportes";
+            // 
+            // listadoDeMateriasToolStripMenuItem
+            // 
+            this.listadoDeMateriasToolStripMenuItem.Name = "listadoDeMateriasToolStripMenuItem";
+            this.listadoDeMateriasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listadoDeMateriasToolStripMenuItem.Text = "Listado de materias";
+            this.listadoDeMateriasToolStripMenuItem.Click += new System.EventHandler(this.listadoDeMateriasToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -419,5 +437,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmgestionDocente;
         private System.Windows.Forms.ToolStripMenuItem tsmgestionAlumno;
         private System.Windows.Forms.ToolStripMenuItem btnInscripcionCurso;
+        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listadoDeMateriasToolStripMenuItem;
     }
 }
