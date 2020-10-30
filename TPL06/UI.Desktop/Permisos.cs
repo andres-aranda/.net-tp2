@@ -21,9 +21,15 @@ namespace Academia.UI.Desktop
         public Permisos()
         {
             InitializeComponent();
+            Listar();
         }
 
         private void Permisos_Load(object sender, EventArgs e)
+        {
+            Listar();
+        }
+
+        private void Listar()
         {
             List<Usuario> usuarios = ul.GetAll();
             dgvPermisos.AutoGenerateColumns = false;
@@ -89,6 +95,7 @@ namespace Academia.UI.Desktop
                 ul.AddModulo((string)dgvPermisos.CurrentRow.Cells[0].Value, idModulo);
                 MessageBox.Show("Permiso agregado con éxito.", "Éxito", MessageBoxButtons.OK);
             }
+            Listar();
         }
     }
 }
