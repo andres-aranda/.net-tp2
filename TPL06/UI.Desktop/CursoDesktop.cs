@@ -17,6 +17,12 @@ namespace Academia.UI.Desktop
 
         public int idCurso { get; private set; }
 
+
+        public CursoDesktop()
+        {
+            idCurso = 0;
+            InitializeComponent();
+        }
         public CursoDesktop(int id)
         {
             idCurso = id;

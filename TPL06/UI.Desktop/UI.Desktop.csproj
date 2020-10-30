@@ -110,6 +110,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetMateriasAcademia.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetPersonas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetPersonas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="EspecialidadDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +211,12 @@
     <Compile Include="Reporte.Designer.cs">
       <DependentUpon>Reporte.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReporteInscripciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteInscripciones.Designer.cs">
+      <DependentUpon>ReporteInscripciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="UsuarioDesktop.cs">
       <SubType>Form</SubType>
@@ -244,6 +255,17 @@
     </None>
     <None Include="DataSetMateriasAcademia.xss">
       <DependentUpon>DataSetMateriasAcademia.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetPersonas.xsc">
+      <DependentUpon>DataSetPersonas.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetPersonas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetPersonas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetPersonas.xss">
+      <DependentUpon>DataSetPersonas.xsd</DependentUpon>
     </None>
     <None Include="Resources\remove-btn.png" />
     <None Include="Resources\edit-btn.png" />
@@ -305,6 +327,10 @@
     <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="Reporte.resx">
       <DependentUpon>Reporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteInscripciones.rdlc" />
+    <EmbeddedResource Include="ReporteInscripciones.resx">
+      <DependentUpon>ReporteInscripciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteMaterias.rdlc" />
     <EmbeddedResource Include="UsuarioDesktop.resx">
