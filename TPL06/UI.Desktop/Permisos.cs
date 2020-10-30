@@ -38,13 +38,13 @@ namespace Academia.UI.Desktop
             {
                 Usuario u = usuarios.Find(usr => usr.NombreUsuario == (string)row.Cells[0].Value);
                 u.Modulo = ul.GetModulos(u);
-                if (u.Modulo.Exists(m => m.Descripcion == "Docente"))
+                if (u.Modulo.Exists(m => m.Id == 1))
                     row.Cells[1].Value = true;
-                else if (u.Modulo.Exists(m => m.Descripcion == "Alumno"))
+                if (u.Modulo.Exists(m => m.Id == 2))
                     row.Cells[2].Value = true;
-                else if (u.Modulo.Exists(m => m.Descripcion == "NoDocente"))
+                if (u.Modulo.Exists(m => m.Id == 3))
                     row.Cells[3].Value = true;
-                else if (u.Modulo.Exists(m => m.Descripcion == "Administrador"))
+                if (u.Modulo.Exists(m => m.Id == 4))
                     row.Cells[4].Value = true;
             }
         }
