@@ -99,11 +99,6 @@ namespace Academia.UI.Desktop
             AbrirFormularioHijo(new Modulos());
         }
 
-        private void btnUsuarios_Click(object sender, EventArgs e)
-        {
-            AbrirFormularioHijo(new Usuarios());
-        }
-
         private void btnPlanes_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo(new Planes());
@@ -155,6 +150,11 @@ namespace Academia.UI.Desktop
         private void listadoDeMateriasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo(new Reporte());
+        }
+
+        private void tsmPermisos_Click(object sender, EventArgs e)
+        {
+            // TODO
         }
     }
 }

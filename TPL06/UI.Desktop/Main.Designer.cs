@@ -35,8 +35,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tsmArchivo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmSeguridad = new System.Windows.Forms.ToolStripMenuItem();
-            this.modulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmModulos = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmPermisos = new System.Windows.Forms.ToolStripMenuItem();
             this.buscarActualizacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.realizarBackUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -164,25 +164,25 @@
             // tsmSeguridad
             // 
             this.tsmSeguridad.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.modulosToolStripMenuItem,
-            this.usuariosToolStripMenuItem});
+            this.tsmPermisos,
+            this.tsmModulos});
             this.tsmSeguridad.Name = "tsmSeguridad";
             this.tsmSeguridad.Size = new System.Drawing.Size(194, 22);
             this.tsmSeguridad.Text = "Seguridad";
             // 
-            // modulosToolStripMenuItem
+            // tsmModulos
             // 
-            this.modulosToolStripMenuItem.Name = "modulosToolStripMenuItem";
-            this.modulosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.modulosToolStripMenuItem.Text = "Modulos";
-            this.modulosToolStripMenuItem.Click += new System.EventHandler(this.btnModulos_Click);
+            this.tsmModulos.Name = "tsmModulos";
+            this.tsmModulos.Size = new System.Drawing.Size(180, 22);
+            this.tsmModulos.Text = "Modulos";
+            this.tsmModulos.Click += new System.EventHandler(this.btnModulos_Click);
             // 
-            // usuariosToolStripMenuItem
+            // tsmPermisos
             // 
-            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.usuariosToolStripMenuItem.Text = "Usuarios";
-            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.btnUsuarios_Click);
+            this.tsmPermisos.Name = "tsmPermisos";
+            this.tsmPermisos.Size = new System.Drawing.Size(180, 22);
+            this.tsmPermisos.Text = "Permisos";
+            this.tsmPermisos.Click += new System.EventHandler(this.tsmPermisos_Click);
             // 
             // buscarActualizacionesToolStripMenuItem
             // 
@@ -494,8 +494,8 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem tsmArchivo;
         private System.Windows.Forms.ToolStripMenuItem tsmSeguridad;
-        private System.Windows.Forms.ToolStripMenuItem modulosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmModulos;
+        private System.Windows.Forms.ToolStripMenuItem tsmPermisos;
         private System.Windows.Forms.ToolStripMenuItem buscarActualizacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem backUpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem realizarBackUpToolStripMenuItem;
