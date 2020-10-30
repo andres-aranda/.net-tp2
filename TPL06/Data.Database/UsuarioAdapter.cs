@@ -4,6 +4,9 @@ using System.Text;
 using Business.Entities;
 using System.Data;
 using System.Data.SqlClient;
+using Academia.Data.Database;
+using System.Linq;
+using System.Runtime.CompilerServices;
 
 // VER TRY CATCH para capas negocio y presentación.
 
@@ -84,6 +87,28 @@ namespace Data.Database
             return usr;
         }
 
+        public Usuario GetOne(string nombreUsuario)
+        {
+            Usuario u;
+            try
+            {
+                using (EntidadesTP2 db = new EntidadesTP2())
+                {
+                    var oUsuario = db.usuarios.Find(nombreUsuario);
+                    u = new Usuario()
+                    {
+                        Id = oUsuario.id_usuario,
+                        NombreUsuario = oUsuario.nombre_usuario
+                    };
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            return u;
+        }
+
         public void Delete(int Id)
         {
             try
@@ -101,6 +126,27 @@ namespace Data.Database
             finally
             {
                 this.CloseConnection();
+            }
+        }
+
+        public void DeleteModulo(string nombreUsuario, int idModulo)
+        {
+            try
+            {
+                using (EntidadesTP2 db = new EntidadesTP2())
+                {
+                    int id = (from u in db.usuarios
+                             where u.nombre_usuario == nombreUsuario
+                             select u.id_usuario).First();
+                    db.modulos_usuarios.Remove((from mu in db.modulos_usuarios                                               
+                                               where mu.id_usuario == id && mu.id_modulo == idModulo
+                                               select mu).First());
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
             }
         }
 
@@ -217,6 +263,59 @@ namespace Data.Database
                 return null;
             }
             return usuario;
+        }
+
+        public List<Modulo> GetModulos(Usuario u)
+        {
+            List<Modulo> modulos = new List<Modulo>();
+            try
+            {
+                using (EntidadesTP2 db = new EntidadesTP2())
+                {
+                    var modulosUsuario = from m in db.modulos
+                                         join mu in db.modulos_usuarios on m.id_modulo equals mu.id_modulo
+                                         where mu.id_usuario == u.Id
+                                         select m;
+                    foreach (var m in modulosUsuario)
+                    {
+                        Modulo mod = new Modulo
+                        {
+                            Id = m.id_modulo,
+                            Descripcion = m.desc_modulo
+                        };
+                        modulos.Add(mod);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            return modulos;
+        }
+
+        public void AddModulo(string nombreUsuario, int idModulo)
+        {
+            try
+            {
+                using (EntidadesTP2 db = new EntidadesTP2())
+                {
+                    int idUsuario = (from u in db.usuarios
+                              where u.nombre_usuario == nombreUsuario
+                              select u.id_usuario).First();
+                    modulos_usuarios mu = new modulos_usuarios
+                    {
+                        id_modulo = idModulo,
+                        id_usuario = idUsuario
+                    };
+                    db.modulos_usuarios.Add(mu);
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
     }
 }

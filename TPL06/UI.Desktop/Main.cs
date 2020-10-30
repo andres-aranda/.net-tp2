@@ -154,7 +154,7 @@ namespace Academia.UI.Desktop
 
         private void tsmPermisos_Click(object sender, EventArgs e)
         {
-            // TODO
+            AbrirFormularioHijo(new Permisos());
         }
     }
 }
