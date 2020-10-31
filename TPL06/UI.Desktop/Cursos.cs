@@ -29,9 +29,32 @@ namespace Academia.UI.Desktop
         {
             using (EntidadesTP2 db = new EntidadesTP2())
             {
-                 List<cursos>  cur = db.cursos.Include(x => x.comisiones).Include(x => x.materias).ToList();
+                List<cursos>  cur = db.cursos.Include(x => x.comisiones).Include(x => x.materias).ToList();
                 this.dataGridView1.DataSource = cur;
-           }
+            }
+        }
+
+        private void tsbNuevo_Click(object sender, EventArgs e)
+        {
+            CursoDesktop cd = new CursoDesktop();
+            cd.ShowDialog();
+        }
+
+        private void tsbEditar_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                int id = ((cursos)dataGridView1.SelectedRows[0].DataBoundItem).id_curso;
+                CursoDesktop cd = new CursoDesktop(id);
+                cd.ShowDialog();
+            }
+            Mapeo();
+        }
+
+        private void tsbReporte_Click(object sender, EventArgs e)
+        {
+            ReporteInscripciones ri = new ReporteInscripciones();
+            ri.ShowDialog();
         }
     }
 }

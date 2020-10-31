@@ -68,7 +68,7 @@ namespace Academia.UI.Desktop
             txtAnio.Text = Curso.anio_calendario.ToString();
             txtCupo.Text = Curso.cupo.ToString();
             cmbComision.SelectedValue = Curso.id_comision;
-            cmbMateria.SelectedItem = Curso.id_materia;
+            cmbMateria.SelectedValue = Curso.id_materia;
         }
        
           

@@ -159,7 +159,7 @@ namespace Academia.UI.Desktop
 
         private void cursosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AbrirFormularioHijo(new CursoDesktop());
+            AbrirFormularioHijo(new Cursos());
         }
 
         private void materiasToolStripMenuItem_Click(object sender, EventArgs e)
