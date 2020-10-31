@@ -56,5 +56,25 @@ namespace Academia.UI.Desktop
             ReporteInscripciones ri = new ReporteInscripciones();
             ri.ShowDialog();
         }
+
+        private void tsbEliminar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Desea eliminar el curso?", "Borrar Curso", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (this.dataGridView1.SelectedRows.Count > 0)
+                {
+                    using (EntidadesTP2 db = new EntidadesTP2())
+                    {
+                        int ID = ((cursos)this.dataGridView1.SelectedRows[0].DataBoundItem).id_curso;
+                        cursos curso = db.cursos.Find(ID);
+                        db.cursos.Remove(curso);
+                        db.SaveChanges();
+                    }
+                    
+                      
+                }
+            }
+            Mapeo();
+        }
     }
 }

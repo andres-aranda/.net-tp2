@@ -81,8 +81,7 @@ namespace Academia.UI.Desktop
                 Console.WriteLine(cmbPlan.SelectedValue.GetType());
                 int pla = 0;
                 try
-                {
-            
+                {            
                     pla = (int)(cmbPlan.SelectedValue);
                 }
                 catch
@@ -91,7 +90,7 @@ namespace Academia.UI.Desktop
                 }
                 if (pla != 0)
                 {
-this.cmbComision.DataSource = db.comisiones.Where(c => c.id_plan == pla).ToList();
+                this.cmbComision.DataSource = db.comisiones.Where(c => c.id_plan == pla).ToList();
                 this.cmbComision.DisplayMember = "desc_comision";
                 this.cmbComision.ValueMember = "id_comision";
 
@@ -103,5 +102,68 @@ this.cmbComision.DataSource = db.comisiones.Where(c => c.id_plan == pla).ToList(
             }
       
         }
+
+        private void btnCanelar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            using (EntidadesTP2 db = new EntidadesTP2())
+            {
+                cursos curso = LeerCampos();
+                if (idCurso == 0)
+                {
+                    db.cursos.Add(curso);
+                }
+                else
+                {
+                    curso = db.cursos.Find(idCurso);
+                    curso = LeerCampos();                
+                }
+                db.SaveChanges();
+
+                    /*
+                     public void Update(Persona p)
+        {
+            try
+            {
+                using (EntidadesTP2 db = new EntidadesTP2())
+                {
+                    personas oPersona = db.personas.Find(p.Id);
+                    oPersona.nombre = p.Nombre;
+                    oPersona.apellido = p.Apellido;
+                    oPersona.direccion = p.Direccion;
+                    oPersona.telefono = p.Telefono;
+                    oPersona.legajo = p.Legajo;
+                    oPersona.id_plan = p.IdPlan;
+                    oPersona.fecha_nac = p.FechaDeNacimiento;
+
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+*/
+                
+            }
+        }
+
+        private cursos LeerCampos()
+        {
+            cursos c = new cursos
+            {
+                id_comision = int.Parse(cmbComision.SelectedValue.ToString()),
+                id_materia = int.Parse(cmbMateria.SelectedValue.ToString()),
+                anio_calendario = int.Parse(txtAnio.Text),
+                cupo = int.Parse(txtCupo.Text)
+            };
+            return c;
+        }
+
     }
 }
