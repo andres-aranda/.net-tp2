@@ -84,5 +84,11 @@ namespace Academia.UI.Desktop
         {
             Close();
         }
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            Reporte r = new Reporte();
+            r.ShowDialog();
+        }
     }
 }

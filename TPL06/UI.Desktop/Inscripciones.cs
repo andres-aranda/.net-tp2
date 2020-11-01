@@ -73,9 +73,10 @@ namespace Academia.UI.Desktop
            
         }
 
-        private void Inscripciones_Load(object sender, EventArgs e)
+        private void tsbReporte_Click(object sender, EventArgs e)
         {
-
+            ReporteInscripciones ri = new ReporteInscripciones();
+            ri.ShowDialog();
         }
     }
 }

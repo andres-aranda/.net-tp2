@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Academia.UI.Desktop
 {
-    public partial class PerosnaDesktopPendiente : Form
+    public partial class PersonaDesktop : Form
     {
-        public PerosnaDesktopPendiente()
+        public PersonaDesktop()
         {
             InitializeComponent();
         }

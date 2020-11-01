@@ -119,8 +119,8 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmd = new SqlCommand("INSERT INTO modulos (desc_modulo, ejecuta)" +
-                    " VALUES (@desc_modulo, @ejecuta)" +
+                SqlCommand cmd = new SqlCommand("INSERT INTO modulos (desc_modulo)" +
+                    " VALUES (@desc_modulo)" +
                     " SELECT @@identity", Sqlconn);
 
                 cmd.Parameters.Add("@desc_modulo", SqlDbType.VarChar, 50).Value = modulo.Descripcion;

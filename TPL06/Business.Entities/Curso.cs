@@ -10,8 +10,6 @@ namespace Business.Entities
         private int _AñoCalendario;
         private int _Cupo;
         private string _Descripcion;
-        private int _IdComision; //TODO "segun brian borrar luego"
-        private int _IdMateria; // segun brian borrar luego 
         private Materia _Materia;
         private Comision _Comision;
 
@@ -43,18 +41,6 @@ namespace Business.Entities
         {
             get => _Descripcion;
             set => _Descripcion = value;
-        }
-
-        public int IdComision
-        {
-            get => _IdComision;
-            set => _IdComision = value;
-        }
-
-        public int IdMateria
-        {
-            get => _IdMateria;
-            set => _IdMateria = value;
         }
     }
 }

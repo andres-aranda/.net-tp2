@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net.Mail;
 using Academia.Data.Database;
 using Business.Entities;
 using Business.Logic;
@@ -57,11 +58,11 @@ namespace UI.Consola
               public void MostrarDatos(Usuario usuario)
               {
                   System.Console.WriteLine("Usuario: " + usuario.Id); 
-                  System.Console.WriteLine("\nNombre: "+ usuario.Nombre);
-                  System.Console.WriteLine("\nApellido: " + usuario.Apellido);
+                  System.Console.WriteLine("\nNombre: "+ usuario.Persona.Nombre);
+                  System.Console.WriteLine("\nApellido: " + usuario.Persona.Apellido);
                   System.Console.WriteLine("\nNombre de Usuario: " + usuario.NombreUsuario);
                   System.Console.WriteLine("\nClave: " + usuario.Clave);
-                  System.Console.WriteLine("\nEmail: " + usuario.Email);
+                  System.Console.WriteLine("\nEmail: " + usuario.Persona.Email);
                   System.Console.WriteLine("\nHabilitado: " + usuario.Habilitado);
                   System.Console.WriteLine();
               }
@@ -85,7 +86,7 @@ namespace UI.Consola
                 int id = int.Parse(Console.ReadLine());
                 this.MostrarDatos(UsuarioNegocio.GetOne(id));
             }
-            catch (FormatException fe)
+            catch (FormatException)
             {
                 System.Console.WriteLine("El ID ingresado debe ser un número entero.");
             }
@@ -102,15 +103,15 @@ namespace UI.Consola
                 System.Console.Clear();
                 Usuario usuario = new Usuario();
                 System.Console.Write("Ingrese Nombre: ");
-                usuario.Nombre = System.Console.ReadLine();
+                usuario.Persona.Nombre = System.Console.ReadLine();
                 System.Console.Write("Ingrese Apellido: ");
-                usuario.Apellido = System.Console.ReadLine();
+                usuario.Persona.Apellido = System.Console.ReadLine();
                 System.Console.Write("Ingrese Nombre de Usuario: ");
                 usuario.NombreUsuario = System.Console.ReadLine();
                 System.Console.Write("Ingrese Clave: ");
                 usuario.Clave = System.Console.ReadLine();
                 System.Console.Write("Ingrese Email: ");
-                usuario.Email = System.Console.ReadLine();
+                usuario.Persona.Email = new MailAddress(System.Console.ReadLine());
                 System.Console.Write("Ingrese Habilitación de Usuario (1-Si/Otro-NO): ");
                 usuario.Habilitado = (System.Console.ReadLine() == "1");
                 usuario.State = BusinessEntity.Estados.New;
@@ -132,21 +133,21 @@ namespace UI.Consola
                 int id = int.Parse(System.Console.ReadLine());
                 Usuario usuario = UsuarioNegocio.GetOne(id);
                 System.Console.Write("Ingrese Nombre: ");
-                usuario.Nombre = System.Console.ReadLine();
+                usuario.Persona.Nombre = System.Console.ReadLine();
                 System.Console.Write("Ingrese Apellido: ");
-                usuario.Apellido = System.Console.ReadLine();
+                usuario.Persona.Apellido = System.Console.ReadLine();
                 System.Console.Write("Ingrese Nombre de Usuario: ");
                 usuario.NombreUsuario = System.Console.ReadLine();
                 System.Console.Write("Ingrese Clave: ");
                 usuario.Clave = System.Console.ReadLine();
                 System.Console.Write("Ingrese Email: ");
-                usuario.Email = System.Console.ReadLine();
+                usuario.Persona.Email = new MailAddress(System.Console.ReadLine());
                 System.Console.Write("Ingrese Habilitación de Usuario (1-Si/Otro-NO): ");
                 usuario.Habilitado = (System.Console.ReadLine() == "1");
                 usuario.State = BusinessEntity.Estados.Modified;
                 UsuarioNegocio.Save(usuario);
             }
-            catch (FormatException fe)
+            catch (FormatException)
             {
                 System.Console.WriteLine("El ID ingresado debe ser un número entero.");
             }
@@ -165,7 +166,7 @@ namespace UI.Consola
                 int id = int.Parse(System.Console.ReadLine());
                 UsuarioNegocio.Delete(id);
             }
-            catch (FormatException fe)
+            catch (FormatException)
             {
                 System.Console.WriteLine("El ID ingresado debe ser un número entero.");
             }

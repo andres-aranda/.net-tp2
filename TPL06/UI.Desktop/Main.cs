@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Business.Entities;
+using Academia.Util;
 
 
 namespace Academia.UI.Desktop
@@ -59,39 +60,73 @@ namespace Academia.UI.Desktop
 
         private void formMain_Shown(object sender, EventArgs e)
         {
+            #region Ocultar todo
             tsmgestionAcademia.Visible = false;
             tsmgestionAlumno.Visible = false;
             tsmgestionDocente.Visible = false;
+            tsmAlumno.Visible = false;
+            tsmDocente.Visible = false;
+            tsmSeguridad.Visible = false;            
+            lblBienvenida.Visible = false;
+            lblTituloAcciones.Visible = false;
+            btnAlumnoCursos.Visible = false;
+            btnAlumnoInscribirse.Visible = false;
+            btnDocenteCursos.Visible = false;
+            btnDocenteAlumnos.Visible = false;
+            btnNoDocenteInscribirAlumno.Visible = false;
+            btnNoDocentePersonas.Visible = false;
+            btnNoDocenteUsuarios.Visible = false;
+            btnAdministradorPermisos.Visible = false;
+            #endregion
+
             Login appLogin = new Login();
             if (appLogin.ShowDialog() != DialogResult.OK)
-            {
                 this.Dispose();
-            }
             else
                 contraerMenuLateral();
             usuarioActual = (Usuario) appLogin.UsuarioLogeado;
+
             appLogin.Close();
-            this.WindowState = FormWindowState.Maximized;
+
+            lblBienvenida.Text = Validations.Greeting() + usuarioActual.Persona.Nombre;
+            lblBienvenida.Visible = true;
+            lblTituloAcciones.Visible = true;
+            
             foreach (Modulo m in usuarioActual.Modulo)
             {
-                if (m.Descripcion == "Alumno" || m.Descripcion == "Administrador") 
-                    tsmgestionAlumno.Visible = true ;
-                if (m.Descripcion == "Docente" || m.Descripcion == "Administrador")
-                    tsmgestionDocente.Visible = true;
+                if (m.Descripcion == "Alumno")
+                {
+                    tsmAlumno.Visible = true;
+                    btnAlumnoCursos.Visible = true;
+                    btnAlumnoInscribirse.Visible = true;
+                }
+                if (m.Descripcion == "Docente")
+                {
+                    tsmDocente.Visible = true;
+                    btnDocenteAlumnos.Visible = true;
+                    btnDocenteCursos.Visible = true;
+                }
+                    
                 if (m.Descripcion == "No docente" || m.Descripcion == "Administrador")
+                {
                     tsmgestionAcademia.Visible = true;
-
+                    tsmgestionAlumno.Visible = true;
+                    tsmgestionDocente.Visible = true;
+                    btnNoDocenteInscribirAlumno.Visible = true;
+                    btnNoDocentePersonas.Visible = true;
+                    btnNoDocenteUsuarios.Visible = true;
+                    if (m.Descripcion == "Administrador")
+                    {
+                        tsmSeguridad.Visible = true;
+                        btnAdministradorPermisos.Visible = true;
+                    }
+                }
             }
 
         }
         private void btnModulos_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo(new Modulos());
-        }
-
-        private void btnUsuarios_Click(object sender, EventArgs e)
-        {
-            AbrirFormularioHijo(new Usuarios());
         }
 
         private void btnPlanes_Click(object sender, EventArgs e)
@@ -132,14 +167,112 @@ namespace Academia.UI.Desktop
 
         private void mnuInscripcionCursos_Click(object sender, EventArgs e)
         {
-            AbrirFormularioHijo(new Inscripciones(usuarioActual.IdPersona));
-
-            // COMO IDENTIFICO EL ID DEL ALUMNO LOGUEADO??????????? Donde esta el 1 tiene que ir algo como "IdAlumnoActual"
+            // TODO: Preguntar ID alumno para abrir Inscripciones
         }
 
         private void personasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo(new Personas());
+        }
+
+        private void listadoDeMateriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new Reporte());
+        }
+
+        private void tsmPermisos_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new Permisos());
+        }
+
+        private void cursosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new Cursos());
+        }
+
+        private void materiasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new Materias());
+        }
+
+        private void btnAlumnoCursos_Click(object sender, EventArgs e)
+        {
+            // TODO: Abrir cursos del alumno
+        }
+
+        private void btnAlumnoInscribirse_Click(object sender, EventArgs e)
+        {
+            // TODO: Abrir inscripcion a materia del alumno
+        }
+
+        private void btnDocenteCursos_Click(object sender, EventArgs e)
+        {
+            // TODO: Abrir CursosDocente
+        }
+
+        private void btnDocenteAlumnos_Click(object sender, EventArgs e)
+        {
+            // TODO: Abrir AlumnosDocente
+        }
+
+        private void btnNoDocentePersonas_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new Personas());
+        }
+
+        private void btnNoDocenteUsuarios_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new Usuarios());
+        }
+
+        private void btnNoDocenteInscribirAlumno_Click(object sender, EventArgs e)
+        {
+            // TODO: Preguntar ID de alumno a inscribir
+        }
+
+        private void btnAdministradorPermisos_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new Permisos());
+        }
+
+        private void miInformaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // TODO: Abrir MiInformacion
+        }
+
+        private void usuariosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new Usuarios());
+        }
+
+        private void planesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new Planes());
+        }
+
+        private void cursosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            // TODO: Preguntar ID docente para abrir CursosDocente
+        }
+
+        private void misCursosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // TODO: Abrir CursosAlumno
+        }
+
+        private void inscripciónAMateriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new Inscripciones(usuarioActual.Persona.Id));
+        }
+
+        private void misCursosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            // TODO: Abrir CursosDocente
+        }
+
+        private void alumnosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // TODO: Abrir AlumnosDocente
         }
     }
 }

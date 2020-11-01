@@ -28,11 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inscripciones));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tsbCrearAlumnoInscripciones = new System.Windows.Forms.ToolStripButton();
-            this.tsbModificarAlumnoInscripciones = new System.Windows.Forms.ToolStripButton();
-            this.tsbEliminarAlumnoInscripciones = new System.Windows.Forms.ToolStripButton();
             this.dgvAlumnoInscripciones = new System.Windows.Forms.DataGridView();
             this.CursoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CondicionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,6 +40,10 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tsbCrearAlumnoInscripciones = new System.Windows.Forms.ToolStripButton();
+            this.tsbModificarAlumnoInscripciones = new System.Windows.Forms.ToolStripButton();
+            this.tsbEliminarAlumnoInscripciones = new System.Windows.Forms.ToolStripButton();
+            this.tsbReporte = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnoInscripciones)).BeginInit();
             this.tlAlumnoInscripciones.SuspendLayout();
@@ -56,42 +56,13 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbCrearAlumnoInscripciones,
             this.tsbModificarAlumnoInscripciones,
-            this.tsbEliminarAlumnoInscripciones});
+            this.tsbEliminarAlumnoInscripciones,
+            this.tsbReporte});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(600, 27);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // tsbCrearAlumnoInscripciones
-            // 
-            this.tsbCrearAlumnoInscripciones.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbCrearAlumnoInscripciones.Image = ((System.Drawing.Image)(resources.GetObject("tsbCrearAlumnoInscripciones.Image")));
-            this.tsbCrearAlumnoInscripciones.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbCrearAlumnoInscripciones.Name = "tsbCrearAlumnoInscripciones";
-            this.tsbCrearAlumnoInscripciones.Size = new System.Drawing.Size(24, 24);
-            this.tsbCrearAlumnoInscripciones.Text = "Nuevo";
-            this.tsbCrearAlumnoInscripciones.Click += new System.EventHandler(this.tsbCrearAlumnoInscripciones_Click);
-            // 
-            // tsbModificarAlumnoInscripciones
-            // 
-            this.tsbModificarAlumnoInscripciones.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbModificarAlumnoInscripciones.Image = ((System.Drawing.Image)(resources.GetObject("tsbModificarAlumnoInscripciones.Image")));
-            this.tsbModificarAlumnoInscripciones.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbModificarAlumnoInscripciones.Name = "tsbModificarAlumnoInscripciones";
-            this.tsbModificarAlumnoInscripciones.Size = new System.Drawing.Size(24, 24);
-            this.tsbModificarAlumnoInscripciones.Text = "Editar";
-            this.tsbModificarAlumnoInscripciones.Click += new System.EventHandler(this.tsbModificarAlumnoInscripciones_Click);
-            // 
-            // tsbEliminarAlumnoInscripciones
-            // 
-            this.tsbEliminarAlumnoInscripciones.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbEliminarAlumnoInscripciones.Image = ((System.Drawing.Image)(resources.GetObject("tsbEliminarAlumnoInscripciones.Image")));
-            this.tsbEliminarAlumnoInscripciones.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbEliminarAlumnoInscripciones.Name = "tsbEliminarAlumnoInscripciones";
-            this.tsbEliminarAlumnoInscripciones.Size = new System.Drawing.Size(24, 24);
-            this.tsbEliminarAlumnoInscripciones.Text = "Eliminar";
-            this.tsbEliminarAlumnoInscripciones.Click += new System.EventHandler(this.tsbEliminarAlumnoInscripciones_Click);
             // 
             // dgvAlumnoInscripciones
             // 
@@ -230,6 +201,46 @@
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 125;
             // 
+            // tsbCrearAlumnoInscripciones
+            // 
+            this.tsbCrearAlumnoInscripciones.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbCrearAlumnoInscripciones.Image = global::Academia.UI.Desktop.Properties.Resources.add_btn;
+            this.tsbCrearAlumnoInscripciones.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbCrearAlumnoInscripciones.Name = "tsbCrearAlumnoInscripciones";
+            this.tsbCrearAlumnoInscripciones.Size = new System.Drawing.Size(24, 24);
+            this.tsbCrearAlumnoInscripciones.Text = "Nuevo";
+            this.tsbCrearAlumnoInscripciones.Click += new System.EventHandler(this.tsbCrearAlumnoInscripciones_Click);
+            // 
+            // tsbModificarAlumnoInscripciones
+            // 
+            this.tsbModificarAlumnoInscripciones.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbModificarAlumnoInscripciones.Image = global::Academia.UI.Desktop.Properties.Resources.edit_btn;
+            this.tsbModificarAlumnoInscripciones.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbModificarAlumnoInscripciones.Name = "tsbModificarAlumnoInscripciones";
+            this.tsbModificarAlumnoInscripciones.Size = new System.Drawing.Size(24, 24);
+            this.tsbModificarAlumnoInscripciones.Text = "Editar";
+            this.tsbModificarAlumnoInscripciones.Click += new System.EventHandler(this.tsbModificarAlumnoInscripciones_Click);
+            // 
+            // tsbEliminarAlumnoInscripciones
+            // 
+            this.tsbEliminarAlumnoInscripciones.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbEliminarAlumnoInscripciones.Image = global::Academia.UI.Desktop.Properties.Resources.remove_btn;
+            this.tsbEliminarAlumnoInscripciones.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbEliminarAlumnoInscripciones.Name = "tsbEliminarAlumnoInscripciones";
+            this.tsbEliminarAlumnoInscripciones.Size = new System.Drawing.Size(24, 24);
+            this.tsbEliminarAlumnoInscripciones.Text = "Eliminar";
+            this.tsbEliminarAlumnoInscripciones.Click += new System.EventHandler(this.tsbEliminarAlumnoInscripciones_Click);
+            // 
+            // tsbReporte
+            // 
+            this.tsbReporte.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbReporte.Image = global::Academia.UI.Desktop.Properties.Resources.report_btn;
+            this.tsbReporte.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbReporte.Name = "tsbReporte";
+            this.tsbReporte.Size = new System.Drawing.Size(24, 24);
+            this.tsbReporte.Text = "toolStripButton1";
+            this.tsbReporte.Click += new System.EventHandler(this.tsbReporte_Click);
+            // 
             // Inscripciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -269,5 +280,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.ToolStripButton tsbReporte;
     }
 }

@@ -69,7 +69,7 @@ namespace Academia.UI.Web
         {
             tablaResumen.Visible = false;
             Usuario usuario = (Usuario)Session["usuarioLogueado"];
-            int idPersona = usuario.IdPersona;
+            int idPersona = usuario.Persona.Id;
             Persona per = LogicPer.GetOne(idPersona);
             if (!(Page.IsPostBack)) 
             {
@@ -110,7 +110,7 @@ namespace Academia.UI.Web
             AñoLabel.Text = inscripcion.añoCurso.ToString();
             tablaResumen.Visible = true;
             Usuario u = (Usuario)Session["usuarioLogueado"];
-            cl.Inscribir(u.IdPersona, CursoElegido.Id);
+            cl.Inscribir(u.Persona.Id, CursoElegido.Id);
         }
     }
 }

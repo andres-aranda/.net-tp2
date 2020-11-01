@@ -1,6 +1,6 @@
 ﻿namespace Academia.UI.Desktop
 {
-    partial class PerosnaDesktopPendiente
+    partial class PersonaDesktop
     {
         /// <summary>
         /// Required designer variable.

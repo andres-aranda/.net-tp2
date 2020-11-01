@@ -56,9 +56,9 @@ namespace Academia.UI.Web
         private void LoadForm(int id)
         {
             this.Entity = this.Logic.GetOne(id);
-            this.nombreTextBox.Text = this.Entity.Nombre;
-            this.apellidoTextBox.Text = this.Entity.Apellido;
-            this.emailTextBox.Text = this.Entity.Email;
+            this.nombreTextBox.Text = this.Entity.Persona.Nombre;
+            this.apellidoTextBox.Text = this.Entity.Persona.Apellido;
+            this.emailTextBox.Text = this.Entity.Persona.Email.ToString();
             this.habilitadoCheckBox.Checked = this.Entity.Habilitado;
             this.nombreUsuarioTextBox.Text = this.Entity.NombreUsuario;
             this.claveTextBox.Text = this.Entity.Clave;
@@ -66,9 +66,9 @@ namespace Academia.UI.Web
 
         protected void LoadEntity(Usuario usuario)
         {
-            usuario.Nombre = this.nombreTextBox.Text;
-            usuario.Apellido = this.apellidoTextBox.Text;
-            usuario.Email = this.emailTextBox.Text;
+            usuario.Persona.Nombre = this.nombreTextBox.Text;
+            usuario.Persona.Apellido = this.apellidoTextBox.Text;
+            usuario.Persona.Email = new System.Net.Mail.MailAddress(emailTextBox.Text);
             usuario.NombreUsuario = this.nombreUsuarioTextBox.Text;
             usuario.Habilitado = this.habilitadoCheckBox.Checked;
             usuario.Clave = this.claveTextBox.Text;

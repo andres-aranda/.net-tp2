@@ -46,38 +46,5 @@ namespace Academia.UI.Desktop
         {
             this.Close();
         }
-
-        private void tsbNuevo_Click(object sender, EventArgs e)
-        {
-            ModuloDesktop moduloDesktop = new ModuloDesktop(ApplicationForm.ModoForm.Alta);
-            moduloDesktop.ShowDialog();
-            this.Listar();
-        }
-        private void TsbModificarModulo_Click(object sender, EventArgs e)
-        {
-            if (this.dgvModulos.SelectedRows.Count > 0)
-            {
-                int ID = ((Business.Entities.Modulo)this.dgvModulos.SelectedRows[0].DataBoundItem).Id;
-                ModuloDesktop moduloDesktop = new ModuloDesktop(ID, ApplicationForm.ModoForm.Modificacion);
-                moduloDesktop.ShowDialog();
-            }
-            this.Listar();
-        }
-
-        private void TsbBorrarModulo_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("¿Desea eliminar el modulo?", "Borrar Modulo", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                if (this.dgvModulos.SelectedRows.Count > 0)
-                {
-                    int ID = ((Business.Entities.Modulo)this.dgvModulos.SelectedRows[0].DataBoundItem).Id;
-                    ModuloLogic moduloLogic = new ModuloLogic();
-                    moduloLogic.Delete(ID);
-                }
-            }
-            this.Listar();
-        }
-
-
     }
 }
