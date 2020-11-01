@@ -72,5 +72,10 @@ namespace Academia.UI.Desktop
         {
            
         }
+
+        private void Inscripciones_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

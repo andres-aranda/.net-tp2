@@ -238,9 +238,10 @@
             this.Controls.Add(this.tlAlumnoInscripciones);
             this.Controls.Add(this.dgvAlumnoInscripciones);
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Inscripciones";
             this.Text = "Inscripciones";
+            this.Load += new System.EventHandler(this.Inscripciones_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnoInscripciones)).EndInit();
