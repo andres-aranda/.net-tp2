@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Academia.Data.Database;
+using System;
 using System.Windows.Forms;
 
 namespace Academia.UI.Desktop
