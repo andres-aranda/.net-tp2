@@ -86,8 +86,6 @@ namespace Academia.UI.Desktop
                 contraerMenuLateral();
             usuarioActual = (Usuario) appLogin.UsuarioLogeado;
 
-            
-
             appLogin.Close();
 
             this.WindowState = FormWindowState.Maximized;
@@ -171,9 +169,7 @@ namespace Academia.UI.Desktop
 
         private void mnuInscripcionCursos_Click(object sender, EventArgs e)
         {
-            AbrirFormularioHijo(new Inscripciones(usuarioActual.IdPersona));
-
-            // COMO IDENTIFICO EL ID DEL ALUMNO LOGUEADO??????????? Donde esta el 1 tiene que ir algo como "IdAlumnoActual"
+            // TODO: Preguntar ID alumno para abrir Inscripciones
         }
 
         private void personasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -213,12 +209,12 @@ namespace Academia.UI.Desktop
 
         private void btnDocenteCursos_Click(object sender, EventArgs e)
         {
-            // TODO: Abrir cursos del docente
+            // TODO: Abrir CursosDocente
         }
 
         private void btnDocenteAlumnos_Click(object sender, EventArgs e)
         {
-            // TODO: Abrir listado de alumnos del docente
+            // TODO: Abrir AlumnosDocente
         }
 
         private void btnNoDocentePersonas_Click(object sender, EventArgs e)
@@ -239,6 +235,46 @@ namespace Academia.UI.Desktop
         private void btnAdministradorPermisos_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo(new Permisos());
+        }
+
+        private void miInformaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // TODO: Abrir MiInformacion
+        }
+
+        private void usuariosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new Usuarios());
+        }
+
+        private void planesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new Planes());
+        }
+
+        private void cursosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            // TODO: Preguntar ID docente para abrir CursosDocente
+        }
+
+        private void misCursosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // TODO: Abrir CursosAlumno
+        }
+
+        private void inscripciónAMateriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new Inscripciones(usuarioActual.IdPersona));
+        }
+
+        private void misCursosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            // TODO: Abrir CursosDocente
+        }
+
+        private void alumnosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // TODO: Abrir AlumnosDocente
         }
     }
 }
