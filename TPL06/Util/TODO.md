@@ -1,7 +1,7 @@
 ## ABMCs Desktop
 ✔ Modulos [HECHO]
 ✔ Modulos_Usuarios [HECHO]
-* Usuarios
+✔ Usuarios
 * Personas
 * Planes
 * Comisiones
