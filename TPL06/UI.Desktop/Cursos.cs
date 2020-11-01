@@ -21,7 +21,7 @@ namespace Academia.UI.Desktop
 
         private void Cursos_Load(object sender, EventArgs e)
         {
-            dataGridView1.AutoGenerateColumns = false;
+            dgvCursos.AutoGenerateColumns = false;
             Mapeo();
 
         }
@@ -30,7 +30,7 @@ namespace Academia.UI.Desktop
             using (EntidadesTP2 db = new EntidadesTP2())
             {
                 List<cursos>  cur = db.cursos.Include(x => x.comisiones).Include(x => x.materias).ToList();
-                this.dataGridView1.DataSource = cur;
+                this.dgvCursos.DataSource = cur;
             }
         }
 
@@ -42,9 +42,9 @@ namespace Academia.UI.Desktop
 
         private void tsbEditar_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (dgvCursos.SelectedRows.Count > 0)
             {
-                int id = ((cursos)dataGridView1.SelectedRows[0].DataBoundItem).id_curso;
+                int id = ((cursos)dgvCursos.SelectedRows[0].DataBoundItem).id_curso;
                 CursoDesktop cd = new CursoDesktop(id);
                 cd.ShowDialog();
             }
@@ -61,11 +61,11 @@ namespace Academia.UI.Desktop
         {
             if (MessageBox.Show("¿Desea eliminar el curso?", "Borrar Curso", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                if (this.dataGridView1.SelectedRows.Count > 0)
+                if (this.dgvCursos.SelectedRows.Count > 0)
                 {
                     using (EntidadesTP2 db = new EntidadesTP2())
                     {
-                        int ID = ((cursos)this.dataGridView1.SelectedRows[0].DataBoundItem).id_curso;
+                        int ID = ((cursos)this.dgvCursos.SelectedRows[0].DataBoundItem).id_curso;
                         cursos curso = db.cursos.Find(ID);
                         db.cursos.Remove(curso);
                         db.SaveChanges();

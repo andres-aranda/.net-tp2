@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Business.Entities;
 using Business.Logic;
+using Academia.Util;
 
 namespace Academia.UI.Desktop
 {
@@ -146,7 +147,7 @@ namespace Academia.UI.Desktop
                 mensaje = "La clave debe tener al menos 8 caracteres.";
                 retorno = false;
             }
-            else if (!(IsValidEmail(this.txtEmail.Text)))
+            else if (!(Validations.IsValidEmail(this.txtEmail.Text)))
             {
                 mensaje = "Debe ingresar un email valido.";
                 retorno = false;
@@ -158,19 +159,6 @@ namespace Academia.UI.Desktop
             }
 
             return retorno;
-        }
-
-        private bool IsValidEmail(string email)
-        {
-            try
-            {
-                var addr = new System.Net.Mail.MailAddress(email);
-                return addr.Address == email;
-            }
-            catch
-            {
-                return false;
-            }
         }
 
         private void SetFormName(ModoForm modo)

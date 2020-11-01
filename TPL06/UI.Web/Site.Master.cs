@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Academia.Util;
 
 namespace Academia.UI.Web
 {
@@ -23,21 +24,9 @@ namespace Academia.UI.Web
             this.gestionDocente.Visible = false;
             this.docente.Visible = false;
             ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "printHello();", true);
-            string text;
-            TimeSpan now = DateTime.Now.TimeOfDay;
-            if (now >= TimeSpan.Parse("05:00") && now < TimeSpan.Parse("13:00"))
-            {
-                text = "Buenos días, ";
-            }
-            else if (now >= TimeSpan.Parse("13:00") && now < TimeSpan.Parse("18:00"))
-            {
-                text = "Buenas tardes, ";
-            }
-            else
-            {
-                text = "Buenas noches, ";
-            }
-            this.lblUsuarioLogeado.Text =  text + usuarioLog.Nombre;
+        
+            this.lblUsuarioLogeado.Text =  Validations.Greeting() + usuarioLog.Nombre;
+
             foreach (Modulo m in usuarioLog.Modulo)
             {
                 if (m.Descripcion == "Alumno" )
