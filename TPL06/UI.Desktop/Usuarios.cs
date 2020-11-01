@@ -17,7 +17,7 @@ namespace Academia.UI.Desktop
         public Usuarios()
         {
             InitializeComponent();
-            this.dgvUsuarios.AutoGenerateColumns = false;
+            this.dgvUsuarios.AutoGenerateColumns = true;
             Listar();
         }
 
@@ -27,12 +27,24 @@ namespace Academia.UI.Desktop
 
             try
             {
-                this.dgvUsuarios.DataSource = ul.GetAll();
+                List<Usuario> usuarios = ul.GetAll();
+                var _bind = from u in usuarios
+                            select new
+                            {
+                                Id = u.Id,
+                                NombreUsuario = u.NombreUsuario,
+                                Nombre = u.Persona.Nombre,
+                                Apellido = u.Persona.Apellido,
+                                Email = u.Persona.Email.ToString()
+                            };
+                dgvUsuarios.DataSource = _bind.ToList();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+
+            
         }
 
         private void formUsuarios_Load(object sender, EventArgs e)
@@ -61,7 +73,7 @@ namespace Academia.UI.Desktop
         {
             if (this.dgvUsuarios.SelectedRows.Count > 0)
             {
-                int ID = ((Business.Entities.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).Id;
+                int ID = (int)dgvUsuarios.SelectedRows[0].Cells[0].Value;
                 UsuarioDesktop usuarioDesktop = new UsuarioDesktop(ID, ApplicationForm.ModoForm.Modificacion);
                 usuarioDesktop.ShowDialog();
             }
@@ -75,7 +87,7 @@ namespace Academia.UI.Desktop
             {
                 if (this.dgvUsuarios.SelectedRows.Count > 0)
                 {
-                    int ID = ((Business.Entities.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).Id;
+                    int ID = (int)dgvUsuarios.SelectedRows[0].Cells[0].Value;
                     UsuarioLogic usuarioLogic = new UsuarioLogic();
                     usuarioLogic.Delete(ID);
                 }

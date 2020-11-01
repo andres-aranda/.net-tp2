@@ -19,7 +19,6 @@ namespace Academia.UI.Desktop
 
         private void ReporteInscripciones_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'DataSetPersonas.DataTable1' table. You can move, or remove it, as needed.
             this.DataTable1TableAdapter.Fill(this.DataSetPersonas.DataTable1);
 
             this.reportViewer1.RefreshReport();

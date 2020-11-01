@@ -10,81 +10,22 @@ namespace Business.Entities
 {
     public class Usuario : BusinessEntity
     {
-        public Usuario()
-        {
-
-        }
-        private string _Apellido;
-        private String _Nombre;
         private String _NombreUsuario;
-        private String _Email;
         private string _Clave;
-        private int _IdPersona;
         private bool _Habilitado;
         private List<Modulo> modulo;
         private Persona _persona;
-
-        protected SqlDataAdapter _daUsuarios;
 
         public Persona Persona
         {
             get => _persona;
             set => _persona = value;
-
-        }
-
-        public SqlDataAdapter daUsuarios
-        {
-            get { return _daUsuarios; }
-            set { _daUsuarios = value; }
-        }
-
-        protected SqlConnection _conn;
-
-        public SqlConnection Conn
-        {
-            get { return _conn; }
-            set { _conn = value; }
-        }
-
-        public DataTable GetAll()
-        {
-            DataTable dtUsuarios = new DataTable();
-            this.daUsuarios.Fill(dtUsuarios);
-            return dtUsuarios;
-        }
-        public void GuardarCambios(DataTable dtUsuarios)
-        {
-            this.daUsuarios.Update(dtUsuarios);
-            dtUsuarios.AcceptChanges();
-        }
-        public string Apellido
-        {
-            get { return _Apellido; }
-            set { _Apellido = value; }
         }
 
         public string Clave
         {
             get { return _Clave; }
             set { _Clave = value; }
-        }
-        public int IdPersona
-        {
-            get { return _IdPersona; }
-            set { _IdPersona = value; }
-        }
-
-        public String Email
-        {
-            get { return _Email; }
-            set { _Email = value; }
-        }
-
-        public string Nombre
-        {
-            get { return _Nombre; }
-            set { _Nombre = value; }
         }
 
         public string NombreUsuario
@@ -104,5 +45,7 @@ namespace Business.Entities
             get => modulo;
             set => modulo = value;
         }
+
+        public Usuario() { }
     }
 }

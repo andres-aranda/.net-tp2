@@ -88,9 +88,7 @@ namespace Academia.UI.Desktop
 
             appLogin.Close();
 
-            this.WindowState = FormWindowState.Maximized;
-
-            lblBienvenida.Text = Validations.Greeting() + usuarioActual.Nombre;
+            lblBienvenida.Text = Validations.Greeting() + usuarioActual.Persona.Nombre;
             lblBienvenida.Visible = true;
             lblTituloAcciones.Visible = true;
             
@@ -264,7 +262,7 @@ namespace Academia.UI.Desktop
 
         private void inscripciónAMateriasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AbrirFormularioHijo(new Inscripciones(usuarioActual.IdPersona));
+            AbrirFormularioHijo(new Inscripciones(usuarioActual.Persona.Id));
         }
 
         private void misCursosToolStripMenuItem1_Click(object sender, EventArgs e)

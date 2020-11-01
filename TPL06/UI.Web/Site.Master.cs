@@ -25,7 +25,7 @@ namespace Academia.UI.Web
             this.docente.Visible = false;
             ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "printHello();", true);
         
-            this.lblUsuarioLogeado.Text =  Validations.Greeting() + usuarioLog.Nombre;
+            this.lblUsuarioLogeado.Text =  Validations.Greeting() + usuarioLog.Persona.Nombre;
 
             foreach (Modulo m in usuarioLog.Modulo)
             {

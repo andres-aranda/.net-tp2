@@ -21,7 +21,7 @@ namespace Academia.UI.Web
         {
             Usuario usuarioLog = (Usuario)Session["usuarioLogueado"];
             PersonaLogic pl = new PersonaLogic();
-            Entity = pl.GetOne(usuarioLog.IdPersona);
+            Entity = pl.GetOne(usuarioLog.Persona.Id);
             LoadForm();
             
 
@@ -33,7 +33,7 @@ namespace Academia.UI.Web
             Plan plan = pla.GetOne(Entity.IdPlan);
             this.txtNombre.Text = this.Entity.Nombre;
             this.txtApellido.Text = this.Entity.Apellido;
-            this.txtEmail.Text = usuarioLog.Email.ToString();
+            this.txtEmail.Text = usuarioLog.Persona.Email.ToString();
             this.txtTelefono.Text = this.Entity.Telefono;
             this.txtFechaNac.Text = this.Entity.FechaDeNacimiento.ToString();
             this.txtLegajo.Text = this.Entity.Legajo.ToString();

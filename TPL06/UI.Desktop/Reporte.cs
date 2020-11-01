@@ -18,8 +18,7 @@ namespace Academia.UI.Desktop
         }
 
         private void Reporte_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'DataSetMateriasAcademia.materias' table. You can move, or remove it, as needed.
+        {          
             this.materiasTableAdapter.Fill(this.DataSetMateriasAcademia.materias);
 
             this.reportViewer1.RefreshReport();

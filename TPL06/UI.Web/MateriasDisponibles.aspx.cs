@@ -71,7 +71,7 @@ namespace Academia.UI.Web
                     Page.Response.Redirect("~/PaginaNoPermitida.aspx");
             }
             Usuario usuario = (Usuario)Session["usuarioLogueado"];
-            int idPersona = usuario.IdPersona;
+            int idPersona = usuario.Persona.Id;
             Persona per = LogicPer.GetOne(idPersona);
             LoadGrid(per.IdPlan);
         }

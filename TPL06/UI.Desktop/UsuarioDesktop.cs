@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net.Mail;
 using System.Windows.Forms;
 using Business.Entities;
 using Business.Logic;
@@ -61,9 +62,9 @@ namespace Academia.UI.Desktop
         {
             this.txtId.Text = this.UsuarioActual.Id.ToString();
             this.chkHabilitado.Checked = this.UsuarioActual.Habilitado;
-            this.txtNombre.Text = this.UsuarioActual.Nombre;
-            this.txtApellido.Text = this.UsuarioActual.Apellido;
-            this.txtEmail.Text = this.UsuarioActual.Email;
+            this.txtNombre.Text = this.UsuarioActual.Persona.Nombre;
+            this.txtApellido.Text = this.UsuarioActual.Persona.Apellido;
+            this.txtEmail.Text = this.UsuarioActual.Persona.Email.ToString();
             this.txtUsuario.Text = this.UsuarioActual.NombreUsuario;
             this.txtClave.Text = this.UsuarioActual.Clave;
             this.txtConfirmarClave.Text = this.UsuarioActual.Clave;
@@ -93,9 +94,9 @@ namespace Academia.UI.Desktop
                     this.UsuarioActual = new Usuario();
                     this.UsuarioActual.Id = 0;
                     this.UsuarioActual.Habilitado = this.chkHabilitado.Checked;
-                    this.UsuarioActual.Nombre = this.txtNombre.Text;
-                    this.UsuarioActual.Apellido = this.txtApellido.Text;
-                    this.UsuarioActual.Email = this.txtEmail.Text;
+                    this.UsuarioActual.Persona.Nombre = this.txtNombre.Text;
+                    this.UsuarioActual.Persona.Apellido = this.txtApellido.Text;
+                    this.UsuarioActual.Persona.Email = new MailAddress(txtEmail.Text);
                     this.UsuarioActual.NombreUsuario = this.txtUsuario.Text;
                     this.UsuarioActual.Clave = this.txtClave.Text;
                     this.UsuarioActual.Clave = this.txtConfirmarClave.Text;
@@ -106,9 +107,9 @@ namespace Academia.UI.Desktop
                 case ModoForm.Modificacion:
                     this.UsuarioActual.Id = int.Parse(this.txtId.Text.ToString());
                     this.UsuarioActual.Habilitado = this.chkHabilitado.Checked;
-                    this.UsuarioActual.Nombre = this.txtNombre.Text;
-                    this.UsuarioActual.Apellido = this.txtApellido.Text;
-                    this.UsuarioActual.Email = this.txtEmail.Text;
+                    this.UsuarioActual.Persona.Nombre = this.txtNombre.Text;
+                    this.UsuarioActual.Persona.Apellido = this.txtApellido.Text;
+                    this.UsuarioActual.Persona.Email = new System.Net.Mail.MailAddress(txtEmail.Text);
                     this.UsuarioActual.NombreUsuario = this.txtUsuario.Text;
                     this.UsuarioActual.Clave = this.txtClave.Text;
                     this.UsuarioActual.Clave = this.txtConfirmarClave.Text;

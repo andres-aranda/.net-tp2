@@ -25,8 +25,8 @@ namespace Data.Database
                     " SELECT @@identity", Sqlconn);
 
                 cmd.Parameters.Add("@cupo", SqlDbType.Int).Value = m.Cupo;
-                cmd.Parameters.Add("@id_materia", SqlDbType.Int).Value = m.IdMateria;
-                cmd.Parameters.Add("@id_comision", SqlDbType.Int).Value = m.IdComision;
+                cmd.Parameters.Add("@id_materia", SqlDbType.Int).Value = m.Materia.Id;
+                cmd.Parameters.Add("@id_comision", SqlDbType.Int).Value = m.Comision.Id;
                 cmd.Parameters.Add("@anio_calendario", SqlDbType.Int).Value = m.AñoCalendario;
                 m.Id = decimal.ToInt32((decimal)cmd.ExecuteScalar());
             }
@@ -67,8 +67,8 @@ namespace Data.Database
                     " WHERE id_curso = @id", Sqlconn);
                 cmd.Parameters.Add("@id", SqlDbType.Int).Value = curso.Id;
                 cmd.Parameters.Add("@cupo", SqlDbType.VarChar).Value = curso.Cupo;
-                cmd.Parameters.Add("@id_materia", SqlDbType.Int).Value = curso.IdMateria;
-                cmd.Parameters.Add("@id_comision", SqlDbType.Int).Value = curso.IdComision;
+                cmd.Parameters.Add("@id_materia", SqlDbType.Int).Value = curso.Materia.Id;
+                cmd.Parameters.Add("@id_comision", SqlDbType.Int).Value = curso.Comision.Id;
                 cmd.Parameters.Add("@anio_calendario", SqlDbType.Int).Value = curso.AñoCalendario;
                 cmd.ExecuteNonQuery();
             }
@@ -95,8 +95,8 @@ namespace Data.Database
                 {
                     curso.Id = (int)dr["id_curso"];
                     curso.Cupo = (int)dr["cupo"];
-                    curso.IdMateria = (int)dr["id_materia"];
-                    curso.IdComision = (int)dr["id_comision"];
+                    curso.Materia.Id = (int)dr["id_materia"];
+                    curso.Comision.Id = (int)dr["id_comision"];
                     curso.AñoCalendario = (int)dr["anio_calendario"];
                 }
                 dr.Close();
@@ -128,8 +128,8 @@ namespace Data.Database
                 {
                     curso.Id = (int)dr["id_curso"];
                     curso.Cupo = (int)dr["cupo"];
-                    curso.IdMateria = (int)dr["id_materia"];
-                    curso.IdComision = (int)dr["id_comision"];
+                    curso.Materia.Id = (int)dr["id_materia"];
+                    curso.Comision.Id = (int)dr["id_comision"];
                     curso.AñoCalendario = (int)dr["anio_calendario"];
 
                     curso.Materia = matAdapt.GetOne((int)dr["id_materia"]);
@@ -161,11 +161,11 @@ namespace Data.Database
                     Curso m = new Curso();
                     m.Id = (int)drCursos["id_curso"];
                     m.Cupo = (int)drCursos["cupo"];
-                    m.IdMateria = (int)drCursos["id_materia"];
-                    m.IdComision = (int)drCursos["id_comision"];
+                    m.Materia.Id = (int)drCursos["id_materia"];
+                    m.Comision.Id = (int)drCursos["id_comision"];
                     m.AñoCalendario = (int)drCursos["anio_calendario"];
-                    if (m.IdMateria != 0){ m.Materia = mat.GetOne(m.IdMateria); }
-                    if (m.IdComision != 0){  m.Comision = com.GetOne(m.IdComision);}              
+                    if (m.Materia.Id != 0){ m.Materia = mat.GetOne(m.Materia.Id); }
+                    if (m.Comision.Id != 0){  m.Comision = com.GetOne(m.Comision.Id);}              
                     cursos.Add(m);
                 }
                 drCursos.Close();
@@ -195,11 +195,11 @@ namespace Data.Database
                     Curso m = new Curso();
                     m.Id = (int)drCursos["id_curso"];
                     m.Cupo = (int)drCursos["cupo"];
-                    m.IdMateria = (int)drCursos["id_materia"];
-                    m.IdComision = (int)drCursos["id_comision"];
+                    m.Materia.Id = (int)drCursos["id_materia"];
+                    m.Comision.Id = (int)drCursos["id_comision"];
                     m.AñoCalendario = (int)drCursos["anio_calendario"];
-                   m.Materia = mat.GetOne(m.IdMateria); 
-                     m.Comision = com.GetOne(m.IdComision);              
+                    m.Materia = mat.GetOne(m.Materia.Id); 
+                    m.Comision = com.GetOne(m.Comision.Id);              
                     cursos.Add(m);
                 }
                 drCursos.Close();
