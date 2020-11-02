@@ -128,10 +128,7 @@ namespace Data.Database
                 {
                     curso.Id = (int)dr["id_curso"];
                     curso.Cupo = (int)dr["cupo"];
-                    curso.Materia.Id = (int)dr["id_materia"];
-                    curso.Comision.Id = (int)dr["id_comision"];
                     curso.AñoCalendario = (int)dr["anio_calendario"];
-
                     curso.Materia = matAdapt.GetOne((int)dr["id_materia"]);
                     curso.Comision = comAdapt.GetOne((int)dr["id_comision"]);
                 }

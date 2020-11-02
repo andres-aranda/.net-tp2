@@ -26,10 +26,11 @@ namespace Academia.UI.Desktop
         {
             using (EntidadesTP2 db = new EntidadesTP2())
             {
-                this.comboBox1.DataSource = db.planes.ToList();
-                this.comboBox1.DisplayMember = "desc_plan";
-                this.comboBox1.ValueMember = "id_plan";
+                this.cmbPlan.DataSource = db.planes.ToList();
+                this.cmbPlan.DisplayMember = "desc_plan";
+                this.cmbPlan.ValueMember = "id_plan";
             }
         }
+
     }
 }

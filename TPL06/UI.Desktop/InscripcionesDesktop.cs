@@ -80,14 +80,14 @@ namespace Academia.UI.Desktop
         private void InscripcionesDesktop_Load(object sender, EventArgs e)
         {
             panelResumen.Visible = false;
-buscarMaterias(Per.IdPlan);
+            buscarMaterias(Per.IdPlan);
 
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            int idMateria = int.Parse((string)cmbMaterias.SelectedValue);
-            int idComision = int.Parse((string)cmbComison.SelectedValue);
+            int idMateria = (int)cmbMaterias.SelectedValue;
+            int idComision = (int)cmbComison.SelectedValue;
             CursoLogic cl = new CursoLogic();
             CursoElegido = cl.GetByComisionMateria(idComision, idMateria);
             ResumenInscripcion inscripcion = new ResumenInscripcion
@@ -101,7 +101,7 @@ buscarMaterias(Per.IdPlan);
             lblAño.Text = inscripcion.añoCurso.ToString();
             panelResumen.Visible = true;
             cl.Inscribir(Per.Id, CursoElegido.Id);
-            MessageBox.Show("Inscriocion solicitada con exito");
+            MessageBox.Show("Inscripción solicitada con éxito");
             cmbComison.Enabled = false;
             cmbMaterias.Enabled = false;
             btnConfirmar.Enabled = false;
@@ -116,10 +116,11 @@ buscarMaterias(Per.IdPlan);
         {
             try
             {
-            int idMateria = ((Materia)cmbMaterias.SelectedValue).Id;
+            int idMateria = (int)cmbMaterias.SelectedValue;
             cmbComison.DataSource = buscarComisiones(idMateria);
             this.cmbComison.DisplayMember = "DescripcionComision";
             this.cmbComison.ValueMember = "Id";
+               
             }
             catch
             {

@@ -202,7 +202,7 @@ namespace Academia.UI.Desktop
 
         private void btnAlumnoInscribirse_Click(object sender, EventArgs e)
         {
-            // TODO: Abrir inscripcion a materia del alumno
+            AbrirFormularioHijo(new InscripcionesDesktop(usuarioActual.Persona.Id));
         }
 
         private void btnDocenteCursos_Click(object sender, EventArgs e)
@@ -237,7 +237,7 @@ namespace Academia.UI.Desktop
 
         private void miInformaciónToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // TODO: Abrir MiInformacion
+            AbrirFormularioHijo(new PersonaDesktop());
         }
 
         private void usuariosToolStripMenuItem1_Click(object sender, EventArgs e)

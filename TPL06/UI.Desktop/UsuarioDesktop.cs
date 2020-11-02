@@ -16,7 +16,13 @@ namespace Academia.UI.Desktop
 {
     public partial class UsuarioDesktop : ApplicationForm
     {
-        public Usuario UsuarioActual { get; set; }
+        private Usuario UsuarioActual { get; set; }
+        private PersonaLogic Pl { get => pl; set => pl = value; }
+        private List<Persona> ListPers { get => listPers; set => listPers = value; }
+
+        private List<Persona> listPers;
+
+        PersonaLogic pl;
 
 
         public UsuarioDesktop()
@@ -157,15 +163,29 @@ namespace Academia.UI.Desktop
 
         private void txtLegajo_TextChanged(object sender, EventArgs e)
         {
-            PersonaLogic pl = new PersonaLogic();
+            
             Persona p = new Persona();
             try
             {
-                p = pl.GetByLegajo(int.Parse(txtLegajo.Text));
+                p = listPers.Find(a => a.Legajo == int.Parse(txtLegajo.Text));
             }
-            catch (Exception) { }
-            txtApellido.Text = p.Apellido;
-            txtNombre.Text = p.Nombre;
+            catch(Exception) { }
+            if (p != null)
+            {
+                txtApellido.Text = p.Apellido;
+                txtNombre.Text = p.Nombre;
+            }
+            else
+            {
+                txtApellido.Text = "";
+                txtNombre.Text = "";
+            }
+        }
+
+        private void UsuarioDesktop_Load(object sender, EventArgs e)
+        {
+            Pl = new PersonaLogic();
+            listPers = Pl.GetAll();
         }
     }
 }
