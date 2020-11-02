@@ -8,6 +8,7 @@ using Academia.Data.Database;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Net.Mail;
+using System.ComponentModel.Design;
 
 // VER TRY CATCH para capas negocio y presentación.
 
@@ -32,7 +33,6 @@ namespace Data.Database
                     usr.Id = (int)drUsuarios["id_usuario"];
                     usr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
                     usr.Clave = (string)drUsuarios["clave"];
-                    usr.Habilitado = (bool)drUsuarios["habilitado"];
                     usr.Persona = new Persona
                     {
                         Id = (int)drUsuarios["id_persona"],
@@ -75,7 +75,6 @@ namespace Data.Database
                     usr.Id = (int)drUsuario["id_usuario"];
                     usr.NombreUsuario = (string)drUsuario["nombre_usuario"];
                     usr.Clave = (string)drUsuario["clave"];
-                    usr.Habilitado = (bool)drUsuario["habilitado"];
                     usr.Persona = new Persona
                     {
                         Id = (int)drUsuario["id_persona"],
@@ -177,15 +176,13 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmd = new SqlCommand("UPDATE usuarios SET nombre_usuario = @nombre_usuario, clave = @clave, "
-                    + "habilitado = @habilitado" +
+                SqlCommand cmd = new SqlCommand("UPDATE usuarios SET nombre_usuario = @nombre_usuario, clave = @clave " +
                     " WHERE id_usuario = @id; " +
                     "UPDATE personas SET nombre = @nombre, apellido = @apellido, email = @email " +
-                    "WHERE id_persona = @id_persona", Sqlconn);
+                    " WHERE id_persona = @id_persona;", Sqlconn);
                 cmd.Parameters.Add("@id", SqlDbType.Int).Value = usuario.Id;
                 cmd.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = usuario.NombreUsuario;
                 cmd.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = usuario.Clave;
-                cmd.Parameters.Add("@habilitado", SqlDbType.VarChar, 50).Value = usuario.Habilitado;
                 cmd.Parameters.Add("@id_persona", SqlDbType.Int).Value = usuario.Persona.Id;
                 cmd.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = usuario.Persona.Nombre;
                 cmd.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = usuario.Persona.Apellido;
@@ -207,24 +204,26 @@ namespace Data.Database
         {
             try
             {
-                this.OpenConnection();
-                SqlCommand cmd = new SqlCommand("INSERT INTO usuarios (nombre_usuario, clave, habilitado, nombre, apellido, email)" +
-                    " VALUES (@nombre_usuario, @clave, @habilitado, @nombre, @apellido, @email)" +
-                    " SELECT @@identity", Sqlconn);
-                
-                cmd.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = usuario.NombreUsuario;
-                cmd.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = usuario.Clave;
-                cmd.Parameters.Add("@habilitado", SqlDbType.VarChar, 50).Value = usuario.Habilitado;
-                usuario.Id = decimal.ToInt32((decimal)cmd.ExecuteScalar());
+                using (EntidadesTP2 db = new EntidadesTP2())
+                {
+                    int idPersona = (from p in db.personas
+                                     where p.legajo == usuario.Persona.Legajo
+                                     select p.id_persona).First();
+
+                    usuarios oUsuario = new usuarios
+                    {
+                        nombre_usuario = usuario.NombreUsuario,
+                        clave = usuario.Clave,
+                        id_persona = idPersona
+                    };
+                    db.usuarios.Add(oUsuario);
+                    db.SaveChanges();
+                }
             }
             catch (Exception Ex)
             {
                 Exception excepcionManejada = new Exception("Error al modificar usuario", Ex);
                 throw excepcionManejada;
-            }
-            finally
-            {
-                this.CloseConnection();
             }
         }
 
@@ -265,7 +264,6 @@ namespace Data.Database
                     usuario.Id = (int)drUsuario["id_usuario"];
                     usuario.NombreUsuario = (string)drUsuario["nombre_usuario"];
                     usuario.Clave = (string)drUsuario["clave"];
-                    usuario.Habilitado = (bool)drUsuario["habilitado"];
                     usuario.Persona = new Persona
                     {
                         Id = (int)drUsuario["id_persona"],

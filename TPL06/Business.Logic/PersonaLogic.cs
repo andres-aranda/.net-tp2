@@ -42,6 +42,18 @@ namespace Business.Logic
         {
             return PersonaData.GetMateriasPlan(idPersona);
         }
+
+        public Persona GetByLegajo(int legajo)
+        {
+            try
+            {
+                return PersonaData.GetByLegajo(legajo);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
     }
 }
 

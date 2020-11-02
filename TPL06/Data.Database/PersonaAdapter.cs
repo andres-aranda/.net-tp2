@@ -40,7 +40,31 @@ namespace Data.Database
             }
         }
 
-
+        public Persona GetByLegajo(int legajo)
+        {
+            Persona persona = new Persona();
+            try
+            {
+                using (EntidadesTP2 db = new EntidadesTP2())
+                {
+                    personas oPersona = (from p in db.personas
+                                         where p.legajo == legajo
+                                         select p).First();
+                    persona.Id = oPersona.id_persona;
+                    persona.Apellido = oPersona.apellido;
+                    persona.Nombre = oPersona.nombre;
+                    persona.Direccion = oPersona.direccion;
+                    persona.Telefono = oPersona.telefono;
+                    persona.Legajo = (int)oPersona.legajo;
+                    persona.FechaDeNacimiento = oPersona.fecha_nac;
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            return persona;
+        }
 
         public void Update(Persona p)
         {

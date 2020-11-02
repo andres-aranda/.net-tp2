@@ -59,7 +59,6 @@ namespace Academia.UI.Web
             this.nombreTextBox.Text = this.Entity.Persona.Nombre;
             this.apellidoTextBox.Text = this.Entity.Persona.Apellido;
             this.emailTextBox.Text = this.Entity.Persona.Email.ToString();
-            this.habilitadoCheckBox.Checked = this.Entity.Habilitado;
             this.nombreUsuarioTextBox.Text = this.Entity.NombreUsuario;
             this.claveTextBox.Text = this.Entity.Clave;
         }
@@ -70,7 +69,6 @@ namespace Academia.UI.Web
             usuario.Persona.Apellido = this.apellidoTextBox.Text;
             usuario.Persona.Email = new System.Net.Mail.MailAddress(emailTextBox.Text);
             usuario.NombreUsuario = this.nombreUsuarioTextBox.Text;
-            usuario.Habilitado = this.habilitadoCheckBox.Checked;
             usuario.Clave = this.claveTextBox.Text;
         }
         private void SaveEntity(Usuario usuario)

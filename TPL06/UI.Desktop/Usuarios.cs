@@ -17,7 +17,8 @@ namespace Academia.UI.Desktop
         public Usuarios()
         {
             InitializeComponent();
-            this.dgvUsuarios.AutoGenerateColumns = true;
+            dgvUsuarios.AutoGenerateColumns = false;
+            dgvUsuarios.Columns[0].Visible = false;
             Listar();
         }
 

@@ -20,6 +20,7 @@ namespace Academia.UI.Desktop
 
         private void Personas_Load(object sender, EventArgs e)
         {
+            dgvPersonas.AutoGenerateColumns = false;
             Listar();
         }
 
@@ -29,6 +30,13 @@ namespace Academia.UI.Desktop
             PersonaLogic pl = new PersonaLogic();
             dgvPersonas.DataSource = pl.GetAll();
 
+        }
+
+        private void tsbNuevo_Click(object sender, EventArgs e)
+        {
+            PersonaDesktop pd = new PersonaDesktop();
+            pd.ShowDialog();
+            Listar();
         }
     }
 }

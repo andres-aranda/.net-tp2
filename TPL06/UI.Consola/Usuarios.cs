@@ -63,7 +63,6 @@ namespace UI.Consola
                   System.Console.WriteLine("\nNombre de Usuario: " + usuario.NombreUsuario);
                   System.Console.WriteLine("\nClave: " + usuario.Clave);
                   System.Console.WriteLine("\nEmail: " + usuario.Persona.Email);
-                  System.Console.WriteLine("\nHabilitado: " + usuario.Habilitado);
                   System.Console.WriteLine();
               }
 
@@ -113,7 +112,6 @@ namespace UI.Consola
                 System.Console.Write("Ingrese Email: ");
                 usuario.Persona.Email = new MailAddress(System.Console.ReadLine());
                 System.Console.Write("Ingrese Habilitación de Usuario (1-Si/Otro-NO): ");
-                usuario.Habilitado = (System.Console.ReadLine() == "1");
                 usuario.State = BusinessEntity.Estados.New;
                 UsuarioNegocio.Save(usuario);
                 System.Console.WriteLine("El ID del usuario creado es: {0}", usuario.Id);
@@ -143,7 +141,6 @@ namespace UI.Consola
                 System.Console.Write("Ingrese Email: ");
                 usuario.Persona.Email = new MailAddress(System.Console.ReadLine());
                 System.Console.Write("Ingrese Habilitación de Usuario (1-Si/Otro-NO): ");
-                usuario.Habilitado = (System.Console.ReadLine() == "1");
                 usuario.State = BusinessEntity.Estados.Modified;
                 UsuarioNegocio.Save(usuario);
             }

@@ -12,7 +12,6 @@ namespace Business.Entities
     {
         private String _NombreUsuario;
         private string _Clave;
-        private bool _Habilitado;
         private List<Modulo> modulo;
         private Persona _persona;
 
@@ -32,12 +31,6 @@ namespace Business.Entities
         {
             get { return _NombreUsuario; }
             set { _NombreUsuario = value; }
-        }
-
-        public bool Habilitado
-        {
-            get { return _Habilitado; }
-            set { _Habilitado = value; }
         }
 
         public List<Modulo> Modulo

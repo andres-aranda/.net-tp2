@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ModeloTP2.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ModeloTP2.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="alumnos_inscripciones">
           <Key>
             <PropertyRef Name="id_inscripcion" />
@@ -98,16 +98,6 @@
           <Property Name="desc_plan" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="id_especialidad" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
         <EntityType Name="usuarios">
           <Key>
             <PropertyRef Name="id_usuario" />
@@ -115,25 +105,9 @@
           <Property Name="id_usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombre_usuario" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="clave" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="habilitado" Type="bit" Nullable="false" />
-          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="apellido" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="email" Type="varchar" MaxLength="50" />
           <Property Name="cambia_clave" Type="bit" />
           <Property Name="id_persona" Type="int" />
         </EntityType>
-        <Association Name="FK_alumnos_inscripciones_cursos">
-          <End Role="cursos" Type="Self.cursos" Multiplicity="1" />
-          <End Role="alumnos_inscripciones" Type="Self.alumnos_inscripciones" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="cursos">
-              <PropertyRef Name="id_curso" />
-            </Principal>
-            <Dependent Role="alumnos_inscripciones">
-              <PropertyRef Name="id_curso" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_alumnos_inscripciones_personas">
           <End Role="personas" Type="Self.personas" Multiplicity="1" />
           <End Role="alumnos_inscripciones" Type="Self.alumnos_inscripciones" Multiplicity="*" />
@@ -182,30 +156,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_docentes_cursos_cursos">
-          <End Role="cursos" Type="Self.cursos" Multiplicity="1" />
-          <End Role="docentes_cursos" Type="Self.docentes_cursos" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="cursos">
-              <PropertyRef Name="id_curso" />
-            </Principal>
-            <Dependent Role="docentes_cursos">
-              <PropertyRef Name="id_curso" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_docentes_cursos_personas">
-          <End Role="personas" Type="Self.personas" Multiplicity="1" />
-          <End Role="docentes_cursos" Type="Self.docentes_cursos" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="personas">
-              <PropertyRef Name="id_persona" />
-            </Principal>
-            <Dependent Role="docentes_cursos">
-              <PropertyRef Name="id_docente" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_materias_planes">
           <End Role="planes" Type="Self.planes" Multiplicity="1" />
           <End Role="materias" Type="Self.materias" Multiplicity="*" />
@@ -215,30 +165,6 @@
             </Principal>
             <Dependent Role="materias">
               <PropertyRef Name="id_plan" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_modulos_usuarios_modulos">
-          <End Role="modulos" Type="Self.modulos" Multiplicity="1" />
-          <End Role="modulos_usuarios" Type="Self.modulos_usuarios" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="modulos">
-              <PropertyRef Name="id_modulo" />
-            </Principal>
-            <Dependent Role="modulos_usuarios">
-              <PropertyRef Name="id_modulo" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_modulos_usuarios_usuarios">
-          <End Role="usuarios" Type="Self.usuarios" Multiplicity="1" />
-          <End Role="modulos_usuarios" Type="Self.modulos_usuarios" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="usuarios">
-              <PropertyRef Name="id_usuario" />
-            </Principal>
-            <Dependent Role="modulos_usuarios">
-              <PropertyRef Name="id_usuario" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -289,12 +215,7 @@
           <EntitySet Name="modulos_usuarios" EntityType="Self.modulos_usuarios" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="personas" EntityType="Self.personas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="planes" EntityType="Self.planes" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="usuarios" EntityType="Self.usuarios" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_alumnos_inscripciones_cursos" Association="Self.FK_alumnos_inscripciones_cursos">
-            <End Role="cursos" EntitySet="cursos" />
-            <End Role="alumnos_inscripciones" EntitySet="alumnos_inscripciones" />
-          </AssociationSet>
           <AssociationSet Name="FK_alumnos_inscripciones_personas" Association="Self.FK_alumnos_inscripciones_personas">
             <End Role="personas" EntitySet="personas" />
             <End Role="alumnos_inscripciones" EntitySet="alumnos_inscripciones" />
@@ -311,25 +232,9 @@
             <End Role="materias" EntitySet="materias" />
             <End Role="cursos" EntitySet="cursos" />
           </AssociationSet>
-          <AssociationSet Name="FK_docentes_cursos_cursos" Association="Self.FK_docentes_cursos_cursos">
-            <End Role="cursos" EntitySet="cursos" />
-            <End Role="docentes_cursos" EntitySet="docentes_cursos" />
-          </AssociationSet>
-          <AssociationSet Name="FK_docentes_cursos_personas" Association="Self.FK_docentes_cursos_personas">
-            <End Role="personas" EntitySet="personas" />
-            <End Role="docentes_cursos" EntitySet="docentes_cursos" />
-          </AssociationSet>
           <AssociationSet Name="FK_materias_planes" Association="Self.FK_materias_planes">
             <End Role="planes" EntitySet="planes" />
             <End Role="materias" EntitySet="materias" />
-          </AssociationSet>
-          <AssociationSet Name="FK_modulos_usuarios_modulos" Association="Self.FK_modulos_usuarios_modulos">
-            <End Role="modulos" EntitySet="modulos" />
-            <End Role="modulos_usuarios" EntitySet="modulos_usuarios" />
-          </AssociationSet>
-          <AssociationSet Name="FK_modulos_usuarios_usuarios" Association="Self.FK_modulos_usuarios_usuarios">
-            <End Role="usuarios" EntitySet="usuarios" />
-            <End Role="modulos_usuarios" EntitySet="modulos_usuarios" />
           </AssociationSet>
           <AssociationSet Name="FK_personas_planes" Association="Self.FK_personas_planes">
             <End Role="planes" EntitySet="planes" />
@@ -344,11 +249,55 @@
             <End Role="usuarios" EntitySet="usuarios" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ModeloTP2" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="EntidadesTP2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="alumnos_inscripciones" EntityType="ModeloTP2.alumnos_inscripciones" />
+          <EntitySet Name="comisiones" EntityType="ModeloTP2.comisiones" />
+          <EntitySet Name="cursos" EntityType="ModeloTP2.cursos" />
+          <EntitySet Name="docentes_cursos" EntityType="ModeloTP2.docentes_cursos" />
+          <EntitySet Name="especialidades" EntityType="ModeloTP2.especialidades" />
+          <EntitySet Name="materias" EntityType="ModeloTP2.materias" />
+          <EntitySet Name="modulos" EntityType="ModeloTP2.modulos" />
+          <EntitySet Name="modulos_usuarios" EntityType="ModeloTP2.modulos_usuarios" />
+          <EntitySet Name="personas" EntityType="ModeloTP2.personas" />
+          <EntitySet Name="planes" EntityType="ModeloTP2.planes" />
+          <EntitySet Name="usuarios" EntityType="ModeloTP2.usuarios" />
+          <AssociationSet Name="FK_alumnos_inscripciones_personas" Association="ModeloTP2.FK_alumnos_inscripciones_personas">
+            <End Role="personas" EntitySet="personas" />
+            <End Role="alumnos_inscripciones" EntitySet="alumnos_inscripciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_comisiones_planes" Association="ModeloTP2.FK_comisiones_planes">
+            <End Role="planes" EntitySet="planes" />
+            <End Role="comisiones" EntitySet="comisiones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cursos_comisiones" Association="ModeloTP2.FK_cursos_comisiones">
+            <End Role="comisiones" EntitySet="comisiones" />
+            <End Role="cursos" EntitySet="cursos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cursos_materias" Association="ModeloTP2.FK_cursos_materias">
+            <End Role="materias" EntitySet="materias" />
+            <End Role="cursos" EntitySet="cursos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_planes_especialidades" Association="ModeloTP2.FK_planes_especialidades">
+            <End Role="especialidades" EntitySet="especialidades" />
+            <End Role="planes" EntitySet="planes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_materias_planes" Association="ModeloTP2.FK_materias_planes">
+            <End Role="planes" EntitySet="planes" />
+            <End Role="materias" EntitySet="materias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_personas_planes" Association="ModeloTP2.FK_personas_planes">
+            <End Role="planes" EntitySet="planes" />
+            <End Role="personas" EntitySet="personas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_usuarios_personas" Association="ModeloTP2.FK_usuarios_personas">
+            <End Role="personas" EntitySet="personas" />
+            <End Role="usuarios" EntitySet="usuarios" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="alumnos_inscripciones">
           <Key>
             <PropertyRef Name="id_inscripcion" />
@@ -356,21 +305,20 @@
           <Property Name="id_inscripcion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="id_alumno" Type="Int32" Nullable="false" />
           <Property Name="id_curso" Type="Int32" Nullable="false" />
-          <Property Name="condicion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="condicion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="nota" Type="Int32" />
-          <NavigationProperty Name="cursos" Relationship="Self.FK_alumnos_inscripciones_cursos" FromRole="alumnos_inscripciones" ToRole="cursos" />
-          <NavigationProperty Name="personas" Relationship="Self.FK_alumnos_inscripciones_personas" FromRole="alumnos_inscripciones" ToRole="personas" />
+          <NavigationProperty Name="personas" Relationship="ModeloTP2.FK_alumnos_inscripciones_personas" FromRole="alumnos_inscripciones" ToRole="personas" />
         </EntityType>
         <EntityType Name="comisiones">
           <Key>
             <PropertyRef Name="id_comision" />
           </Key>
           <Property Name="id_comision" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="desc_comision" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="desc_comision" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="anio_especialidad" Type="Int32" Nullable="false" />
           <Property Name="id_plan" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="planes" Relationship="Self.FK_comisiones_planes" FromRole="comisiones" ToRole="planes" />
-          <NavigationProperty Name="cursos" Relationship="Self.FK_cursos_comisiones" FromRole="comisiones" ToRole="cursos" />
+          <NavigationProperty Name="planes" Relationship="ModeloTP2.FK_comisiones_planes" FromRole="comisiones" ToRole="planes" />
+          <NavigationProperty Name="cursos" Relationship="ModeloTP2.FK_cursos_comisiones" FromRole="comisiones" ToRole="cursos" />
         </EntityType>
         <EntityType Name="cursos">
           <Key>
@@ -381,10 +329,8 @@
           <Property Name="id_comision" Type="Int32" Nullable="false" />
           <Property Name="anio_calendario" Type="Int32" Nullable="false" />
           <Property Name="cupo" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="alumnos_inscripciones" Relationship="Self.FK_alumnos_inscripciones_cursos" FromRole="cursos" ToRole="alumnos_inscripciones" />
-          <NavigationProperty Name="comisiones" Relationship="Self.FK_cursos_comisiones" FromRole="cursos" ToRole="comisiones" />
-          <NavigationProperty Name="materias" Relationship="Self.FK_cursos_materias" FromRole="cursos" ToRole="materias" />
-          <NavigationProperty Name="docentes_cursos" Relationship="Self.FK_docentes_cursos_cursos" FromRole="cursos" ToRole="docentes_cursos" />
+          <NavigationProperty Name="comisiones" Relationship="ModeloTP2.FK_cursos_comisiones" FromRole="cursos" ToRole="comisiones" />
+          <NavigationProperty Name="materias" Relationship="ModeloTP2.FK_cursos_materias" FromRole="cursos" ToRole="materias" />
         </EntityType>
         <EntityType Name="docentes_cursos">
           <Key>
@@ -394,28 +340,26 @@
           <Property Name="id_curso" Type="Int32" Nullable="false" />
           <Property Name="id_docente" Type="Int32" Nullable="false" />
           <Property Name="cargo" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="cursos" Relationship="Self.FK_docentes_cursos_cursos" FromRole="docentes_cursos" ToRole="cursos" />
-          <NavigationProperty Name="personas" Relationship="Self.FK_docentes_cursos_personas" FromRole="docentes_cursos" ToRole="personas" />
         </EntityType>
         <EntityType Name="especialidades">
           <Key>
             <PropertyRef Name="id_especialidad" />
           </Key>
           <Property Name="id_especialidad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="desc_especialidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="planes" Relationship="Self.FK_planes_especialidades" FromRole="especialidades" ToRole="planes" />
+          <Property Name="desc_especialidad" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="planes" Relationship="ModeloTP2.FK_planes_especialidades" FromRole="especialidades" ToRole="planes" />
         </EntityType>
         <EntityType Name="materias">
           <Key>
             <PropertyRef Name="id_materia" />
           </Key>
           <Property Name="id_materia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="desc_materia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="desc_materia" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="hs_semanales" Type="Int32" Nullable="false" />
           <Property Name="hs_totales" Type="Int32" Nullable="false" />
           <Property Name="id_plan" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="cursos" Relationship="Self.FK_cursos_materias" FromRole="materias" ToRole="cursos" />
-          <NavigationProperty Name="planes" Relationship="Self.FK_materias_planes" FromRole="materias" ToRole="planes" />
+          <NavigationProperty Name="cursos" Relationship="ModeloTP2.FK_cursos_materias" FromRole="materias" ToRole="cursos" />
+          <NavigationProperty Name="planes" Relationship="ModeloTP2.FK_materias_planes" FromRole="materias" ToRole="planes" />
         </EntityType>
         <EntityType Name="modulos">
           <Key>
@@ -423,7 +367,6 @@
           </Key>
           <Property Name="id_modulo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="desc_modulo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="modulos_usuarios" Relationship="Self.FK_modulos_usuarios_modulos" FromRole="modulos" ToRole="modulos_usuarios" />
         </EntityType>
         <EntityType Name="modulos_usuarios">
           <Key>
@@ -432,16 +375,14 @@
           <Property Name="id_modulo_usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="id_modulo" Type="Int32" Nullable="false" />
           <Property Name="id_usuario" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="modulos" Relationship="Self.FK_modulos_usuarios_modulos" FromRole="modulos_usuarios" ToRole="modulos" />
-          <NavigationProperty Name="usuarios" Relationship="Self.FK_modulos_usuarios_usuarios" FromRole="modulos_usuarios" ToRole="usuarios" />
         </EntityType>
         <EntityType Name="personas">
           <Key>
             <PropertyRef Name="id_persona" />
           </Key>
           <Property Name="id_persona" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="apellido" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -449,64 +390,36 @@
           <Property Name="legajo" Type="Int32" />
           <Property Name="tipo_persona" Type="Int32" Nullable="false" />
           <Property Name="id_plan" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="alumnos_inscripciones" Relationship="Self.FK_alumnos_inscripciones_personas" FromRole="personas" ToRole="alumnos_inscripciones" />
-          <NavigationProperty Name="docentes_cursos" Relationship="Self.FK_docentes_cursos_personas" FromRole="personas" ToRole="docentes_cursos" />
-          <NavigationProperty Name="planes" Relationship="Self.FK_personas_planes" FromRole="personas" ToRole="planes" />
-          <NavigationProperty Name="usuarios" Relationship="Self.FK_usuarios_personas" FromRole="personas" ToRole="usuarios" />
+          <NavigationProperty Name="alumnos_inscripciones" Relationship="ModeloTP2.FK_alumnos_inscripciones_personas" FromRole="personas" ToRole="alumnos_inscripciones" />
+          <NavigationProperty Name="planes" Relationship="ModeloTP2.FK_personas_planes" FromRole="personas" ToRole="planes" />
+          <NavigationProperty Name="usuarios" Relationship="ModeloTP2.FK_usuarios_personas" FromRole="personas" ToRole="usuarios" />
         </EntityType>
         <EntityType Name="planes">
           <Key>
             <PropertyRef Name="id_plan" />
           </Key>
           <Property Name="id_plan" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="desc_plan" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="desc_plan" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="id_especialidad" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="comisiones" Relationship="Self.FK_comisiones_planes" FromRole="planes" ToRole="comisiones" />
-          <NavigationProperty Name="especialidades" Relationship="Self.FK_planes_especialidades" FromRole="planes" ToRole="especialidades" />
-          <NavigationProperty Name="materias" Relationship="Self.FK_materias_planes" FromRole="planes" ToRole="materias" />
-          <NavigationProperty Name="personas" Relationship="Self.FK_personas_planes" FromRole="planes" ToRole="personas" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="comisiones" Relationship="ModeloTP2.FK_comisiones_planes" FromRole="planes" ToRole="comisiones" />
+          <NavigationProperty Name="especialidades" Relationship="ModeloTP2.FK_planes_especialidades" FromRole="planes" ToRole="especialidades" />
+          <NavigationProperty Name="materias" Relationship="ModeloTP2.FK_materias_planes" FromRole="planes" ToRole="materias" />
+          <NavigationProperty Name="personas" Relationship="ModeloTP2.FK_personas_planes" FromRole="planes" ToRole="personas" />
         </EntityType>
         <EntityType Name="usuarios">
           <Key>
             <PropertyRef Name="id_usuario" />
           </Key>
           <Property Name="id_usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nombre_usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="clave" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="habilitado" Type="Boolean" Nullable="false" />
-          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nombre_usuario" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="clave" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="cambia_clave" Type="Boolean" />
           <Property Name="id_persona" Type="Int32" />
-          <NavigationProperty Name="modulos_usuarios" Relationship="Self.FK_modulos_usuarios_usuarios" FromRole="usuarios" ToRole="modulos_usuarios" />
-          <NavigationProperty Name="personas" Relationship="Self.FK_usuarios_personas" FromRole="usuarios" ToRole="personas" />
+          <NavigationProperty Name="personas" Relationship="ModeloTP2.FK_usuarios_personas" FromRole="usuarios" ToRole="personas" />
         </EntityType>
-        <Association Name="FK_alumnos_inscripciones_cursos">
-          <End Role="cursos" Type="Self.cursos" Multiplicity="1" />
-          <End Role="alumnos_inscripciones" Type="Self.alumnos_inscripciones" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="cursos">
-              <PropertyRef Name="id_curso" />
-            </Principal>
-            <Dependent Role="alumnos_inscripciones">
-              <PropertyRef Name="id_curso" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_alumnos_inscripciones_personas">
-          <End Role="personas" Type="Self.personas" Multiplicity="1" />
-          <End Role="alumnos_inscripciones" Type="Self.alumnos_inscripciones" Multiplicity="*" />
+          <End Type="ModeloTP2.personas" Role="personas" Multiplicity="1" />
+          <End Type="ModeloTP2.alumnos_inscripciones" Role="alumnos_inscripciones" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="personas">
               <PropertyRef Name="id_persona" />
@@ -517,8 +430,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_comisiones_planes">
-          <End Role="planes" Type="Self.planes" Multiplicity="1" />
-          <End Role="comisiones" Type="Self.comisiones" Multiplicity="*" />
+          <End Type="ModeloTP2.planes" Role="planes" Multiplicity="1" />
+          <End Type="ModeloTP2.comisiones" Role="comisiones" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="planes">
               <PropertyRef Name="id_plan" />
@@ -529,8 +442,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_cursos_comisiones">
-          <End Role="comisiones" Type="Self.comisiones" Multiplicity="1" />
-          <End Role="cursos" Type="Self.cursos" Multiplicity="*" />
+          <End Type="ModeloTP2.comisiones" Role="comisiones" Multiplicity="1" />
+          <End Type="ModeloTP2.cursos" Role="cursos" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="comisiones">
               <PropertyRef Name="id_comision" />
@@ -541,8 +454,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_cursos_materias">
-          <End Role="materias" Type="Self.materias" Multiplicity="1" />
-          <End Role="cursos" Type="Self.cursos" Multiplicity="*" />
+          <End Type="ModeloTP2.materias" Role="materias" Multiplicity="1" />
+          <End Type="ModeloTP2.cursos" Role="cursos" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="materias">
               <PropertyRef Name="id_materia" />
@@ -552,33 +465,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_docentes_cursos_cursos">
-          <End Role="cursos" Type="Self.cursos" Multiplicity="1" />
-          <End Role="docentes_cursos" Type="Self.docentes_cursos" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="cursos">
-              <PropertyRef Name="id_curso" />
-            </Principal>
-            <Dependent Role="docentes_cursos">
-              <PropertyRef Name="id_curso" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_docentes_cursos_personas">
-          <End Role="personas" Type="Self.personas" Multiplicity="1" />
-          <End Role="docentes_cursos" Type="Self.docentes_cursos" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="personas">
-              <PropertyRef Name="id_persona" />
-            </Principal>
-            <Dependent Role="docentes_cursos">
-              <PropertyRef Name="id_docente" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_planes_especialidades">
-          <End Role="especialidades" Type="Self.especialidades" Multiplicity="1" />
-          <End Role="planes" Type="Self.planes" Multiplicity="*" />
+          <End Type="ModeloTP2.especialidades" Role="especialidades" Multiplicity="1" />
+          <End Type="ModeloTP2.planes" Role="planes" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="especialidades">
               <PropertyRef Name="id_especialidad" />
@@ -589,8 +478,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_materias_planes">
-          <End Role="planes" Type="Self.planes" Multiplicity="1" />
-          <End Role="materias" Type="Self.materias" Multiplicity="*" />
+          <End Type="ModeloTP2.planes" Role="planes" Multiplicity="1" />
+          <End Type="ModeloTP2.materias" Role="materias" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="planes">
               <PropertyRef Name="id_plan" />
@@ -600,33 +489,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_modulos_usuarios_modulos">
-          <End Role="modulos" Type="Self.modulos" Multiplicity="1" />
-          <End Role="modulos_usuarios" Type="Self.modulos_usuarios" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="modulos">
-              <PropertyRef Name="id_modulo" />
-            </Principal>
-            <Dependent Role="modulos_usuarios">
-              <PropertyRef Name="id_modulo" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_modulos_usuarios_usuarios">
-          <End Role="usuarios" Type="Self.usuarios" Multiplicity="1" />
-          <End Role="modulos_usuarios" Type="Self.modulos_usuarios" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="usuarios">
-              <PropertyRef Name="id_usuario" />
-            </Principal>
-            <Dependent Role="modulos_usuarios">
-              <PropertyRef Name="id_usuario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_personas_planes">
-          <End Role="planes" Type="Self.planes" Multiplicity="1" />
-          <End Role="personas" Type="Self.personas" Multiplicity="*" />
+          <End Type="ModeloTP2.planes" Role="planes" Multiplicity="1" />
+          <End Type="ModeloTP2.personas" Role="personas" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="planes">
               <PropertyRef Name="id_plan" />
@@ -637,8 +502,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_usuarios_personas">
-          <End Role="personas" Type="Self.personas" Multiplicity="0..1" />
-          <End Role="usuarios" Type="Self.usuarios" Multiplicity="*" />
+          <End Type="ModeloTP2.personas" Role="personas" Multiplicity="0..1" />
+          <End Type="ModeloTP2.usuarios" Role="usuarios" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="personas">
               <PropertyRef Name="id_persona" />
@@ -648,73 +513,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="EntidadesTP2" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="alumnos_inscripciones" EntityType="Self.alumnos_inscripciones" />
-          <EntitySet Name="comisiones" EntityType="Self.comisiones" />
-          <EntitySet Name="cursos" EntityType="Self.cursos" />
-          <EntitySet Name="docentes_cursos" EntityType="Self.docentes_cursos" />
-          <EntitySet Name="especialidades" EntityType="Self.especialidades" />
-          <EntitySet Name="materias" EntityType="Self.materias" />
-          <EntitySet Name="modulos" EntityType="Self.modulos" />
-          <EntitySet Name="modulos_usuarios" EntityType="Self.modulos_usuarios" />
-          <EntitySet Name="personas" EntityType="Self.personas" />
-          <EntitySet Name="planes" EntityType="Self.planes" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
-          <EntitySet Name="usuarios" EntityType="Self.usuarios" />
-          <AssociationSet Name="FK_alumnos_inscripciones_cursos" Association="Self.FK_alumnos_inscripciones_cursos">
-            <End Role="cursos" EntitySet="cursos" />
-            <End Role="alumnos_inscripciones" EntitySet="alumnos_inscripciones" />
-          </AssociationSet>
-          <AssociationSet Name="FK_alumnos_inscripciones_personas" Association="Self.FK_alumnos_inscripciones_personas">
-            <End Role="personas" EntitySet="personas" />
-            <End Role="alumnos_inscripciones" EntitySet="alumnos_inscripciones" />
-          </AssociationSet>
-          <AssociationSet Name="FK_comisiones_planes" Association="Self.FK_comisiones_planes">
-            <End Role="planes" EntitySet="planes" />
-            <End Role="comisiones" EntitySet="comisiones" />
-          </AssociationSet>
-          <AssociationSet Name="FK_cursos_comisiones" Association="Self.FK_cursos_comisiones">
-            <End Role="comisiones" EntitySet="comisiones" />
-            <End Role="cursos" EntitySet="cursos" />
-          </AssociationSet>
-          <AssociationSet Name="FK_cursos_materias" Association="Self.FK_cursos_materias">
-            <End Role="materias" EntitySet="materias" />
-            <End Role="cursos" EntitySet="cursos" />
-          </AssociationSet>
-          <AssociationSet Name="FK_docentes_cursos_cursos" Association="Self.FK_docentes_cursos_cursos">
-            <End Role="cursos" EntitySet="cursos" />
-            <End Role="docentes_cursos" EntitySet="docentes_cursos" />
-          </AssociationSet>
-          <AssociationSet Name="FK_docentes_cursos_personas" Association="Self.FK_docentes_cursos_personas">
-            <End Role="personas" EntitySet="personas" />
-            <End Role="docentes_cursos" EntitySet="docentes_cursos" />
-          </AssociationSet>
-          <AssociationSet Name="FK_planes_especialidades" Association="Self.FK_planes_especialidades">
-            <End Role="especialidades" EntitySet="especialidades" />
-            <End Role="planes" EntitySet="planes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_materias_planes" Association="Self.FK_materias_planes">
-            <End Role="planes" EntitySet="planes" />
-            <End Role="materias" EntitySet="materias" />
-          </AssociationSet>
-          <AssociationSet Name="FK_modulos_usuarios_modulos" Association="Self.FK_modulos_usuarios_modulos">
-            <End Role="modulos" EntitySet="modulos" />
-            <End Role="modulos_usuarios" EntitySet="modulos_usuarios" />
-          </AssociationSet>
-          <AssociationSet Name="FK_modulos_usuarios_usuarios" Association="Self.FK_modulos_usuarios_usuarios">
-            <End Role="usuarios" EntitySet="usuarios" />
-            <End Role="modulos_usuarios" EntitySet="modulos_usuarios" />
-          </AssociationSet>
-          <AssociationSet Name="FK_personas_planes" Association="Self.FK_personas_planes">
-            <End Role="planes" EntitySet="planes" />
-            <End Role="personas" EntitySet="personas" />
-          </AssociationSet>
-          <AssociationSet Name="FK_usuarios_personas" Association="Self.FK_usuarios_personas">
-            <End Role="personas" EntitySet="personas" />
-            <End Role="usuarios" EntitySet="usuarios" />
-          </AssociationSet>
-        </EntityContainer>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -723,129 +522,114 @@
           <EntitySetMapping Name="alumnos_inscripciones">
             <EntityTypeMapping TypeName="ModeloTP2.alumnos_inscripciones">
               <MappingFragment StoreEntitySet="alumnos_inscripciones">
-                <ScalarProperty Name="id_inscripcion" ColumnName="id_inscripcion" />
-                <ScalarProperty Name="id_alumno" ColumnName="id_alumno" />
-                <ScalarProperty Name="id_curso" ColumnName="id_curso" />
-                <ScalarProperty Name="condicion" ColumnName="condicion" />
                 <ScalarProperty Name="nota" ColumnName="nota" />
+                <ScalarProperty Name="condicion" ColumnName="condicion" />
+                <ScalarProperty Name="id_curso" ColumnName="id_curso" />
+                <ScalarProperty Name="id_alumno" ColumnName="id_alumno" />
+                <ScalarProperty Name="id_inscripcion" ColumnName="id_inscripcion" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="comisiones">
             <EntityTypeMapping TypeName="ModeloTP2.comisiones">
               <MappingFragment StoreEntitySet="comisiones">
-                <ScalarProperty Name="id_comision" ColumnName="id_comision" />
-                <ScalarProperty Name="desc_comision" ColumnName="desc_comision" />
-                <ScalarProperty Name="anio_especialidad" ColumnName="anio_especialidad" />
                 <ScalarProperty Name="id_plan" ColumnName="id_plan" />
+                <ScalarProperty Name="anio_especialidad" ColumnName="anio_especialidad" />
+                <ScalarProperty Name="desc_comision" ColumnName="desc_comision" />
+                <ScalarProperty Name="id_comision" ColumnName="id_comision" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="cursos">
             <EntityTypeMapping TypeName="ModeloTP2.cursos">
               <MappingFragment StoreEntitySet="cursos">
-                <ScalarProperty Name="id_curso" ColumnName="id_curso" />
-                <ScalarProperty Name="id_materia" ColumnName="id_materia" />
-                <ScalarProperty Name="id_comision" ColumnName="id_comision" />
-                <ScalarProperty Name="anio_calendario" ColumnName="anio_calendario" />
                 <ScalarProperty Name="cupo" ColumnName="cupo" />
+                <ScalarProperty Name="anio_calendario" ColumnName="anio_calendario" />
+                <ScalarProperty Name="id_comision" ColumnName="id_comision" />
+                <ScalarProperty Name="id_materia" ColumnName="id_materia" />
+                <ScalarProperty Name="id_curso" ColumnName="id_curso" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="docentes_cursos">
             <EntityTypeMapping TypeName="ModeloTP2.docentes_cursos">
               <MappingFragment StoreEntitySet="docentes_cursos">
-                <ScalarProperty Name="id_dictado" ColumnName="id_dictado" />
-                <ScalarProperty Name="id_curso" ColumnName="id_curso" />
-                <ScalarProperty Name="id_docente" ColumnName="id_docente" />
                 <ScalarProperty Name="cargo" ColumnName="cargo" />
+                <ScalarProperty Name="id_docente" ColumnName="id_docente" />
+                <ScalarProperty Name="id_curso" ColumnName="id_curso" />
+                <ScalarProperty Name="id_dictado" ColumnName="id_dictado" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="especialidades">
             <EntityTypeMapping TypeName="ModeloTP2.especialidades">
               <MappingFragment StoreEntitySet="especialidades">
-                <ScalarProperty Name="id_especialidad" ColumnName="id_especialidad" />
                 <ScalarProperty Name="desc_especialidad" ColumnName="desc_especialidad" />
+                <ScalarProperty Name="id_especialidad" ColumnName="id_especialidad" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="materias">
             <EntityTypeMapping TypeName="ModeloTP2.materias">
               <MappingFragment StoreEntitySet="materias">
-                <ScalarProperty Name="id_materia" ColumnName="id_materia" />
-                <ScalarProperty Name="desc_materia" ColumnName="desc_materia" />
-                <ScalarProperty Name="hs_semanales" ColumnName="hs_semanales" />
-                <ScalarProperty Name="hs_totales" ColumnName="hs_totales" />
                 <ScalarProperty Name="id_plan" ColumnName="id_plan" />
+                <ScalarProperty Name="hs_totales" ColumnName="hs_totales" />
+                <ScalarProperty Name="hs_semanales" ColumnName="hs_semanales" />
+                <ScalarProperty Name="desc_materia" ColumnName="desc_materia" />
+                <ScalarProperty Name="id_materia" ColumnName="id_materia" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="modulos">
             <EntityTypeMapping TypeName="ModeloTP2.modulos">
               <MappingFragment StoreEntitySet="modulos">
-                <ScalarProperty Name="id_modulo" ColumnName="id_modulo" />
                 <ScalarProperty Name="desc_modulo" ColumnName="desc_modulo" />
+                <ScalarProperty Name="id_modulo" ColumnName="id_modulo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="modulos_usuarios">
             <EntityTypeMapping TypeName="ModeloTP2.modulos_usuarios">
               <MappingFragment StoreEntitySet="modulos_usuarios">
-                <ScalarProperty Name="id_modulo_usuario" ColumnName="id_modulo_usuario" />
-                <ScalarProperty Name="id_modulo" ColumnName="id_modulo" />
                 <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+                <ScalarProperty Name="id_modulo" ColumnName="id_modulo" />
+                <ScalarProperty Name="id_modulo_usuario" ColumnName="id_modulo_usuario" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="personas">
             <EntityTypeMapping TypeName="ModeloTP2.personas">
               <MappingFragment StoreEntitySet="personas">
-                <ScalarProperty Name="id_persona" ColumnName="id_persona" />
-                <ScalarProperty Name="nombre" ColumnName="nombre" />
-                <ScalarProperty Name="apellido" ColumnName="apellido" />
-                <ScalarProperty Name="direccion" ColumnName="direccion" />
-                <ScalarProperty Name="email" ColumnName="email" />
-                <ScalarProperty Name="telefono" ColumnName="telefono" />
-                <ScalarProperty Name="fecha_nac" ColumnName="fecha_nac" />
-                <ScalarProperty Name="legajo" ColumnName="legajo" />
-                <ScalarProperty Name="tipo_persona" ColumnName="tipo_persona" />
                 <ScalarProperty Name="id_plan" ColumnName="id_plan" />
+                <ScalarProperty Name="tipo_persona" ColumnName="tipo_persona" />
+                <ScalarProperty Name="legajo" ColumnName="legajo" />
+                <ScalarProperty Name="fecha_nac" ColumnName="fecha_nac" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="apellido" ColumnName="apellido" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="id_persona" ColumnName="id_persona" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="planes">
             <EntityTypeMapping TypeName="ModeloTP2.planes">
               <MappingFragment StoreEntitySet="planes">
-                <ScalarProperty Name="id_plan" ColumnName="id_plan" />
-                <ScalarProperty Name="desc_plan" ColumnName="desc_plan" />
                 <ScalarProperty Name="id_especialidad" ColumnName="id_especialidad" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="ModeloTP2.sysdiagrams">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="desc_plan" ColumnName="desc_plan" />
+                <ScalarProperty Name="id_plan" ColumnName="id_plan" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="usuarios">
             <EntityTypeMapping TypeName="ModeloTP2.usuarios">
               <MappingFragment StoreEntitySet="usuarios">
-                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
-                <ScalarProperty Name="nombre_usuario" ColumnName="nombre_usuario" />
-                <ScalarProperty Name="clave" ColumnName="clave" />
-                <ScalarProperty Name="habilitado" ColumnName="habilitado" />
-                <ScalarProperty Name="nombre" ColumnName="nombre" />
-                <ScalarProperty Name="apellido" ColumnName="apellido" />
-                <ScalarProperty Name="email" ColumnName="email" />
-                <ScalarProperty Name="cambia_clave" ColumnName="cambia_clave" />
                 <ScalarProperty Name="id_persona" ColumnName="id_persona" />
+                <ScalarProperty Name="cambia_clave" ColumnName="cambia_clave" />
+                <ScalarProperty Name="clave" ColumnName="clave" />
+                <ScalarProperty Name="nombre_usuario" ColumnName="nombre_usuario" />
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

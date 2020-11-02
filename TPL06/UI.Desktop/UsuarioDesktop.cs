@@ -34,9 +34,13 @@ namespace Academia.UI.Desktop
         public UsuarioDesktop(int ID, ModoForm modo) : this()
         {
             UsuarioLogic usuarioLogic = new UsuarioLogic();
+            PersonaLogic personaLogic = new PersonaLogic();
             UsuarioActual = usuarioLogic.GetOne(ID);
+            UsuarioActual.Persona = personaLogic.GetOne(UsuarioActual.Persona.Id);
 
             this.modoForm = modo;
+
+            txtLegajo.Enabled = false;
 
             this.MapearDeDatos();
 
@@ -60,25 +64,16 @@ namespace Academia.UI.Desktop
 
         public override void MapearDeDatos()
         {
-            this.txtId.Text = this.UsuarioActual.Id.ToString();
-            this.chkHabilitado.Checked = this.UsuarioActual.Habilitado;
-            this.txtNombre.Text = this.UsuarioActual.Persona.Nombre;
-            this.txtApellido.Text = this.UsuarioActual.Persona.Apellido;
-            this.txtEmail.Text = this.UsuarioActual.Persona.Email.ToString();
             this.txtUsuario.Text = this.UsuarioActual.NombreUsuario;
             this.txtClave.Text = this.UsuarioActual.Clave;
             this.txtConfirmarClave.Text = this.UsuarioActual.Clave;
+            txtLegajo.Text = UsuarioActual.Persona.Legajo.ToString();
 
             switch (this.modoForm)
             {
                 case ModoForm.Alta | ModoForm.Modificacion:
                     this.btnAceptar.Text = "Guardar";
                     break;
-
-                case ModoForm.Baja:
-                    this.btnAceptar.Text = "Eliminar";
-                    break;
-
                 case ModoForm.Consulta:
                     this.btnAceptar.Text = "Aceptar";
                     break;
@@ -91,29 +86,21 @@ namespace Academia.UI.Desktop
             switch (this.modoForm)
             {
                 case ModoForm.Alta:
-                    this.UsuarioActual = new Usuario();
-                    this.UsuarioActual.Id = 0;
-                    this.UsuarioActual.Habilitado = this.chkHabilitado.Checked;
-                    this.UsuarioActual.Persona.Nombre = this.txtNombre.Text;
-                    this.UsuarioActual.Persona.Apellido = this.txtApellido.Text;
-                    this.UsuarioActual.Persona.Email = new MailAddress(txtEmail.Text);
-                    this.UsuarioActual.NombreUsuario = this.txtUsuario.Text;
-                    this.UsuarioActual.Clave = this.txtClave.Text;
-                    this.UsuarioActual.Clave = this.txtConfirmarClave.Text;
+                    UsuarioActual = new Usuario();
+                    UsuarioActual.Id = 0;
+                    UsuarioActual.NombreUsuario = this.txtUsuario.Text;
+                    UsuarioActual.Clave = this.txtConfirmarClave.Text;
+                    UsuarioActual.Persona = new Persona
+                    {
+                        Legajo = int.Parse(txtLegajo.Text)
+                    };
 
                     this.UsuarioActual.State = BusinessEntity.Estados.New;
                     break;
 
                 case ModoForm.Modificacion:
-                    this.UsuarioActual.Id = int.Parse(this.txtId.Text.ToString());
-                    this.UsuarioActual.Habilitado = this.chkHabilitado.Checked;
-                    this.UsuarioActual.Persona.Nombre = this.txtNombre.Text;
-                    this.UsuarioActual.Persona.Apellido = this.txtApellido.Text;
-                    this.UsuarioActual.Persona.Email = new System.Net.Mail.MailAddress(txtEmail.Text);
-                    this.UsuarioActual.NombreUsuario = this.txtUsuario.Text;
-                    this.UsuarioActual.Clave = this.txtClave.Text;
+                    this.UsuarioActual.NombreUsuario = this.txtUsuario.Text; 
                     this.UsuarioActual.Clave = this.txtConfirmarClave.Text;
-
                     this.UsuarioActual.State = BusinessEntity.Estados.Modified;
                     break;
                 default:
@@ -130,36 +117,23 @@ namespace Academia.UI.Desktop
 
         public override bool Validar()
         {
-            bool retorno = true;
-            string mensaje = "";
-
-            if (this.txtNombre.Text == "" | this.txtApellido.Text == "" | this.txtEmail.Text == "" | this.txtUsuario.Text == "" | this.txtClave.Text == "" | this.txtConfirmarClave.Text == "")
+            if (this.txtNombre.Text == "" || this.txtApellido.Text == "" || this.txtUsuario.Text == "" || this.txtClave.Text == "" || this.txtConfirmarClave.Text == "")
             {
-                mensaje = "Debe llenar todos los campos.";
-                retorno = false;
+                Notificar("Debe llenar todos los campos.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
             }
             else if (this.txtClave.Text != this.txtConfirmarClave.Text)
             {
-                mensaje = "Las claves deben ser iguales.";
-                retorno = false;
+                Notificar("Las claves deben ser iguales.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
             }
             else if (this.txtClave.Text.Length < 8)
             {
-                mensaje = "La clave debe tener al menos 8 caracteres.";
-                retorno = false;
-            }
-            else if (!(Validations.IsValidEmail(this.txtEmail.Text)))
-            {
-                mensaje = "Debe ingresar un email valido.";
-                retorno = false;
+                Notificar("La clave debe tener al menos 8 caracteres.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
             }
 
-            if (!retorno)
-            {
-                Notificar(mensaje, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-
-            return retorno;
+            return true;
         }
 
         private void SetFormName(ModoForm modo)
@@ -181,6 +155,17 @@ namespace Academia.UI.Desktop
             }
         }
 
-      
+        private void txtLegajo_TextChanged(object sender, EventArgs e)
+        {
+            PersonaLogic pl = new PersonaLogic();
+            Persona p = new Persona();
+            try
+            {
+                p = pl.GetByLegajo(int.Parse(txtLegajo.Text));
+            }
+            catch (Exception) { }
+            txtApellido.Text = p.Apellido;
+            txtNombre.Text = p.Nombre;
+        }
     }
 }
