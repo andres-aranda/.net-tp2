@@ -90,7 +90,6 @@ namespace Academia.UI.Web
             int idComision = int.Parse(cmbComision.SelectedValue);
             CursoLogic cl = new CursoLogic();
             CursoElegido = cl.GetByComisionMateria(idComision, idMateria);          
-
         }
 
         protected void inscripcion_Click(object sender, EventArgs e)
@@ -111,6 +110,7 @@ namespace Academia.UI.Web
             tablaResumen.Visible = true;
             Usuario u = (Usuario)Session["usuarioLogueado"];
             cl.Inscribir(u.Persona.Id, CursoElegido.Id);
+
         }
     }
 }

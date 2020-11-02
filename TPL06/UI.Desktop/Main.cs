@@ -262,7 +262,7 @@ namespace Academia.UI.Desktop
 
         private void inscripciónAMateriasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AbrirFormularioHijo(new Inscripciones(usuarioActual.Persona.Id));
+            AbrirFormularioHijo(new InscripcionesDesktop(usuarioActual.Persona.Id));
         }
 
         private void misCursosToolStripMenuItem1_Click(object sender, EventArgs e)
