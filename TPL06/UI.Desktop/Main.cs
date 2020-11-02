@@ -107,7 +107,7 @@ namespace Academia.UI.Desktop
                     btnDocenteCursos.Visible = true;
                 }
                     
-                if (m.Descripcion == "No docente" || m.Descripcion == "Administrador")
+                if (m.Descripcion == "NoDocente" || m.Descripcion == "Administrador")
                 {
                     tsmgestionAcademia.Visible = true;
                     tsmgestionAlumno.Visible = true;
