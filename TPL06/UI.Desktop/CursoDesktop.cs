@@ -124,31 +124,6 @@ namespace Academia.UI.Desktop
                 }
                 db.SaveChanges();
 
-                    /*
-                     public void Update(Persona p)
-        {
-            try
-            {
-                using (EntidadesTP2 db = new EntidadesTP2())
-                {
-                    personas oPersona = db.personas.Find(p.Id);
-                    oPersona.nombre = p.Nombre;
-                    oPersona.apellido = p.Apellido;
-                    oPersona.direccion = p.Direccion;
-                    oPersona.telefono = p.Telefono;
-                    oPersona.legajo = p.Legajo;
-                    oPersona.id_plan = p.IdPlan;
-                    oPersona.fecha_nac = p.FechaDeNacimiento;
-
-                    db.SaveChanges();
-                }
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-        }
-*/
                 
             }
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Academia.Data.Database;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,14 @@ namespace Academia.Util
             catch
             {
                 return false;
+            }
+        }     
+        public static bool IsLegajoUnico(int Legajo)
+        {
+            using (EntidadesTP2 db = new EntidadesTP2())
+            {
+                personas oPersona = (personas)db.personas.Where(x=>x.legajo==Legajo).First();
+                return (oPersona == null);
             }
         }
 
