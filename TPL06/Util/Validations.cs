@@ -23,11 +23,18 @@ namespace Academia.Util
         }     
         public static bool IsLegajoUnico(int Legajo)
         {
-            using (EntidadesTP2 db = new EntidadesTP2())
+            try
             {
-                personas oPersona = (personas)db.personas.Where(x=>x.legajo==Legajo).First();
-                return (oPersona == null);
+                using (EntidadesTP2 db = new EntidadesTP2())
+                {
+                    var v = (personas)db.personas.Where(x => x.legajo == Legajo).First();
+                }
             }
+            catch
+            {
+                return true;
+            }
+            return false;
         }
 
         public static string Greeting()

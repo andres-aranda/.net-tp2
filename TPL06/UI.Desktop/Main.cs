@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Business.Entities;
 using Academia.Util;
-
+using Academia.Data.Database;
 
 namespace Academia.UI.Desktop
 {
@@ -167,7 +167,15 @@ namespace Academia.UI.Desktop
 
         private void mnuInscripcionCursos_Click(object sender, EventArgs e)
         {
-            // TODO: Preguntar ID alumno para abrir Inscripciones
+            IngresoLegajo il = new IngresoLegajo();
+            il.ShowDialog();
+            int legajo = il.Legajo;
+            int idPersona;
+            using (EntidadesTP2 db = new EntidadesTP2())
+            {
+                idPersona = db.personas.Where(x => x.legajo == legajo).First().id_persona;
+            }
+            AbrirFormularioHijo(new InscripcionesDesktop(idPersona));
         }
 
         private void personasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -223,11 +231,6 @@ namespace Academia.UI.Desktop
         private void btnNoDocenteUsuarios_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo(new Usuarios());
-        }
-
-        private void btnNoDocenteInscribirAlumno_Click(object sender, EventArgs e)
-        {
-            // TODO: Preguntar ID de alumno a inscribir
         }
 
         private void btnAdministradorPermisos_Click(object sender, EventArgs e)

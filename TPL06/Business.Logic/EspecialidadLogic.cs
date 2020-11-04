@@ -37,5 +37,10 @@ namespace Business.Logic
         {
             EspecialidadData.Delete(id);
         }
+
+        public Especialidad GetByPlan(int id)
+        {
+            return EspecialidadData.GetByPlan(id);
+        }
     }
 }

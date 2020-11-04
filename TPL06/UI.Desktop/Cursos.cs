@@ -29,8 +29,11 @@ namespace Academia.UI.Desktop
         {
             using (EntidadesTP2 db = new EntidadesTP2())
             {
-                List<cursos>  cur = db.cursos.Include(x => x.comisiones).Include(x => x.materias).ToList();
-                this.dgvCursos.DataSource = cur;
+                var listaCursos = from cur in db.cursos
+                                  join com in db.comisiones on cur.id_comision equals com.id_comision
+                                  join m in db.materias on cur.id_materia equals m.id_materia
+                                  select new { Id = cur.id_curso, Materia = m.desc_materia, Comision = com.desc_comision, Año = cur.anio_calendario, Cupo = cur.cupo };
+                this.dgvCursos.DataSource = listaCursos.ToList();
             }
         }
 
@@ -38,13 +41,14 @@ namespace Academia.UI.Desktop
         {
             CursoDesktop cd = new CursoDesktop();
             cd.ShowDialog();
+            Mapeo();
         }
 
         private void tsbEditar_Click(object sender, EventArgs e)
         {
             if (dgvCursos.SelectedRows.Count > 0)
             {
-                int id = ((cursos)dgvCursos.SelectedRows[0].DataBoundItem).id_curso;
+                int id = (int)dgvCursos.SelectedRows[0].Cells[0].Value;
                 CursoDesktop cd = new CursoDesktop(id);
                 cd.ShowDialog();
             }
@@ -65,7 +69,7 @@ namespace Academia.UI.Desktop
                 {
                     using (EntidadesTP2 db = new EntidadesTP2())
                     {
-                        int ID = ((cursos)this.dgvCursos.SelectedRows[0].DataBoundItem).id_curso;
+                        int ID = (int)dgvCursos.SelectedRows[0].Cells[0].Value;
                         cursos curso = db.cursos.Find(ID);
                         db.cursos.Remove(curso);
                         db.SaveChanges();
@@ -75,6 +79,16 @@ namespace Academia.UI.Desktop
                 }
             }
             Mapeo();
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            Mapeo();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

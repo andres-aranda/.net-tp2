@@ -59,7 +59,13 @@ namespace Academia.UI.Desktop
         }
         private bool Validar()
         {
-            return (txtNombre.Text != string.Empty && txtApellido.Text != string.Empty && txtDireccion.Text != string.Empty && txtTelefono.Text != string.Empty && Validations.IsValidEmail(txtEmail.Text) && Validations.IsLegajoUnico(int.Parse(txtLegajo.Text)));
+            bool isLegajoUnico = IdPersona == -1 ? Validations.IsLegajoUnico(int.Parse(txtLegajo.Text)) : true;
+            return txtNombre.Text != string.Empty
+                && txtApellido.Text != string.Empty
+                && txtDireccion.Text != string.Empty
+                && txtTelefono.Text != string.Empty
+                && Validations.IsValidEmail(txtEmail.Text)
+                && isLegajoUnico;
         }
         private void btnAceptar_Click(object sender, EventArgs e)
         {
@@ -69,18 +75,34 @@ namespace Academia.UI.Desktop
                 {
                     using (EntidadesTP2 db = new EntidadesTP2())
                     {
-                        personas oPersona = LeerCampos();
+                        personas oPersona = new personas();
+                        oPersona.nombre = txtNombre.Text;
+                        oPersona.apellido = txtApellido.Text;
+                        oPersona.direccion = txtDireccion.Text;
+                        oPersona.telefono = txtTelefono.Text;
+                        oPersona.email = txtEmail.Text;
+                        oPersona.legajo = int.Parse(txtLegajo.Text);
+                        oPersona.id_plan = (int)cmbPlan.SelectedValue;
+                        oPersona.fecha_nac = mcFechaNacimiento.SelectionStart;
 
                         if (IdPersona == -1)
                         {
                             db.personas.Add(oPersona);
-                            MessageBox.Show("Persona agregada con exito");
+                            MessageBox.Show("Persona agregada con éxito.");
                         }
                         else
                         {
                             oPersona = db.personas.Find(IdPersona);
-                            oPersona = LeerCampos();
-                            MessageBox.Show("Persona actualizada con exito");
+                            oPersona.nombre = txtNombre.Text;
+                            oPersona.apellido = txtApellido.Text;
+                            oPersona.direccion = txtDireccion.Text;
+                            oPersona.telefono = txtTelefono.Text;
+                            oPersona.email = txtEmail.Text;
+                            oPersona.legajo = int.Parse(txtLegajo.Text);
+                            oPersona.id_plan = (int)cmbPlan.SelectedValue;
+                            oPersona.fecha_nac = mcFechaNacimiento.SelectionStart;
+                            db.SaveChanges();
+                            MessageBox.Show("Persona actualizada con éxito.");
                         }
 
                         db.SaveChanges();
@@ -89,11 +111,11 @@ namespace Academia.UI.Desktop
 
                 }
                 else
-                    MessageBox.Show("Ingrese todos los campos");
+                    MessageBox.Show("Error en los campos ingresados.");
             }
             catch
             {
-                MessageBox.Show("Datos invalidos");
+                MessageBox.Show("Datos inválidos.");
             }
 
         }

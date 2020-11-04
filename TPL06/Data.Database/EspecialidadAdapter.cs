@@ -5,6 +5,7 @@ using Business.Entities;
 using System.Data;
 using System.Data.SqlClient;
 using Academia.Data.Database;
+using System.Linq;
 
 namespace Data.Database
 {
@@ -141,6 +142,21 @@ namespace Data.Database
                 this.Update(especialidad);
             }
             especialidad.State = BusinessEntity.Estados.Unmodified;
+        }
+
+        public Especialidad GetByPlan(int id)
+        {
+            Especialidad especialidad = new Especialidad();
+            using (EntidadesTP2 db = new EntidadesTP2())
+            {
+                especialidades esp = (from p in db.planes
+                                      join e in db.especialidades on p.id_especialidad equals e.id_especialidad
+                                      where p.id_plan == id
+                                      select e).First();
+                especialidad.Id = esp.id_especialidad;
+                especialidad.Descripcion = esp.desc_especialidad;
+            }
+            return especialidad;
         }
 
     }

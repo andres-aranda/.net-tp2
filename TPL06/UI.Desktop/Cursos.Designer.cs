@@ -30,10 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvCursos = new System.Windows.Forms.DataGridView();
-            this.id_curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comision = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.entidadesTP2BindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -41,8 +37,12 @@
             this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
-            this.tsbReporte = new System.Windows.Forms.ToolStripButton();
             this.tlpCursos = new System.Windows.Forms.TableLayoutPanel();
+            this.id_curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comision = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Año = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCursos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.entidadesTP2BindingSource)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -61,6 +61,7 @@
             this.id_curso,
             this.materia,
             this.comision,
+            this.Año,
             this.cupo});
             this.tlpCursos.SetColumnSpan(this.dgvCursos, 2);
             this.dgvCursos.Location = new System.Drawing.Point(3, 3);
@@ -69,42 +70,6 @@
             this.dgvCursos.RowHeadersWidth = 51;
             this.dgvCursos.Size = new System.Drawing.Size(557, 224);
             this.dgvCursos.TabIndex = 0;
-            // 
-            // id_curso
-            // 
-            this.id_curso.DataPropertyName = "id_curso";
-            this.id_curso.HeaderText = "Id";
-            this.id_curso.MinimumWidth = 6;
-            this.id_curso.Name = "id_curso";
-            this.id_curso.ReadOnly = true;
-            this.id_curso.Width = 125;
-            // 
-            // materia
-            // 
-            this.materia.DataPropertyName = "desMat";
-            this.materia.HeaderText = "Materia";
-            this.materia.MinimumWidth = 6;
-            this.materia.Name = "materia";
-            this.materia.ReadOnly = true;
-            this.materia.Width = 125;
-            // 
-            // comision
-            // 
-            this.comision.DataPropertyName = "desCom";
-            this.comision.HeaderText = "Comision";
-            this.comision.MinimumWidth = 6;
-            this.comision.Name = "comision";
-            this.comision.ReadOnly = true;
-            this.comision.Width = 125;
-            // 
-            // cupo
-            // 
-            this.cupo.DataPropertyName = "cupo";
-            this.cupo.HeaderText = "Cupo";
-            this.cupo.MinimumWidth = 6;
-            this.cupo.Name = "cupo";
-            this.cupo.ReadOnly = true;
-            this.cupo.Width = 125;
             // 
             // btnActualizar
             // 
@@ -115,6 +80,7 @@
             this.btnActualizar.TabIndex = 1;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnSalir
             // 
@@ -126,6 +92,7 @@
             this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // entidadesTP2BindingSource
             // 
@@ -137,8 +104,7 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbNuevo,
             this.tsbEditar,
-            this.tsbEliminar,
-            this.tsbReporte});
+            this.tsbEliminar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(563, 27);
@@ -175,16 +141,6 @@
             this.tsbEliminar.Text = "toolStripButton3";
             this.tsbEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
             // 
-            // tsbReporte
-            // 
-            this.tsbReporte.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbReporte.Image = global::Academia.UI.Desktop.Properties.Resources.report_btn;
-            this.tsbReporte.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbReporte.Name = "tsbReporte";
-            this.tsbReporte.Size = new System.Drawing.Size(24, 24);
-            this.tsbReporte.Text = "toolStripButton4";
-            this.tsbReporte.Click += new System.EventHandler(this.tsbReporte_Click);
-            // 
             // tlpCursos
             // 
             this.tlpCursos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -203,6 +159,49 @@
             this.tlpCursos.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpCursos.Size = new System.Drawing.Size(563, 259);
             this.tlpCursos.TabIndex = 4;
+            // 
+            // id_curso
+            // 
+            this.id_curso.DataPropertyName = "Id";
+            this.id_curso.HeaderText = "Id";
+            this.id_curso.MinimumWidth = 6;
+            this.id_curso.Name = "id_curso";
+            this.id_curso.ReadOnly = true;
+            this.id_curso.Width = 125;
+            // 
+            // materia
+            // 
+            this.materia.DataPropertyName = "Materia";
+            this.materia.HeaderText = "Materia";
+            this.materia.MinimumWidth = 6;
+            this.materia.Name = "materia";
+            this.materia.ReadOnly = true;
+            this.materia.Width = 125;
+            // 
+            // comision
+            // 
+            this.comision.DataPropertyName = "Comision";
+            this.comision.HeaderText = "Comision";
+            this.comision.MinimumWidth = 6;
+            this.comision.Name = "comision";
+            this.comision.ReadOnly = true;
+            this.comision.Width = 125;
+            // 
+            // Año
+            // 
+            this.Año.DataPropertyName = "Año";
+            this.Año.HeaderText = "Año";
+            this.Año.Name = "Año";
+            this.Año.ReadOnly = true;
+            // 
+            // cupo
+            // 
+            this.cupo.DataPropertyName = "Cupo";
+            this.cupo.HeaderText = "Cupo";
+            this.cupo.MinimumWidth = 6;
+            this.cupo.Name = "cupo";
+            this.cupo.ReadOnly = true;
+            this.cupo.Width = 125;
             // 
             // Cursos
             // 
@@ -228,17 +227,17 @@
 
         private System.Windows.Forms.DataGridView dgvCursos;
         private System.Windows.Forms.BindingSource entidadesTP2BindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_curso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn materia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn comision;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cupo;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton tsbNuevo;
         private System.Windows.Forms.ToolStripButton tsbEditar;
         private System.Windows.Forms.ToolStripButton tsbEliminar;
-        private System.Windows.Forms.ToolStripButton tsbReporte;
         private System.Windows.Forms.TableLayoutPanel tlpCursos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_curso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn materia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn comision;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Año;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cupo;
     }
 }

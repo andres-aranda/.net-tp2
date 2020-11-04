@@ -31,7 +31,7 @@ namespace Academia.UI.Desktop
 
         public void CursoDesktop_Load(object sender, EventArgs e)
         {
-
+            // TODO: Ver que onda no carga Fisica 1
             CargaCombos();
             if (idCurso != 0)
             {
@@ -41,7 +41,6 @@ namespace Academia.UI.Desktop
                 }
                 Mapeo();
             }
-
         }
 
         public void CargaCombos()
@@ -112,7 +111,11 @@ namespace Academia.UI.Desktop
         {
             using (EntidadesTP2 db = new EntidadesTP2())
             {
-                cursos curso = LeerCampos();
+                cursos curso = new cursos();
+                curso.id_comision = int.Parse(cmbComision.SelectedValue.ToString());
+                curso.id_materia = int.Parse(cmbMateria.SelectedValue.ToString());
+                curso.anio_calendario = int.Parse(txtAnio.Text);
+                curso.cupo = int.Parse(txtCupo.Text);
                 if (idCurso == 0)
                 {
                     db.cursos.Add(curso);
@@ -120,22 +123,21 @@ namespace Academia.UI.Desktop
                 else
                 {
                     curso = db.cursos.Find(idCurso);
-                    curso = LeerCampos();                
+                    curso.id_comision = int.Parse(cmbComision.SelectedValue.ToString());
+                    curso.id_materia = int.Parse(cmbMateria.SelectedValue.ToString());
+                    curso.anio_calendario = int.Parse(txtAnio.Text);
+                    curso.cupo = int.Parse(txtCupo.Text);
                 }
                 db.SaveChanges();
-
-                
             }
+            Dispose();
         }
 
         private cursos LeerCampos()
         {
             cursos c = new cursos
             {
-                id_comision = int.Parse(cmbComision.SelectedValue.ToString()),
-                id_materia = int.Parse(cmbMateria.SelectedValue.ToString()),
-                anio_calendario = int.Parse(txtAnio.Text),
-                cupo = int.Parse(txtCupo.Text)
+                
             };
             return c;
         }

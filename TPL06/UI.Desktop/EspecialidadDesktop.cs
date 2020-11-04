@@ -56,7 +56,7 @@ namespace Academia.UI.Desktop
 
         public override void MapearDeDatos()
         {
-            this.txtId.Text = this.EspecialidadActual.Id.ToString();
+            
             this.txtDescripcion.Text = this.EspecialidadActual.Descripcion;
 
             switch (this.modoForm)
@@ -89,7 +89,7 @@ namespace Academia.UI.Desktop
                     break;
 
                 case ModoForm.Modificacion:
-                    this.EspecialidadActual.Id = int.Parse(this.txtId.Text.ToString());
+                    
                     this.EspecialidadActual.Descripcion = this.txtDescripcion.Text;
                   
                     this.EspecialidadActual.State = BusinessEntity.Estados.Modified;

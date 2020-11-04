@@ -28,13 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Planes));
             this.tscUsuarios = new System.Windows.Forms.ToolStripContainer();
             this.tlModulos = new System.Windows.Forms.TableLayoutPanel();
             this.dgvPlanes = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdEspecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.tsModulos = new System.Windows.Forms.ToolStrip();
@@ -42,6 +38,9 @@
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdEspecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tscUsuarios.ContentPanel.SuspendLayout();
             this.tscUsuarios.TopToolStripPanel.SuspendLayout();
             this.tscUsuarios.SuspendLayout();
@@ -56,13 +55,11 @@
             // tscUsuarios.ContentPanel
             // 
             this.tscUsuarios.ContentPanel.Controls.Add(this.tlModulos);
-            this.tscUsuarios.ContentPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tscUsuarios.ContentPanel.Size = new System.Drawing.Size(623, 251);
+            this.tscUsuarios.ContentPanel.Size = new System.Drawing.Size(467, 219);
             this.tscUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tscUsuarios.Location = new System.Drawing.Point(0, 0);
-            this.tscUsuarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tscUsuarios.Name = "tscUsuarios";
-            this.tscUsuarios.Size = new System.Drawing.Size(623, 303);
+            this.tscUsuarios.Size = new System.Drawing.Size(467, 246);
             this.tscUsuarios.TabIndex = 2;
             this.tscUsuarios.Text = "toolStripContainer1";
             // 
@@ -82,12 +79,11 @@
             this.tlModulos.Controls.Add(this.btnSalir, 1, 1);
             this.tlModulos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlModulos.Location = new System.Drawing.Point(0, 0);
-            this.tlModulos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tlModulos.Name = "tlModulos";
             this.tlModulos.RowCount = 2;
             this.tlModulos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlModulos.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlModulos.Size = new System.Drawing.Size(623, 251);
+            this.tlModulos.Size = new System.Drawing.Size(467, 219);
             this.tlModulos.TabIndex = 0;
             // 
             // dgvPlanes
@@ -97,53 +93,24 @@
             this.dgvPlanes.BackgroundColor = System.Drawing.Color.Firebrick;
             this.dgvPlanes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPlanes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
+            this.ID,
             this.descripcion,
             this.IdEspecialidad});
             this.tlModulos.SetColumnSpan(this.dgvPlanes, 2);
             this.dgvPlanes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvPlanes.Location = new System.Drawing.Point(4, 4);
-            this.dgvPlanes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvPlanes.Location = new System.Drawing.Point(3, 3);
             this.dgvPlanes.Name = "dgvPlanes";
             this.dgvPlanes.ReadOnly = true;
             this.dgvPlanes.RowHeadersWidth = 51;
-            this.dgvPlanes.Size = new System.Drawing.Size(615, 207);
+            this.dgvPlanes.Size = new System.Drawing.Size(461, 184);
             this.dgvPlanes.TabIndex = 0;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "Id";
-            this.id.HeaderText = "ID";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Width = 125;
-            // 
-            // descripcion
-            // 
-            this.descripcion.DataPropertyName = "DescripcionComision";
-            this.descripcion.HeaderText = "DescripcionComision";
-            this.descripcion.MinimumWidth = 6;
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
-            this.descripcion.Width = 125;
-            // 
-            // IdEspecialidad
-            // 
-            this.IdEspecialidad.DataPropertyName = "IdEspecialidad";
-            this.IdEspecialidad.HeaderText = "ID especialidad";
-            this.IdEspecialidad.MinimumWidth = 6;
-            this.IdEspecialidad.Name = "IdEspecialidad";
-            this.IdEspecialidad.ReadOnly = true;
-            this.IdEspecialidad.Width = 125;
             // 
             // btnActualizar
             // 
             this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizar.Location = new System.Drawing.Point(411, 219);
-            this.btnActualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnActualizar.Location = new System.Drawing.Point(308, 193);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(100, 28);
+            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
             this.btnActualizar.TabIndex = 1;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
@@ -151,10 +118,9 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(519, 219);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalir.Location = new System.Drawing.Point(389, 193);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(100, 28);
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -170,54 +136,78 @@
             this.tsbEliminar});
             this.tsModulos.Location = new System.Drawing.Point(4, 0);
             this.tsModulos.Name = "tsModulos";
-            this.tsModulos.Size = new System.Drawing.Size(100, 27);
+            this.tsModulos.Size = new System.Drawing.Size(115, 27);
             this.tsModulos.TabIndex = 0;
             // 
             // tsbNuevo
             // 
             this.tsbNuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbNuevo.Image = ((System.Drawing.Image)(resources.GetObject("tsbNuevo.Image")));
+            this.tsbNuevo.Image = global::Academia.UI.Desktop.Properties.Resources.add_btn;
             this.tsbNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbNuevo.Name = "tsbNuevo";
-            this.tsbNuevo.Size = new System.Drawing.Size(29, 24);
+            this.tsbNuevo.Size = new System.Drawing.Size(24, 24);
             this.tsbNuevo.Text = "Nuevo";
             this.tsbNuevo.Click += new System.EventHandler(this.tsbNuevo_Click);
             // 
             // tsbEditar
             // 
             this.tsbEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbEditar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEditar.Image")));
+            this.tsbEditar.Image = global::Academia.UI.Desktop.Properties.Resources.edit_btn;
             this.tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEditar.Name = "tsbEditar";
-            this.tsbEditar.Size = new System.Drawing.Size(29, 24);
+            this.tsbEditar.Size = new System.Drawing.Size(24, 24);
             this.tsbEditar.Text = "Editar";
             this.tsbEditar.Click += new System.EventHandler(this.TsbModificarPlan_Click);
             // 
             // tsbEliminar
             // 
             this.tsbEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbEliminar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEliminar.Image")));
+            this.tsbEliminar.Image = global::Academia.UI.Desktop.Properties.Resources.remove_btn;
             this.tsbEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEliminar.Name = "tsbEliminar";
-            this.tsbEliminar.Size = new System.Drawing.Size(29, 24);
+            this.tsbEliminar.Size = new System.Drawing.Size(24, 24);
             this.tsbEliminar.Text = "Eliminar";
             this.tsbEliminar.Click += new System.EventHandler(this.TsbBorrarPlan_Click);
             // 
             // reportViewer1
             // 
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Name = "ReportViewer";
+            this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(396, 246);
             this.reportViewer1.TabIndex = 0;
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "Id";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // descripcion
+            // 
+            this.descripcion.DataPropertyName = "Descripcion";
+            this.descripcion.HeaderText = "Descripcion";
+            this.descripcion.MinimumWidth = 6;
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            this.descripcion.Width = 125;
+            // 
+            // IdEspecialidad
+            // 
+            this.IdEspecialidad.DataPropertyName = "Especialidad";
+            this.IdEspecialidad.HeaderText = "Especialidad";
+            this.IdEspecialidad.MinimumWidth = 6;
+            this.IdEspecialidad.Name = "IdEspecialidad";
+            this.IdEspecialidad.ReadOnly = true;
+            this.IdEspecialidad.Width = 125;
+            // 
             // Planes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(623, 303);
+            this.ClientSize = new System.Drawing.Size(467, 246);
             this.Controls.Add(this.tscUsuarios);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Planes";
             this.Text = "Planes";
             this.Load += new System.EventHandler(this.Planes_Load);
@@ -245,9 +235,9 @@
         private System.Windows.Forms.ToolStripButton tsbNuevo;
         private System.Windows.Forms.ToolStripButton tsbEditar;
         private System.Windows.Forms.ToolStripButton tsbEliminar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdEspecialidad;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }

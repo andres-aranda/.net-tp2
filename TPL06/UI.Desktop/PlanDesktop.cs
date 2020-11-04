@@ -22,7 +22,7 @@ namespace Academia.UI.Desktop
         private void comboBox()
         {
             this.cmbEsp.DataSource = el.GetAll();
-            this.cmbEsp.DisplayMember = "DescripcionComision";
+            this.cmbEsp.DisplayMember = "Descripcion";
             this.cmbEsp.ValueMember = "Id";
         }
         public PlanDesktop()
@@ -68,8 +68,9 @@ namespace Academia.UI.Desktop
 
         public override void MapearDeDatos()
         {
-            this.txtId.Text = this.PlanActual.Id.ToString();
-            this.txtDescripcion.Text = this.PlanActual.Descripcion;
+            txtId.Text = this.PlanActual.Id.ToString();
+            txtDescripcion.Text = this.PlanActual.Descripcion;
+            cmbEsp.SelectedValue = el.GetByPlan(PlanActual.Id).Id;
             
         
 

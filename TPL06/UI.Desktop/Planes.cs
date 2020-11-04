@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Academia.Data.Database;
 using Business.Entities;
 using Business.Logic;
+using Data.Database;
 
 namespace Academia.UI.Desktop
 {
@@ -22,10 +24,15 @@ namespace Academia.UI.Desktop
         private void Listar()
         {
             PlanLogic ml = new PlanLogic();
-
             try
             {
-                this.dgvPlanes.DataSource = ml.GetAll();
+                using (EntidadesTP2 db = new EntidadesTP2())
+                {
+                    var listaPlanes = from p in db.planes
+                                      join e in db.especialidades on p.id_especialidad equals e.id_especialidad
+                                      select new { ID = p.id_plan, Descripcion = p.desc_plan, Especialidad = e.desc_especialidad };
+                    dgvPlanes.DataSource = listaPlanes.ToList();
+                }
             }
             catch (Exception ex)
             {
@@ -56,7 +63,7 @@ namespace Academia.UI.Desktop
         {
             if (this.dgvPlanes.SelectedRows.Count > 0)
             {
-                int ID = ((Business.Entities.Plan)this.dgvPlanes.SelectedRows[0].DataBoundItem).Id;
+                int ID = (int)dgvPlanes.SelectedRows[0].Cells[0].Value;
                 PlanDesktop planDesktop = new PlanDesktop(ID, ApplicationForm.ModoForm.Modificacion);
                 planDesktop.ShowDialog();
             }
@@ -69,7 +76,7 @@ namespace Academia.UI.Desktop
             {
                 if (this.dgvPlanes.SelectedRows.Count > 0)
                 {
-                    int ID = ((Business.Entities.Plan)this.dgvPlanes.SelectedRows[0].DataBoundItem).Id;
+                    int ID = (int)dgvPlanes.SelectedRows[0].Cells[0].Value;
                     PlanLogic planLogic = new PlanLogic();
                     planLogic.Delete(ID);
                 }
