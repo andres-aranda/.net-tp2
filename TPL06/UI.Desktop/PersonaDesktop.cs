@@ -22,6 +22,7 @@ namespace Academia.UI.Desktop
         {
             Mapeo();
         }
+
         private void Mapeo()
         {
             using (EntidadesTP2 db = new EntidadesTP2())
@@ -32,5 +33,24 @@ namespace Academia.UI.Desktop
             }
         }
 
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            using (EntidadesTP2 db = new EntidadesTP2())
+            {
+                personas oPersona = new personas
+                {
+                    nombre = txtNombre.Text,
+                    apellido = txtApellido.Text,
+                    direccion = txtDireccion.Text,
+                    telefono = txtTelefono.Text,
+                    email = txtEmail.Text,
+                    legajo = int.Parse(txtLegajo.Text),
+                    id_plan = (int)cmbPlan.SelectedItem,
+                    fecha_nac = mcFechaNacimiento.SelectionStart
+                };
+                db.personas.Add(oPersona);
+                db.SaveChanges();
+            }
+        }
     }
 }
