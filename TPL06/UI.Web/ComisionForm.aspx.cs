@@ -44,7 +44,9 @@ namespace Academia.UI.Web
             protected void Page_Load(object sender, EventArgs e)
             {
                 //   int variable = (int)Session["idSeleccionado"];
-                if (Session["formMode"] != null)
+           if (Page.IsPostBack)
+            {
+                 if (Session["formMode"] != null)
                 {
                     FormMode = (FormModes)Session["formMode"];
                     if (Session["idSeleccionada"] != null)
@@ -52,6 +54,8 @@ namespace Academia.UI.Web
                 }
 
             }
+            }
+           
 
             private void LoadForm(int id)
             {

@@ -120,7 +120,7 @@
             this.btn_CerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btn_CerrarSesion.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btn_CerrarSesion.Location = new System.Drawing.Point(0, 322);
-            this.btn_CerrarSesion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_CerrarSesion.Margin = new System.Windows.Forms.Padding(2);
             this.btn_CerrarSesion.Name = "btn_CerrarSesion";
             this.btn_CerrarSesion.Size = new System.Drawing.Size(200, 27);
             this.btn_CerrarSesion.TabIndex = 0;
@@ -148,15 +148,15 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmArchivo,
             this.tsmAlumno,
+            this.tsmDocente,
             this.tsmgestionAcademia,
             this.tsmgestionDocente,
-            this.tsmgestionAlumno,
-            this.tsmDocente});
+            this.tsmgestionAlumno});
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(200, 63);
+            this.menuStrip1.Size = new System.Drawing.Size(200, 139);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -285,21 +285,21 @@
             // tsmPersonas
             // 
             this.tsmPersonas.Name = "tsmPersonas";
-            this.tsmPersonas.Size = new System.Drawing.Size(150, 22);
+            this.tsmPersonas.Size = new System.Drawing.Size(180, 22);
             this.tsmPersonas.Text = "Personas";
             this.tsmPersonas.Click += new System.EventHandler(this.personasToolStripMenuItem_Click);
             // 
             // tsmUsuarios
             // 
             this.tsmUsuarios.Name = "tsmUsuarios";
-            this.tsmUsuarios.Size = new System.Drawing.Size(150, 22);
+            this.tsmUsuarios.Size = new System.Drawing.Size(180, 22);
             this.tsmUsuarios.Text = "Usuarios";
             this.tsmUsuarios.Click += new System.EventHandler(this.usuariosToolStripMenuItem1_Click);
             // 
             // tsmPlanes
             // 
             this.tsmPlanes.Name = "tsmPlanes";
-            this.tsmPlanes.Size = new System.Drawing.Size(150, 22);
+            this.tsmPlanes.Size = new System.Drawing.Size(180, 22);
             this.tsmPlanes.Text = "Planes";
             this.tsmPlanes.CheckStateChanged += new System.EventHandler(this.btnPlanes_Click);
             this.tsmPlanes.Click += new System.EventHandler(this.planesToolStripMenuItem_Click);
@@ -307,14 +307,14 @@
             // tsmEspecialidades
             // 
             this.tsmEspecialidades.Name = "tsmEspecialidades";
-            this.tsmEspecialidades.Size = new System.Drawing.Size(150, 22);
+            this.tsmEspecialidades.Size = new System.Drawing.Size(180, 22);
             this.tsmEspecialidades.Text = "Especialidades";
             this.tsmEspecialidades.Click += new System.EventHandler(this.btnEspecialidades_Click);
             // 
             // tsmMaterias
             // 
             this.tsmMaterias.Name = "tsmMaterias";
-            this.tsmMaterias.Size = new System.Drawing.Size(150, 22);
+            this.tsmMaterias.Size = new System.Drawing.Size(180, 22);
             this.tsmMaterias.Text = "Materias";
             this.tsmMaterias.CheckStateChanged += new System.EventHandler(this.btnMaterias_Click);
             this.tsmMaterias.Click += new System.EventHandler(this.materiasToolStripMenuItem_Click);
@@ -322,14 +322,14 @@
             // tsmComisiones
             // 
             this.tsmComisiones.Name = "tsmComisiones";
-            this.tsmComisiones.Size = new System.Drawing.Size(150, 22);
+            this.tsmComisiones.Size = new System.Drawing.Size(180, 22);
             this.tsmComisiones.Text = "Comisiones";
             this.tsmComisiones.Click += new System.EventHandler(this.btnComisones_Click);
             // 
             // tsmCursos
             // 
             this.tsmCursos.Name = "tsmCursos";
-            this.tsmCursos.Size = new System.Drawing.Size(150, 22);
+            this.tsmCursos.Size = new System.Drawing.Size(180, 22);
             this.tsmCursos.Text = "Cursos";
             this.tsmCursos.Click += new System.EventHandler(this.cursosToolStripMenuItem_Click);
             // 
@@ -345,7 +345,7 @@
             // tsmCursosDocentes
             // 
             this.tsmCursosDocentes.Name = "tsmCursosDocentes";
-            this.tsmCursosDocentes.Size = new System.Drawing.Size(110, 22);
+            this.tsmCursosDocentes.Size = new System.Drawing.Size(180, 22);
             this.tsmCursosDocentes.Text = "Cursos";
             this.tsmCursosDocentes.Click += new System.EventHandler(this.cursosToolStripMenuItem1_Click);
             // 

@@ -66,7 +66,7 @@ namespace Academia.UI.Desktop
             tsmgestionDocente.Visible = false;
             tsmAlumno.Visible = false;
             tsmDocente.Visible = false;
-            tsmSeguridad.Visible = false;            
+            tsmSeguridad.Visible = false;
             lblBienvenida.Visible = false;
             lblTituloAcciones.Visible = false;
             btnAlumnoCursos.Visible = false;
@@ -84,14 +84,22 @@ namespace Academia.UI.Desktop
                 this.Dispose();
             else
                 contraerMenuLateral();
-            usuarioActual = (Usuario) appLogin.UsuarioLogeado;
+            usuarioActual = (Usuario)appLogin.UsuarioLogeado;
 
             appLogin.Close();
 
-            lblBienvenida.Text = Validations.Greeting() + usuarioActual.Persona.Nombre;
-            lblBienvenida.Visible = true;
-            lblTituloAcciones.Visible = true;
-            
+
+            if (usuarioActual == null)
+            {
+                this.Close();
+            }
+            else
+            {
+                lblBienvenida.Text = Validations.Greeting() + usuarioActual.Persona.Nombre;
+                lblBienvenida.Visible = true;
+        
+                lblTituloAcciones.Visible = true;
+
             foreach (Modulo m in usuarioActual.Modulo)
             {
                 if (m.Descripcion == "Alumno")
@@ -106,7 +114,7 @@ namespace Academia.UI.Desktop
                     btnDocenteAlumnos.Visible = true;
                     btnDocenteCursos.Visible = true;
                 }
-                    
+
                 if (m.Descripcion == "NoDocente" || m.Descripcion == "Administrador")
                 {
                     tsmgestionAcademia.Visible = true;
@@ -122,8 +130,9 @@ namespace Academia.UI.Desktop
                     }
                 }
             }
-
         }
+        }
+
         private void btnModulos_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo(new Modulos());
@@ -171,11 +180,19 @@ namespace Academia.UI.Desktop
             il.ShowDialog();
             int legajo = il.Legajo;
             int idPersona;
-            using (EntidadesTP2 db = new EntidadesTP2())
+            try
             {
-                idPersona = db.personas.Where(x => x.legajo == legajo).First().id_persona;
+                using (EntidadesTP2 db = new EntidadesTP2())
+                {
+                    idPersona = db.personas.Where(x => x.legajo == legajo).First().id_persona;
+                }
+                AbrirFormularioHijo(new InscripcionesDesktop(idPersona));
             }
-            AbrirFormularioHijo(new InscripcionesDesktop(idPersona));
+            catch
+            {
+
+            }
+
         }
 
         private void personasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -220,7 +237,7 @@ namespace Academia.UI.Desktop
 
         private void btnDocenteAlumnos_Click(object sender, EventArgs e)
         {
-            AbrirFormularioHijo(new Alumno());
+            AbrirFormularioHijo(new Alumno(usuarioActual.Persona.Id));
         }
 
         private void btnNoDocentePersonas_Click(object sender, EventArgs e)
@@ -255,7 +272,22 @@ namespace Academia.UI.Desktop
 
         private void cursosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            // TODO: Preguntar ID docente para abrir CursosDocente
+            IngresoLegajo il = new IngresoLegajo();
+            il.ShowDialog();
+            int legajo = il.Legajo;
+            int idPersona;
+            try
+            {
+                using (EntidadesTP2 db = new EntidadesTP2())
+                {
+                    idPersona = db.personas.Where(x => x.legajo == legajo).First().id_persona;
+                }
+                AbrirFormularioHijo(new Alumno(idPersona));
+            }
+            catch
+            {
+
+            }
         }
 
         private void misCursosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -275,7 +307,7 @@ namespace Academia.UI.Desktop
 
         private void alumnosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AbrirFormularioHijo(new Alumno());
+            AbrirFormularioHijo(new Alumno(usuarioActual.Persona.Id));
         }
     }
 }

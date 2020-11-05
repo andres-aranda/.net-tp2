@@ -13,10 +13,14 @@ namespace Academia.UI.Desktop
 {
     public partial class Alumno : Form
     {
-        public Alumno()
+        int _idDocente;
+
+        public int IdDocente { get => _idDocente; set => _idDocente = value; }
+
+        public Alumno(int id)
         {
             InitializeComponent();
-
+            IdDocente = id;
 
         }
 
@@ -36,6 +40,7 @@ namespace Academia.UI.Desktop
                                   join mat in db.materias on cur.id_materia equals mat.id_materia
                                   join com in db.comisiones on cur.id_comision equals com.id_comision
                                   join doc_cur in db.docentes_cursos on cur.id_curso equals doc_cur.id_curso
+                                  where doc_cur.id_docente == IdDocente
                                   select new
                                   {
                                       IdInscripcion = alu_ins.id_inscripcion,

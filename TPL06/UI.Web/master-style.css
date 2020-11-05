@@ -127,3 +127,23 @@ input[type="text"]:focus, input[type="password"]:focus {
 input[type="text"]:disabled, input[type="password"]:disabled {
     border-style: none;
 }
+.btn {
+    background-color: transparent;
+    border: none;
+    color: var(--color-primario);
+    margin : 3px;
+    padding: .5rem 1rem .5rem 1rem;
+    font-weight: 600;
+}
+
+    .btn:hover {
+        background-color: var(--color-secundario);
+    }
+
+    .btn:active {
+        background-color: var(--color-primario) !important;
+    }
+
+    .btn:focus {
+        background-color: var(--color-primario) !important;
+    }

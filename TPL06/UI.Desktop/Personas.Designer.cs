@@ -33,6 +33,7 @@
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
             this.dgvPersonas = new System.Windows.Forms.DataGridView();
+            this.IdPersona = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,7 +53,7 @@
             this.tsbEliminar});
             this.tsPersonas.Location = new System.Drawing.Point(0, 0);
             this.tsPersonas.Name = "tsPersonas";
-            this.tsPersonas.Size = new System.Drawing.Size(606, 25);
+            this.tsPersonas.Size = new System.Drawing.Size(945, 25);
             this.tsPersonas.TabIndex = 1;
             this.tsPersonas.Text = "toolStrip1";
             // 
@@ -93,6 +94,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPersonas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPersonas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdPersona,
             this.Legajo,
             this.Nombre,
             this.Apellido,
@@ -105,8 +107,14 @@
             this.dgvPersonas.Name = "dgvPersonas";
             this.dgvPersonas.RowHeadersWidth = 51;
             this.dgvPersonas.RowTemplate.Height = 24;
-            this.dgvPersonas.Size = new System.Drawing.Size(606, 377);
+            this.dgvPersonas.Size = new System.Drawing.Size(945, 394);
             this.dgvPersonas.TabIndex = 0;
+            // 
+            // IdPersona
+            // 
+            this.IdPersona.DataPropertyName = "Id";
+            this.IdPersona.HeaderText = "IdPersona";
+            this.IdPersona.Name = "IdPersona";
             // 
             // Legajo
             // 
@@ -154,7 +162,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(606, 402);
+            this.ClientSize = new System.Drawing.Size(945, 419);
             this.Controls.Add(this.dgvPersonas);
             this.Controls.Add(this.tsPersonas);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -175,6 +183,7 @@
         private System.Windows.Forms.ToolStripButton tsbEditar;
         private System.Windows.Forms.ToolStripButton tsbEliminar;
         private System.Windows.Forms.DataGridView dgvPersonas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdPersona;
         private System.Windows.Forms.DataGridViewTextBoxColumn Legajo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;

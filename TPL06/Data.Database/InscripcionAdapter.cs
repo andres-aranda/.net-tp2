@@ -172,7 +172,7 @@ namespace Data.Database
                     "INSERT INTO alumnos_inscripciones " +
                     "   (id_alumno, id_curso, condicion, nota) " +
                     "VALUES " +
-                    "   (@id_alumno, @id_curso, 'Cursando', NULL)", Sqlconn);
+                    "   (@id_alumno, @id_curso, 'Cursando', 0)", Sqlconn);
                 cmd.Parameters.Add("@id_alumno", SqlDbType.Int).Value = idAlumno;
                 cmd.Parameters.Add("@id_curso", SqlDbType.Int).Value = idCurso;
                 cmd.ExecuteScalar();

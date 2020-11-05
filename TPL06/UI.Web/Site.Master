@@ -53,7 +53,7 @@
                     <h3>Gestión académica</h3>
                     <ul>
                     <li><a href="">Personas</a></li>
-                    <li><a href="">Usuarios</a></li>
+                    <li><a href="Usuarios.aspx">Usuarios</a></li>
                     <li><a href="">Planes</a></li>
                     <li><a href="">Especialidades</a></li>
                     <li><a href="Materias.aspx">Materias</a></li>

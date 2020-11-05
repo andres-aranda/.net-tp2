@@ -23,6 +23,7 @@ namespace Academia.UI.Desktop
         private void Personas_Load(object sender, EventArgs e)
         {
             dgvPersonas.AutoGenerateColumns = false;
+            //dgvPersonas.Columns[0].Visible = false;
             Listar();
         }
 
@@ -50,7 +51,7 @@ namespace Academia.UI.Desktop
                 {
                     using (EntidadesTP2 db = new EntidadesTP2())
                     {
-                        int ID = ((Persona)this.dgvPersonas.SelectedRows[0].DataBoundItem).Id;
+                        int ID = (int)this.dgvPersonas.SelectedRows[0].Cells[0].Value;
                         personas persona = db.personas.Find(ID);
                         db.personas.Remove(persona);
                         db.SaveChanges();
@@ -63,10 +64,18 @@ namespace Academia.UI.Desktop
 
         private void tsbEditar_Click(object sender, EventArgs e)
         {
-            int ID = ((Persona)this.dgvPersonas.SelectedRows[0].DataBoundItem).Id;
+            try
+            {
+            int ID = (int)this.dgvPersonas.SelectedRows[0].Cells[0].Value;
             PersonaDesktop pd = new PersonaDesktop(ID);
             pd.ShowDialog();
             Listar();
+            }
+            catch
+            {
+
+            }
+           
         }
     }
 }

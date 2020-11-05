@@ -25,7 +25,10 @@ namespace Academia.UI.Web
                     Page.Response.Redirect("~/PaginaNoPermitida.aspx");
             }
             int idPersona = usuario.Persona.Id;
-            inscripcionesDocente.DataSource = cl.GetMateriasInscripcionesDocente(idPersona);
+
+            List<Inscripcion> ls = cl.GetMateriasInscripcionesDocente(idPersona);
+
+            inscripcionesDocente.DataSource = ls;
             inscripcionesDocente.DataBind();
         }
     }

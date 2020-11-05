@@ -24,9 +24,12 @@ namespace Academia.UI.Web
             {
                 if (!(m.Descripcion == "Docente" || m.Descripcion == "Administrador"))
                     Page.Response.Redirect("~/PaginaNoPermitida.aspx");
+           
+            
             }
-            //cursosDocenteGV.DataSource = cl.GetCursosDocente(usuarioLog.IdPersona);
-            //cursosDocenteGV.DataBind();
+            
+            cursosDocenteGV.DataSource = cl.GetCursosDocente(usuarioLog.Persona.Id);
+            cursosDocenteGV.DataBind();
         }
     }
 }

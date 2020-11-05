@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="PageContent" runat="server">
-    <asp:GridView ID="cursosDocenteGV" runat="server" AutoGenerateColumns="False" CssClass="tabla">
+    <asp:GridView ID="cursosDocenteGV" runat="server" AutoGenerateColumns="False" CssClass="tabla" >
         <Columns>
             <asp:BoundField DataField="Materia.Descripcion" HeaderText="Materia" />
             <asp:BoundField DataField="Comision.DescripcionComision" HeaderText="Comisión" />
