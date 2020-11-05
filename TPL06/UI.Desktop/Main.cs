@@ -220,7 +220,7 @@ namespace Academia.UI.Desktop
 
         private void btnDocenteAlumnos_Click(object sender, EventArgs e)
         {
-            // TODO: Abrir AlumnosDocente
+            AbrirFormularioHijo(new Alumno());
         }
 
         private void btnNoDocentePersonas_Click(object sender, EventArgs e)

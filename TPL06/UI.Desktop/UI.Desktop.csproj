@@ -289,6 +289,9 @@
     <None Include="Resources\remove-btn.png" />
     <None Include="Resources\edit-btn.png" />
     <None Include="Resources\add-btn.png" />
+    <EmbeddedResource Include="Alumno.resx">
+      <DependentUpon>Alumno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ApplicationForm.resx">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
     </EmbeddedResource>
