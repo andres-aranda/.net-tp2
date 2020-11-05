@@ -187,12 +187,6 @@
     <Compile Include="Materias.Designer.cs">
       <DependentUpon>Materias.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuABMC.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MenuABMC.Designer.cs">
-      <DependentUpon>MenuABMC.cs</DependentUpon>
-    </Compile>
     <Compile Include="Modulos.cs">
       <SubType>Form</SubType>
     </Compile>
