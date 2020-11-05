@@ -82,8 +82,17 @@
                 &nbsp;</td>
         </tr>
         </table>
-<%--    <asp:Panel ID="Panel1" runat="server">
-    </asp:Panel>--%>
+      <div style="margin: 15px;">
+        <asp:LinkButton ID="NuevoLinkButton" runat="server"  style="
+border-radius: 20px;
+font-size: 1.25rem !important;
+background: #36304a !important;
+color: white !important;
+margin: 5px  !important;
+padding: .3rem .5rem .3rem .5rem !important;">
+            Nuevo</asp:LinkButton>
+
+        </div>
     </div>
     
 

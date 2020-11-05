@@ -3,9 +3,18 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="PageContent" runat="server">
     <div>
-            &nbsp;<asp:Panel ID="gridActionPanel" runat="server">
-                <asp:LinkButton ID="editarLinkButton" runat="server" OnClick="editarLinkButton_Click">Incribirse</asp:LinkButton>
-            </asp:Panel>
+     
+              <div style="margin-bottom: 15px;">
+<asp:LinkButton ID="LinkButton1" runat="server" OnClick="editarLinkButton_Click" ForeColor="Black" style="
+    border-radius: 20px;
+    font-size: 1.25rem !important;
+    background: #36304a !important;
+    color: white !important;
+    margin: 5px  !important;
+    padding: .3rem .5rem .3rem .5rem !important;">
+            Incribirse
+        </asp:LinkButton>
+        </div>
             <asp:Panel ID="gridPanel" runat="server">
                 <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="GridView1_SelectedIndexChanged"
                     SelectedRowStyle-BackColor="Black"

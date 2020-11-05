@@ -48,8 +48,24 @@
             <td __designer:mapid="171">&nbsp;</td>
         </tr>
     </table>
-    <asp:Panel ID="formActionPanel" runat="server">
-        <asp:LinkButton ID="AceptarLinkButton" runat="server" OnClick="AceptarLinkButton_Click">Aceptar</asp:LinkButton>
-        <asp:LinkButton ID="CancelarLinkButton" runat="server" OnClick="CancelarLinkButton_Click">Cancelar</asp:LinkButton>
-    </asp:Panel>
+          <div style="margin-bottom: 15px;">
+<asp:LinkButton ID="editarLinkButton" runat="server" OnClick="AceptarLinkButton_Click" ForeColor="Black" style="
+    border-radius: 20px;
+    font-size: 1.25rem !important;
+    background: #36304a !important;
+    color: white !important;
+    margin: 5px  !important;
+    padding: .3rem .5rem .3rem .5rem !important;">
+            Aceptar
+        </asp:LinkButton>
+        <asp:LinkButton ID="EliminarLinkButton" runat="server" OnClick="CancelarLinkButton_Click" style="
+border-radius: 10px;
+font-size: 1.25rem !important;
+background: #36304a !important;
+color: white !important;
+margin: 5px  !important;
+padding: .3rem .5rem .3rem .5rem !important;">
+            Cancelar</asp:LinkButton>
+
+        </div>
 </asp:Content>

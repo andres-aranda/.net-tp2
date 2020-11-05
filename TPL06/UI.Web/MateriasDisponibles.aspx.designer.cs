@@ -15,22 +15,13 @@ namespace Academia.UI.Web
     {
 
         /// <summary>
-        /// Control gridActionPanel.
+        /// Control LinkButton1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel gridActionPanel;
-
-        /// <summary>
-        /// Control editarLinkButton.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton editarLinkButton;
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
 
         /// <summary>
         /// Control gridPanel.

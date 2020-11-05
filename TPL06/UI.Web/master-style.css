@@ -40,10 +40,19 @@ li {
 }
 
 a {
-    color: var(--color-claro);
+    border-radius: .1rem !important;
+    font-size: 1.25rem !important;
+    background: #1D201F !important;
+    color: white !important;
+    margin-top: 5px !important;
+    padding: .75rem 1.5rem .75rem 1.5rem !important;
+
+
+
+    /*color: var(--color-claro);
     text-decoration: none;
     transition: font-weight .3s ease-in-out;
-    transition: font-size .3s ease-in-out;
+    transition: font-size .3s ease-in-out;*/
 }
 
 li a:hover {
@@ -105,6 +114,10 @@ h3 {
     line-height: 1.2;
     font-weight: unset;
     height: 50px;
+}.filas a {
+ 
+    color: black;
+  
 }
 .filas:hover {
     color: #555555;
@@ -127,23 +140,15 @@ input[type="text"]:focus, input[type="password"]:focus {
 input[type="text"]:disabled, input[type="password"]:disabled {
     border-style: none;
 }
-.btn {
-    background-color: transparent;
-    border: none;
-    color: var(--color-primario);
-    margin : 3px;
-    padding: .5rem 1rem .5rem 1rem;
-    font-weight: 600;
+.prueba{
+    background-color:red;
 }
-
-    .btn:hover {
-        background-color: var(--color-secundario);
-    }
-
-    .btn:active {
-        background-color: var(--color-primario) !important;
-    }
-
-    .btn:focus {
-        background-color: var(--color-primario) !important;
-    }
+.botones {
+    font-size: xxx-large;
+        border-radius: .1rem !important;
+    font-size: 1.25rem !important;
+    background: #1D201F !important;
+    color: white !important;
+    margin-top: 5px !important;
+    padding: .75rem 1.5rem .75rem 1.5rem !important;
+}

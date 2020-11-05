@@ -78,30 +78,21 @@ namespace Academia.UI.Web
         protected global::System.Web.UI.WebControls.TextBox hsTotalesTextBox;
 
         /// <summary>
-        /// Control formActionPanel.
+        /// Control editarLinkButton.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel formActionPanel;
+        protected global::System.Web.UI.WebControls.LinkButton editarLinkButton;
 
         /// <summary>
-        /// Control AceptarLinkButton.
+        /// Control EliminarLinkButton.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton AceptarLinkButton;
-
-        /// <summary>
-        /// Control CancelarLinkButton.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton CancelarLinkButton;
+        protected global::System.Web.UI.WebControls.LinkButton EliminarLinkButton;
     }
 }
