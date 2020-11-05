@@ -7,6 +7,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Academia.Util;
 
+
+// TODO: link Gestión docente>Cursos tiene que preguntar el legajo del docente y llevarlo a sus cursos
+// TODO: link Gestión alumno>Inscripciones tiene que preguntar el legajo del alumno y llevarlo a sus inscripciones
 namespace Academia.UI.Web
 {
     public partial class Site1 : System.Web.UI.MasterPage

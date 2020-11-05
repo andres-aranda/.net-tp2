@@ -52,13 +52,13 @@
                 <div id="gestionAcademica" runat="server">
                     <h3>Gestión académica</h3>
                     <ul>
-                    <li><a href="">Personas</a></li>
+                    <li><a href="Personas.aspx">Personas</a></li>
                     <li><a href="Usuarios.aspx">Usuarios</a></li>
-                    <li><a href="">Planes</a></li>
-                    <li><a href="">Especialidades</a></li>
+                    <li><a href="Planes.aspx">Planes</a></li>
+                    <li><a href="Especialidades.aspx">Especialidades</a></li>
                     <li><a href="Materias.aspx">Materias</a></li>
                     <li><a href="Comisiones.aspx">Comisiones</a></li>
-                    <li><a href="">Cursos</a></li>                 
+                    <li><a href="Cursos.aspx">Cursos</a></li>                 
                   </ul>
                 </div>
                 <div id="gestionDocente" runat="server">
