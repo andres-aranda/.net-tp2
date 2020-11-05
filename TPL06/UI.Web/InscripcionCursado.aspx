@@ -1,26 +1,27 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="InscripcionCursado.aspx.cs" Inherits="Academia.UI.Web.InscripcionCursado" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
-    .auto-style1 {
-        width: 100px;
-    }
-</style>
+        .auto-style1 {
+            width: 100px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="PageContent" runat="server">
     <div id="seleccionMateria">
- <p>
-        Seleccione Materia:&nbsp;
+        <p>
+            Seleccione Materia:&nbsp;
         <asp:DropDownList ID="cmbMateria" runat="server" DataTextField="Descripcion" DataValueField="Id" AutoPostBack="True" OnSelectedIndexChanged="cmbMateria_SelectedIndexChanged">
         </asp:DropDownList>
-        <asp:Button ID="Button1" runat="server" OnClick="cmbMateria_SelectedIndexChanged" Text="Refresh" />
-    </p>
+            <asp:Button ID="Button1" runat="server" OnClick="cmbMateria_SelectedIndexChanged" Text="Refresh" />
+        </p>
     </div>
     <div id="seleccionComision">
- <p>
-        Seleccione Comision:&nbsp;
+        <p>
+            Seleccione Comision:&nbsp;
         <asp:DropDownList ID="cmbComision" runat="server" DataTextField="DescripcionComision" DataValueField="Id" OnSelectedIndexChanged="cmbComision_SelectedIndexChanged">
         </asp:DropDownList>
-    </p>
+        </p>
     </div>
     <asp:DetailsView ID="detallesInscripcion" runat="server" Height="39px" Width="125px" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellPadding="3" CellSpacing="1" GridLines="None" Visible="False">
         <EditRowStyle BackColor="#9471DE" Font-Bold="True" ForeColor="White" />
@@ -40,16 +41,19 @@
         <table>
             <tr>
                 <td><b>Comisión</b></td>
-                <td class="auto-style1"><asp:Label ID="ComisionLabel" runat="server" Text="Label"></asp:Label></td>
+                <td class="auto-style1">
+                    <asp:Label ID="ComisionLabel" runat="server" Text="Label"></asp:Label></td>
             </tr>
             <tr>
                 <td><b>Materia</b></td>
-                <td class="auto-style1"><asp:Label ID="MateriaLabel" runat="server"></asp:Label></td>
+                <td class="auto-style1">
+                    <asp:Label ID="MateriaLabel" runat="server"></asp:Label></td>
             </tr>
             <tr>
                 <td><b>Año</b></td>
-                <td class="auto-style1"><asp:Label ID="AñoLabel" runat="server" Text="Label"></asp:Label></td>
+                <td class="auto-style1">
+                    <asp:Label ID="AñoLabel" runat="server" Text="Label"></asp:Label></td>
             </tr>
         </table>
     </div>
-    </asp:Content>
+</asp:Content>

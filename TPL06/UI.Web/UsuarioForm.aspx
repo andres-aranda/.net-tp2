@@ -57,7 +57,7 @@
     
 
 <asp:Panel ID="formActionPanel" runat="server">
-        <asp:LinkButton ID="AceptarLinkButton" runat="server" OnClick="AceptarLinkButton_Click" BackColor="#99CCFF" BorderColor="Black">Aceptar</asp:LinkButton>
-        <asp:LinkButton ID="CancelarLinkButton" runat="server" OnClick="CancelarLinkButton_Click" BackColor="#99CCFF" BorderColor="Black">Cancelar</asp:LinkButton>
+        <asp:LinkButton ID="AceptarLinkButton" runat="server" OnClick="AceptarLinkButton_Click" CssClass="btn">Aceptar</asp:LinkButton>
+        <asp:LinkButton ID="CancelarLinkButton" runat="server" OnClick="CancelarLinkButton_Click" CssClass="btn">Cancelar</asp:LinkButton>
     </asp:Panel>
 </asp:Content>

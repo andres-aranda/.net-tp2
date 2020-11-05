@@ -1,8 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MateriaForm.aspx.cs" Inherits="Academia.UI.Web.MateriaForm" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="PageContent" runat="server">
-     <table style="width:100%;" __designer:mapid="150">
+    <table style="width: 100%;" __designer:mapid="150">
         <tr __designer:mapid="151">
             <td __designer:mapid="152">
                 <asp:Label ID="nombreLabel" runat="server" Text="Descripccion"></asp:Label>
@@ -10,8 +11,7 @@
             <td __designer:mapid="154">
                 <asp:TextBox ID="descripcionTextBox" runat="server"></asp:TextBox>
             </td>
-            <td __designer:mapid="156">
-                NroPlan</td>
+            <td __designer:mapid="156">NroPlan</td>
             <td __designer:mapid="158">
                 <asp:TextBox ID="idPlanTextBox" runat="server"></asp:TextBox>
             </td>
@@ -31,41 +31,21 @@
             </td>
         </tr>
         <tr __designer:mapid="163">
-            <td __designer:mapid="164">
-                &nbsp;</td>
-            <td __designer:mapid="166">
-                &nbsp;</td>
-            <td __designer:mapid="168">
-                &nbsp;</td>
-            <td __designer:mapid="16a">
-                &nbsp;</td>
+            <td __designer:mapid="164">&nbsp;</td>
+            <td __designer:mapid="166">&nbsp;</td>
+            <td __designer:mapid="168">&nbsp;</td>
+            <td __designer:mapid="16a">&nbsp;</td>
         </tr>
         <tr __designer:mapid="16c">
-            <td __designer:mapid="16d">
-                &nbsp;</td>
+            <td __designer:mapid="16d">&nbsp;</td>
             <td __designer:mapid="16f">&nbsp;</td>
             <td __designer:mapid="170">&nbsp;</td>
             <td __designer:mapid="171">&nbsp;</td>
         </tr>
     </table>
-          <div style="margin-bottom: 15px;">
-<asp:LinkButton ID="editarLinkButton" runat="server" OnClick="AceptarLinkButton_Click" ForeColor="Black" style="
-    border-radius: 20px;
-    font-size: 1.25rem !important;
-    background: #36304a !important;
-    color: white !important;
-    margin: 5px  !important;
-    padding: .3rem .5rem .3rem .5rem !important;">
-            Aceptar
-        </asp:LinkButton>
-        <asp:LinkButton ID="EliminarLinkButton" runat="server" OnClick="CancelarLinkButton_Click" style="
-border-radius: 10px;
-font-size: 1.25rem !important;
-background: #36304a !important;
-color: white !important;
-margin: 5px  !important;
-padding: .3rem .5rem .3rem .5rem !important;">
-            Cancelar</asp:LinkButton>
+    <div style="margin-bottom: 15px;">
+        <asp:LinkButton ID="editarLinkButton" runat="server" OnClick="AceptarLinkButton_Click" CssClass="btn">Aceptar</asp:LinkButton>
+        <asp:LinkButton ID="EliminarLinkButton" runat="server" OnClick="CancelarLinkButton_Click" CssClass="btn">Cancelar</asp:LinkButton>
 
-        </div>
+    </div>
 </asp:Content>
