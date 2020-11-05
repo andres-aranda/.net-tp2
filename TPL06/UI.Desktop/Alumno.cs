@@ -16,13 +16,15 @@ namespace Academia.UI.Desktop
         public Alumno()
         {
             InitializeComponent();
-            dvgAlumnos.AutoGenerateColumns = false;
+        
          
         }
 
         private void Alumno_Load(object sender, EventArgs e)
         {
+           
             Mapeo();
+            dvgAlumnos.Columns[0].Visible=false;
         }
         private void Mapeo()
             {
@@ -43,7 +45,7 @@ namespace Academia.UI.Desktop
                                           Apellido = pe.apellido,
                                           Legajo = pe.legajo,
                                           Nota = alu_ins.nota,
-                                          Anio = cur.anio_calendario
+                                         
                                           
                                       };
                      this.dvgAlumnos.DataSource = listaCursos.ToList();
@@ -52,6 +54,9 @@ namespace Academia.UI.Desktop
 
         private void dvgAlumnos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            int indicee = dvgAlumnos.CurrentCell.RowIndex;
+           int IdInscripcion= (int)dvgAlumnos.Rows[indicee].Cells[0].Value;
+
              MessageBox.Show(dvgAlumnos.CurrentCell.RowIndex + "," + dvgAlumnos.CurrentCell.ColumnIndex+ "," + dvgAlumnos.CurrentCell.Value);
          
                

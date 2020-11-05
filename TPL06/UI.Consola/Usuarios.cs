@@ -72,7 +72,7 @@ namespace UI.Consola
             EntidadesTP2 e = new EntidadesTP2();
             foreach (var usr in e.usuarios)
             {
-                Console.WriteLine(usr.apellido);
+                //Console.WriteLine(usr.apellido);
             }
         }
 

@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.dvgAlumnos = new System.Windows.Forms.DataGridView();
+            this.IdInscripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Año = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Materias = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Comision = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Año = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Calificar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dvgAlumnos)).BeginInit();
             this.SuspendLayout();
@@ -44,20 +44,32 @@
             // 
             this.dvgAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvgAlumnos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdInscripcion,
+            this.Año,
             this.Materias,
             this.Comision,
             this.Nombre,
             this.Apellido,
             this.Legajo,
-            this.Nota,
-            this.Año,
             this.Calificar});
             this.dvgAlumnos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dvgAlumnos.Location = new System.Drawing.Point(0, 0);
             this.dvgAlumnos.Name = "dvgAlumnos";
-            this.dvgAlumnos.Size = new System.Drawing.Size(800, 450);
+            this.dvgAlumnos.Size = new System.Drawing.Size(844, 450);
             this.dvgAlumnos.TabIndex = 0;
             this.dvgAlumnos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgAlumnos_CellContentClick);
+            // 
+            // IdInscripcion
+            // 
+            this.IdInscripcion.DataPropertyName = "IdInscripcion";
+            this.IdInscripcion.HeaderText = "IdInscripcion";
+            this.IdInscripcion.Name = "IdInscripcion";
+            // 
+            // Año
+            // 
+            this.Año.DataPropertyName = "Año";
+            this.Año.HeaderText = "Año";
+            this.Año.Name = "Año";
             // 
             // Materias
             // 
@@ -89,21 +101,9 @@
             this.Legajo.HeaderText = "Legajo";
             this.Legajo.Name = "Legajo";
             // 
-            // Nota
-            // 
-            this.Nota.DataPropertyName = "Nota";
-            this.Nota.HeaderText = "Nota";
-            this.Nota.Name = "Nota";
-            // 
-            // Año
-            // 
-            this.Año.DataPropertyName = "Anio";
-            this.Año.HeaderText = "Año";
-            this.Año.Name = "Año";
-            // 
             // Calificar
             // 
-            this.Calificar.DataPropertyName = "Materia";
+            this.Calificar.DataPropertyName = "Nota";
             this.Calificar.HeaderText = "Calificar";
             this.Calificar.Name = "Calificar";
             // 
@@ -111,7 +111,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(844, 450);
             this.Controls.Add(this.dvgAlumnos);
             this.Name = "Alumno";
             this.Text = "Alumno";
@@ -124,13 +124,13 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dvgAlumnos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdInscripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Año;
         private System.Windows.Forms.DataGridViewTextBoxColumn Materias;
         private System.Windows.Forms.DataGridViewTextBoxColumn Comision;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn Legajo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nota;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Año;
         private System.Windows.Forms.DataGridViewButtonColumn Calificar;
     }
 }
