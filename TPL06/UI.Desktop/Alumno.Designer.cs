@@ -36,6 +36,7 @@
             this.Legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Año = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Calificar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dvgAlumnos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,12 +50,14 @@
             this.Apellido,
             this.Legajo,
             this.Nota,
-            this.Año});
+            this.Año,
+            this.Calificar});
             this.dvgAlumnos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dvgAlumnos.Location = new System.Drawing.Point(0, 0);
             this.dvgAlumnos.Name = "dvgAlumnos";
             this.dvgAlumnos.Size = new System.Drawing.Size(800, 450);
             this.dvgAlumnos.TabIndex = 0;
+            this.dvgAlumnos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgAlumnos_CellContentClick);
             // 
             // Materias
             // 
@@ -98,6 +101,12 @@
             this.Año.HeaderText = "Año";
             this.Año.Name = "Año";
             // 
+            // Calificar
+            // 
+            this.Calificar.DataPropertyName = "Materia";
+            this.Calificar.HeaderText = "Calificar";
+            this.Calificar.Name = "Calificar";
+            // 
             // Alumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -122,5 +131,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Legajo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nota;
         private System.Windows.Forms.DataGridViewTextBoxColumn Año;
+        private System.Windows.Forms.DataGridViewButtonColumn Calificar;
     }
 }

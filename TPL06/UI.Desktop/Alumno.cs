@@ -16,6 +16,8 @@ namespace Academia.UI.Desktop
         public Alumno()
         {
             InitializeComponent();
+            dvgAlumnos.AutoGenerateColumns = false;
+         
         }
 
         private void Alumno_Load(object sender, EventArgs e)
@@ -32,7 +34,8 @@ namespace Academia.UI.Desktop
                                       join mat in db.materias on cur.id_materia equals mat.id_materia
                                       join com in db.comisiones on cur.id_comision equals com.id_comision
                                       join doc_cur in db.docentes_cursos on cur.id_curso equals doc_cur.id_curso
-                                      select new { 
+                                      select new {
+                                          IdInscripcion= alu_ins.id_inscripcion,
                                           Materia = mat.desc_materia, 
                                           Comision = com.desc_comision,
                                           Año = cur.anio_calendario,
@@ -41,10 +44,17 @@ namespace Academia.UI.Desktop
                                           Legajo = pe.legajo,
                                           Nota = alu_ins.nota,
                                           Anio = cur.anio_calendario
-
+                                          
                                       };
                      this.dvgAlumnos.DataSource = listaCursos.ToList();
                 }
             }
+
+        private void dvgAlumnos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+             MessageBox.Show(dvgAlumnos.CurrentCell.RowIndex + "," + dvgAlumnos.CurrentCell.ColumnIndex+ "," + dvgAlumnos.CurrentCell.Value);
+         
+               
+        }
     }
 }
