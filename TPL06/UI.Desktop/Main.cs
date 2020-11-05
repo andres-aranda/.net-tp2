@@ -275,7 +275,7 @@ namespace Academia.UI.Desktop
 
         private void alumnosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // TODO: Abrir AlumnosDocente
+            AbrirFormularioHijo(new Alumno());
         }
     }
 }

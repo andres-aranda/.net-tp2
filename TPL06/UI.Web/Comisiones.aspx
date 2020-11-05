@@ -12,7 +12,7 @@
                 SelectedRowStyle-ForeColor="White"
                 DataKeyNames="ID">
                 <Columns>
-                    <asp:BoundField HeaderText="Descripcion" DataField="Descripcion" />
+                    <asp:BoundField HeaderText="Descripcion" DataField="DescripcionComision" />
                     <asp:BoundField HeaderText="Año especialidad" DataField="AñoEspecialidad" />
                     <asp:BoundField HeaderText="ID del plan" DataField="IdPlan" />
                     <asp:CommandField SelectText="Seleccionar" ShowSelectButton="True" />

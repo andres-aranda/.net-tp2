@@ -47,7 +47,7 @@ namespace Academia.UI.Desktop
                 }
                 catch
                 {
-                    MessageBox.Show("La nota incresada es invalida");
+                    MessageBox.Show("La nota ingresada es invalida");
                 }
 
 
