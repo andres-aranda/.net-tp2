@@ -90,5 +90,10 @@ namespace Academia.UI.Desktop
         {
             Dispose();
         }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

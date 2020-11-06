@@ -187,6 +187,12 @@
     <Compile Include="Materias.Designer.cs">
       <DependentUpon>Materias.cs</DependentUpon>
     </Compile>
+    <Compile Include="MisCursosAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MisCursosAlumno.Designer.cs">
+      <DependentUpon>MisCursosAlumno.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -336,6 +342,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Materias.resx">
       <DependentUpon>Materias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MisCursosAlumno.resx">
+      <DependentUpon>MisCursosAlumno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos.resx">
       <DependentUpon>Modulos.cs</DependentUpon>

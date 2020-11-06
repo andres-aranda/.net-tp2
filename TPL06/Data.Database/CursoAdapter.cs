@@ -282,7 +282,13 @@ namespace Data.Database
             try
             {                 
                 this.OpenConnection();
-                SqlCommand cmdCurso = new SqlCommand("select	desc_materia, desc_comision, nota, anio_calendario from personas pe inner join alumnos_inscripciones alu_ins on alu_ins.id_alumno = pe.id_persona inner join cursos cur on cur.id_curso = alu_ins.id_curso inner join materias mat on mat.id_materia = cur.id_materia inner join comisiones com on com.id_comision = cur.id_comision WHERE id_persona = @id",Sqlconn);
+                SqlCommand cmdCurso = new SqlCommand("    select desc_materia, desc_comision, nota, anio_calendario " +
+                    "from personas pe " +
+                    "inner join alumnos_inscripciones alu_ins on alu_ins.id_alumno = pe.id_persona" +
+                    " inner join cursos cur on cur.id_curso = alu_ins.id_curso" +
+                    " inner join materias mat on mat.id_materia = cur.id_materia " +
+                    "inner join comisiones com on com.id_comision = cur.id_comision " +
+                    "WHERE id_persona = @id");
                 cmdCurso.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 SqlDataReader drCurso = cmdCurso.ExecuteReader();
                 while (drCurso.Read())

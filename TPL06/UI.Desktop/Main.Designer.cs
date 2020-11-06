@@ -48,6 +48,9 @@
             this.tsmAlumno = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmMisCursosAlumno = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmInscripcionAMaterias = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmDocente = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmMisCursosDocente = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmAlumnosDocente = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmgestionAcademia = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmPersonas = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmUsuarios = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,9 +63,6 @@
             this.tsmCursosDocentes = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmgestionAlumno = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmInscripcionCurso = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmDocente = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmMisCursosDocente = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmAlumnosDocente = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblAcacemia = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -156,7 +156,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(200, 139);
+            this.menuStrip1.Size = new System.Drawing.Size(200, 63);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -258,7 +258,7 @@
             this.tsmMisCursosAlumno.Name = "tsmMisCursosAlumno";
             this.tsmMisCursosAlumno.Size = new System.Drawing.Size(189, 22);
             this.tsmMisCursosAlumno.Text = "Mis cursos";
-            this.tsmMisCursosAlumno.Click += new System.EventHandler(this.misCursosToolStripMenuItem_Click);
+            this.tsmMisCursosAlumno.Click += new System.EventHandler(this.btnAlumnoCursos_Click);
             // 
             // tsmInscripcionAMaterias
             // 
@@ -266,6 +266,29 @@
             this.tsmInscripcionAMaterias.Size = new System.Drawing.Size(189, 22);
             this.tsmInscripcionAMaterias.Text = "Inscripción a materias";
             this.tsmInscripcionAMaterias.Click += new System.EventHandler(this.inscripciónAMateriasToolStripMenuItem_Click);
+            // 
+            // tsmDocente
+            // 
+            this.tsmDocente.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmMisCursosDocente,
+            this.tsmAlumnosDocente});
+            this.tsmDocente.Name = "tsmDocente";
+            this.tsmDocente.Size = new System.Drawing.Size(195, 19);
+            this.tsmDocente.Text = "Docente";
+            // 
+            // tsmMisCursosDocente
+            // 
+            this.tsmMisCursosDocente.Name = "tsmMisCursosDocente";
+            this.tsmMisCursosDocente.Size = new System.Drawing.Size(130, 22);
+            this.tsmMisCursosDocente.Text = "Mis cursos";
+            this.tsmMisCursosDocente.Click += new System.EventHandler(this.misCursosToolStripMenuItem1_Click);
+            // 
+            // tsmAlumnosDocente
+            // 
+            this.tsmAlumnosDocente.Name = "tsmAlumnosDocente";
+            this.tsmAlumnosDocente.Size = new System.Drawing.Size(130, 22);
+            this.tsmAlumnosDocente.Text = "Alumnos";
+            this.tsmAlumnosDocente.Click += new System.EventHandler(this.alumnosToolStripMenuItem_Click);
             // 
             // tsmgestionAcademia
             // 
@@ -285,21 +308,21 @@
             // tsmPersonas
             // 
             this.tsmPersonas.Name = "tsmPersonas";
-            this.tsmPersonas.Size = new System.Drawing.Size(180, 22);
+            this.tsmPersonas.Size = new System.Drawing.Size(150, 22);
             this.tsmPersonas.Text = "Personas";
             this.tsmPersonas.Click += new System.EventHandler(this.personasToolStripMenuItem_Click);
             // 
             // tsmUsuarios
             // 
             this.tsmUsuarios.Name = "tsmUsuarios";
-            this.tsmUsuarios.Size = new System.Drawing.Size(180, 22);
+            this.tsmUsuarios.Size = new System.Drawing.Size(150, 22);
             this.tsmUsuarios.Text = "Usuarios";
             this.tsmUsuarios.Click += new System.EventHandler(this.usuariosToolStripMenuItem1_Click);
             // 
             // tsmPlanes
             // 
             this.tsmPlanes.Name = "tsmPlanes";
-            this.tsmPlanes.Size = new System.Drawing.Size(180, 22);
+            this.tsmPlanes.Size = new System.Drawing.Size(150, 22);
             this.tsmPlanes.Text = "Planes";
             this.tsmPlanes.CheckStateChanged += new System.EventHandler(this.btnPlanes_Click);
             this.tsmPlanes.Click += new System.EventHandler(this.planesToolStripMenuItem_Click);
@@ -307,14 +330,14 @@
             // tsmEspecialidades
             // 
             this.tsmEspecialidades.Name = "tsmEspecialidades";
-            this.tsmEspecialidades.Size = new System.Drawing.Size(180, 22);
+            this.tsmEspecialidades.Size = new System.Drawing.Size(150, 22);
             this.tsmEspecialidades.Text = "Especialidades";
             this.tsmEspecialidades.Click += new System.EventHandler(this.btnEspecialidades_Click);
             // 
             // tsmMaterias
             // 
             this.tsmMaterias.Name = "tsmMaterias";
-            this.tsmMaterias.Size = new System.Drawing.Size(180, 22);
+            this.tsmMaterias.Size = new System.Drawing.Size(150, 22);
             this.tsmMaterias.Text = "Materias";
             this.tsmMaterias.CheckStateChanged += new System.EventHandler(this.btnMaterias_Click);
             this.tsmMaterias.Click += new System.EventHandler(this.materiasToolStripMenuItem_Click);
@@ -322,14 +345,14 @@
             // tsmComisiones
             // 
             this.tsmComisiones.Name = "tsmComisiones";
-            this.tsmComisiones.Size = new System.Drawing.Size(180, 22);
+            this.tsmComisiones.Size = new System.Drawing.Size(150, 22);
             this.tsmComisiones.Text = "Comisiones";
             this.tsmComisiones.Click += new System.EventHandler(this.btnComisones_Click);
             // 
             // tsmCursos
             // 
             this.tsmCursos.Name = "tsmCursos";
-            this.tsmCursos.Size = new System.Drawing.Size(180, 22);
+            this.tsmCursos.Size = new System.Drawing.Size(150, 22);
             this.tsmCursos.Text = "Cursos";
             this.tsmCursos.Click += new System.EventHandler(this.cursosToolStripMenuItem_Click);
             // 
@@ -345,7 +368,7 @@
             // tsmCursosDocentes
             // 
             this.tsmCursosDocentes.Name = "tsmCursosDocentes";
-            this.tsmCursosDocentes.Size = new System.Drawing.Size(180, 22);
+            this.tsmCursosDocentes.Size = new System.Drawing.Size(110, 22);
             this.tsmCursosDocentes.Text = "Cursos";
             this.tsmCursosDocentes.Click += new System.EventHandler(this.cursosToolStripMenuItem1_Click);
             // 
@@ -361,32 +384,9 @@
             // tsmInscripcionCurso
             // 
             this.tsmInscripcionCurso.Name = "tsmInscripcionCurso";
-            this.tsmInscripcionCurso.Size = new System.Drawing.Size(180, 22);
+            this.tsmInscripcionCurso.Size = new System.Drawing.Size(176, 22);
             this.tsmInscripcionCurso.Text = "Inscripción a cursar";
             this.tsmInscripcionCurso.Click += new System.EventHandler(this.mnuInscripcionCursos_Click);
-            // 
-            // tsmDocente
-            // 
-            this.tsmDocente.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmMisCursosDocente,
-            this.tsmAlumnosDocente});
-            this.tsmDocente.Name = "tsmDocente";
-            this.tsmDocente.Size = new System.Drawing.Size(195, 19);
-            this.tsmDocente.Text = "Docente";
-            // 
-            // tsmMisCursosDocente
-            // 
-            this.tsmMisCursosDocente.Name = "tsmMisCursosDocente";
-            this.tsmMisCursosDocente.Size = new System.Drawing.Size(180, 22);
-            this.tsmMisCursosDocente.Text = "Mis cursos";
-            this.tsmMisCursosDocente.Click += new System.EventHandler(this.misCursosToolStripMenuItem1_Click);
-            // 
-            // tsmAlumnosDocente
-            // 
-            this.tsmAlumnosDocente.Name = "tsmAlumnosDocente";
-            this.tsmAlumnosDocente.Size = new System.Drawing.Size(180, 22);
-            this.tsmAlumnosDocente.Text = "Alumnos";
-            this.tsmAlumnosDocente.Click += new System.EventHandler(this.alumnosToolStripMenuItem_Click);
             // 
             // panel2
             // 

@@ -30,6 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvCursos = new System.Windows.Forms.DataGridView();
+            this.id_curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comision = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Año = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.entidadesTP2BindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -38,11 +43,6 @@
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
             this.tlpCursos = new System.Windows.Forms.TableLayoutPanel();
-            this.id_curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comision = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Año = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCursos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.entidadesTP2BindingSource)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -70,6 +70,49 @@
             this.dgvCursos.RowHeadersWidth = 51;
             this.dgvCursos.Size = new System.Drawing.Size(557, 224);
             this.dgvCursos.TabIndex = 0;
+            // 
+            // id_curso
+            // 
+            this.id_curso.DataPropertyName = "Id";
+            this.id_curso.HeaderText = "Id";
+            this.id_curso.MinimumWidth = 6;
+            this.id_curso.Name = "id_curso";
+            this.id_curso.ReadOnly = true;
+            this.id_curso.Width = 125;
+            // 
+            // materia
+            // 
+            this.materia.DataPropertyName = "Materia";
+            this.materia.HeaderText = "Materia";
+            this.materia.MinimumWidth = 6;
+            this.materia.Name = "materia";
+            this.materia.ReadOnly = true;
+            this.materia.Width = 125;
+            // 
+            // comision
+            // 
+            this.comision.DataPropertyName = "Comision";
+            this.comision.HeaderText = "Comision";
+            this.comision.MinimumWidth = 6;
+            this.comision.Name = "comision";
+            this.comision.ReadOnly = true;
+            this.comision.Width = 125;
+            // 
+            // Año
+            // 
+            this.Año.DataPropertyName = "Año";
+            this.Año.HeaderText = "Año";
+            this.Año.Name = "Año";
+            this.Año.ReadOnly = true;
+            // 
+            // cupo
+            // 
+            this.cupo.DataPropertyName = "Cupo";
+            this.cupo.HeaderText = "Cupo";
+            this.cupo.MinimumWidth = 6;
+            this.cupo.Name = "cupo";
+            this.cupo.ReadOnly = true;
+            this.cupo.Width = 125;
             // 
             // btnActualizar
             // 
@@ -110,6 +153,7 @@
             this.toolStrip1.Size = new System.Drawing.Size(563, 27);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
+            this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
             // 
             // tsbNuevo
             // 
@@ -159,49 +203,6 @@
             this.tlpCursos.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpCursos.Size = new System.Drawing.Size(563, 259);
             this.tlpCursos.TabIndex = 4;
-            // 
-            // id_curso
-            // 
-            this.id_curso.DataPropertyName = "Id";
-            this.id_curso.HeaderText = "Id";
-            this.id_curso.MinimumWidth = 6;
-            this.id_curso.Name = "id_curso";
-            this.id_curso.ReadOnly = true;
-            this.id_curso.Width = 125;
-            // 
-            // materia
-            // 
-            this.materia.DataPropertyName = "Materia";
-            this.materia.HeaderText = "Materia";
-            this.materia.MinimumWidth = 6;
-            this.materia.Name = "materia";
-            this.materia.ReadOnly = true;
-            this.materia.Width = 125;
-            // 
-            // comision
-            // 
-            this.comision.DataPropertyName = "Comision";
-            this.comision.HeaderText = "Comision";
-            this.comision.MinimumWidth = 6;
-            this.comision.Name = "comision";
-            this.comision.ReadOnly = true;
-            this.comision.Width = 125;
-            // 
-            // Año
-            // 
-            this.Año.DataPropertyName = "Año";
-            this.Año.HeaderText = "Año";
-            this.Año.Name = "Año";
-            this.Año.ReadOnly = true;
-            // 
-            // cupo
-            // 
-            this.cupo.DataPropertyName = "Cupo";
-            this.cupo.HeaderText = "Cupo";
-            this.cupo.MinimumWidth = 6;
-            this.cupo.Name = "cupo";
-            this.cupo.ReadOnly = true;
-            this.cupo.Width = 125;
             // 
             // Cursos
             // 

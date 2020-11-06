@@ -222,7 +222,7 @@ namespace Academia.UI.Desktop
 
         private void btnAlumnoCursos_Click(object sender, EventArgs e)
         {
-            // TODO: Abrir cursos del alumno
+            AbrirFormularioHijo(new MisCursosAlumno(usuarioActual.Persona.Id));
         }
 
         private void btnAlumnoInscribirse_Click(object sender, EventArgs e)
