@@ -82,10 +82,9 @@ namespace Data.Database
                 cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = Id;
                 cmdDelete.ExecuteNonQuery();
             }
-            catch (Exception Ex)
+            catch (System.Data.Entity.Infrastructure.DbUpdateException ex)
             {
-                Exception excepcionManejada = new Exception("Error al eliminar plan", Ex);
-                throw excepcionManejada;
+                throw ex;
             }
             finally
             {

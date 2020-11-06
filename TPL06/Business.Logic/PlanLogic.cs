@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Data.Database;
+using System.Data;
 
 namespace Business.Logic
 {
@@ -34,7 +35,14 @@ namespace Business.Logic
 
         public void Delete(int id)
         {
-            PlanData.Delete(id);
+            try
+            {
+                PlanData.Delete(id);
+            }
+            catch (System.Data.Entity.Infrastructure.DbUpdateException e)
+            {
+                throw e;
+            }
         }
     }
 }

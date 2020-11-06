@@ -77,6 +77,8 @@ namespace Academia.UI.Desktop
             btnNoDocentePersonas.Visible = false;
             btnNoDocenteUsuarios.Visible = false;
             btnAdministradorPermisos.Visible = false;
+            if (formularioActual != null)
+                formularioActual.Close();
             #endregion
 
             Login appLogin = new Login();
@@ -230,11 +232,6 @@ namespace Academia.UI.Desktop
             AbrirFormularioHijo(new InscripcionesDesktop(usuarioActual.Persona.Id));
         }
 
-        private void btnDocenteCursos_Click(object sender, EventArgs e)
-        {
-            // TODO: Abrir CursosDocente
-        }
-
         private void btnDocenteAlumnos_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo(new Alumno(usuarioActual.Persona.Id));
@@ -257,7 +254,7 @@ namespace Academia.UI.Desktop
 
         private void miInformaciónToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AbrirFormularioHijo(new PersonaDesktop());
+            AbrirFormularioHijo(new PersonaDesktop(usuarioActual.Persona.Id, false));
         }
 
         private void usuariosToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -271,6 +268,26 @@ namespace Academia.UI.Desktop
         }
 
         private void cursosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new DocentesCursos());
+        }
+
+        private void inscripciónAMateriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new InscripcionesDesktop(usuarioActual.Persona.Id));
+        }
+
+        private void misCursosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new DocentesCursos(usuarioActual.Persona.Id));
+        }
+
+        private void alumnosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new Alumno(usuarioActual.Persona.Id));
+        }
+
+        private void alumnosToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             IngresoLegajo il = new IngresoLegajo();
             il.ShowDialog();
@@ -288,26 +305,6 @@ namespace Academia.UI.Desktop
             {
 
             }
-        }
-
-        private void misCursosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            // TODO: Abrir CursosAlumno
-        }
-
-        private void inscripciónAMateriasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AbrirFormularioHijo(new InscripcionesDesktop(usuarioActual.Persona.Id));
-        }
-
-        private void misCursosToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            // TODO: Abrir CursosDocente
-        }
-
-        private void alumnosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AbrirFormularioHijo(new Alumno(usuarioActual.Persona.Id));
         }
     }
 }

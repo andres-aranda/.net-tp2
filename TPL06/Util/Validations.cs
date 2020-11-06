@@ -20,7 +20,7 @@ namespace Academia.Util
                 }
                 return false;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return true;
             }

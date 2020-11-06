@@ -68,14 +68,21 @@ namespace Academia.UI.Desktop
 
         private void tsbEliminar_Click(object sender, EventArgs e)
         {
-            if (dgvComisiones.SelectedRows.Count > 0)
+            try
             {
-                if (MessageBox.Show("¿Seguro que desea eliminar la comisión?", "Eliminar comisión", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (dgvComisiones.SelectedRows.Count > 0)
                 {
-                    ComisionLogic cl = new ComisionLogic();
-                    int id = ((Business.Entities.Comision)dgvComisiones.SelectedRows[0].DataBoundItem).Id;
-                    cl.Delete(id);
+                    if (MessageBox.Show("¿Seguro que desea eliminar la comisión?", "Eliminar comisión", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        ComisionLogic cl = new ComisionLogic();
+                        int id = ((Business.Entities.Comision)dgvComisiones.SelectedRows[0].DataBoundItem).Id;
+                        cl.Delete(id);
+                    }
                 }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al eliminar la comisión. Verifique que no esté siendo usada.");
             }
             Listar();
         }

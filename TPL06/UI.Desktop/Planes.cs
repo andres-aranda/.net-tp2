@@ -72,16 +72,23 @@ namespace Academia.UI.Desktop
 
         private void TsbBorrarPlan_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Desea eliminar el plan?", "Borrar Plan", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            try
             {
-                if (this.dgvPlanes.SelectedRows.Count > 0)
+                if (MessageBox.Show("¿Desea eliminar el plan?", "Borrar Plan", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    int ID = (int)dgvPlanes.SelectedRows[0].Cells[0].Value;
-                    PlanLogic planLogic = new PlanLogic();
-                    planLogic.Delete(ID);
+                    if (this.dgvPlanes.SelectedRows.Count > 0)
+                    {
+                        int ID = (int)dgvPlanes.SelectedRows[0].Cells[0].Value;
+                        PlanLogic planLogic = new PlanLogic();
+                        planLogic.Delete(ID);
+                    }
                 }
+                this.Listar();
             }
-            this.Listar();
+            catch (System.Data.Entity.Infrastructure.DbUpdateException)
+            {
+                MessageBox.Show("No se pudo eliminar el plan.");
+            }
         }
     }
 }

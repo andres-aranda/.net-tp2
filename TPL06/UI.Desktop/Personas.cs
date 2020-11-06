@@ -53,8 +53,28 @@ namespace Academia.UI.Desktop
                     {
                         int ID = (int)this.dgvPersonas.SelectedRows[0].Cells[0].Value;
                         personas persona = db.personas.Find(ID);
-                        db.personas.Remove(persona);
-                        db.SaveChanges();
+                        try
+                        {
+                            db.personas.Remove(persona);
+                            db.SaveChanges();
+                        }
+                        catch (System.Data.Entity.Infrastructure.DbUpdateException)
+                        {
+                            DialogResult resultado = MessageBox.Show("Esta persona tiene asociado un usuario. ¿Desea borrar también el usuario?", "Confirmar acción", MessageBoxButtons.YesNo);
+                            if (resultado == DialogResult.Yes)
+                            {
+                                usuarios u = db.usuarios.Where(x => x.id_persona == ID).First();
+                                var muLista = db.modulos_usuarios.Where(x => x.id_usuario == u.id_usuario);
+                                db.usuarios.Remove(u);
+                                db.personas.Remove(persona);
+                                foreach (modulos_usuarios mu in muLista)
+                                {
+                                    db.modulos_usuarios.Remove(mu);
+                                }
+                                db.SaveChanges();
+                            }
+                        }
+                        
                     }
                     
                 }
@@ -67,7 +87,7 @@ namespace Academia.UI.Desktop
             try
             {
             int ID = (int)this.dgvPersonas.SelectedRows[0].Cells[0].Value;
-            PersonaDesktop pd = new PersonaDesktop(ID);
+            PersonaDesktop pd = new PersonaDesktop(ID, true);
             pd.ShowDialog();
             Listar();
             }

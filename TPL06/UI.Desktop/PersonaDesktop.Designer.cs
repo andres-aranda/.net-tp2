@@ -228,7 +228,7 @@
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lblNombre);
             this.Name = "PersonaDesktop";
-            this.Text = "PerosnaDesktop";
+            this.Text = "Persona";
             this.Load += new System.EventHandler(this.PerosnaDesktop_Load);
             ((System.ComponentModel.ISupportInitialize)(this.entidadesTP2BindingSource)).EndInit();
             this.ResumeLayout(false);

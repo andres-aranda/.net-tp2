@@ -15,6 +15,7 @@ namespace Academia.UI.Desktop
     public partial class PersonaDesktop : Form
     {
         int _idPersona;
+        bool PuedeModificar;
 
         public int IdPersona { get => _idPersona; set => _idPersona = value; }
 
@@ -23,15 +24,18 @@ namespace Academia.UI.Desktop
             IdPersona = -1;
             InitializeComponent();
         }
-        public PersonaDesktop(int id)
+
+        public PersonaDesktop(int id, bool puedeModificar)
         {
             IdPersona = id;
+            PuedeModificar = puedeModificar;
             InitializeComponent();
-            
         }
 
         private void PerosnaDesktop_Load(object sender, EventArgs e)
         {
+            txtLegajo.Enabled = PuedeModificar;
+            cmbPlan.Enabled = PuedeModificar;
             Mapeo();
         }
 

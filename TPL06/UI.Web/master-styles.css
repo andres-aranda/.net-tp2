@@ -107,29 +107,28 @@ h3 {
     height: 50px;
 }
 
-.filas:hover {
-    color: #555555;
-    background-color: #f5f5f5;
-    cursor: pointer;
-}
+    .filas:hover {
+        color: #555555;
+        background-color: #f5f5f5;
+        cursor: pointer;
+    }
 
 input[type="text"], input[type="password"] {
-    border-style: none;
-    border-bottom: solid #f0f0f0 1px;
+    border: solid #f0f0f0 1px;
     background-color: transparent;
     height: 100%;
     color: black;
     font-family: 'Noto Sans JP', sans-serif;
 }
 
-input[type="text"]:focus, input[type="password"]:focus {
-    border-bottom-color: #36304a;
-    outline: none !important;
-}
+    input[type="text"]:focus, input[type="password"]:focus {
+        border-bottom-color: #36304a;
+        outline: none !important;
+    }
 
-input[type="text"]:disabled, input[type="password"]:disabled {
-    border-style: none;
-}
+    input[type="text"]:disabled, input[type="password"]:disabled {
+        border-style: none;
+    }
 
 .btn {
     background-color: #36304a;
@@ -143,16 +142,19 @@ input[type="text"]:disabled, input[type="password"]:disabled {
     border-radius: .25rem;
 }
 
-.btn:hover {
-    background-color: var(--color-primario);
-    box-shadow: 5px 5px 10px -5px rgba(0,0,0,0.42);
-    
-}
+    .btn:hover {
+        background-color: var(--color-primario);
+        box-shadow: 5px 5px 10px -5px rgba(0,0,0,0.42);
+    }
 
-.btn:active {
-    background-color: var(--color-primario) !important;
-}
+    .btn:active {
+        background-color: var(--color-primario) !important;
+    }
 
-.btn:focus {
-    background-color: var(--color-primario) !important;
+    .btn:focus {
+        background-color: var(--color-primario) !important;
+    }
+
+a td {
+    color: red;
 }

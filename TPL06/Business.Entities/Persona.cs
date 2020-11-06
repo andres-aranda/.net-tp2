@@ -36,7 +36,7 @@ namespace Business.Entities
 
         public DateTime FechaDeNacimiento
         {
-            get { return _FechaNacimiento; }
+            get { return _FechaNacimiento.Date; }
             set { _FechaNacimiento = value; }
         }
 
@@ -63,5 +63,6 @@ namespace Business.Entities
             get { return _Telefono; }
             set { _Telefono = value; }
         }
+
     }
 }

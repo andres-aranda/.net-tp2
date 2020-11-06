@@ -121,6 +121,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetPersonas.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DocentesCursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocentesCursos.Designer.cs">
+      <DependentUpon>DocentesCursos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocentesCursosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocentesCursosForm.Designer.cs">
+      <DependentUpon>DocentesCursosForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditarNota.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -312,6 +324,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cursos.resx">
       <DependentUpon>Cursos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocentesCursos.resx">
+      <DependentUpon>DocentesCursos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocentesCursosForm.resx">
+      <DependentUpon>DocentesCursosForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditarNota.resx">
       <DependentUpon>EditarNota.cs</DependentUpon>

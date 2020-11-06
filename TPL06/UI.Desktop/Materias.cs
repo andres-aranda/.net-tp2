@@ -68,14 +68,21 @@ namespace Academia.UI.Desktop
 
         private void tsbEliminar_Click(object sender, EventArgs e)
         {
-            if (dgvMaterias.SelectedRows.Count > 0)
+            try
             {
-                if (MessageBox.Show("¿Desea eliminar la materia?", "Eliminar materia", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (dgvMaterias.SelectedRows.Count > 0)
                 {
-                    int id = ((Business.Entities.Materia)dgvMaterias.SelectedRows[0].DataBoundItem).Id;
-                    MateriaLogic materiaLogic = new MateriaLogic();
-                    materiaLogic.Delete(id);
+                    if (MessageBox.Show("¿Desea eliminar la materia?", "Eliminar materia", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        int id = ((Business.Entities.Materia)dgvMaterias.SelectedRows[0].DataBoundItem).Id;
+                        MateriaLogic materiaLogic = new MateriaLogic();
+                        materiaLogic.Delete(id);
+                    }
                 }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al eliminar la materia. Verifique que no esté siendo usada.");
             }
             Listar();
         }

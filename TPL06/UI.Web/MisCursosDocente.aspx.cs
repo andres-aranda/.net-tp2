@@ -7,6 +7,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+// TODO: boton para agregar docentes a cursos o quitarlos (solo disponibles para admins y no docentes)
+
 namespace Academia.UI.Web
 {
     public partial class MisCursosDocente : System.Web.UI.Page

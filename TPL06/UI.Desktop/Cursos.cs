@@ -63,20 +63,27 @@ namespace Academia.UI.Desktop
 
         private void tsbEliminar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Desea eliminar el curso?", "Borrar Curso", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            try
             {
-                if (this.dgvCursos.SelectedRows.Count > 0)
+                if (MessageBox.Show("¿Desea eliminar el curso?", "Borrar Curso", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    using (EntidadesTP2 db = new EntidadesTP2())
+                    if (this.dgvCursos.SelectedRows.Count > 0)
                     {
-                        int ID = (int)dgvCursos.SelectedRows[0].Cells[0].Value;
-                        cursos curso = db.cursos.Find(ID);
-                        db.cursos.Remove(curso);
-                        db.SaveChanges();
-                    }
+                        using (EntidadesTP2 db = new EntidadesTP2())
+                        {
+                            int ID = (int)dgvCursos.SelectedRows[0].Cells[0].Value;
+                            cursos curso = db.cursos.Find(ID);
+                            db.cursos.Remove(curso);
+                            db.SaveChanges();
+                        }
                     
                       
+                    }
                 }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al eliminar el curso. Verifique que no esté siendo usado.");
             }
             Mapeo();
         }
