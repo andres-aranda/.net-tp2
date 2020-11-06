@@ -1,4 +1,5 @@
-﻿using Business.Entities;
+﻿using Academia.Util;
+using Business.Entities;
 using Business.Logic;
 using System;
 using System.Collections.Generic;
@@ -73,7 +74,7 @@ namespace Academia.UI.Desktop
         public InscripcionesDesktop(int idPersona)
         {
             Per = LogicPer.GetOne(idPersona);
-            
+
             InitializeComponent();
         }
 
@@ -90,21 +91,29 @@ namespace Academia.UI.Desktop
             int idComision = (int)cmbComison.SelectedValue;
             CursoLogic cl = new CursoLogic();
             CursoElegido = cl.GetByComisionMateria(idComision, idMateria);
-            ResumenInscripcion inscripcion = new ResumenInscripcion
+            if (Validations.IsValidInscripcion(Per.Id, CursoElegido.Id))
             {
-                nombreComision = CursoElegido.Comision.DescripcionComision,
-                nombreMateria = CursoElegido.Materia.Descripcion,
-                añoCurso = CursoElegido.AñoCalendario
-            };
-            lblComision.Text = inscripcion.nombreComision;
-            lblMateria.Text = inscripcion.nombreMateria;
-            lblAño.Text = inscripcion.añoCurso.ToString();
-            panelResumen.Visible = true;
-            cl.Inscribir(Per.Id, CursoElegido.Id);
-            MessageBox.Show("Inscripción solicitada con éxito");
-            cmbComison.Enabled = false;
-            cmbMaterias.Enabled = false;
-            btnConfirmar.Enabled = false;
+                ResumenInscripcion inscripcion = new ResumenInscripcion
+                {
+                    nombreComision = CursoElegido.Comision.DescripcionComision,
+                    nombreMateria = CursoElegido.Materia.Descripcion,
+                    añoCurso = CursoElegido.AñoCalendario
+                };
+                lblComision.Text = inscripcion.nombreComision;
+                lblMateria.Text = inscripcion.nombreMateria;
+                lblAño.Text = inscripcion.añoCurso.ToString();
+                panelResumen.Visible = true;
+                cl.Inscribir(Per.Id, CursoElegido.Id);
+                MessageBox.Show("Inscripción solicitada con éxito");
+                cmbComison.Enabled = false;
+                cmbMaterias.Enabled = false;
+                btnConfirmar.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show(Per.Apellido + " " + Per.Nombre + " ya se encuentra inscripto a " + CursoElegido.Materia.Descripcion );
+            }
+
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -116,36 +125,37 @@ namespace Academia.UI.Desktop
         {
             try
             {
-            int idMateria = (int)cmbMaterias.SelectedValue;
-            cmbComison.DataSource = buscarComisiones(idMateria);
-            this.cmbComison.DisplayMember = "DescripcionComision";
-            this.cmbComison.ValueMember = "Id";
-               
+                int idMateria = (int)cmbMaterias.SelectedValue;
+                cmbComison.DataSource = buscarComisiones(idMateria);
+                this.cmbComison.DisplayMember = "DescripcionComision";
+                this.cmbComison.ValueMember = "Id";
+
             }
             catch
             {
 
             }
-       
+
         }
 
         private void cmbComison_SelectedValueChanged(object sender, EventArgs e)
         {
             try
-            { if (cmbComison.SelectedValue != null)
+            {
+                if (cmbComison.SelectedValue != null)
                 {
-             int idMateria = ((Materia)cmbMaterias.SelectedValue).Id;            
-            int idComision = ((Comision)cmbComison.SelectedValue).Id;
-            CursoLogic cl = new CursoLogic();
-            CursoElegido = cl.GetByComisionMateria(idComision, idMateria);
+                    int idMateria = ((Materia)cmbMaterias.SelectedValue).Id;
+                    int idComision = ((Comision)cmbComison.SelectedValue).Id;
+                    CursoLogic cl = new CursoLogic();
+                    CursoElegido = cl.GetByComisionMateria(idComision, idMateria);
                 }
- 
+
             }
             catch
             {
 
             }
-          
+
         }
     }
 }

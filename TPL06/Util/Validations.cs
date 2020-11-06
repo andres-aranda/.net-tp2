@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,6 +10,24 @@ namespace Academia.Util
 {
     public class Validations
     {
+        public static bool IsValidInscripcion(int IdPersona, int IdCurso)
+        {
+            try
+            {
+                using (EntidadesTP2 db = new EntidadesTP2())
+                {
+                    var v = (alumnos_inscripciones)db.alumnos_inscripciones.Where(x => x.id_alumno == IdPersona && x.id_curso == IdCurso).First();
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                return true;
+            }
+
+
+        }
+
         public static bool IsValidEmail(string email)
         {
             try
@@ -20,7 +39,7 @@ namespace Academia.Util
             {
                 return false;
             }
-        }     
+        }
         public static bool IsLegajoUnico(int Legajo)
         {
             try
