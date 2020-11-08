@@ -9,7 +9,6 @@ namespace Business.Entities
     {
         private int _AñoCalendario;
         private int _Cupo;
-        private string _Descripcion;
         private Materia _Materia;
         private Comision _Comision;
 
@@ -35,12 +34,6 @@ namespace Business.Entities
         {
             get => _Cupo;
             set => _Cupo = value;
-        }
-
-        public string Descripcion
-        {
-            get => _Descripcion;
-            set => _Descripcion = value;
         }
     }
 }

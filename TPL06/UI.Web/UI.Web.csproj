@@ -102,7 +102,7 @@
     <Content Include="Especialidades.aspx" />
     <Content Include="EspecialidadForm.aspx" />
     <Content Include="InscripcionCursado.aspx" />
-    <Content Include="master-styles.css" />
+    <Content Include="master-style.css" />
     <Content Include="MateriasDisponibles.aspx" />
     <Content Include="MiInformacion.aspx" />
     <Content Include="MisCursos.aspx" />

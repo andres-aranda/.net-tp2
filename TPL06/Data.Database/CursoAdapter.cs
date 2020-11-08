@@ -158,8 +158,14 @@ namespace Data.Database
                     Curso m = new Curso();
                     m.Id = (int)drCursos["id_curso"];
                     m.Cupo = (int)drCursos["cupo"];
-                    m.Materia.Id = (int)drCursos["id_materia"];
-                    m.Comision.Id = (int)drCursos["id_comision"];
+                    m.Materia = new Materia
+                    {
+                        Id = (int)drCursos["id_materia"]
+                    };
+                    m.Comision = new Comision
+                    {
+                        Id = (int)drCursos["id_comision"]
+                    };
                     m.AñoCalendario = (int)drCursos["anio_calendario"];
                     if (m.Materia.Id != 0){ m.Materia = mat.GetOne(m.Materia.Id); }
                     if (m.Comision.Id != 0){  m.Comision = com.GetOne(m.Comision.Id);}              
