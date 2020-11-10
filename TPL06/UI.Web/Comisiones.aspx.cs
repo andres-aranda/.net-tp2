@@ -7,6 +7,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+// TODO: Manejar borrado con foreign keys en TODOS los ABMs
+// TODO: EDITAR no carga los datos
+// TODO: Mejorar CSS de el ABM
+
 namespace Academia.UI.Web
 {
     public partial class Comisiones : System.Web.UI.Page
@@ -68,8 +72,8 @@ namespace Academia.UI.Web
 
         private void LoadGrid()
         {
-            this.gridViewComisiones.DataSource = this.Logic.GetAll();
-            this.gridViewComisiones.DataBind();
+            this.dgvComisiones.DataSource = this.Logic.GetAll();
+            this.dgvComisiones.DataBind();
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -79,7 +83,7 @@ namespace Academia.UI.Web
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.SelectedID = (int)this.gridViewComisiones.SelectedValue;
+            this.SelectedID = (int)this.dgvComisiones.SelectedValue;
         }
         protected void editarLinkButton_Click(object sender, EventArgs e)
         {

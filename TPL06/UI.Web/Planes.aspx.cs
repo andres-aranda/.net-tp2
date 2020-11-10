@@ -6,6 +6,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Business.Logic;
 
+// TODO: Estilo de tabla
+// TODO: Botones ABM
+
 namespace Academia.UI.Web
 {
     public partial class Planes : System.Web.UI.Page

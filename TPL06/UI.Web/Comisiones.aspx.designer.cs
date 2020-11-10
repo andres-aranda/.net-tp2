@@ -15,31 +15,31 @@ namespace Academia.UI.Web
     {
 
         /// <summary>
-        /// editarLinkButton control.
+        /// lbtEditar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton editarLinkButton;
+        protected global::System.Web.UI.WebControls.LinkButton lbtEditar;
 
         /// <summary>
-        /// EliminarLinkButton control.
+        /// lbtEliminar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton EliminarLinkButton;
+        protected global::System.Web.UI.WebControls.LinkButton lbtEliminar;
 
         /// <summary>
-        /// NuevoLinkButton control.
+        /// lbtNuevo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton NuevoLinkButton;
+        protected global::System.Web.UI.WebControls.LinkButton lbtNuevo;
 
         /// <summary>
         /// gridPanel control.
@@ -51,13 +51,13 @@ namespace Academia.UI.Web
         protected global::System.Web.UI.WebControls.Panel gridPanel;
 
         /// <summary>
-        /// gridViewComisiones control.
+        /// dgvComisiones control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gridViewComisiones;
+        protected global::System.Web.UI.WebControls.GridView dgvComisiones;
 
         /// <summary>
         /// formActionPanel control.

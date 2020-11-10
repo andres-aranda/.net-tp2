@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Business.Logic;
 using Business.Entities;
+// TODO: Mejorar formulario
+// TODO: pageload borra el formulario
 
 namespace Academia.UI.Web
 {

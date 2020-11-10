@@ -7,6 +7,9 @@ using System.Web.UI.WebControls;
 using Business.Entities;
 using Business.Logic;
 
+// TODO: Estilo de tabla
+// TODO: Botones ABM
+
 namespace Academia.UI.Web
 {
     public partial class Especialidades : System.Web.UI.Page

@@ -1,10 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Business.Entities.BusinessEntity" Collapsed="true">
+  <Class Name="Business.Entities.BusinessEntity">
     <Position X="6.25" Y="0.5" Width="1.5" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
+    <NestedTypes>
+      <Enum Name="Business.Entities.BusinessEntity.Estados" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>BusinessEntity.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABCAEAAA=</HashCode>
       <FileName>BusinessEntity.cs</FileName>
@@ -25,7 +32,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Business.Entities.Modulo">
-    <Position X="1.5" Y="1" Width="1.5" />
+    <Position X="2.5" Y="1.5" Width="1.5" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
@@ -50,12 +57,12 @@
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAgAAABQCAAAAAEAAAAhAAAIAEAABEAA4IAGAAAFEg=</HashCode>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAIAAAAAAAAIAECAAAkAg=</HashCode>
       <FileName>Usuario.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Business.Entities.Materia" Collapsed="true">
-    <Position X="1" Y="4.75" Width="1.5" />
+    <Position X="4.25" Y="2.5" Width="1.5" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
@@ -65,23 +72,16 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Business.Entities.Persona">
-    <Position X="3.5" Y="5" Width="1.5" />
-    <NestedTypes>
-      <Enum Name="Business.Entities.Persona.TiposPersonas" Collapsed="true">
-        <TypeIdentifier>
-          <NewMemberFileName>Persona.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Enum>
-    </NestedTypes>
+    <Position X="6.25" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACgAAQCEACAQhEEEAAUAAAAAEAAAAgAABAA=</HashCode>
+      <HashCode>AAAAAAAAACgAAACEACAQhEEAAAUAAAAAEAAAAgAABAA=</HashCode>
       <FileName>Persona.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Business.Entities.Curso">
     <Position X="10" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAABQIAACAIAACAACAAAAAABgAQAAgAEAAAgAAAABAA=</HashCode>
+      <HashCode>AAABQIAACAIAAAAACAAAAAAAgAQAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Curso.cs</FileName>
     </TypeIdentifier>
   </Class>

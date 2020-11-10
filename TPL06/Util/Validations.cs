@@ -56,6 +56,8 @@ namespace Academia.Util
             return false;
         }
 
+
+        // Devuelve un saludo distinto dependiendo de la hora del día
         public static string Greeting()
         {
             TimeSpan now = DateTime.Now.TimeOfDay;
