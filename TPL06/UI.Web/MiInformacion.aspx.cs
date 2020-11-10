@@ -1,4 +1,5 @@
-﻿using Business.Entities;
+﻿using Academia.Data.Database;
+using Business.Entities;
 using Business.Logic;
 using System;
 using System.Collections.Generic;
@@ -12,36 +13,30 @@ namespace Academia.UI.Web
     // TODO: Ver Boton guardar y replicar css del amb en los otros
     public partial class MiInformacion : System.Web.UI.Page
     {
-        private Persona Entity
-        {
-            get;
-            set;
-        }
+        private Persona Entity;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Usuario usuarioLog = (Usuario)Session["usuarioLogueado"];
+            int idPersona = (int)Session["idSeleccionado"];
             PersonaLogic pl = new PersonaLogic();
-            Entity = pl.GetOne(usuarioLog.Persona.Id);
+            Entity = pl.GetOne(idPersona);
             LoadForm();
-            
-
         }
         private void LoadForm()
         {
-            Usuario usuarioLog = (Usuario)Session["usuarioLogueado"];
-            PlanLogic pla = new PlanLogic();
-            Plan plan = pla.GetOne(Entity.IdPlan);
-            this.txtNombre.Text = this.Entity.Nombre;
-            this.txtApellido.Text = this.Entity.Apellido;
-            this.txtEmail.Text = usuarioLog.Persona.Email.ToString();
-            this.txtTelefono.Text = this.Entity.Telefono;
-            this.txtFechaNac.Text = this.Entity.FechaDeNacimiento.ToString();
-            this.txtLegajo.Text = this.Entity.Legajo.ToString();
-            this.txtNombreUsua.Text = usuarioLog.NombreUsuario;
-            this.txtClave.Text = usuarioLog.Clave;
-            this.txtDireccion.Text = this.Entity.Direccion.ToString();
-            this.txtPlan.Text = plan.Descripcion;
+            using (EntidadesTP2 db = new EntidadesTP2())
+            {
+                usuarios u = db.usuarios.Where(x => x.id_persona == Entity.Id).First();
+                this.txtNombre.Text = this.Entity.Nombre;
+                this.txtApellido.Text = this.Entity.Apellido;
+                this.txtEmail.Text = Entity.Email.ToString();
+                this.txtTelefono.Text = this.Entity.Telefono;
+                this.txtFechaNac.Text = this.Entity.FechaDeNacimiento.ToString();
+                this.txtLegajo.Text = this.Entity.Legajo.ToString();
+                this.txtNombreUsua.Text = u.nombre_usuario;
+                this.txtDireccion.Text = this.Entity.Direccion.ToString();
+            }
+            
         }
     }
 }

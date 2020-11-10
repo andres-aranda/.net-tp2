@@ -62,10 +62,7 @@
                 <td __designer:mapid="166">
                     <asp:TextBox ID="txtFechaNac" runat="server" Height="25px"></asp:TextBox>
                 </td>
-                <td __designer:mapid="168">Plan</td>
-                <td __designer:mapid="16a">
-                    <asp:TextBox ID="txtPlan" runat="server"></asp:TextBox>
-                </td>
+
             </tr>
             <tr __designer:mapid="163" class="filas">
                 <td __designer:mapid="164">Legajo</td>
