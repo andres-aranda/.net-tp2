@@ -9,6 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace Academia.UI.Web
 {
+    // TODO: Ver Boton guardar y replicar css del amb en los otros
     public partial class MiInformacion : System.Web.UI.Page
     {
         private Persona Entity

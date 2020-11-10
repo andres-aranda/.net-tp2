@@ -8,7 +8,7 @@ using Business.Logic;
 using Business.Entities;
 using Academia.Data.Database;
 
-// TODO: 
+
 
 namespace Academia.UI.Web
 {

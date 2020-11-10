@@ -11,6 +11,8 @@ namespace Academia.UI.Web
 {
     public partial class InscripcionCursado : System.Web.UI.Page
     {
+        // TODO: Validar incripcion ANDRES
+
         #region DECLARACIONES
         MateriaLogic _logic;
         private MateriaLogic Logic

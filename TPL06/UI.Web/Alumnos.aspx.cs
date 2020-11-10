@@ -11,6 +11,9 @@ namespace Academia.UI.Web
 {
     public partial class Alumnos : System.Web.UI.Page
     {
+
+        // TODO: Agregar funcionalidad de poner nota MARCO
+
         protected void Page_Load(object sender, EventArgs e)
         {
             CursoLogic cl = new CursoLogic();
@@ -30,6 +33,21 @@ namespace Academia.UI.Web
 
             inscripcionesDocente.DataSource = ls;
             inscripcionesDocente.DataBind();
+        }
+
+        protected void NuevoLinkButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void editarLinkButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void EliminarLinkButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
