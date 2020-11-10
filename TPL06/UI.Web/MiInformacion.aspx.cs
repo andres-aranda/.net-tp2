@@ -17,10 +17,19 @@ namespace Academia.UI.Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            int idPersona = (int)Session["idSeleccionado"];
+            int idPersona;
+            if (Session["idSeleccionado"] != null)
+            {
+                idPersona = (int)Session["idSeleccionado"];
+            }
+            else
+            {
+                idPersona = ((Usuario)Session["usuarioLogueado"]).Persona.Id;
+            }
             PersonaLogic pl = new PersonaLogic();
             Entity = pl.GetOne(idPersona);
             LoadForm();
+            Session["idSeleccionado"] = null;
         }
         private void LoadForm()
         {

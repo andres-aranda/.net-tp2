@@ -17,7 +17,6 @@ namespace Academia.UI.Web
         protected void Page_Load(object sender, EventArgs e)
         {
             Usuario usuarioLog = (Usuario)Session["usuarioLogueado"];
-            Session["idSeleccionado"] = usuarioLog.Persona.Id;
             if (usuarioLog == null)
             {
                 Page.Response.Redirect("~/Login.aspx");

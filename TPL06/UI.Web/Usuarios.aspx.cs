@@ -112,7 +112,6 @@ namespace Academia.UI.Web
             Session["idSeleccionada"] = null;
             Session["formMode"] = FormModes.Alta;
             Page.Response.Redirect("~/UsuarioForm.aspx");
-
         }
 
 
