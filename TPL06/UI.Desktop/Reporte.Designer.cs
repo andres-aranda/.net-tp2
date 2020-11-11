@@ -29,23 +29,33 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.materiasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataSetMateriasAcademia = new Academia.UI.Desktop.DataSetMateriasAcademia();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.planesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.DataSetMateriasAcademia = new Academia.UI.Desktop.DataSetMateriasAcademia();
-            this.materiasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.materiasTableAdapter = new Academia.UI.Desktop.DataSetMateriasAcademiaTableAdapters.materiasTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.planesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetMateriasAcademia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.materiasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetMateriasAcademia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.planesBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // materiasBindingSource
+            // 
+            this.materiasBindingSource.DataMember = "materias";
+            this.materiasBindingSource.DataSource = this.DataSetMateriasAcademia;
+            // 
+            // DataSetMateriasAcademia
+            // 
+            this.DataSetMateriasAcademia.DataSetName = "DataSetMateriasAcademia";
+            this.DataSetMateriasAcademia.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "ReporteDS";
-            reportDataSource1.Value = this.materiasBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource2.Name = "ReporteDS";
+            reportDataSource2.Value = this.materiasBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Academia.UI.Desktop.Report1.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
@@ -58,16 +68,6 @@
             this.planesBindingSource.DataMember = "materias";
             this.planesBindingSource.DataSource = typeof(Academia.Data.Database.planes);
             // 
-            // DataSetMateriasAcademia
-            // 
-            this.DataSetMateriasAcademia.DataSetName = "DataSetMateriasAcademia";
-            this.DataSetMateriasAcademia.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // materiasBindingSource
-            // 
-            this.materiasBindingSource.DataMember = "materias";
-            this.materiasBindingSource.DataSource = this.DataSetMateriasAcademia;
-            // 
             // materiasTableAdapter
             // 
             this.materiasTableAdapter.ClearBeforeFill = true;
@@ -79,11 +79,12 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
             this.Name = "Reporte";
-            this.Text = "Reporte";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Materias";
             this.Load += new System.EventHandler(this.Reporte_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.planesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetMateriasAcademia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.materiasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetMateriasAcademia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.planesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

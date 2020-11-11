@@ -31,6 +31,9 @@
             this.tscUsuarios = new System.Windows.Forms.ToolStripContainer();
             this.tlModulos = new System.Windows.Forms.TableLayoutPanel();
             this.dgvPlanes = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdEspecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.tsModulos = new System.Windows.Forms.ToolStrip();
@@ -38,9 +41,6 @@
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdEspecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tscUsuarios.ContentPanel.SuspendLayout();
             this.tscUsuarios.TopToolStripPanel.SuspendLayout();
             this.tscUsuarios.SuspendLayout();
@@ -105,6 +105,31 @@
             this.dgvPlanes.Size = new System.Drawing.Size(461, 184);
             this.dgvPlanes.TabIndex = 0;
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "Id";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // descripcion
+            // 
+            this.descripcion.DataPropertyName = "Descripcion";
+            this.descripcion.HeaderText = "Descripcion";
+            this.descripcion.MinimumWidth = 6;
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            this.descripcion.Width = 125;
+            // 
+            // IdEspecialidad
+            // 
+            this.IdEspecialidad.DataPropertyName = "Especialidad";
+            this.IdEspecialidad.HeaderText = "Especialidad";
+            this.IdEspecialidad.MinimumWidth = 6;
+            this.IdEspecialidad.Name = "IdEspecialidad";
+            this.IdEspecialidad.ReadOnly = true;
+            this.IdEspecialidad.Width = 125;
+            // 
             // btnActualizar
             // 
             this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -136,7 +161,7 @@
             this.tsbEliminar});
             this.tsModulos.Location = new System.Drawing.Point(4, 0);
             this.tsModulos.Name = "tsModulos";
-            this.tsModulos.Size = new System.Drawing.Size(115, 27);
+            this.tsModulos.Size = new System.Drawing.Size(84, 27);
             this.tsModulos.TabIndex = 0;
             // 
             // tsbNuevo
@@ -176,31 +201,6 @@
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(396, 246);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "Id";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // descripcion
-            // 
-            this.descripcion.DataPropertyName = "Descripcion";
-            this.descripcion.HeaderText = "Descripcion";
-            this.descripcion.MinimumWidth = 6;
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
-            this.descripcion.Width = 125;
-            // 
-            // IdEspecialidad
-            // 
-            this.IdEspecialidad.DataPropertyName = "Especialidad";
-            this.IdEspecialidad.HeaderText = "Especialidad";
-            this.IdEspecialidad.MinimumWidth = 6;
-            this.IdEspecialidad.Name = "IdEspecialidad";
-            this.IdEspecialidad.ReadOnly = true;
-            this.IdEspecialidad.Width = 125;
             // 
             // Planes
             // 

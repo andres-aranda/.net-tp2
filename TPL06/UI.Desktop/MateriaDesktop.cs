@@ -39,7 +39,6 @@ namespace Academia.UI.Desktop
 
         public override void MapearDeDatos()
         {
-            txtId.Text = Materia.Id.ToString();
             txtNombre.Text = Materia.Descripcion;
             txtHsSemanales.Text = Materia.HsSemanales.ToString();
             txtHsTotales.Text = Materia.HsTotales.ToString();
@@ -86,17 +85,21 @@ namespace Academia.UI.Desktop
 
         public override void MapearADatos()
         {
-            Materia = new Materia();
-            Materia.Id = 0;
-            Materia.Descripcion = txtNombre.Text;
-            Materia.HsSemanales = int.Parse(txtHsSemanales.Text);
-            Materia.HsTotales = int.Parse(txtHsTotales.Text);
-            Materia.IdPlan = (int)cboIdPlan.SelectedValue;
             if (modoForm == ModoForm.Alta)
+            {
+                Materia = new Materia();
+                Materia.Descripcion = txtNombre.Text;
+                Materia.HsSemanales = int.Parse(txtHsSemanales.Text);
+                Materia.HsTotales = int.Parse(txtHsTotales.Text);
+                Materia.IdPlan = (int)cboIdPlan.SelectedValue;
                 Materia.State = Materia.Estados.New;
+            }
             else if (modoForm == ModoForm.Modificacion)
             {
-                Materia.Id = int.Parse(txtId.Text);
+                Materia.Descripcion = txtNombre.Text;
+                Materia.HsSemanales = int.Parse(txtHsSemanales.Text);
+                Materia.HsTotales = int.Parse(txtHsTotales.Text);
+                Materia.IdPlan = (int)cboIdPlan.SelectedValue;
                 Materia.State = Materia.Estados.Modified;
             }
         }

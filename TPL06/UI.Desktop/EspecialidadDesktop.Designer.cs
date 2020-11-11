@@ -33,7 +33,6 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -45,23 +44,18 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.Controls.Add(this.btnAceptar, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label7, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtDescripcion, 3, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 92);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 106F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(462, 149);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(0, 106);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(3, 46);
+            this.btnAceptar.Location = new System.Drawing.Point(196, 41);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 0;
@@ -71,7 +65,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(84, 46);
+            this.btnCancelar.Location = new System.Drawing.Point(115, 41);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 1;
@@ -82,37 +76,41 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label7.Location = new System.Drawing.Point(4, 25);
+            this.label7.Location = new System.Drawing.Point(13, 15);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 13);
-            this.label7.TabIndex = 16;
+            this.label7.Size = new System.Drawing.Size(63, 13);
+            this.label7.TabIndex = 18;
             this.label7.Text = "Descripción";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txtDescripcion.Location = new System.Drawing.Point(84, 20);
+            this.txtDescripcion.Location = new System.Drawing.Point(83, 12);
             this.txtDescripcion.MaxLength = 600;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(375, 20);
-            this.txtDescripcion.TabIndex = 3;
+            this.txtDescripcion.Size = new System.Drawing.Size(188, 20);
+            this.txtDescripcion.TabIndex = 17;
             this.txtDescripcion.WordWrap = false;
             // 
             // EspecialidadDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(462, 149);
+            this.ClientSize = new System.Drawing.Size(288, 76);
+            this.Controls.Add(this.btnAceptar);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "EspecialidadDesktop";
             this.ShowIcon = false;
-            this.Text = "EspecialidadDesktop";
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Especialidad";
             this.ResumeLayout(false);
             this.PerformLayout();
 
