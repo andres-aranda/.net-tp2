@@ -238,7 +238,7 @@ input[type="text"], input[type="password"] ,select{
                 <div id="gestionDocente" runat="server">
                     <h3>Gestión docente</h3>
                     <ul>
-                        <li><a href="">Cursos</a></li>
+                        <li><a href="IngresoLegajoDocente.aspx">Cursos</a></li>
                     </ul>
                 </div>
                 <div id="docente" runat="server">
@@ -258,7 +258,7 @@ input[type="text"], input[type="password"] ,select{
                 <div id="gestionAlumno" runat="server">
                     <h3>Gestion Alumno</h3>
                     <ul>
-                        <li><a href="">Inscripciones</a></li>
+                        <li><a href="IngresoLegajoAlumno.aspx">Inscripciones</a></li>
                     </ul>
                 </div>
                 <hr>

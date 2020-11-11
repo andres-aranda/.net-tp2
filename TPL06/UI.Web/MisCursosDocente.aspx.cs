@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-// TODO: boton para agregar docentes a cursos o quitarlos (solo disponibles para admins y no docentes)
+// TODO: boton para agregar docentes a cursos o quitarlos (solo disponibles para admins y no docentes) BRAIAN
 
 namespace Academia.UI.Web
 {
@@ -26,11 +26,12 @@ namespace Academia.UI.Web
             {
                 if (!(m.Descripcion == "Docente" || m.Descripcion == "Administrador"))
                     Page.Response.Redirect("~/PaginaNoPermitida.aspx");
-           
-            
             }
-            
-            cursosDocenteGV.DataSource = cl.GetCursosDocente(usuarioLog.Persona.Id);
+
+            if (Session["docente"] == null)
+                cursosDocenteGV.DataSource = cl.GetCursosDocente(usuarioLog.Persona.Id);
+            else
+                cursosDocenteGV.DataSource = cl.GetCursosDocente(((Persona)Session["docente"]).Id);
             cursosDocenteGV.DataBind();
         }
     }
