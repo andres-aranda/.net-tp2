@@ -29,10 +29,8 @@ namespace Academia.UI.Desktop
 
         private void Listar()
         {
-
             PersonaLogic pl = new PersonaLogic();
             dgvPersonas.DataSource = pl.GetAll();
-
         }
 
         private void tsbNuevo_Click(object sender, EventArgs e)
@@ -41,7 +39,7 @@ namespace Academia.UI.Desktop
             pd.ShowDialog();
             Listar();
         }
-        
+
 
         private void tsbEliminar_Click(object sender, EventArgs e)
         {
@@ -74,28 +72,26 @@ namespace Academia.UI.Desktop
                                 db.SaveChanges();
                             }
                         }
-                        
                     }
-                    
                 }
             }
             Listar();
-                    }
+        }
 
         private void tsbEditar_Click(object sender, EventArgs e)
         {
             try
             {
-            int ID = (int)this.dgvPersonas.SelectedRows[0].Cells[0].Value;
-            PersonaDesktop pd = new PersonaDesktop(ID, true);
-            pd.ShowDialog();
-            Listar();
+                int ID = (int)this.dgvPersonas.SelectedRows[0].Cells[0].Value;
+                PersonaDesktop pd = new PersonaDesktop(ID, true);
+                pd.ShowDialog();
+                Listar();
             }
             catch
             {
 
             }
-           
+
         }
     }
 }
