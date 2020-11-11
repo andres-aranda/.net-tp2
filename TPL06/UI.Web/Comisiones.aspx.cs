@@ -7,9 +7,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-// TODO: Manejar borrado con foreign keys en TODOS los ABMs
-// TODO: EDITAR no carga los datos
-// TODO: Mejorar CSS de el ABM
+// TODO: Manejar borrado con foreign keys en TODOS los ABMs   ANDRES
+// TODO: EDITAR no carga los datos  ANDREDS     
+// TODO: Mejorar CSS de el ABM ANDRES
 
 namespace Academia.UI.Web
 {
