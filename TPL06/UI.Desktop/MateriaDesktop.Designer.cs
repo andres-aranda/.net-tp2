@@ -114,6 +114,7 @@
             this.cboIdPlan.Name = "cboIdPlan";
             this.cboIdPlan.Size = new System.Drawing.Size(108, 21);
             this.cboIdPlan.TabIndex = 8;
+            this.cboIdPlan.SelectedIndexChanged += new System.EventHandler(this.cboIdPlan_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -163,7 +164,7 @@
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MateriaDesktop";
             this.ShowIcon = false;
             this.Text = "Materia";

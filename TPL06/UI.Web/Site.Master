@@ -134,11 +134,10 @@ h3 {
         cursor: pointer;
     }
 
-input[type="text"], input[type="password"] {
-    border-radius: .1rem !important;
-    border: solid #f0f0f0 1px;
+input[type="text"], input[type="password"] ,select{
+    border-radius: 5px !important;
+    border: solid #696675 1px;
     background-color: transparent;
-    height: 100%;
     color: black;
     font-family: 'Noto Sans JP', sans-serif;
 }

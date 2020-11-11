@@ -4,11 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 using Business.Entities;
 using Business.Logic;
-
-// TODO: pageload borra el formulario  ANDRES
-// TODO: Arreglar ABM    ANDRES
 
 namespace Academia.UI.Web
 {
@@ -115,7 +113,20 @@ namespace Academia.UI.Web
 
         private void DeleteEntity(int id)
         {
-            this.Logic.Delete(id);
+            try
+            {
+
+                if (MessageBox.Show("¿Desea eliminar la materia?", "Eliminar materia", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    this.Logic.Delete(id);
+                    MessageBox.Show("La materia fue furrada conexito");
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al eliminar la materia. Verifique que no esté siendo usada.");
+            }
         }
         protected void NuevoLinkButton_Click(object sender, EventArgs e)
         {
