@@ -23,7 +23,7 @@ namespace Academia.UI.Desktop
         private void Personas_Load(object sender, EventArgs e)
         {
             dgvPersonas.AutoGenerateColumns = false;
-            //dgvPersonas.Columns[0].Visible = false;
+            dgvPersonas.Columns[0].Visible = false;
             Listar();
         }
 
@@ -45,9 +45,9 @@ namespace Academia.UI.Desktop
 
         private void tsbEliminar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Desea eliminar la persona?", "Borrar Persona", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (this.dgvPersonas.SelectedRows.Count > 0)
             {
-                if (this.dgvPersonas.SelectedRows.Count > 0)
+                if (MessageBox.Show("¿Desea eliminar la persona?", "Borrar Persona", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     using (EntidadesTP2 db = new EntidadesTP2())
                     {
