@@ -126,5 +126,10 @@ namespace Academia.UI.Desktop
         {
 
         }
+
+        private void cboIdPlan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
