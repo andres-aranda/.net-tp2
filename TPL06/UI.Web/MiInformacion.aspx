@@ -24,7 +24,7 @@
                     <asp:Label ID="Label3" runat="server" Text="Apellido"></asp:Label>
                 </td>
                 <td class="auto-style1">
-                    <asp:TextBox ID="txtApellido" runat="server" Height="25px"></asp:TextBox>
+                    <asp:TextBox ID="txtApellido" runat="server"></asp:TextBox>
                 </td>
                 <td class="auto-style1">
                     <asp:Label ID="Label4" runat="server" Text="Clave"></asp:Label>
@@ -62,6 +62,11 @@
                 <td>
                     <asp:TextBox ID="txtFechaNac" runat="server" Height="25px" Enabled="False"></asp:TextBox>
                 </td>
+                <td>Plan</td>
+                <td>
+                    <asp:DropDownList ID="ddlPlanes" runat="server" Enabled="False">
+                    </asp:DropDownList>
+                </td>
 
             </tr>
             <tr class="filas">
@@ -74,7 +79,7 @@
             </tr>
         </table>
         <div style="margin: 15px;">
-            <asp:LinkButton ID="NuevoLinkButton" runat="server" CssClass="btn">Nuevo</asp:LinkButton>
+            <asp:LinkButton ID="NuevoLinkButton" runat="server" CssClass="btn" OnClick="NuevoLinkButton_Click1">Nuevo</asp:LinkButton>
 
         </div>
     </div>

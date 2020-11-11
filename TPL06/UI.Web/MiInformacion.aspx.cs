@@ -3,6 +3,7 @@ using Business.Entities;
 using Business.Logic;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core.Common.EntitySql;
 using System.Globalization;
 using System.Linq;
 using System.Web;
@@ -16,27 +17,41 @@ namespace Academia.UI.Web
     {
         private Persona persona;
         private usuarios usuario;
-        private int modoForm; // 0: Nuevo, 1: Editar
 
         PersonaLogic pl = new PersonaLogic();
 
         protected void Page_Load(object sender, EventArgs e)
         {
             int idPersona;
-            // modoForm = (int)Session["modoForm"];
-            if (Session["idSeleccionado"] != null)
-            {
-                idPersona = (int)Session["idSeleccionado"];
-            }
-            else
-            {
-                idPersona = ((Usuario)Session["usuarioLogueado"]).Persona.Id;
-            }
-            
-            persona = pl.GetOne(idPersona);
             if (!Page.IsPostBack)
             {
-                LoadForm();
+                CargarPlanes();
+                if (Session["idSeleccionado"] != null && (int)Session["idSeleccionado"] != -1)
+                {
+                    idPersona = (int)Session["idSeleccionado"];
+                    Session["esNuevo"] = false;
+                    persona = pl.GetOne(idPersona);
+                    LoadForm();
+                }
+                else if (Session["idSeleccionado"] == null)
+                {
+                    idPersona = ((Usuario)Session["usuarioLogueado"]).Persona.Id;
+                    Session["esNuevo"] = false;
+                    persona = pl.GetOne(idPersona);
+                    LoadForm();
+                }
+                else
+                {
+                    txtFechaNac.Enabled = true;
+                    txtLegajo.Enabled = true;
+                    ddlPlanes.Enabled = true;
+                    txtNombreUsua.Text = "No asignado.";
+                    txtClave.Enabled = false;
+                    repetirClave.Enabled = false;
+                    txtClave.Text = "No asignado.";
+                    repetirClave.Text = "No asignado.";
+                    Session["esNuevo"] = true;
+                }
             }
             Session["idSeleccionado"] = null;
         }
@@ -54,21 +69,52 @@ namespace Academia.UI.Web
                 this.txtLegajo.Text = this.persona.Legajo.ToString();
                 this.txtNombreUsua.Text = usuario.nombre_usuario;
                 this.txtDireccion.Text = this.persona.Direccion.ToString();
+                ddlPlanes.SelectedValue = persona.IdPlan.ToString();
             }
             
         }
 
-        protected void NuevoLinkButton_Click(object sender, EventArgs e)
+        private void CargarPlanes()
         {
             using (EntidadesTP2 db = new EntidadesTP2())
             {
-                personas oPersona = db.personas.Find(persona.Id);
-                oPersona.nombre = txtNombre.Text;
-                oPersona.apellido = txtApellido.Text;
-                oPersona.email = txtEmail.Text;
-                oPersona.telefono = txtTelefono.Text;
-                oPersona.fecha_nac = DateTime.Parse(txtFechaNac.Text);
-                oPersona.direccion = txtDireccion.Text;
+                List<planes> planes = db.planes.ToList();
+                ddlPlanes.DataSource = planes;
+                ddlPlanes.DataValueField = "id_plan";
+                ddlPlanes.DataTextField = "desc_plan";
+                ddlPlanes.DataBind();
+            }
+        }
+        protected void NuevoLinkButton_Click1(object sender, EventArgs e)
+        {
+            using (EntidadesTP2 db = new EntidadesTP2())
+            {
+                personas oPersona;
+                if ((bool)Session["esNuevo"])
+                {
+                    oPersona = new personas
+                    {
+                        apellido = txtApellido.Text,
+                        nombre = txtNombre.Text,
+                        email = txtEmail.Text,
+                        telefono = txtTelefono.Text,
+                        fecha_nac = DateTime.Parse(txtFechaNac.Text),
+                        legajo = int.Parse(txtLegajo.Text),
+                        direccion = txtDireccion.Text,
+                        id_plan = int.Parse(ddlPlanes.SelectedValue)
+                    };
+                    db.personas.Add(oPersona);
+                }
+                else
+                {
+                    oPersona = db.personas.Find(persona.Id);
+                    oPersona.nombre = txtNombre.Text;
+                    oPersona.apellido = txtApellido.Text;
+                    oPersona.email = txtEmail.Text;
+                    oPersona.telefono = txtTelefono.Text;
+                    oPersona.direccion = txtDireccion.Text;
+                }
+                db.SaveChanges();
             }
         }
     }

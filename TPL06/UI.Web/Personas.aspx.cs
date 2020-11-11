@@ -33,6 +33,7 @@ namespace Academia.UI.Web
 
         protected void NuevoLinkButton_Click(object sender, EventArgs e)
         {
+            Session["idSeleccionado"] = -1;
             Page.Response.Redirect("~/MiInformacion.aspx");
         }
     }
