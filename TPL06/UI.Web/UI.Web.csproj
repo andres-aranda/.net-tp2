@@ -102,6 +102,8 @@
     <Content Include="CursosDocente.aspx" />
     <Content Include="Especialidades.aspx" />
     <Content Include="EspecialidadForm.aspx" />
+    <Content Include="IngresoLegajoAlumno.aspx" />
+    <Content Include="IngresoLegajoDocente.aspx" />
     <Content Include="InscripcionCursado.aspx" />
     <Content Include="master-style.css" />
     <Content Include="MateriasDisponibles.aspx" />
@@ -208,6 +210,20 @@
     </Compile>
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IngresoLegajoAlumno.aspx.cs">
+      <DependentUpon>IngresoLegajoAlumno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IngresoLegajoAlumno.aspx.designer.cs">
+      <DependentUpon>IngresoLegajoAlumno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IngresoLegajoDocente.aspx.cs">
+      <DependentUpon>IngresoLegajoDocente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IngresoLegajoDocente.aspx.designer.cs">
+      <DependentUpon>IngresoLegajoDocente.aspx</DependentUpon>
     </Compile>
     <Compile Include="InscripcionCursado.aspx.cs">
       <DependentUpon>InscripcionCursado.aspx</DependentUpon>

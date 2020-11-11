@@ -27,7 +27,13 @@ namespace Academia.UI.Web
                 if (!(m.Descripcion == "Alumno" || m.Descripcion == "Administrador"))
                     Page.Response.Redirect("~/PaginaNoPermitida.aspx");
             }
-            int idPersona = usuario.Persona.Id;
+
+            int idPersona;
+            if (Session["alumno"] == null)
+                idPersona = usuario.Persona.Id;
+            else
+                idPersona = ((Persona)Session["alumno"]).Id;
+
             using (EntidadesTP2 db = new EntidadesTP2())
             {
                 var inscripciones = from pe in db.personas
@@ -41,11 +47,6 @@ namespace Academia.UI.Web
                 inscripcionesAlu.DataSource = inscripciones.ToList();
                 inscripcionesAlu.DataBind();
             }
-
-
-          
-       
-         
         }
     }
 }
