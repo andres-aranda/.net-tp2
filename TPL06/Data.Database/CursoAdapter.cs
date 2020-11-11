@@ -95,9 +95,15 @@ namespace Data.Database
                 {
                     curso.Id = (int)dr["id_curso"];
                     curso.Cupo = (int)dr["cupo"];
-                    curso.Materia.Id = (int)dr["id_materia"];
-                    curso.Comision.Id = (int)dr["id_comision"];
                     curso.AñoCalendario = (int)dr["anio_calendario"];
+                    curso.Materia = new Materia
+                    {
+                        Id = (int)dr["id_materia"]
+                    };
+                    curso.Comision = new Comision
+                    {
+                        Id = (int)dr["id_comision"]
+                    };
                 }
                 dr.Close();
             }

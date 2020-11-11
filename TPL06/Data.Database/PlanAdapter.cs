@@ -4,6 +4,8 @@ using System.Text;
 using Business.Entities;
 using System.Data;
 using System.Data.SqlClient;
+using Academia.Data.Database;
+using System.Linq;
 
 namespace Data.Database
 {
@@ -38,6 +40,21 @@ namespace Data.Database
             }
 
             return planes;
+        }
+
+        public Plan GetByIdMateria(int idMateria)
+        {
+            Plan p = new Plan();
+            using (EntidadesTP2 db = new EntidadesTP2())
+            {
+                planes oPlan = (from pl in db.planes
+                                join m in db.materias on pl.id_plan equals m.id_plan
+                                where m.id_materia == idMateria
+                                select pl).First();
+                p.Id = oPlan.id_plan;
+                p.Descripcion = oPlan.desc_plan;
+            }
+            return p;
         }
 
         public Plan GetOne(int Id)

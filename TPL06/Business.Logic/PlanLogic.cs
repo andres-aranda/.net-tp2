@@ -44,5 +44,10 @@ namespace Business.Logic
                 throw e;
             }
         }
+
+        public Plan GetByIdMateria(int id)
+        {
+            return PlanData.GetByIdMateria(id);
+        }
     }
 }
