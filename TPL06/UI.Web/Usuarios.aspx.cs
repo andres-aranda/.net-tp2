@@ -75,6 +75,14 @@ namespace Academia.UI.Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Usuario usuarioLog = (Usuario)Session["usuarioLogueado"];
+
+            foreach (Modulo m in usuarioLog.Modulo)
+            {
+                if (!(m.Descripcion == "NoDocente" || m.Descripcion == "Administrador"))
+                    Page.Response.Redirect("~/PaginaNoPermitida.aspx");
+            }
+          
             LoadGrid();
         }
 
