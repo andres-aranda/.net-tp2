@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Business.Entities;
 using System.Data;
+using Academia.Data.Database;
 
 namespace Data.Database
 {
@@ -135,6 +136,37 @@ namespace Data.Database
                 CloseConnection();
             }
         }
+
+        public List<Comision> GetByPlan(int idPlan)
+        {
+            List<Comision> comisiones = new List<Comision>();
+            try
+            {
+                using (EntidadesTP2 db = new EntidadesTP2())
+                {
+                    List<comisiones> oComisiones = (from c in db.comisiones
+                                                    where c.id_plan == idPlan
+                                                    select c).ToList();
+                    foreach (comisiones com in oComisiones)
+                    {
+                        Comision c = new Comision
+                        {
+                            Id = com.id_plan,
+                            DescripcionComision = com.desc_comision,
+                            AñoEspecialidad = com.anio_especialidad,
+                            IdPlan = com.id_plan
+                        };
+                        comisiones.Add(c);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            return comisiones;
+        }
+
         public List<Comision> GetByMateria(int IdMateria)
         {
             List<Comision> comisiones = new List<Comision>();

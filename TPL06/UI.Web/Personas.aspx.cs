@@ -6,7 +6,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-// TODO: Editar, eliminar, nuevo BRAIAN
 
 namespace Academia.UI.Web
 {
@@ -20,18 +19,18 @@ namespace Academia.UI.Web
             dgvPersonas.DataBind();
         }
 
-        protected void editarLinkButton_Click(object sender, EventArgs e)
+        protected void btnEditar_Click(object sender, EventArgs e)
         {
             Session["idSeleccionado"] = dgvPersonas.SelectedValue;
             Page.Response.Redirect("~/MiInformacion.aspx");
         }
 
-        protected void EliminarLinkButton_Click(object sender, EventArgs e)
+        protected void btnEliminar_Click(object sender, EventArgs e)
         {
             pl.Delete((int)dgvPersonas.SelectedValue);
         }
 
-        protected void NuevoLinkButton_Click(object sender, EventArgs e)
+        protected void btnNuevo_Click(object sender, EventArgs e)
         {
             Session["idSeleccionado"] = -1;
             Page.Response.Redirect("~/MiInformacion.aspx");

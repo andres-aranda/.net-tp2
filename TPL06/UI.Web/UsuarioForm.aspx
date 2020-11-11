@@ -2,56 +2,56 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="PageContent" runat="server">
-    <table style="width:100%;" __designer:mapid="150">
-        <tr __designer:mapid="151">
-            <td __designer:mapid="152">
+    <table style="width:100%;">
+        <tr>
+            <td>
                 <asp:Label ID="nombreLabel" runat="server" Text="Nombre"></asp:Label>
             </td>
-            <td __designer:mapid="154">
+            <td>
                 <asp:TextBox ID="nombreTextBox" runat="server"></asp:TextBox>
             </td>
-            <td __designer:mapid="156">
+            <td>
                 &nbsp;<asp:Label ID="nombreUsuarioLabel" runat="server" Text="Nombre de usuario"></asp:Label>
             </td>
-            <td __designer:mapid="158">
+            <td>
                 <asp:TextBox ID="nombreUsuarioTextBox" runat="server"></asp:TextBox>
             </td>
         </tr>
-        <tr __designer:mapid="15a">
-            <td class="auto-style1" __designer:mapid="15b">
+        <tr>
+            <td class="auto-style1">
                 <asp:Label ID="apellidoLabel" runat="server" Text="Apellido"></asp:Label>
             </td>
-            <td class="auto-style1" __designer:mapid="15d">
+            <td class="auto-style1">
                 <asp:TextBox ID="apellidoTextBox" runat="server"></asp:TextBox>
             </td>
-            <td class="auto-style1" __designer:mapid="15f">
+            <td class="auto-style1">
                 <asp:Label ID="claveLabel" runat="server" Text="Clave"></asp:Label>
             </td>
-            <td class="auto-style1" __designer:mapid="161">
+            <td class="auto-style1">
                 <asp:TextBox ID="claveTextBox" runat="server" TextMode="Password"></asp:TextBox>
             </td>
         </tr>
-        <tr __designer:mapid="163">
-            <td __designer:mapid="164">
+        <tr>
+            <td>
                 <asp:Label ID="emailLabel" runat="server" Text="Email"></asp:Label>
             </td>
-            <td __designer:mapid="166">
+            <td>
                 <asp:TextBox ID="emailTextBox" runat="server"></asp:TextBox>
             </td>
-            <td __designer:mapid="168">
+            <td>
                 <asp:Label ID="repetirClaveLabel" runat="server" Text="Repetir clave"></asp:Label>
             </td>
-            <td __designer:mapid="16a">
+            <td>
                 <asp:TextBox ID="repetirClaveTextBox" runat="server" TextMode="Password"></asp:TextBox>
             </td>
         </tr>
-        <tr __designer:mapid="16c">
-            <td __designer:mapid="16d">
+        <tr>
+            <td>
                 <asp:CheckBox ID="habilitadoCheckBox" runat="server" Text="Habilitado" TextAlign="Left" BorderColor="Black" ForeColor="Black" />
             </td>
-            <td __designer:mapid="16f">&nbsp;</td>
-            <td __designer:mapid="170">&nbsp;</td>
-            <td __designer:mapid="171">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
         </tr>
     </table>
     

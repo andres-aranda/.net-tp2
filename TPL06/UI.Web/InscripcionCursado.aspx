@@ -13,7 +13,6 @@
             Seleccione Materia:&nbsp;
         <asp:DropDownList ID="cmbMateria" runat="server" DataTextField="Descripcion" DataValueField="Id" AutoPostBack="True" OnSelectedIndexChanged="cmbMateria_SelectedIndexChanged">
         </asp:DropDownList>
-            <asp:Button ID="Button1" runat="server" OnClick="cmbMateria_SelectedIndexChanged" Text="Refresh" />
         </p>
     </div>
     <div id="seleccionComision">
