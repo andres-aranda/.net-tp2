@@ -6,7 +6,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Business.Logic;
 using Business.Entities;
-// TODO: pageload borra el formulario ANDRES
+using System.Windows.Forms;
+using Academia.Util;
+// TODO: Ver porque no guarda en base d edatos 
 
 namespace Academia.UI.Web
 {
@@ -44,14 +46,26 @@ namespace Academia.UI.Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
-             //   int variable = (int)Session["idSeleccionado"];
+            Usuario usuarioLog = (Usuario)Session["usuarioLogueado"];
+
+            foreach (Modulo m in usuarioLog.Modulo)
+            {
+                if (!(m.Descripcion == "NoDocente" || m.Descripcion == "Administrador"))
+                    Page.Response.Redirect("~/PaginaNoPermitida.aspx");
+            }
+            if (!IsPostBack)
+            {
+               
+
                 if (Session["formMode"] != null)
                 {
-                    FormMode = (FormModes)Session["formMode"];
                     if (Session["idSeleccionada"] != null)
                         LoadForm((int)Session["idSeleccionada"]);
+
+                    FormMode = (FormModes)Session["formMode"];
                 }
-           
+            }
+
         }
 
         private void LoadForm(int id)
@@ -84,7 +98,11 @@ namespace Academia.UI.Web
 
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
-            switch (this.FormMode)
+            try
+            {
+                if(Validations.IsClaveValida(repetirClaveTextBox.Text, claveTextBox.Text))
+                {
+    switch (this.FormMode)
             {
                 case FormModes.Alta:
                     this.Entity = new Usuario();
@@ -100,7 +118,16 @@ namespace Academia.UI.Web
                     this.SaveEntity(this.Entity);
                     break;
             }
-        }
+            MessageBox.Show("Datos guardados");
+                }else
+                    MessageBox.Show("Las claves no coinciden");
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Campos invalidos");
+            }
+}
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {

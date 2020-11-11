@@ -27,7 +27,10 @@ namespace Academia.Util
 
 
         }
-
+        public static bool IsClaveValida(string a , string b)
+        {
+            return a == b;
+        }
         public static bool IsValidEmail(string email)
         {
             try
@@ -56,7 +59,7 @@ namespace Academia.Util
             return false;
         }
 
-
+        
         // Devuelve un saludo distinto dependiendo de la hora del día
         public static string Greeting()
         {

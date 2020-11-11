@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 
 namespace Academia.UI.Web
 {
@@ -30,9 +31,12 @@ namespace Academia.UI.Web
             int idPersona = usuario.Persona.Id;
 
             List<Inscripcion> ls = cl.GetMateriasInscripcionesDocente(idPersona);
-
             inscripcionesDocente.DataSource = ls;
             inscripcionesDocente.DataBind();
+            if (inscripcionesDocente == null)
+            {
+                MessageBox.Show("No posee inscripciones de alumnos");
+            }
         }
 
         protected void NuevoLinkButton_Click(object sender, EventArgs e)

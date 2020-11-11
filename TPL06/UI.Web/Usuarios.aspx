@@ -9,8 +9,7 @@
         </div>
         <asp:Panel ID="gridPanel" runat="server">
             <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="GridView1_SelectedIndexChanged"
-                SelectedRowStyle-BackColor="Black"
-                SelectedRowStyle-ForeColor="White"
+             
                 DataKeyNames="ID" CssClass="tabla">
                 <Columns>
                     <asp:BoundField HeaderText="Nombre" DataField="Persona.Nombre" />
@@ -21,6 +20,7 @@
                 </Columns>
                 <HeaderStyle CssClass="cabecera" />
                 <RowStyle CssClass="filas" />
+                <SelectedRowStyle CssClass="filaSeleccionada" />
             </asp:GridView>
         </asp:Panel>
     </div>
