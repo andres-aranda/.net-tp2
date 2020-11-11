@@ -1,4 +1,5 @@
-﻿using Business.Entities;
+﻿using Academia.Util;
+using Business.Entities;
 using Business.Logic;
 using System;
 using System.Collections.Generic;
@@ -6,12 +7,12 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 
 namespace Academia.UI.Web
 {
     public partial class InscripcionCursado : System.Web.UI.Page
     {
-        // TODO: Validar incripcion ANDRES
 
         #region DECLARACIONES
         MateriaLogic _logic;
@@ -100,19 +101,25 @@ namespace Academia.UI.Web
             int idComision = int.Parse(cmbComision.SelectedValue);
             CursoLogic cl = new CursoLogic();
             CursoElegido = cl.GetByComisionMateria(idComision, idMateria);
-            ResumenInscripcion inscripcion = new ResumenInscripcion
-            {
-                nombreComision = CursoElegido.Comision.DescripcionComision,
-                nombreMateria = CursoElegido.Materia.Descripcion,
-                añoCurso = CursoElegido.AñoCalendario
-            };
-            ComisionLabel.Text = inscripcion.nombreComision;
-            MateriaLabel.Text = inscripcion.nombreMateria;
-            AñoLabel.Text = inscripcion.añoCurso.ToString();
-            tablaResumen.Visible = true;
             Usuario u = (Usuario)Session["usuarioLogueado"];
-            cl.Inscribir(u.Persona.Id, CursoElegido.Id);
-
+            if (Validations.IsValidInscripcion(u.Persona.Id, CursoElegido.Id))
+            {
+                ResumenInscripcion inscripcion = new ResumenInscripcion
+                {
+                    nombreComision = CursoElegido.Comision.DescripcionComision,
+                    nombreMateria = CursoElegido.Materia.Descripcion,
+                    añoCurso = CursoElegido.AñoCalendario
+                };
+                ComisionLabel.Text = inscripcion.nombreComision;
+                MateriaLabel.Text = inscripcion.nombreMateria;
+                AñoLabel.Text = inscripcion.añoCurso.ToString();
+                tablaResumen.Visible = true;
+                cl.Inscribir(u.Persona.Id, CursoElegido.Id);
+            }
+            else
+            {
+                MessageBox.Show(u.Persona.Apellido + " " + u.Persona.Nombre + " ya se encuentra inscripto a " + CursoElegido.Materia.Descripcion);
+            }
         }
     }
 }

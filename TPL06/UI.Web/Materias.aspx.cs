@@ -7,8 +7,8 @@ using System.Web.UI.WebControls;
 using Business.Entities;
 using Business.Logic;
 
-// TODO: pageload borra el formulario
-// TODO: Arreglar ABM
+// TODO: pageload borra el formulario  ANDRES
+// TODO: Arreglar ABM    ANDRES
 
 namespace Academia.UI.Web
 {
