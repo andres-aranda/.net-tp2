@@ -6,8 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Business.Logic;
 
-// TODO: Estilo de tabla
-// TODO: Botones ABM
+// TODO: Estilo de tabla ANDRES
+// TODO: Botones ABM ANDRES
 
 namespace Academia.UI.Web
 {
