@@ -15,6 +15,7 @@ namespace Academia.UI.Web
         #region Disparadores 
         protected void AceptarLinkButton_Click(object sender, EventArgs e)
         {
+            try { 
             switch (this.FormMode)
             {
                 case FormModes.Alta:
@@ -31,8 +32,13 @@ namespace Academia.UI.Web
                     this.SaveEntity(this.Entity);
                     break;
             }
-            MessageBox.Show("Datos guardados con exito");
+            MessageBox.Show("Datos guardados");
         }
+            catch (Exception)
+            {
+                MessageBox.Show("Campos invalidos");
+            }
+}
 
         protected void CancelarLinkButton_Click(object sender, EventArgs e)
         {

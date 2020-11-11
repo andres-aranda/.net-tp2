@@ -6,10 +6,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 
-// TODO: Manejar borrado con foreign keys en TODOS los ABMs   ANDRES
-// TODO: EDITAR no carga los datos  ANDREDS     
-// TODO: Mejorar CSS de el ABM ANDRES
+
 
 namespace Academia.UI.Web
 {
@@ -105,7 +104,20 @@ namespace Academia.UI.Web
 
         private void DeleteEntity(int id)
         {
-            this.Logic.Delete(id);
+            try
+            {
+
+                if (MessageBox.Show("¿Desea eliminar la Comision?", "Eliminar materia", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    this.Logic.Delete(id);
+                    MessageBox.Show("La materia fue furrada conexito");
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al eliminar la Comision. Verifique que no esté siendo usada.");
+            }
         }
         protected void NuevoLinkButton_Click(object sender, EventArgs e)
         {

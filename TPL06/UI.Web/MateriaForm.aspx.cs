@@ -14,8 +14,8 @@ namespace Academia.UI.Web
     public partial class MateriaForm : System.Web.UI.Page
     {
         #region Declaraciones
-    private MateriaLogic Logic = new MateriaLogic();
-      
+        private MateriaLogic Logic = new MateriaLogic();
+
         private Materia Entity
         {
             get;
@@ -36,23 +36,23 @@ namespace Academia.UI.Web
             }
         }
         #endregion
-  
+
         #region Metodos 
-  private void cargacombo()
+        private void cargacombo()
         {
-            
+
             PlanLogic pl = new PlanLogic();
             cboIdPlan.DataSource = pl.GetAll();
             cboIdPlan.DataBind();
             EspecialidadLogic el = new EspecialidadLogic();
             Especialidad esp = el.GetByPlan(int.Parse(this.cboIdPlan.SelectedValue));
             lblEspecialidad.Text = esp.Descripcion;
-               
+
         }
         private void LoadForm(int id)
         {
             EspecialidadLogic el = new EspecialidadLogic();
-            
+
             this.Entity = this.Logic.GetOne(id);
             this.descripcionTextBox.Text = this.Entity.Descripcion;
             this.hsSemanalesTextBox.Text = this.Entity.HsSemanales.ToString();
@@ -78,25 +78,32 @@ namespace Academia.UI.Web
         #endregion
 
         #region Disparadores
-      protected void AceptarLinkButton_Click(object sender, EventArgs e)
+        protected void AceptarLinkButton_Click(object sender, EventArgs e)
         {
-            switch (this.FormMode)
+            try
             {
-                case FormModes.Alta:
-                    this.Entity = new Materia();
-                    this.Entity.State = BusinessEntity.Estados.New;
-                    this.LoadEntity(this.Entity);
-                    this.SaveEntity(this.Entity);
-                    break;
-                case FormModes.Modificion:
-                    this.Entity = new Materia();
-                    this.Entity.Id = (int)Session["idSeleccionada"];
-                    this.Entity.State = BusinessEntity.Estados.Modified;
-                    this.LoadEntity(this.Entity);
-                    this.SaveEntity(this.Entity);
-                    break;
+                switch (this.FormMode)
+                {
+                    case FormModes.Alta:
+                        this.Entity = new Materia();
+                        this.Entity.State = BusinessEntity.Estados.New;
+                        this.LoadEntity(this.Entity);
+                        this.SaveEntity(this.Entity);
+                        break;
+                    case FormModes.Modificion:
+                        this.Entity = new Materia();
+                        this.Entity.Id = (int)Session["idSeleccionada"];
+                        this.Entity.State = BusinessEntity.Estados.Modified;
+                        this.LoadEntity(this.Entity);
+                        this.SaveEntity(this.Entity);
+                        break;
+                }
+                MessageBox.Show("Datos guardados");
             }
-            MessageBox.Show("Datos guardados con exito");
+            catch (Exception)
+            {
+                MessageBox.Show("Campos invalidos");
+            }
         }
 
         protected void CancelarLinkButton_Click(object sender, EventArgs e)
@@ -138,7 +145,7 @@ namespace Academia.UI.Web
 
         }
 
-      
+
 
     }
 
