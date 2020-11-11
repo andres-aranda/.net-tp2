@@ -20,5 +20,22 @@ namespace Academia.UI.Web
             dgvCursos.DataSource = cl.GetAll();
             dgvCursos.DataBind();
         }
+
+        protected void btnNuevo_Click(object sender, EventArgs e)
+        {
+            Session["idSeleccionado"] = -1; // Indica que es un nuevo curso
+            Page.Response.Redirect("~/CursoForm.aspx");
+        }
+
+        protected void btnEditar_Click(object sender, EventArgs e)
+        {
+            Session["idSeleccionado"] = (int)dgvCursos.SelectedValue;
+            Page.Response.Redirect("~/CursoForm.aspx");
+        }
+
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

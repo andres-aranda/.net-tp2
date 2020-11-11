@@ -15,31 +15,31 @@ namespace Academia.UI.Web
     {
 
         /// <summary>
-        /// editarLinkButton control.
+        /// btnEditar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton editarLinkButton;
+        protected global::System.Web.UI.WebControls.LinkButton btnEditar;
 
         /// <summary>
-        /// EliminarLinkButton control.
+        /// btnEliminar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton EliminarLinkButton;
+        protected global::System.Web.UI.WebControls.LinkButton btnEliminar;
 
         /// <summary>
-        /// NuevoLinkButton control.
+        /// btnNuevo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton NuevoLinkButton;
+        protected global::System.Web.UI.WebControls.LinkButton btnNuevo;
 
         /// <summary>
         /// gridPanel control.

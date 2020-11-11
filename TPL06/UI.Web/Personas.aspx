@@ -3,12 +3,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="PageContent" runat="server">
     <div>
-        <asp:LinkButton ID="editarLinkButton" runat="server" OnClick="editarLinkButton_Click" CssClass="btn">Editar</asp:LinkButton>
-        <asp:LinkButton ID="EliminarLinkButton" runat="server" OnClick="EliminarLinkButton_Click" CssClass="btn">Eliminar</asp:LinkButton>
-        <asp:LinkButton ID="NuevoLinkButton" runat="server" OnClick="NuevoLinkButton_Click" CssClass="btn">Nuevo</asp:LinkButton>
+        <asp:LinkButton ID="btnEditar" runat="server" OnClick="btnEditar_Click" CssClass="btn">Editar</asp:LinkButton>
+        <asp:LinkButton ID="btnEliminar" runat="server" OnClick="btnEliminar_Click" CssClass="btn">Eliminar</asp:LinkButton>
+        <asp:LinkButton ID="btnNuevo" runat="server" OnClick="btnNuevo_Click" CssClass="btn">Nuevo</asp:LinkButton>
     </div>
     <asp:Panel ID="gridPanel" runat="server">
-        <asp:GridView ID="dgvPersonas" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" CssClass="tabla">
+        <asp:GridView ID="dgvPersonas" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" CssClass="tabla" OnSelectedIndexChanged="dgvPersonas_SelectedIndexChanged">
         <Columns>
                     <asp:BoundField HeaderText="ID" DataField="Id" />
                     <asp:BoundField HeaderText="Legajo" DataField="Legajo" />

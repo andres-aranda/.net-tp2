@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Data.Database;
 using Business.Entities;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace Business.Logic
 {
@@ -36,6 +37,12 @@ namespace Business.Logic
         {
             ComisionData.Delete(id);
         }
+
+        public List<Comision> GetByPlan(int idPlan)
+        {
+            return ComisionData.GetByPlan(idPlan);
+        }
+
         public List<Comision> GetByMateria(int idMateria)
         {
             return ComisionData.GetByMateria(idMateria);
