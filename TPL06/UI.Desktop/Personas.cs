@@ -37,7 +37,7 @@ namespace Academia.UI.Desktop
 
         private void tsbNuevo_Click(object sender, EventArgs e)
         {
-            PersonaDesktop pd = new PersonaDesktop();
+            PersonaDesktop pd = new PersonaDesktop(-1, true);
             pd.ShowDialog();
             Listar();
         }

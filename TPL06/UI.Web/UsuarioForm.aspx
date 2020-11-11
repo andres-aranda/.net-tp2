@@ -8,7 +8,7 @@
                 <asp:Label ID="nombreLabel" runat="server" Text="Nombre"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="nombreTextBox" runat="server"></asp:TextBox>
+                <asp:TextBox ID="nombreTextBox" runat="server" Enabled="False" ReadOnly="True"></asp:TextBox>
             </td>
             <td>
                 &nbsp;<asp:Label ID="nombreUsuarioLabel" runat="server" Text="Nombre de usuario"></asp:Label>
@@ -22,7 +22,7 @@
                 <asp:Label ID="apellidoLabel" runat="server" Text="Apellido"></asp:Label>
             </td>
             <td class="auto-style1">
-                <asp:TextBox ID="apellidoTextBox" runat="server"></asp:TextBox>
+                <asp:TextBox ID="apellidoTextBox" runat="server" Enabled="False" ReadOnly="True"></asp:TextBox>
             </td>
             <td class="auto-style1">
                 <asp:Label ID="claveLabel" runat="server" Text="Clave"></asp:Label>
@@ -36,7 +36,7 @@
                 <asp:Label ID="emailLabel" runat="server" Text="Email"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="emailTextBox" runat="server"></asp:TextBox>
+                <asp:TextBox ID="emailTextBox" runat="server" Enabled="False" ReadOnly="True"></asp:TextBox>
             </td>
             <td>
                 <asp:Label ID="repetirClaveLabel" runat="server" Text="Repetir clave"></asp:Label>
