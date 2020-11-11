@@ -6,7 +6,6 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Business.Logic;
 using Business.Entities;
-// TODO: Mejorar formulario
 // TODO: pageload borra el formulario
 
 namespace Academia.UI.Web
@@ -83,7 +82,7 @@ namespace Academia.UI.Web
             this.Logic.Delete(id);
         }
 
-        protected void AceptarLinkButton_Click(object sender, EventArgs e)
+        protected void btnAceptar_Click(object sender, EventArgs e)
         {
             switch (this.FormMode)
             {
@@ -103,7 +102,7 @@ namespace Academia.UI.Web
             }
         }
 
-        protected void CancelarLinkButton_Click(object sender, EventArgs e)
+        protected void btnCancelar_Click(object sender, EventArgs e)
         {
             Page.Response.Redirect("~/Usuarios.aspx");
         }
