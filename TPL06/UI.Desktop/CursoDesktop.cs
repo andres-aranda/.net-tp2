@@ -1,4 +1,6 @@
 ﻿using Academia.Data.Database;
+using Business.Entities;
+using Business.Logic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,75 +33,47 @@ namespace Academia.UI.Desktop
 
         public void CursoDesktop_Load(object sender, EventArgs e)
         {
-            // TODO: Ver que onda no carga Fisica 1
-            CargaCombos();
+            CargarPlanes();
             if (idCurso != 0)
             {
-                using (EntidadesTP2 db = new EntidadesTP2())
-                {
-                    Curso = db.cursos.Find(idCurso);
-                }
                 Mapeo();
             }
         }
 
-        public void CargaCombos()
+        public void CargarPlanes()
         {
-            using (EntidadesTP2 db = new EntidadesTP2())
-            {
-                this.cmbPlan.DataSource = db.planes.ToList();
-                this.cmbPlan.DisplayMember = "desc_plan";
-                this.cmbPlan.ValueMember = "id_plan";
-
-
-                this.cmbComision.DataSource =  db.comisiones.Where(c => c.id_plan == (int)cmbPlan.SelectedValue).ToList();
-                this.cmbComision.DisplayMember = "desc_comision";
-                this.cmbComision.ValueMember = "id_comision";
-
-                this.cmbMateria.DataSource = db.materias.Where(m=>m.id_plan==(int)cmbPlan.SelectedValue).ToList();
-                this.cmbMateria.DisplayMember = "desc_materia";
-                this.cmbMateria.ValueMember = "id_materia";
-            }
+            cmbPlan.DataSource = (new PlanLogic()).GetAll();
+            cmbPlan.ValueMember = "Id";
+            cmbPlan.DisplayMember = "Descripcion";
         }
         private void Mapeo()
         {
-            lblId.Text = Curso.id_curso.ToString();
             txtAnio.Text = Curso.anio_calendario.ToString();
             txtCupo.Text = Curso.cupo.ToString();
-            cmbComision.SelectedValue = Curso.id_comision;
+            Curso c = (new CursoLogic()).GetOne(idCurso);
+            cmbPlan.SelectedValue = (new PlanLogic()).GetByIdMateria(c.Materia.Id).Id.ToString();
+            CargarMaterias();
             cmbMateria.SelectedValue = Curso.id_materia;
+            CargarComisiones();
+            cmbComision.SelectedValue = Curso.id_comision;
+
         }
-       
-          
+
+        private void CargarMaterias()
+        {
+            int idPlan = (int)cmbPlan.SelectedValue;
+            cmbMateria.DataSource = (new MateriaLogic()).GetByPlan(idPlan);
+        }
+
+        private void CargarComisiones()
+        {
+            int idPlan = (int)cmbPlan.SelectedValue;
+            cmbComision.DataSource = (new ComisionLogic()).GetByPlan(idPlan);
+        }
 
         private void cmbPlan_SelectedValueChanged(object sender, EventArgs e)
         {
-
-             using (EntidadesTP2 db = new EntidadesTP2())
-            {
-                Console.WriteLine(cmbPlan.SelectedValue.GetType());
-                int pla = 0;
-                try
-                {            
-                    pla = (int)(cmbPlan.SelectedValue);
-                }
-                catch
-                {
-
-                }
-                if (pla != 0)
-                {
-                this.cmbComision.DataSource = db.comisiones.Where(c => c.id_plan == pla).ToList();
-                this.cmbComision.DisplayMember = "desc_comision";
-                this.cmbComision.ValueMember = "id_comision";
-
-                this.cmbMateria.DataSource = db.materias.Where(m => m.id_plan == pla).ToList();
-                this.cmbMateria.DisplayMember = "desc_materia";
-                this.cmbMateria.ValueMember = "id_materia";
-                }
-                
-            }
-      
+            CargarMaterias();
         }
 
         private void btnCanelar_Click(object sender, EventArgs e)
@@ -137,7 +111,7 @@ namespace Academia.UI.Desktop
         {
             cursos c = new cursos
             {
-                
+
             };
             return c;
         }
