@@ -9,7 +9,7 @@
         <asp:LinkButton ID="btnNuevo" runat="server" OnClick="btnNuevo_Click" CssClass="btn">Nuevo</asp:LinkButton>
     </div>
     <asp:Panel ID="gridPanel" runat="server">
-        <asp:GridView ID="dgvPersonas" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" CssClass="tabla" OnSelectedIndexChanged="dgvPersonas_SelectedIndexChanged">
+        <asp:GridView ID="dgvPersonas" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" CssClass="tabla">
             <Columns>
                 <asp:BoundField HeaderText="ID" DataField="Id" />
                 <asp:BoundField HeaderText="Legajo" DataField="Legajo" />
