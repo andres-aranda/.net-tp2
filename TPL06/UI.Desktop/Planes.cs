@@ -19,7 +19,9 @@ namespace Academia.UI.Desktop
         public Planes()
         {
             InitializeComponent();
-            this.dgvPlanes.AutoGenerateColumns = false;
+            dgvPlanes.AutoGenerateColumns = false;
+            dgvPlanes.Columns[0].Visible = false;
+            
         }
         private void Listar()
         {

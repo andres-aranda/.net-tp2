@@ -17,7 +17,8 @@ namespace Academia.UI.Desktop
         public Materias()
         {
             InitializeComponent();
-            this.dgvMaterias.AutoGenerateColumns = false;
+            dgvMaterias.AutoGenerateColumns = false;
+            dgvMaterias.Columns[0].Visible = false;
         }
 
         public void Listar()

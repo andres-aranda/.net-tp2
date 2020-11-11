@@ -18,6 +18,7 @@ namespace Academia.UI.Desktop
         {
             InitializeComponent();
             dgvComisiones.AutoGenerateColumns = false;
+            dgvComisiones.Columns[0].Visible = false;
         }
 
         private void Listar()

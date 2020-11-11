@@ -17,7 +17,8 @@ namespace Academia.UI.Desktop
         public Especialidades()
         {
             InitializeComponent();
-            this.dgvEspecialidades.AutoGenerateColumns = false;
+            dgvEspecialidades.AutoGenerateColumns = false;
+            dgvEspecialidades.Columns[0].Visible = false;
         }
 
         private void Listar()

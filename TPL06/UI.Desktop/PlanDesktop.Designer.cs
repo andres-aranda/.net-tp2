@@ -106,6 +106,7 @@
             this.Name = "PlanDesktop";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Plan";
             this.ResumeLayout(false);
             this.PerformLayout();

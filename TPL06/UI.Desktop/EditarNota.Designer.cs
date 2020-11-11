@@ -36,15 +36,15 @@
             // 
             // txtNota
             // 
-            this.txtNota.Location = new System.Drawing.Point(45, 34);
+            this.txtNota.Location = new System.Drawing.Point(63, 14);
             this.txtNota.Name = "txtNota";
-            this.txtNota.Size = new System.Drawing.Size(100, 20);
+            this.txtNota.Size = new System.Drawing.Size(96, 20);
             this.txtNota.TabIndex = 0;
             // 
             // lblNota
             // 
             this.lblNota.AutoSize = true;
-            this.lblNota.Location = new System.Drawing.Point(76, 13);
+            this.lblNota.Location = new System.Drawing.Point(27, 17);
             this.lblNota.Name = "lblNota";
             this.lblNota.Size = new System.Drawing.Size(30, 13);
             this.lblNota.TabIndex = 1;
@@ -52,7 +52,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(100, 66);
+            this.btnAceptar.Location = new System.Drawing.Point(100, 50);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 2;
@@ -62,7 +62,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(13, 66);
+            this.btnCancelar.Location = new System.Drawing.Point(13, 50);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 3;
@@ -74,13 +74,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(187, 101);
+            this.ClientSize = new System.Drawing.Size(187, 92);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lblNota);
             this.Controls.Add(this.txtNota);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "EditarNota";
-            this.Text = "EditarNota";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Calificar";
             this.Load += new System.EventHandler(this.EditarNota_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

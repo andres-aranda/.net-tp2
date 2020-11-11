@@ -38,7 +38,7 @@
             // cmbCurso
             // 
             this.cmbCurso.FormattingEnabled = true;
-            this.cmbCurso.Location = new System.Drawing.Point(69, 10);
+            this.cmbCurso.Location = new System.Drawing.Point(69, 12);
             this.cmbCurso.Name = "cmbCurso";
             this.cmbCurso.Size = new System.Drawing.Size(121, 21);
             this.cmbCurso.TabIndex = 0;
@@ -46,7 +46,7 @@
             // cmbCargo
             // 
             this.cmbCargo.FormattingEnabled = true;
-            this.cmbCargo.Location = new System.Drawing.Point(69, 40);
+            this.cmbCargo.Location = new System.Drawing.Point(69, 42);
             this.cmbCargo.Name = "cmbCargo";
             this.cmbCargo.Size = new System.Drawing.Size(121, 21);
             this.cmbCargo.TabIndex = 1;
@@ -54,7 +54,7 @@
             // lblCurso
             // 
             this.lblCurso.AutoSize = true;
-            this.lblCurso.Location = new System.Drawing.Point(13, 13);
+            this.lblCurso.Location = new System.Drawing.Point(13, 15);
             this.lblCurso.Name = "lblCurso";
             this.lblCurso.Size = new System.Drawing.Size(34, 13);
             this.lblCurso.TabIndex = 2;
@@ -63,7 +63,7 @@
             // lblCargo
             // 
             this.lblCargo.AutoSize = true;
-            this.lblCargo.Location = new System.Drawing.Point(13, 43);
+            this.lblCargo.Location = new System.Drawing.Point(13, 45);
             this.lblCargo.Name = "lblCargo";
             this.lblCargo.Size = new System.Drawing.Size(35, 13);
             this.lblCargo.TabIndex = 3;
@@ -88,7 +88,12 @@
             this.Controls.Add(this.lblCurso);
             this.Controls.Add(this.cmbCargo);
             this.Controls.Add(this.cmbCurso);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "DocentesCursosForm";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Curso";
             this.ResumeLayout(false);
             this.PerformLayout();

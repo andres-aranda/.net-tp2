@@ -22,8 +22,8 @@ namespace Academia.UI.Desktop
         private void Cursos_Load(object sender, EventArgs e)
         {
             dgvCursos.AutoGenerateColumns = false;
+            dgvCursos.Columns[0].Visible = false;
             Mapeo();
-
         }
         private void Mapeo()
         {
