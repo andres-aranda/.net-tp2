@@ -12,6 +12,7 @@ namespace Data.Database
         public List<Plan> GetAll()
         {
             List<Plan> planes = new List<Plan>();
+            EspecialidadAdapter EspAdp = new EspecialidadAdapter();
             try
             {
                 this.OpenConnection();
@@ -23,6 +24,7 @@ namespace Data.Database
                     mod.Id = (int)drPlanes["id_plan"];
                     mod.Descripcion = (string)drPlanes["desc_plan"];
                     mod.IdEspecialidad = (int)drPlanes["id_especialidad"];
+                    mod.Especialidad = EspAdp.GetOne(mod.IdEspecialidad);
 
                     planes.Add(mod);
                 }
@@ -43,6 +45,7 @@ namespace Data.Database
         public Plan GetOne(int Id)
         {
             Plan mod = new Plan();
+            EspecialidadAdapter EspAdp = new EspecialidadAdapter();
             try
             {
                 this.OpenConnection();
@@ -54,6 +57,7 @@ namespace Data.Database
                     mod.Id = (int)drPlan["id_plan"];
                     mod.Descripcion = (string)drPlan["desc_plan"];
                     mod.IdEspecialidad = (int)drPlan["id_especialidad"];
+                    mod.Especialidad = EspAdp.GetOne(mod.IdEspecialidad);
                 }
 
                 drPlan.Close();

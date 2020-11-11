@@ -12,7 +12,7 @@ namespace Academia.UI.Web
 {
     public partial class Materias : System.Web.UI.Page
     {
-
+        #region Declaraciones
         MateriaLogic _logic;
         private MateriaLogic Logic
         {
@@ -25,11 +25,7 @@ namespace Academia.UI.Web
                 return _logic;
             }
         }
-        private Materia Entity
-        {
-            get;
-            set;
-        }
+
         private int SelectedID
         {
             get
@@ -68,27 +64,9 @@ namespace Academia.UI.Web
             }
         }
 
-        private void LoadGrid()
-        {
-            this.gridView.DataSource = this.Logic.GetAll();
-            this.gridView.DataBind();
-        }
+        #endregion
 
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            Usuario usuarioLog = (Usuario)Session["usuarioLogueado"];
-            if (usuarioLog == null)
-            {
-                Page.Response.Redirect("~/PaginaNoPermitida.aspx");
-            }
-            foreach (Modulo m in usuarioLog.Modulo)
-            {
-                if (!(m.Descripcion == "NoDocente" || m.Descripcion == "Administrador"))
-                    Page.Response.Redirect("~/PaginaNoPermitida.aspx");
-            }
-            LoadGrid();
-        }
-
+        #region Disparadores
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.SelectedID = (int)this.gridView.SelectedValue;
@@ -111,6 +89,18 @@ namespace Academia.UI.Web
             }
         }
 
+
+        protected void NuevoLinkButton_Click(object sender, EventArgs e)
+        {
+            Session["idSeleccionada"] = null;
+            Session["formMode"] = FormModes.Alta;
+            Page.Response.Redirect("~/MateriaForm.aspx");
+
+        }
+
+        #endregion
+
+        #region Metodos 
         private void DeleteEntity(int id)
         {
             try
@@ -128,13 +118,31 @@ namespace Academia.UI.Web
                 MessageBox.Show("Error al eliminar la materia. Verifique que no esté siendo usada.");
             }
         }
-        protected void NuevoLinkButton_Click(object sender, EventArgs e)
+        private void LoadGrid()
         {
-            Session["idSeleccionada"] = null;
-            Session["formMode"] = FormModes.Alta;
-            Page.Response.Redirect("~/MateriaForm.aspx");
-
+            this.gridView.DataSource = this.Logic.GetAll();
+            this.gridView.DataBind();
         }
+
+        #endregion
+
+
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            Usuario usuarioLog = (Usuario)Session["usuarioLogueado"];
+            if (usuarioLog == null)
+            {
+                Page.Response.Redirect("~/PaginaNoPermitida.aspx");
+            }
+            foreach (Modulo m in usuarioLog.Modulo)
+            {
+                if (!(m.Descripcion == "NoDocente" || m.Descripcion == "Administrador"))
+                    Page.Response.Redirect("~/PaginaNoPermitida.aspx");
+            }
+            LoadGrid();
+        }
+
 
     }
 }

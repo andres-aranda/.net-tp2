@@ -18,7 +18,7 @@ namespace Business.Entities
 
         private string _Descripcion;
         private int _IdEspecialidad;
-
+        private Especialidad _especialidad;
         protected SqlDataAdapter _daPlanes;
 
         public SqlDataAdapter daPlanes
@@ -56,6 +56,7 @@ namespace Business.Entities
             get { return _IdEspecialidad; }
             set { _IdEspecialidad = value; }
         }
-    
+
+        public Especialidad Especialidad { get => _especialidad; set => _especialidad = value; }
     }
 }

@@ -12,6 +12,7 @@ namespace Business.Logic
     public class EspecialidadLogic : BusinessLogic
     {
         public EspecialidadAdapter EspecialidadData { get; set; }
+        public static EspecialidadAdapter EspecialidadDataS { get; set; }
 
         public EspecialidadLogic()
         {
@@ -26,6 +27,10 @@ namespace Business.Logic
         public Especialidad GetOne(int id)
         {
             return EspecialidadData.GetOne(id);
+        }
+        public static  Especialidad GetOneS(int id)
+        {
+            return EspecialidadDataS.GetOne(id);
         }
 
         public void Save(Especialidad u)

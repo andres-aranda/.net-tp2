@@ -6,7 +6,6 @@
             <asp:LinkButton ID="editarLinkButton" runat="server" OnClick="editarLinkButton_Click" CssClass="btn">Editar</asp:LinkButton>
             <asp:LinkButton ID="EliminarLinkButton" runat="server" OnClick="EliminarLinkButton_Click" CssClass="btn">Eliminar</asp:LinkButton>
             <asp:LinkButton ID="NuevoLinkButton" runat="server" OnClick="NuevoLinkButton_Click" CssClass="btn">Nuevo</asp:LinkButton>
-
         </div>
 
         <asp:Panel ID="gridPanel" runat="server">
@@ -23,7 +22,7 @@
                 </Columns>
                 <HeaderStyle CssClass="cabecera" />
                 <RowStyle CssClass="filas" />
-                <SelectedRowStyle BackColor="Black" ForeColor="White" />
+                <SelectedRowStyle CssClass="filaSeleccionada" />
             </asp:GridView>
         </asp:Panel>
     </div>

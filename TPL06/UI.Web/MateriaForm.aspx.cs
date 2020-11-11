@@ -13,16 +13,9 @@ namespace Academia.UI.Web
 {
     public partial class MateriaForm : System.Web.UI.Page
     {
-        private MateriaLogic _logic;
-        private MateriaLogic Logic
-        {
-            get
-            {
-                if (_logic == null)
-                    _logic = new MateriaLogic();
-                return _logic;
-            }
-        }
+        #region Declaraciones
+    private MateriaLogic Logic = new MateriaLogic();
+      
         private Materia Entity
         {
             get;
@@ -42,34 +35,10 @@ namespace Academia.UI.Web
                 this.ViewState["formMode"] = value;
             }
         }
-
-        protected void Page_Load(object sender, EventArgs e)
-        {
-
-            Usuario usuarioLog = (Usuario)Session["usuarioLogueado"];
-
-            foreach (Modulo m in usuarioLog.Modulo)
-            {
-                if (!(m.Descripcion == "NoDocente" || m.Descripcion == "Administrador"))
-                    Page.Response.Redirect("~/PaginaNoPermitida.aspx");
-            }
-            if (!IsPostBack)
-            {
-                cargacombo();
-
-                if (Session["formMode"] != null)
-                {
-                    if (Session["idSeleccionada"] != null)
-                        LoadForm((int)Session["idSeleccionada"]);
-
-                    FormMode = (FormModes)Session["formMode"];
-                }
-            }
-
-
-        }
-
-        private void cargacombo()
+        #endregion
+  
+        #region Metodos 
+  private void cargacombo()
         {
             
             PlanLogic pl = new PlanLogic();
@@ -106,8 +75,10 @@ namespace Academia.UI.Web
         {
             this.Logic.Delete(id);
         }
+        #endregion
 
-        protected void AceptarLinkButton_Click(object sender, EventArgs e)
+        #region Disparadores
+      protected void AceptarLinkButton_Click(object sender, EventArgs e)
         {
             switch (this.FormMode)
             {
@@ -139,6 +110,36 @@ namespace Academia.UI.Web
             Especialidad esp = el.GetByPlan(int.Parse(this.cboIdPlan.SelectedValue));
             lblEspecialidad.Text = esp.Descripcion;
         }
+        #endregion
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+            Usuario usuarioLog = (Usuario)Session["usuarioLogueado"];
+
+            foreach (Modulo m in usuarioLog.Modulo)
+            {
+                if (!(m.Descripcion == "NoDocente" || m.Descripcion == "Administrador"))
+                    Page.Response.Redirect("~/PaginaNoPermitida.aspx");
+            }
+            if (!IsPostBack)
+            {
+                cargacombo();
+
+                if (Session["formMode"] != null)
+                {
+                    if (Session["idSeleccionada"] != null)
+                        LoadForm((int)Session["idSeleccionada"]);
+
+                    FormMode = (FormModes)Session["formMode"];
+                }
+            }
+
+
+        }
+
+      
+
     }
 
 
