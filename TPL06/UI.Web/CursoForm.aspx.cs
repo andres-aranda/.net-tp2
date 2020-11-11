@@ -1,4 +1,5 @@
 ﻿using Academia.Data.Database;
+using Business.Entities;
 using Business.Logic;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,10 @@ namespace Academia.UI.Web
             if (!Page.IsPostBack)
             {
                 CargarPlanes();
+                if ((int)Session["idSeleccionado"] != -1) // Si el modo es editar, carga los datos del formulario
+                {
+                    CargarFormulario();
+                }
             }
         }
 
@@ -27,16 +32,27 @@ namespace Academia.UI.Web
             CargarComisiones();
         }
 
+        private void CargarFormulario()
+        {
+            int idCurso = (int)Session["idSeleccionado"];
+            Curso c = (new CursoLogic()).GetOne(idCurso);
+            ddlPlanes.SelectedValue = (new PlanLogic()).GetByIdMateria(c.Materia.Id).Id.ToString();
+            CargarMaterias();
+            ddlMaterias.SelectedValue = c.Materia.Id.ToString();
+            CargarComisiones();
+            ddlComisiones.SelectedValue = c.Comision.Id.ToString(); // TODO: No carga la comisión correcta
+            txtAño.Text = c.AñoCalendario.ToString();
+            txtCupo.Text = c.Cupo.ToString();
+        }
+
         protected void ddlPlanes_SelectedIndexChanged(object sender, EventArgs e)
         {
             CargarMaterias();
-            
         }
 
         protected void ddlMaterias_SelectedIndexChanged(object sender, EventArgs e)
         {
             CargarComisiones();
-            
         } 
 
         private void CargarMaterias()

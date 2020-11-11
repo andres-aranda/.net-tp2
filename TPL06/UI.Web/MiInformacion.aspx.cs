@@ -12,7 +12,7 @@ using System.Web.UI.WebControls;
 
 namespace Academia.UI.Web
 {
-    // TODO: Ver Boton guardar y replicar css del amb en los otros
+    // TODO: replicar css de este amb en los otros
     public partial class MiInformacion : System.Web.UI.Page
     {
         private Persona persona;
@@ -85,7 +85,8 @@ namespace Academia.UI.Web
                 ddlPlanes.DataBind();
             }
         }
-        protected void NuevoLinkButton_Click1(object sender, EventArgs e)
+
+        protected void btnGuardar_Click(object sender, EventArgs e)
         {
             using (EntidadesTP2 db = new EntidadesTP2())
             {

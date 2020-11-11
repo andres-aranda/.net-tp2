@@ -79,8 +79,7 @@
             </tr>
         </table>
         <div style="margin: 15px;">
-            <asp:LinkButton ID="NuevoLinkButton" runat="server" CssClass="btn" OnClick="NuevoLinkButton_Click1">Nuevo</asp:LinkButton>
-
+            <asp:LinkButton ID="btnGuardar" runat="server" CssClass="btn" OnClick="btnGuardar_Click">Guardar</asp:LinkButton>
         </div>
     </div>
 

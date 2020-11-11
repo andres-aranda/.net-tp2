@@ -123,15 +123,6 @@ namespace Academia.UI.Web
         protected global::System.Web.UI.WebControls.TextBox repetirClaveTextBox;
 
         /// <summary>
-        /// habilitadoCheckBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox habilitadoCheckBox;
-
-        /// <summary>
         /// formActionPanel control.
         /// </summary>
         /// <remarks>
@@ -141,21 +132,21 @@ namespace Academia.UI.Web
         protected global::System.Web.UI.WebControls.Panel formActionPanel;
 
         /// <summary>
-        /// AceptarLinkButton control.
+        /// btnAceptar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton AceptarLinkButton;
+        protected global::System.Web.UI.WebControls.LinkButton btnAceptar;
 
         /// <summary>
-        /// CancelarLinkButton control.
+        /// btnCancelar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton CancelarLinkButton;
+        protected global::System.Web.UI.WebControls.LinkButton btnCancelar;
     }
 }
