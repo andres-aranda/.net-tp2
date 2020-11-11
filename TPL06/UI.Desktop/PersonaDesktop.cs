@@ -36,6 +36,9 @@ namespace Academia.UI.Desktop
         {
             txtLegajo.Enabled = PuedeModificar;
             cmbPlan.Enabled = PuedeModificar;
+            btnAceptar.Visible = PuedeModificar;
+            btnCancelar.Visible = PuedeModificar;
+
             Mapeo();
         }
 

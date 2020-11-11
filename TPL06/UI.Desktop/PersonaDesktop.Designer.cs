@@ -62,7 +62,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(225, 203);
+            this.btnAceptar.Location = new System.Drawing.Point(104, 204);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 1;
@@ -72,7 +72,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(307, 203);
+            this.btnCancelar.Location = new System.Drawing.Point(16, 204);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 2;
@@ -208,7 +208,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(492, 276);
+            this.ClientSize = new System.Drawing.Size(436, 239);
             this.Controls.Add(this.lblFechaNacimiento);
             this.Controls.Add(this.lblPlan);
             this.Controls.Add(this.txtLegajo);
@@ -227,7 +227,12 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lblNombre);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "PersonaDesktop";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Persona";
             this.Load += new System.EventHandler(this.PerosnaDesktop_Load);
             ((System.ComponentModel.ISupportInitialize)(this.entidadesTP2BindingSource)).EndInit();

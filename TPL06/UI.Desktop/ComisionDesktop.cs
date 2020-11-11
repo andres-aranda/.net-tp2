@@ -74,7 +74,6 @@ namespace Academia.UI.Desktop
 
         public override void MapearDeDatos()
         {
-            txtID.Text = ComisionActual.Id.ToString();
             txtDescripcion.Text = ComisionActual.DescripcionComision;
             txtAñoEspecialidad.Text = ComisionActual.AñoEspecialidad.ToString();
             cboPlan.Text = ComisionActual.IdPlan.ToString();
@@ -115,7 +114,6 @@ namespace Academia.UI.Desktop
                 ComisionActual.State = Comision.Estados.New;
             else if (modoForm == ModoForm.Modificacion)
             {
-                ComisionActual.Id = int.Parse(txtID.Text);
                 ComisionActual.State = Comision.Estados.Modified;
             }
         }

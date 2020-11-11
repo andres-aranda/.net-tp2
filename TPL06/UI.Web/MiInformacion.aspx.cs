@@ -52,8 +52,9 @@ namespace Academia.UI.Web
                     repetirClave.Text = "No asignado.";
                     Session["esNuevo"] = true;
                 }
+                //Session["idSeleccionado"] = null;
             }
-            Session["idSeleccionado"] = null;
+            
         }
 
         private void LoadForm()
@@ -88,6 +89,7 @@ namespace Academia.UI.Web
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
+            int idPersona =(int)Session["idSeleccionado"];
             using (EntidadesTP2 db = new EntidadesTP2())
             {
                 personas oPersona;
@@ -108,7 +110,7 @@ namespace Academia.UI.Web
                 }
                 else
                 {
-                    oPersona = db.personas.Find(persona.Id);
+                    oPersona = db.personas.Find(idPersona);
                     oPersona.nombre = txtNombre.Text;
                     oPersona.apellido = txtApellido.Text;
                     oPersona.email = txtEmail.Text;
@@ -116,7 +118,10 @@ namespace Academia.UI.Web
                     oPersona.direccion = txtDireccion.Text;
                 }
                 db.SaveChanges();
+                System.Windows.Forms.MessageBox.Show("Datos guardados con exitos");
             }
+            Page.Response.Redirect("~/Personas.aspx");
+
         }
     }
 }

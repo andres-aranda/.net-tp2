@@ -17,7 +17,8 @@ namespace Academia.UI.Desktop
         public Especialidades()
         {
             InitializeComponent();
-            this.dgvEspecialidades.AutoGenerateColumns = false;
+            dgvEspecialidades.AutoGenerateColumns = false;
+            dgvEspecialidades.Columns[0].Visible = false;
         }
 
         private void Listar()
@@ -68,10 +69,10 @@ namespace Academia.UI.Desktop
         {
             try
             {
-                if (MessageBox.Show("¿Desea eliminar el especialidad?", "Borrar Especialidad", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (this.dgvEspecialidades.SelectedRows.Count > 0)
                 {
-                    if (this.dgvEspecialidades.SelectedRows.Count > 0)
-                    {
+                    if (MessageBox.Show("¿Desea eliminar el especialidad?", "Borrar Especialidad", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        {
                         int ID = ((Business.Entities.Especialidad)this.dgvEspecialidades.SelectedRows[0].DataBoundItem).Id;
                         EspecialidadLogic especialidadLogic = new EspecialidadLogic();
                         especialidadLogic.Delete(ID);

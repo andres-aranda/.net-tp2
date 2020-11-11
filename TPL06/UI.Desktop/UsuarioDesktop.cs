@@ -17,12 +17,10 @@ namespace Academia.UI.Desktop
     public partial class UsuarioDesktop : ApplicationForm
     {
         private Usuario UsuarioActual { get; set; }
-        private PersonaLogic Pl { get => pl; set => pl = value; }
-        private List<Persona> ListPers { get => listPers; set => listPers = value; }
 
-        private List<Persona> listPers;
 
-        PersonaLogic pl;
+        static PersonaLogic Pl = new PersonaLogic();
+        List<Persona> listPers = Pl.GetAll();
 
 
         public UsuarioDesktop()

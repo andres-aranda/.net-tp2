@@ -19,7 +19,9 @@ namespace Academia.UI.Desktop
         public Planes()
         {
             InitializeComponent();
-            this.dgvPlanes.AutoGenerateColumns = false;
+            dgvPlanes.AutoGenerateColumns = false;
+            dgvPlanes.Columns[0].Visible = false;
+            
         }
         private void Listar()
         {
@@ -74,9 +76,9 @@ namespace Academia.UI.Desktop
         {
             try
             {
-                if (MessageBox.Show("¿Desea eliminar el plan?", "Borrar Plan", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (this.dgvPlanes.SelectedRows.Count > 0)
                 {
-                    if (this.dgvPlanes.SelectedRows.Count > 0)
+                    if (MessageBox.Show("¿Desea eliminar el plan?", "Borrar Plan", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         int ID = (int)dgvPlanes.SelectedRows[0].Cells[0].Value;
                         PlanLogic planLogic = new PlanLogic();

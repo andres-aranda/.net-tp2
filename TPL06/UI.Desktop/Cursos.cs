@@ -22,8 +22,8 @@ namespace Academia.UI.Desktop
         private void Cursos_Load(object sender, EventArgs e)
         {
             dgvCursos.AutoGenerateColumns = false;
+            dgvCursos.Columns[0].Visible = false;
             Mapeo();
-
         }
         private void Mapeo()
         {
@@ -65,10 +65,10 @@ namespace Academia.UI.Desktop
         {
             try
             {
-                if (MessageBox.Show("¿Desea eliminar el curso?", "Borrar Curso", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (this.dgvCursos.SelectedRows.Count > 0) 
                 {
-                    if (this.dgvCursos.SelectedRows.Count > 0)
-                    {
+                    if (MessageBox.Show("¿Desea eliminar el curso?", "Borrar Curso", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        {
                         using (EntidadesTP2 db = new EntidadesTP2())
                         {
                             int ID = (int)dgvCursos.SelectedRows[0].Cells[0].Value;
@@ -96,11 +96,6 @@ namespace Academia.UI.Desktop
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Dispose();
-        }
-
-        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
         }
     }
 }

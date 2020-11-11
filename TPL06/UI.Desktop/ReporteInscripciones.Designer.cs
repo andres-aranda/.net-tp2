@@ -30,13 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.DataSetPersonas = new Academia.UI.Desktop.DataSetPersonas();
             this.DataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataSetPersonas = new Academia.UI.Desktop.DataSetPersonas();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.DataTable1TableAdapter = new Academia.UI.Desktop.DataSetPersonasTableAdapters.DataTable1TableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetPersonas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataTable1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetPersonas)).BeginInit();
             this.SuspendLayout();
+            // 
+            // DataTable1BindingSource
+            // 
+            this.DataTable1BindingSource.DataMember = "DataTable1";
+            this.DataTable1BindingSource.DataSource = this.DataSetPersonas;
+            // 
+            // DataSetPersonas
+            // 
+            this.DataSetPersonas.DataSetName = "DataSetPersonas";
+            this.DataSetPersonas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -51,16 +61,6 @@
             this.reportViewer1.Size = new System.Drawing.Size(800, 450);
             this.reportViewer1.TabIndex = 0;
             // 
-            // DataSetPersonas
-            // 
-            this.DataSetPersonas.DataSetName = "DataSetPersonas";
-            this.DataSetPersonas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // DataTable1BindingSource
-            // 
-            this.DataTable1BindingSource.DataMember = "DataTable1";
-            this.DataTable1BindingSource.DataSource = this.DataSetPersonas;
-            // 
             // DataTable1TableAdapter
             // 
             this.DataTable1TableAdapter.ClearBeforeFill = true;
@@ -72,10 +72,11 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
             this.Name = "ReporteInscripciones";
-            this.Text = "ReporteInscripciones";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Inscripciones";
             this.Load += new System.EventHandler(this.ReporteInscripciones_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetPersonas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataTable1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetPersonas)).EndInit();
             this.ResumeLayout(false);
 
         }

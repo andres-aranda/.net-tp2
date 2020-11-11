@@ -68,7 +68,6 @@ namespace Academia.UI.Desktop
 
         public override void MapearDeDatos()
         {
-            txtId.Text = this.PlanActual.Id.ToString();
             txtDescripcion.Text = this.PlanActual.Descripcion;
             cmbEsp.SelectedValue = el.GetByPlan(PlanActual.Id).Id;
             
@@ -104,7 +103,6 @@ namespace Academia.UI.Desktop
                     break;
 
                 case ModoForm.Modificacion:
-                    this.PlanActual.Id = int.Parse(this.txtId.Text.ToString());
                     this.PlanActual.Descripcion = this.txtDescripcion.Text;
                     this.PlanActual.IdEspecialidad = Convert.ToInt32(this.cmbEsp.SelectedValue);
 
@@ -126,7 +124,7 @@ namespace Academia.UI.Desktop
             bool retorno = true;
             string mensaje = "";
 
-            if (this.txtDescripcion.Text == "" )
+            if (this.txtDescripcion.Text == "")
             {
                 mensaje = "Debe llenar todos los campos.";
                 retorno = false;
