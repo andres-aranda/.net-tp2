@@ -4,73 +4,73 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="PageContent" runat="server">
     <div>
-        <table style="width: 100%;" __designer:mapid="150" class="tabla">
-            <tr __designer:mapid="151" class="filas">
-                <td __designer:mapid="152">
+        <table style="width: 100%;" class="tabla">
+            <tr class="filas">
+                <td>
                     <asp:Label ID="Label1" runat="server" Text="Nombre"></asp:Label>
                 </td>
-                <td __designer:mapid="154">
+                <td>
                     <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
                 </td>
-                <td __designer:mapid="156">
+                <td>
                     <asp:Label ID="Label2" runat="server" Text="Nombre de usuario"></asp:Label>
                 </td>
-                <td __designer:mapid="158">
+                <td>
                     <asp:TextBox ID="txtNombreUsua" runat="server" Enabled="False"></asp:TextBox>
                 </td>
             </tr>
-            <tr __designer:mapid="15a" class="filas">
-                <td class="auto-style1" __designer:mapid="15b">
+            <tr class="filas">
+                <td class="auto-style1">
                     <asp:Label ID="Label3" runat="server" Text="Apellido"></asp:Label>
                 </td>
-                <td class="auto-style1" __designer:mapid="15d">
+                <td class="auto-style1">
                     <asp:TextBox ID="txtApellido" runat="server" Height="25px"></asp:TextBox>
                 </td>
-                <td class="auto-style1" __designer:mapid="15f">
+                <td class="auto-style1">
                     <asp:Label ID="Label4" runat="server" Text="Clave"></asp:Label>
                 </td>
-                <td class="auto-style1" __designer:mapid="161">
+                <td class="auto-style1">
                     <asp:TextBox ID="txtClave" runat="server" TextMode="Password"></asp:TextBox>
                 </td>
             </tr>
             <tr class="filas">
-                <td __designer:mapid="164">
+                <td>
                     <asp:Label ID="emailLabel0" runat="server" Text="Email"></asp:Label>
                 </td>
-                <td __designer:mapid="166">
+                <td>
                     <asp:TextBox ID="txtEmail" runat="server" Height="25px"></asp:TextBox>
                 </td>
-                <td __designer:mapid="168">
+                <td>
                     <asp:Label ID="repetirClaveLabel0" runat="server" Text="Repetir clave"></asp:Label>
                 </td>
-                <td __designer:mapid="16a">
+                <td>
                     <asp:TextBox ID="repetirClave" runat="server" TextMode="Password"></asp:TextBox>
                 </td>
             </tr>
             <tr class="filas">
-                <td __designer:mapid="164">Telefono</td>
-                <td __designer:mapid="166">
+                <td>Telefono</td>
+                <td>
                     <asp:TextBox ID="txtTelefono" runat="server" Height="25px"></asp:TextBox>
                 </td>
-                <td __designer:mapid="168">Direccion</td>
-                <td __designer:mapid="16a">
+                <td>Direccion</td>
+                <td>
                     <asp:TextBox ID="txtDireccion" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr class="filas">
-                <td __designer:mapid="164">Fecha de nacimiento</td>
-                <td __designer:mapid="166">
-                    <asp:TextBox ID="txtFechaNac" runat="server" Height="25px"></asp:TextBox>
+                <td>Fecha de nacimiento</td>
+                <td>
+                    <asp:TextBox ID="txtFechaNac" runat="server" Height="25px" Enabled="False"></asp:TextBox>
                 </td>
 
             </tr>
-            <tr __designer:mapid="163" class="filas">
-                <td __designer:mapid="164">Legajo</td>
-                <td __designer:mapid="166">
+            <tr class="filas">
+                <td>Legajo</td>
+                <td>
                     <asp:TextBox ID="txtLegajo" runat="server" Enabled="False" Height="25px"></asp:TextBox>
                 </td>
-                <td __designer:mapid="168">&nbsp;</td>
-                <td __designer:mapid="16a">&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
             </tr>
         </table>
         <div style="margin: 15px;">
