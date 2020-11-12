@@ -13,9 +13,12 @@ namespace Academia.UI.Web
 {
     public partial class Alumnos : System.Web.UI.Page
     {
-      public int IdIncripcion;
+        private int idIncripcion;
         CursoLogic cl;
-        // TODO: Agregar funcionalidad de poner nota MARCO
+
+        public int IdIncripcion { get => idIncripcion; set => idIncripcion = value; }
+
+    
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -56,13 +59,13 @@ namespace Academia.UI.Web
             try {  
            using (EntidadesTP2 db = new EntidadesTP2())
                 {
-                    alumnos_inscripciones  aluInsc = db.alumnos_inscripciones.Find(IdIncripcion);
+                    alumnos_inscripciones  aluInsc = db.alumnos_inscripciones.Find((int)inscripcionesDocente.SelectedValue);
                     aluInsc.nota = int.Parse(txtNota.Text);
                     db.SaveChanges();
                     MessageBox.Show("Nota Cambiada con éxito");
                 }
                 Usuario usuario = (Usuario)Session["usuarioLogueado"];
-                List<Inscripcion> ls = cl.GetMateriasInscripcionesDocente(usuario.Id);
+                List<Inscripcion> ls = cl.GetMateriasInscripcionesDocente(usuario.Persona.Id);
                 inscripcionesDocente.DataSource = ls;
                 inscripcionesDocente.DataBind();
                 if (inscripcionesDocente == null)
