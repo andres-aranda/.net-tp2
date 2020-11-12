@@ -86,9 +86,9 @@ namespace Academia.UI.Web
         protected void LoadEntity(Usuario usuario)
         {
             usuario.Persona = new Persona();
-            usuario.Persona.Nombre = this.nombreTextBox.Text;
-            usuario.Persona.Apellido = this.apellidoTextBox.Text;
-            usuario.Persona.Email = new System.Net.Mail.MailAddress(emailTextBox.Text);
+            //usuario.Persona.Nombre = this.nombreTextBox.Text;
+            //usuario.Persona.Apellido = this.apellidoTextBox.Text;
+            //usuario.Persona.Email = new System.Net.Mail.MailAddress(emailTextBox.Text);
             usuario.Persona.Legajo = int.Parse(txtLegajo.Text);
             usuario.NombreUsuario = this.nombreUsuarioTextBox.Text;
             usuario.Clave = this.claveTextBox.Text;

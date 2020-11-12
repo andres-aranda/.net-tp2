@@ -53,7 +53,7 @@ namespace Academia.Util
                     usuarios u = db.usuarios.Where(x => x.nombre_usuario == nombreUsuario).First();
                 }
             }
-            catch (ArgumentNullException e)
+            catch (Exception e)
             {
                 return false;
             }
