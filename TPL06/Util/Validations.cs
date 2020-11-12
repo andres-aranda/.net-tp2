@@ -93,7 +93,7 @@ namespace Academia.Util
             }
         }
 
-        public bool IsValidNota(int nota, string condicion)
+        public static bool IsValidNota(int nota, string condicion)
         {
             if (nota < 0 || nota > 10)
                 return false;

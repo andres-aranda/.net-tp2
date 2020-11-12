@@ -1,4 +1,5 @@
 ﻿using Academia.Data.Database;
+using Academia.Util;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,11 +21,22 @@ namespace Academia.UI.Desktop
             IdInscripcion = id;
         }
 
+        List<string> condiciones = new List<string>()
+        {   
+            "Cursando",
+            "Regular",
+            "Aprobada",
+            "Libre"
+        };
+
         public int IdInscripcion { get => _inscripcion; set => _inscripcion = value; }
 
         private void EditarNota_Load(object sender, EventArgs e)
         {
-
+            foreach (string condicion in condiciones)
+            {
+                cmbCondicion.Items.Add(condicion);
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
