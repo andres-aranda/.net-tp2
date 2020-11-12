@@ -16,5 +16,18 @@ namespace Academia.UI.Desktop
         {
             InitializeComponent();
         }
+
+        static List<string> cargos = new List<string>()
+        {
+            "Docente",
+            "Jefe de cátedra",
+            "Jefe de trabajos prácticos",
+            "Ayudante"
+        };
+
+        private void DocentesCursosForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
