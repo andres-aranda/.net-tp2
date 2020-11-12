@@ -90,7 +90,14 @@ namespace Academia.UI.Desktop
             int idMateria = (int)cmbMaterias.SelectedValue;
             int idComision = (int)cmbComison.SelectedValue;
             CursoLogic cl = new CursoLogic();
-            CursoElegido = cl.GetByComisionMateria(idComision, idMateria);
+            try
+            {
+                CursoElegido = cl.GetByComisionMateria(idComision, idMateria);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             if (Validations.IsValidInscripcion(Per.Id, CursoElegido.Id))
             {
                 ResumenInscripcion inscripcion = new ResumenInscripcion

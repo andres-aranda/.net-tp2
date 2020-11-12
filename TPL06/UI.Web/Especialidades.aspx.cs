@@ -17,6 +17,16 @@ namespace Academia.UI.Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Usuario usuario = (Usuario)Session["usuarioLogueado"];
+            if (usuario == null)
+            {
+                Page.Response.Redirect("~/PaginaNoPermitida.aspx");
+            }
+            foreach (Modulo m in usuario.Modulo)
+            {
+                if (!(m.Descripcion == "NoDocente" || m.Descripcion == "Administrador"))
+                    Page.Response.Redirect("~/PaginaNoPermitida.aspx");
+            }
             dgvEspecialidades.DataSource = el.GetAll();
             dgvEspecialidades.DataBind();
             dgvEspecialidades.Columns[0].Visible = false;

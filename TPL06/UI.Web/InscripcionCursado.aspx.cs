@@ -70,6 +70,16 @@ namespace Academia.UI.Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Usuario usuarioLogueado = (Usuario)Session["usuarioLogueado"];
+            if (usuarioLogueado == null)
+            {
+                Page.Response.Redirect("~/PaginaNoPermitida.aspx");
+            }
+            foreach (Modulo m in usuarioLogueado.Modulo)
+            {
+                if (!(m.Descripcion == "NoDocente" || m.Descripcion == "Administrador" || m.Descripcion == "Alumno"))
+                    Page.Response.Redirect("~/PaginaNoPermitida.aspx");
+            }
             tablaResumen.Visible = false;
             Usuario usuario = (Usuario)Session["usuarioLogueado"];
             int idPersona = usuario.Persona.Id;

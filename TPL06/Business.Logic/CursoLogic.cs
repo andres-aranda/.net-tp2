@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,7 +47,14 @@ namespace Business.Logic
 
         public Curso GetByComisionMateria(int idCom, int idMat )
         {
-            return CursoData.GetByMateriaCom(idCom, idMat);
+            try
+            {
+                return CursoData.GetByMateriaCom(idCom, idMat);
+            }
+            catch (SqlException)
+            {
+                throw new Exception("No existe el curso.");
+            }
         }
 
         public void Save(Curso m)

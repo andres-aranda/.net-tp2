@@ -55,7 +55,7 @@ namespace Academia.UI.Web
             }
             if (!IsPostBack)
             {
-               
+
 
                 if (Session["formMode"] != null)
                 {
@@ -100,34 +100,38 @@ namespace Academia.UI.Web
         {
             try
             {
-                if(Validations.IsClaveValida(repetirClaveTextBox.Text, claveTextBox.Text))
+                if (Validations.IsClaveValida(repetirClaveTextBox.Text, claveTextBox.Text))
                 {
-    switch (this.FormMode)
-            {
-                case FormModes.Alta:
-                    this.Entity = new Usuario();
-                    this.Entity.State = BusinessEntity.Estados.New;
-                    this.LoadEntity(this.Entity);
-                    this.SaveEntity(this.Entity);
-                    break;
-                case FormModes.Modificion:
-                    this.Entity = new Usuario();
-                    this.Entity.Id = (int)Session["idSeleccionada"];
-                    this.Entity.State = BusinessEntity.Estados.Modified;
-                    this.LoadEntity(this.Entity);
-                    this.SaveEntity(this.Entity);
-                    break;
-            }
-            MessageBox.Show("Datos guardados");
-                }else
+                    switch (this.FormMode)
+                    {
+                        case FormModes.Alta:
+                            this.Entity = new Usuario();
+                            this.Entity.State = BusinessEntity.Estados.New;
+                            this.LoadEntity(this.Entity);
+                            this.SaveEntity(this.Entity);
+                            break;
+                        case FormModes.Modificion:
+                            this.Entity = new Usuario();
+                            this.Entity.Id = (int)Session["idSeleccionada"];
+                            this.Entity.State = BusinessEntity.Estados.Modified;
+                            this.LoadEntity(this.Entity);
+                            this.SaveEntity(this.Entity);
+                            break;
+                    }
+                    MessageBox.Show("Datos guardados");
+                }
+                else
                     MessageBox.Show("Las claves no coinciden");
-
             }
-            catch (Exception)
+            catch (FormatException)
             {
-                MessageBox.Show("Campos invalidos");
+                MessageBox.Show("Campos inválidos.");
             }
-}
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {

@@ -15,30 +15,31 @@ namespace Academia.UI.Web
         #region Disparadores 
         protected void AceptarLinkButton_Click(object sender, EventArgs e)
         {
-            try { 
-            switch (this.FormMode)
+            try
             {
-                case FormModes.Alta:
-                    this.Entity = new Plan();
-                    this.Entity.State = BusinessEntity.Estados.New;
-                    this.LoadEntity(this.Entity);
-                    this.SaveEntity(this.Entity);
-                    break;
-                case FormModes.Modificion:
-                    this.Entity = new Plan();
-                    this.Entity.Id = (int)Session["idSeleccionada"];
-                    this.Entity.State = BusinessEntity.Estados.Modified;
-                    this.LoadEntity(this.Entity);
-                    this.SaveEntity(this.Entity);
-                    break;
+                switch (this.FormMode)
+                {
+                    case FormModes.Alta:
+                        this.Entity = new Plan();
+                        this.Entity.State = BusinessEntity.Estados.New;
+                        this.LoadEntity(this.Entity);
+                        this.SaveEntity(this.Entity);
+                        break;
+                    case FormModes.Modificion:
+                        this.Entity = new Plan();
+                        this.Entity.Id = (int)Session["idSeleccionada"];
+                        this.Entity.State = BusinessEntity.Estados.Modified;
+                        this.LoadEntity(this.Entity);
+                        this.SaveEntity(this.Entity);
+                        break;
+                }
+                MessageBox.Show("Datos guardados");
             }
-            MessageBox.Show("Datos guardados");
-        }
             catch (Exception)
             {
                 MessageBox.Show("Campos invalidos");
             }
-}
+        }
 
         protected void CancelarLinkButton_Click(object sender, EventArgs e)
         {
@@ -47,7 +48,7 @@ namespace Academia.UI.Web
         #endregion
 
         #region Declaraciones
-  private PlanLogic Logic=new PlanLogic();
+        private PlanLogic Logic = new PlanLogic();
         private Plan Entity
         {
             get;
@@ -90,7 +91,7 @@ namespace Academia.UI.Web
             this.cmbEspecialidad.SelectedValue = this.Entity.IdEspecialidad.ToString();
         }
         #endregion
-      
+
 
         protected void Page_Load(object sender, EventArgs e)
         {

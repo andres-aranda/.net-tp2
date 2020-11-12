@@ -54,7 +54,7 @@ namespace Academia.UI.Web
                 }
                 //Session["idSeleccionado"] = null;
             }
-            
+
         }
 
         private void LoadForm()
@@ -72,7 +72,7 @@ namespace Academia.UI.Web
                 this.txtDireccion.Text = this.persona.Direccion.ToString();
                 ddlPlanes.SelectedValue = persona.IdPlan.ToString();
             }
-            
+
         }
 
         private void CargarPlanes()
@@ -89,7 +89,7 @@ namespace Academia.UI.Web
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            int idPersona =(int)Session["idSeleccionado"];
+            int idPersona = (int)Session["idSeleccionado"];
             using (EntidadesTP2 db = new EntidadesTP2())
             {
                 personas oPersona;

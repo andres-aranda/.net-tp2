@@ -126,9 +126,15 @@ namespace Data.Database
             try
             {
                 OpenConnection();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM cursos WHERE id_materia = @idMateria and id_comision = @idComision", Sqlconn);
+                SqlCommand cmd = new SqlCommand(
+                    "SELECT * FROM cursos " +
+                    "WHERE" +
+                    "    id_materia = @idMateria AND " +
+                    "    id_comision = @idComision AND " +
+                    "    anio_calendario = @anio_calendario", Sqlconn);
                 cmd.Parameters.Add("@idMateria", SqlDbType.Int).Value = idMateria;
                 cmd.Parameters.Add("@idComision", SqlDbType.Int).Value = idComision;
+                cmd.Parameters.Add("@anio_calendario", SqlDbType.Int).Value = DateTime.Now.Year;
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
@@ -140,7 +146,7 @@ namespace Data.Database
                 }
                 dr.Close();
             }
-            catch (Exception e)
+            catch (SqlException e)
             {
                 throw e;
             }

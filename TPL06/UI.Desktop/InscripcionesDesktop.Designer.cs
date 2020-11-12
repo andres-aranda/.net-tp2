@@ -187,7 +187,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(579, 202);
+            this.ClientSize = new System.Drawing.Size(506, 168);
             this.Controls.Add(this.panelResumen);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnVolver);
@@ -196,9 +196,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbMaterias);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "InscripcionesDesktop";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Inscripción";
             this.Load += new System.EventHandler(this.InscripcionesDesktop_Load);
             this.panelResumen.ResumeLayout(false);

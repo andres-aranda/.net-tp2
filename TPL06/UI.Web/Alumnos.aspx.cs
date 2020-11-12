@@ -18,14 +18,12 @@ namespace Academia.UI.Web
 
         public int IdIncripcion { get => idIncripcion; set => idIncripcion = value; }
 
-    
-
         protected void Page_Load(object sender, EventArgs e)
         {
             ZonaEdicion.Visible = false;
             cl = new CursoLogic();
             Usuario usuario = (Usuario)Session["usuarioLogueado"];
-            if (usuario== null)
+            if (usuario == null)
             {
                 Page.Response.Redirect("~/PaginaNoPermitida.aspx");
             }
@@ -45,21 +43,19 @@ namespace Academia.UI.Web
             }
         }
 
-       
-
         protected void inscripcionesDocente_SelectedIndexChanged(object sender, EventArgs e)
         {
             ZonaEdicion.Visible = true;
-           IdIncripcion = (int)inscripcionesDocente.SelectedValue;
-
+            IdIncripcion = (int)inscripcionesDocente.SelectedValue;
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            try {  
-           using (EntidadesTP2 db = new EntidadesTP2())
+            try
+            {
+                using (EntidadesTP2 db = new EntidadesTP2())
                 {
-                    alumnos_inscripciones  aluInsc = db.alumnos_inscripciones.Find((int)inscripcionesDocente.SelectedValue);
+                    alumnos_inscripciones aluInsc = db.alumnos_inscripciones.Find((int)inscripcionesDocente.SelectedValue);
                     aluInsc.nota = int.Parse(txtNota.Text);
                     db.SaveChanges();
                     MessageBox.Show("Nota Cambiada con éxito");
@@ -72,8 +68,8 @@ namespace Academia.UI.Web
                 {
                     MessageBox.Show("No posee inscripciones de alumnos");
                 }
-            } 
-            catch 
+            }
+            catch
             {
             }
         }

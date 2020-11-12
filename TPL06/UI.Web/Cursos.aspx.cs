@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Academia.Data.Database;
 using Business.Logic;
+using Business.Entities;
 
 namespace Academia.UI.Web
 {
@@ -13,6 +14,16 @@ namespace Academia.UI.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Usuario usuario = (Usuario)Session["usuarioLogueado"];
+            if (usuario == null)
+            {
+                Page.Response.Redirect("~/PaginaNoPermitida.aspx");
+            }
+            foreach (Modulo m in usuario.Modulo)
+            {
+                if (!(m.Descripcion == "NoDocente" || m.Descripcion == "Administrador"))
+                    Page.Response.Redirect("~/PaginaNoPermitida.aspx");
+            }
             dgvCursos.Columns[0].Visible = false;
             using (EntidadesTP2 db = new EntidadesTP2())
             {
