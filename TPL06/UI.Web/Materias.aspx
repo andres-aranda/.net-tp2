@@ -1,12 +1,19 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="Materias.aspx.cs" Inherits="Academia.UI.Web.Materias" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="PageContent" runat="server">
-       <drint()" />
-        <div style="margin-bottom: 15px;">
+       <div>
+
+           <div class="contenedorImprimir">
+<input id="btnPrint" class="btn" type="button" value="Imprimir" onclick="doPrint()" />
+           </div>
+
+           <div style="margin-bottom: 15px;">
             <asp:LinkButton ID="editarLinkButton" runat="server" OnClick="editarLinkButton_Click" CssClass="btn">Editar</asp:LinkButton>
             <asp:LinkButton ID="EliminarLinkButton" runat="server" OnClick="EliminarLinkButton_Click" CssClass="btn">Eliminar</asp:LinkButton>
             <asp:LinkButton ID="NuevoLinkButton" runat="server" OnClick="NuevoLinkButton_Click" CssClass="btn">Nuevo</asp:LinkButton>
-        </div-->
+        </div>
+<!--startprint-->
+           <h1>Materias</h1>
         <asp:Panel ID="gridPanel" runat="server">
             <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="GridView1_SelectedIndexChanged"
                 SelectedRowStyle-BackColor="Black"
@@ -23,7 +30,9 @@
                 <RowStyle CssClass="filas" />
                 <SelectedRowStyle CssClass="filaSeleccionada" />
             </asp:GridView>
-        </asp:Pan>
+        </asp:Panel>
+
+           <!--endprint-->
 
     </div>
     <asp:Panel ID="formActionPanel" runat="server">

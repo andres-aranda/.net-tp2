@@ -8,7 +8,7 @@ using Business.Logic;
 using Business.Entities;
 using System.Windows.Forms;
 using Academia.Util;
-// TODO: Ver porque no guarda en base d edatos 
+
 
 namespace Academia.UI.Web
 {

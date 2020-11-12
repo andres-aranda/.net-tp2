@@ -3,11 +3,19 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="PageContent" runat="server">
+      <div class="contenedorImprimir">
+          <input id="btnPrint" class="btn" type="button" value="Imprimir" onclick="doPrint()" />
+           </div>
+
+
     <div>
         <asp:LinkButton ID="btnEditar" runat="server" OnClick="btnEditar_Click" CssClass="btn">Editar</asp:LinkButton>
         <asp:LinkButton ID="btnEliminar" runat="server" OnClick="btnEliminar_Click" CssClass="btn">Eliminar</asp:LinkButton>
         <asp:LinkButton ID="btnNuevo" runat="server" OnClick="btnNuevo_Click" CssClass="btn">Nuevo</asp:LinkButton>
     </div>
+
+    <!--startprint-->
+           <h1>Cursos</h1>
     <asp:GridView ID="dgvCursos" runat="server" DataKeyNames="Id" AutoGenerateColumns="false" CssClass="tabla">
         <Columns>
             <asp:BoundField HeaderText="ID" DataField="Id" />
@@ -21,4 +29,7 @@
         <RowStyle CssClass="filas" />
         <SelectedRowStyle BackColor="Black" ForeColor="White" />
     </asp:GridView>
+
+    
+           <!--endprint-->
 </asp:Content>

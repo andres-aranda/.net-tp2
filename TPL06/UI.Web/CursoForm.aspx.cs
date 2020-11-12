@@ -40,7 +40,7 @@ namespace Academia.UI.Web
             CargarMaterias();
             ddlMaterias.SelectedValue = c.Materia.Id.ToString();
             CargarComisiones();
-            ddlComisiones.SelectedValue = c.Comision.Id.ToString(); // TODO: No carga la comisión correcta
+            ddlComisiones.SelectedValue = c.Comision.Id.ToString(); 
             txtAño.Text = c.AñoCalendario.ToString();
             txtCupo.Text = c.Cupo.ToString();
         }
@@ -48,6 +48,9 @@ namespace Academia.UI.Web
         protected void ddlPlanes_SelectedIndexChanged(object sender, EventArgs e)
         {
             CargarMaterias();
+            EspecialidadLogic el = new EspecialidadLogic();
+            Especialidad esp = el.GetByPlan(int.Parse(this.ddlPlanes.SelectedValue));
+            lblEspecialidad.Text = esp.Descripcion;
         }
 
         protected void ddlMaterias_SelectedIndexChanged(object sender, EventArgs e)

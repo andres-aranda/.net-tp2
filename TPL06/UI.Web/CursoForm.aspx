@@ -6,7 +6,9 @@
     <table>
         <tr>
             <td><asp:Label ID="lblPlan" runat="server" Text="Plan"></asp:Label></td>
-            <td><asp:DropDownList ID="ddlPlanes" runat="server" AutoPostBack="True" DataTextField="Descripcion" DataValueField="Id" OnSelectedIndexChanged="ddlPlanes_SelectedIndexChanged"></asp:DropDownList></td>
+            <td><asp:DropDownList ID="ddlPlanes" runat="server" AutoPostBack="True" DataTextField="Descripcion" DataValueField="Id" OnSelectedIndexChanged="ddlPlanes_SelectedIndexChanged"></asp:DropDownList>
+                <asp:Label ID="lblEspecialidad" runat="server" Text="Label"></asp:Label>
+            </td>
         </tr>
         <tr>
             <td><asp:Label ID="lblMateria" runat="server" Text="Materia"></asp:Label></td>
@@ -14,7 +16,7 @@
         </tr>
         <tr>
             <td><asp:Label ID="lblComision" runat="server" Text="Comisión"></asp:Label></td>
-            <td><asp:DropDownList ID="ddlComisiones" runat="server" DataTextField="DescripcionComision" DataValueField="Id"></asp:DropDownList></td>
+            <td><asp:DropDownList ID="ddlComisiones" runat="server" DataTextField="DescripcionComision" DataValueField="Id" AutoPostBack="True"></asp:DropDownList></td>
         </tr>
         <tr>
             <td><asp:Label ID="lblAño" runat="server" Text="Año"></asp:Label></td>
