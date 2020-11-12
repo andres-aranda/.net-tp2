@@ -6,8 +6,10 @@
 
     <div>
         <asp:Panel ID="ZonaEdicion" runat="server">
-
-            <asp:TextBox ID="txtNota" runat="server"></asp:TextBox>
+            Nota:
+            <asp:TextBox type="number" ID="txtNota" runat="server" OnTextChanged="txtNota_TextChanged"></asp:TextBox>
+            Condicion: 
+            <asp:DropDownList ID="cmbCondicion" runat="server" AutoPostBack="True"></asp:DropDownList>
             <asp:LinkButton ID="btnGuardar" runat="server" CssClass="btn" OnClick="btnGuardar_Click">Guardar</asp:LinkButton>
 
         </asp:Panel>
@@ -22,6 +24,7 @@
                 <asp:BoundField DataField="Persona.Legajo" HeaderText="Legajo" ReadOnly="True" />
                 <asp:BoundField DataField="Nota" HeaderText="Nota" />
                 <asp:BoundField DataField="Curso.AñoCalendario" HeaderText="Año" />
+                <asp:BoundField DataField="Condicion" HeaderText="Condicion" />
                 <asp:CommandField SelectText="Calificar" ShowSelectButton="True" />
 
             </Columns>

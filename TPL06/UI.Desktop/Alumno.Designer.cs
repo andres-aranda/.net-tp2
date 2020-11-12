@@ -37,6 +37,7 @@
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Calificar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Condicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dvgAlumnos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +52,8 @@
             this.Nombre,
             this.Apellido,
             this.Legajo,
-            this.Calificar});
+            this.Calificar,
+            this.Condicion});
             this.dvgAlumnos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dvgAlumnos.Location = new System.Drawing.Point(0, 0);
             this.dvgAlumnos.Name = "dvgAlumnos";
@@ -107,6 +109,13 @@
             this.Calificar.HeaderText = "Calificar";
             this.Calificar.Name = "Calificar";
             // 
+            // Condicion
+            // 
+            this.Condicion.DataPropertyName = "Condicion";
+            this.Condicion.HeaderText = "Condicion";
+            this.Condicion.Name = "Condicion";
+            this.Condicion.ReadOnly = true;
+            // 
             // Alumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -132,5 +141,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn Legajo;
         private System.Windows.Forms.DataGridViewButtonColumn Calificar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Condicion;
     }
 }

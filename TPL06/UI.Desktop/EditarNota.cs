@@ -60,6 +60,10 @@ namespace Academia.UI.Desktop
                         MessageBox.Show("Calificacion guardada,");
                         this.Close();
                     }
+                    else
+                    {
+                        MessageBox.Show("La nota no es acorde a la condicion");
+                    }
                 }
                 catch
                 {

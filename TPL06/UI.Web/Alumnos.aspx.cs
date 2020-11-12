@@ -1,4 +1,5 @@
 ﻿using Academia.Data.Database;
+using Academia.Util;
 using Business.Entities;
 using Business.Logic;
 using System;
@@ -17,10 +18,16 @@ namespace Academia.UI.Web
         CursoLogic cl;
 
         public int IdIncripcion { get => idIncripcion; set => idIncripcion = value; }
-
+        List<string> condiciones = new List<string>()
+        {
+            "Cursando",
+            "Regular",
+            "Aprobada",
+            "Libre"
+        };
         protected void Page_Load(object sender, EventArgs e)
         {
-            ZonaEdicion.Visible = false;
+           
             cl = new CursoLogic();
             Usuario usuario = (Usuario)Session["usuarioLogueado"];
             if (usuario == null)
@@ -33,7 +40,7 @@ namespace Academia.UI.Web
                     Page.Response.Redirect("~/PaginaNoPermitida.aspx");
             }
             int idPersona = usuario.Persona.Id;
-
+            
             List<Inscripcion> ls = cl.GetMateriasInscripcionesDocente(idPersona);
             inscripcionesDocente.DataSource = ls;
             inscripcionesDocente.DataBind();
@@ -41,6 +48,15 @@ namespace Academia.UI.Web
             {
                 MessageBox.Show("No posee inscripciones de alumnos");
             }
+            if (!IsPostBack)
+            {
+                ZonaEdicion.Visible = false;
+                cmbCondicion.DataSource = condiciones;
+                cmbCondicion.DataBind();
+
+
+            }
+
         }
 
         protected void inscripcionesDocente_SelectedIndexChanged(object sender, EventArgs e)
@@ -53,25 +69,41 @@ namespace Academia.UI.Web
         {
             try
             {
-                using (EntidadesTP2 db = new EntidadesTP2())
+                if (Validations.IsValidNota(int.Parse(txtNota.Text), (string)cmbCondicion.SelectedValue))
                 {
-                    alumnos_inscripciones aluInsc = db.alumnos_inscripciones.Find((int)inscripcionesDocente.SelectedValue);
-                    aluInsc.nota = int.Parse(txtNota.Text);
-                    db.SaveChanges();
-                    MessageBox.Show("Nota Cambiada con éxito");
+                    using (EntidadesTP2 db = new EntidadesTP2())
+                    {
+                        alumnos_inscripciones aluInsc = db.alumnos_inscripciones.Find((int)inscripcionesDocente.SelectedValue);
+                        aluInsc.nota = int.Parse(txtNota.Text);
+                        aluInsc.condicion = (string)cmbCondicion.SelectedValue;
+                        db.SaveChanges();
+                        MessageBox.Show("Nota Cambiada con éxito");
+                    }
+                    Usuario usuario = (Usuario)Session["usuarioLogueado"];
+                    List<Inscripcion> ls = cl.GetMateriasInscripcionesDocente(usuario.Persona.Id);
+                    inscripcionesDocente.DataSource = ls;
+                    inscripcionesDocente.DataBind();
+                    IdIncripcion = 0;
+                    if (inscripcionesDocente == null)
+                    {
+                        MessageBox.Show("No posee inscripciones de alumnos");
+                    }
+                    ZonaEdicion.Visible = false;
                 }
-                Usuario usuario = (Usuario)Session["usuarioLogueado"];
-                List<Inscripcion> ls = cl.GetMateriasInscripcionesDocente(usuario.Persona.Id);
-                inscripcionesDocente.DataSource = ls;
-                inscripcionesDocente.DataBind();
-                if (inscripcionesDocente == null)
+                else
                 {
-                    MessageBox.Show("No posee inscripciones de alumnos");
+                    MessageBox.Show("La nota no es acorde a la condicion");
                 }
             }
             catch
             {
+                MessageBox.Show("Ingrese la nota de forma numerica");
             }
+        }
+
+        protected void txtNota_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -256,7 +256,7 @@ namespace Data.Database
             {
                 this.OpenConnection();
                 SqlCommand cmdCurso = new SqlCommand(
-                    "select DISTINCT id_inscripcion ,nombre, apellido, legajo, desc_materia, desc_comision, nota, anio_calendario from personas pe " +
+                    "select DISTINCT condicion, id_inscripcion ,nombre, apellido, legajo, desc_materia, desc_comision, nota, anio_calendario from personas pe " +
                     "inner join alumnos_inscripciones alu_ins on alu_ins.id_alumno = pe.id_persona " +
                     " inner join cursos cur on cur.id_curso = alu_ins.id_curso " +
                     "inner join materias mat on mat.id_materia = cur.id_materia " +
@@ -279,6 +279,7 @@ namespace Data.Database
                     ii.Persona.Apellido= (string)drCurso["apellido"];
                     ii.Persona.Legajo= (int)drCurso["legajo"];
                     ii.Nota = (int)drCurso["nota"];
+                    ii.Condicion = (string)drCurso["condicion"];
                     ii.Curso.AñoCalendario = (int)drCurso["anio_calendario"];
                     insc.Add(ii);
                 }

@@ -51,6 +51,7 @@ namespace Academia.UI.Desktop
                                       Apellido = pe.apellido,
                                       Legajo = pe.legajo,
                                       Nota = alu_ins.nota,
+                                      Condicion = alu_ins.condicion,
 
 
                                   };
