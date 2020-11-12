@@ -13,6 +13,7 @@ namespace Academia.UI.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            dgvCursos.Columns[0].Visible = false;
             using (EntidadesTP2 db = new EntidadesTP2())
             {
                 var cursos = from cur in db.cursos

@@ -23,7 +23,7 @@
                 <RowStyle CssClass="filas" />
                 <SelectedRowStyle CssClass="filaSeleccionada" />
             </asp:GridView>
-        </asp:Pan>
+        </asp:Panel>
 
     </div>
     <asp:Panel ID="formActionPanel" runat="server">

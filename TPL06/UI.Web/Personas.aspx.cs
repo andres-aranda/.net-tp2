@@ -17,6 +17,7 @@ namespace Academia.UI.Web
         {
             dgvPersonas.DataSource = pl.GetAll();
             dgvPersonas.DataBind();
+            dgvPersonas.Columns[0].Visible = false;
         }
 
         protected void btnEditar_Click(object sender, EventArgs e)
