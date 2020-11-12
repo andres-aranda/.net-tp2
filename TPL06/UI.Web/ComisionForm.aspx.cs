@@ -40,7 +40,7 @@ namespace Academia.UI.Web
         {
             this.Entity = this.Logic.GetOne(id);
             this.descComtxt.Text = this.Entity.DescripcionComision;
-            this.cboIdPlan.SelectedValue = this.Entity.IdPlan.ToString();
+            PlanesID.PlanSeleccionado = Entity.IdPlan;
             this.añoEspeTextBox.Text = this.Entity.AñoEspecialidad.ToString();
 
         }
@@ -50,7 +50,7 @@ namespace Academia.UI.Web
          
                 comision.DescripcionComision = this.descComtxt.Text;
                 comision.AñoEspecialidad = int.Parse(this.añoEspeTextBox.Text);
-                comision.IdPlan = int.Parse(this.cboIdPlan.Text);
+                comision.IdPlan = PlanesID.PlanSeleccionado; 
         
             
         }
@@ -100,24 +100,6 @@ namespace Academia.UI.Web
             Page.Response.Redirect("~/Comisiones.aspx");
         }
 
-        protected void cboIdPlan_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            EspecialidadLogic el = new EspecialidadLogic();
-            Especialidad esp = el.GetByPlan(int.Parse(this.cboIdPlan.SelectedValue));
-            lblEspecialidad.Text = esp.Descripcion;
-
-        }
-        private void cargacombo()
-        {
-
-            PlanLogic pl = new PlanLogic();
-            cboIdPlan.DataSource = pl.GetAll();
-            cboIdPlan.DataBind();
-            EspecialidadLogic el = new EspecialidadLogic();
-            Especialidad esp = el.GetByPlan(int.Parse(this.cboIdPlan.SelectedValue));
-            lblEspecialidad.Text = esp.Descripcion;
-
-        }
         #endregion
 
 
@@ -142,13 +124,12 @@ namespace Academia.UI.Web
             }
             if (!Page.IsPostBack)
             {
-                cargacombo();
                 if (Session["formMode"] != null)
                 {
 
                     FormMode = (FormModes)Session["formMode"];
                     if (Session["idSeleccionada"] != null)
-                        LoadForm((int)Session["idSeleccionada"]);
+                    LoadForm((int)Session["idSeleccionada"]);
                 }
 
             }

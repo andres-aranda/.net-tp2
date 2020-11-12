@@ -1,5 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MateriaForm.aspx.cs" Inherits="Academia.UI.Web.MateriaForm" %>
 
+<%@ Register Src="~/Planes.ascx" TagPrefix="uc1" TagName="Planes" %>
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .auto-style1 {
@@ -31,18 +34,20 @@
     .auto-style9 {
         height: 4px;
     }
+        .auto-style10 {
+            margin-bottom: 0px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="PageContent" runat="server">
     <table style="width: 100%;" class="tabla">
         <tr class="filas">
-            <td class="auto-style3">NroPlan</td>
-            <td>
-                <asp:DropDownList ID="cboIdPlan" runat="server" DataTextField="Descripcion" DataValueField="Id" OnSelectedIndexChanged="cboIdPlan_SelectedIndexChanged" OnTextChanged="cboIdPlan_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
-            </td>
-            <td>
-                <asp:Label ID="lblEspecialidad" runat="server" Text="Label"></asp:Label>
-               </td>
+           
+            <td colspan="5">
+                <uc1:Planes runat="server" ID="PlanesID" />
+
+           </td>
+        
         </tr>
         <tr class="filas">
             <td class="auto-style3">

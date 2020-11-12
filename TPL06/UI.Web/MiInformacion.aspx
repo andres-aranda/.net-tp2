@@ -1,5 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MiInformacion.aspx.cs" Inherits="Academia.UI.Web.MiInformacion" %>
 
+<%@ Register Src="~/Planes.ascx" TagPrefix="uc1" TagName="Planes" %>
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="PageContent" runat="server">
@@ -57,25 +60,25 @@
                     <asp:TextBox ID="txtDireccion" runat="server"></asp:TextBox>
                 </td>
             </tr>
-            <tr class="filas">
-                <td>Fecha de nacimiento</td>
-                <td>
-                    <asp:TextBox ID="txtFechaNac" runat="server" Height="25px" Enabled="False"></asp:TextBox>
-                </td>
-                <td>Plan</td>
-                <td>
-                    <asp:DropDownList ID="ddlPlanes" runat="server" Enabled="False">
-                    </asp:DropDownList>
-                </td>
-
-            </tr>
+        
             <tr class="filas">
                 <td>Legajo</td>
                 <td>
                     <asp:TextBox ID="txtLegajo" runat="server" Enabled="False" Height="25px"></asp:TextBox>
                 </td>
+                    <td>Fecha de nacimiento</td>
+                <td>
+                    <asp:TextBox ID="txtFechaNac" runat="server" Height="25px" Enabled="False"></asp:TextBox>
+                </td> 
+
                 <td>&nbsp;</td>
-                <td>&nbsp;</td>
+            </tr> 
+            <tr class="filas">
+           
+                <td colspan="4">
+                <uc1:Planes runat="server" ID="PlanesID" />
+           </td>
+
             </tr>
         </table>
         <div style="margin: 15px;">

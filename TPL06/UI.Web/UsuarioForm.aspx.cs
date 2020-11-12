@@ -81,6 +81,7 @@ namespace Academia.UI.Web
             this.emailTextBox.Text = this.Entity.Persona.Email.ToString();
             this.nombreUsuarioTextBox.Text = this.Entity.NombreUsuario;
             this.claveTextBox.Text = this.Entity.Clave;
+            this.txtLegajo.Text = Entity.Persona.Legajo.ToString();
         }
 
         protected void LoadEntity(Usuario usuario)

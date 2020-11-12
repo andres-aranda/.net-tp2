@@ -43,6 +43,7 @@
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
             this.tlpCursos = new System.Windows.Forms.TableLayoutPanel();
+            this.tsbReporte = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCursos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.entidadesTP2BindingSource)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -147,7 +148,8 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbNuevo,
             this.tsbEditar,
-            this.tsbEliminar});
+            this.tsbEliminar,
+            this.tsbReporte});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(563, 27);
@@ -203,6 +205,16 @@
             this.tlpCursos.Size = new System.Drawing.Size(563, 259);
             this.tlpCursos.TabIndex = 4;
             // 
+            // tsbReporte
+            // 
+            this.tsbReporte.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbReporte.Image = global::Academia.UI.Desktop.Properties.Resources.report_btn;
+            this.tsbReporte.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbReporte.Name = "tsbReporte";
+            this.tsbReporte.Size = new System.Drawing.Size(24, 24);
+            this.tsbReporte.Text = "toolStripButton1";
+            this.tsbReporte.Click += new System.EventHandler(this.tsbReporte_Click);
+            // 
             // Cursos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -239,5 +251,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn comision;
         private System.Windows.Forms.DataGridViewTextBoxColumn Año;
         private System.Windows.Forms.DataGridViewTextBoxColumn cupo;
+        private System.Windows.Forms.ToolStripButton tsbReporte;
     }
 }

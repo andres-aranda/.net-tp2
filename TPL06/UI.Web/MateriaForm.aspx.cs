@@ -38,17 +38,7 @@ namespace Academia.UI.Web
         #endregion
 
         #region Metodos 
-        private void cargacombo()
-        {
-
-            PlanLogic pl = new PlanLogic();
-            cboIdPlan.DataSource = pl.GetAll();
-            cboIdPlan.DataBind();
-            EspecialidadLogic el = new EspecialidadLogic();
-            Especialidad esp = el.GetByPlan(int.Parse(this.cboIdPlan.SelectedValue));
-            lblEspecialidad.Text = esp.Descripcion;
-
-        }
+    
         private void LoadForm(int id)
         {
             EspecialidadLogic el = new EspecialidadLogic();
@@ -57,7 +47,7 @@ namespace Academia.UI.Web
             this.descripcionTextBox.Text = this.Entity.Descripcion;
             this.hsSemanalesTextBox.Text = this.Entity.HsSemanales.ToString();
             this.hsTotalesTextBox.Text = this.Entity.HsTotales.ToString();
-            this.cboIdPlan.SelectedValue = this.Entity.IdPlan.ToString();
+            PlanesID.PlanSeleccionado = this.Entity.IdPlan;
         }
 
         protected void LoadEntity(Materia Matadd)
@@ -65,7 +55,7 @@ namespace Academia.UI.Web
             Matadd.Descripcion = this.descripcionTextBox.Text;
             Matadd.HsTotales = int.Parse(this.hsTotalesTextBox.Text);
             Matadd.HsSemanales = int.Parse(this.hsSemanalesTextBox.Text);
-            Matadd.IdPlan = int.Parse(this.cboIdPlan.SelectedValue);
+            Matadd.IdPlan = PlanesID.PlanSeleccionado;
         }
         private void SaveEntity(Materia usuario)
         {
@@ -111,12 +101,7 @@ namespace Academia.UI.Web
             Page.Response.Redirect("~/Materias.aspx");
         }
 
-        protected void cboIdPlan_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            EspecialidadLogic el = new EspecialidadLogic();
-            Especialidad esp = el.GetByPlan(int.Parse(this.cboIdPlan.SelectedValue));
-            lblEspecialidad.Text = esp.Descripcion;
-        }
+       
         #endregion
 
         protected void Page_Load(object sender, EventArgs e)
@@ -131,7 +116,6 @@ namespace Academia.UI.Web
             }
             if (!IsPostBack)
             {
-                cargacombo();
 
                 if (Session["formMode"] != null)
                 {

@@ -15,22 +15,13 @@ namespace Academia.UI.Web
     {
 
         /// <summary>
-        /// Control cboIdPlan.
+        /// Control PlanesID.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList cboIdPlan;
-
-        /// <summary>
-        /// Control lblEspecialidad.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEspecialidad;
+        protected global::Academia.UI.Web.Planes1 PlanesID;
 
         /// <summary>
         /// Control nombreLabel.

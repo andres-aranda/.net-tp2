@@ -99,7 +99,6 @@
   <ItemGroup>
     <Content Include="CursoForm.aspx" />
     <Content Include="Cursos.aspx" />
-    <Content Include="CursosDocente.aspx" />
     <Content Include="Especialidades.aspx" />
     <Content Include="EspecialidadForm.aspx" />
     <Content Include="IngresoLegajoAlumno.aspx" />
@@ -115,6 +114,7 @@
     <Content Include="PaginaNoPermitida.aspx" />
     <Content Include="Permisos.aspx" />
     <Content Include="Personas.aspx" />
+    <Content Include="Planes.ascx" />
     <Content Include="Planes.aspx" />
     <Content Include="PlanForm.aspx" />
     <Content Include="Resources\alto.gif" />
@@ -173,13 +173,6 @@
     </Compile>
     <Compile Include="Cursos.aspx.designer.cs">
       <DependentUpon>Cursos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="CursosDocente.aspx.cs">
-      <DependentUpon>CursosDocente.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CursosDocente.aspx.designer.cs">
-      <DependentUpon>CursosDocente.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -323,6 +316,13 @@
     </Compile>
     <Compile Include="Personas.aspx.designer.cs">
       <DependentUpon>Personas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Planes.ascx.cs">
+      <DependentUpon>Planes.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Planes.ascx.designer.cs">
+      <DependentUpon>Planes.ascx</DependentUpon>
     </Compile>
     <Compile Include="Planes.aspx.cs">
       <DependentUpon>Planes.aspx</DependentUpon>

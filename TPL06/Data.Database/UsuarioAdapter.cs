@@ -64,7 +64,7 @@ namespace Data.Database
             {
                 this.OpenConnection();
                 SqlCommand cmdUsuario = new SqlCommand(
-                    "SELECT u.*, p.nombre, p.apellido, p. email " +
+                    "SELECT u.*, p.nombre, p.apellido, p.email , p.legajo " +
                     "FROM usuarios u " +
                     "INNER JOIN personas p ON p.id_persona = u.id_persona " +
                     "WHERE id_usuario = @id", Sqlconn);
@@ -78,6 +78,7 @@ namespace Data.Database
                     usr.Persona = new Persona
                     {
                         Id = (int)drUsuario["id_persona"],
+                        Legajo = (int)drUsuario["legajo"],
                         Nombre = (string)drUsuario["nombre"],
                         Apellido = (string)drUsuario["apellido"],
                         Email = new MailAddress((string)drUsuario["email"])
@@ -179,16 +180,10 @@ namespace Data.Database
             {
                 this.OpenConnection();
                 SqlCommand cmd = new SqlCommand("UPDATE usuarios SET nombre_usuario = @nombre_usuario, clave = @clave " +
-                    " WHERE id_usuario = @id; " +
-                    "UPDATE personas SET nombre = @nombre, apellido = @apellido, email = @email " +
-                    " WHERE id_persona = @id_persona;", Sqlconn);
+                    " WHERE id_usuario = @id; ", Sqlconn);
                 cmd.Parameters.Add("@id", SqlDbType.Int).Value = usuario.Id;
                 cmd.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = usuario.NombreUsuario;
                 cmd.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = usuario.Clave;
-                cmd.Parameters.Add("@id_persona", SqlDbType.Int).Value = usuario.Persona.Id;
-                cmd.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = usuario.Persona.Nombre;
-                cmd.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = usuario.Persona.Apellido;
-                cmd.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = usuario.Persona.Email.ToString();
                 cmd.ExecuteNonQuery();
             }
             catch (Exception Ex)

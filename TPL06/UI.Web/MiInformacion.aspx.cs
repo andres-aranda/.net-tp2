@@ -26,9 +26,10 @@ namespace Academia.UI.Web
         {
             if (!Page.IsPostBack)
             {
-                CargarPlanes();
+            
                 if (Session["idSeleccionado"] != null && (int)Session["idSeleccionado"] != -1)
                 {
+                    PlanesID.SoloLectura = false;
                     idPersona = (int)Session["idSeleccionado"];
                     Session["esNuevo"] = false;
                     persona = pl.GetOne(idPersona);
@@ -36,6 +37,7 @@ namespace Academia.UI.Web
                 }
                 else if (Session["idSeleccionado"] == null)
                 {
+                    PlanesID.SoloLectura = false;
                     idPersona = ((Usuario)Session["usuarioLogueado"]).Persona.Id;
                     Session["idSeleccionado"] = idPersona;
                     Session["esNuevo"] = false;
@@ -46,7 +48,7 @@ namespace Academia.UI.Web
                 {
                     txtFechaNac.Enabled = true;
                     txtLegajo.Enabled = true;
-                    ddlPlanes.Enabled = true;
+                    PlanesID.SoloLectura = true;
                     txtNombreUsua.Text = "No asignado.";
                     txtClave.Enabled = false;
                     repetirClave.Enabled = false;
@@ -72,22 +74,11 @@ namespace Academia.UI.Web
                 this.txtLegajo.Text = this.persona.Legajo.ToString();
                 this.txtNombreUsua.Text = usuario.nombre_usuario;
                 this.txtDireccion.Text = this.persona.Direccion.ToString();
-                ddlPlanes.SelectedValue = persona.IdPlan.ToString();
+                PlanesID.PlanSeleccionado = persona.IdPlan;
             }
 
         }
 
-        private void CargarPlanes()
-        {
-            using (EntidadesTP2 db = new EntidadesTP2())
-            {
-                List<planes> planes = db.planes.ToList();
-                ddlPlanes.DataSource = planes;
-                ddlPlanes.DataValueField = "id_plan";
-                ddlPlanes.DataTextField = "desc_plan";
-                ddlPlanes.DataBind();
-            }
-        }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -110,8 +101,8 @@ namespace Academia.UI.Web
                                 fecha_nac = DateTime.Parse(txtFechaNac.Text),
                                 legajo = int.Parse(txtLegajo.Text),
                                 direccion = txtDireccion.Text,
-                                id_plan = int.Parse(ddlPlanes.SelectedValue)
-                            };
+                                id_plan = PlanesID.PlanSeleccionado
+                        };
                             db.personas.Add(oPersona);
                         }
                         else
@@ -172,8 +163,8 @@ namespace Academia.UI.Web
                 string.IsNullOrWhiteSpace(txtTelefono.Text) ||
                 string.IsNullOrWhiteSpace(txtFechaNac.Text) ||
                 string.IsNullOrWhiteSpace(txtLegajo.Text) ||
-                string.IsNullOrWhiteSpace(txtDireccion.Text) ||
-                ddlPlanes.SelectedValue == null
+                string.IsNullOrWhiteSpace(txtDireccion.Text) 
+                //|| PlanesID.PlanSeleccionado == null
                 )
             {
                 return false;

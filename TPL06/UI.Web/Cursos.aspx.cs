@@ -57,9 +57,9 @@ namespace Academia.UI.Web
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            int idCurso = (int)dgvCursos.SelectedValue;
+           
             try
-            {
+            { int idCurso = (int)dgvCursos.SelectedValue;
                 using (EntidadesTP2 db = new EntidadesTP2())
                 {
                     cursos oCurso = db.cursos.Find(idCurso);

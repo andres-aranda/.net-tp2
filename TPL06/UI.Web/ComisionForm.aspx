@@ -1,5 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ComisionForm.aspx.cs" Inherits="Academia.UI.Web.ComisionForm" %>
 
+<%@ Register Src="~/Planes.ascx" TagPrefix="uc1" TagName="Planes" %>
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .auto-style9 {
@@ -33,13 +36,9 @@
             </td>
         </tr>
         <tr class="filas">
-            <td class="auto-style11">NroPlan</td>
-            <td class="auto-style9">
-                <asp:DropDownList ID="cboIdPlan" runat="server" DataTextField="Descripcion" DataValueField="Id" OnSelectedIndexChanged="cboIdPlan_SelectedIndexChanged" OnTextChanged="cboIdPlan_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
-            </td>
-            <td colspan="2">
-                <asp:Label ID="lblEspecialidad" runat="server" Text="Label"></asp:Label>
-            </td>
+                <td colspan="4">
+                <uc1:Planes runat="server" ID="PlanesID" />
+           </td>
         </tr>
     </table>
 

@@ -16,7 +16,7 @@
         </tr>
         <tr>
             <td><asp:Label ID="lblComision" runat="server" Text="Comisión"></asp:Label></td>
-            <td><asp:DropDownList ID="ddlComisiones" runat="server" DataTextField="DescripcionComision" DataValueField="Id" AutoPostBack="True"></asp:DropDownList></td>
+            <td><asp:DropDownList ID="ddlComisiones" runat="server" DataTextField="DescripcionComision" DataValueField="Id" ></asp:DropDownList></td>
         </tr>
         <tr>
             <td><asp:Label ID="lblAño" runat="server" Text="Año"></asp:Label></td>
