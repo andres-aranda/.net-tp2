@@ -112,29 +112,49 @@ namespace Academia.UI.Desktop
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            using (EntidadesTP2 db = new EntidadesTP2())
+            if (Validar())
             {
-                cursos curso;
-                if (idCurso == 0)
+                using (EntidadesTP2 db = new EntidadesTP2())
                 {
-                    curso = new cursos();
-                    curso.id_comision = int.Parse(cmbComision.SelectedValue.ToString());
-                    curso.id_materia = int.Parse(cmbMateria.SelectedValue.ToString());
-                    curso.anio_calendario = int.Parse(txtAnio.Text);
-                    curso.cupo = int.Parse(txtCupo.Text);
-                    db.cursos.Add(curso);
+                    cursos curso;
+                    if (idCurso == 0)
+                    {
+                        curso = new cursos();
+                        curso.id_comision = int.Parse(cmbComision.SelectedValue.ToString());
+                        curso.id_materia = int.Parse(cmbMateria.SelectedValue.ToString());
+                        curso.anio_calendario = int.Parse(txtAnio.Text);
+                        curso.cupo = int.Parse(txtCupo.Text);
+                        db.cursos.Add(curso);
+                    }
+                    else
+                    {
+                        curso = db.cursos.Find(idCurso);
+                        curso.id_comision = int.Parse(cmbComision.SelectedValue.ToString());
+                        curso.id_materia = int.Parse(cmbMateria.SelectedValue.ToString());
+                        curso.anio_calendario = int.Parse(txtAnio.Text);
+                        curso.cupo = int.Parse(txtCupo.Text);
+                    }
+                    db.SaveChanges();
                 }
-                else
-                {
-                    curso = db.cursos.Find(idCurso);
-                    curso.id_comision = int.Parse(cmbComision.SelectedValue.ToString());
-                    curso.id_materia = int.Parse(cmbMateria.SelectedValue.ToString());
-                    curso.anio_calendario = int.Parse(txtAnio.Text);
-                    curso.cupo = int.Parse(txtCupo.Text);
-                }
-                db.SaveChanges();
+                Dispose();
             }
-            Dispose();
+            else
+            {
+                MessageBox.Show("Debe llenar todos los campos.");
+            }
+        }
+
+        private bool Validar()
+        {
+            if (cmbPlan.SelectedValue == null ||
+                cmbComision.SelectedValue == null ||
+                cmbMateria.SelectedValue == null ||
+                string.IsNullOrEmpty(txtAnio.Text) ||
+                string.IsNullOrEmpty(txtCupo.Text))
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

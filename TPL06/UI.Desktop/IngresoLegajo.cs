@@ -22,8 +22,22 @@ namespace Academia.UI.Desktop
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Legajo = int.Parse(txtLegajo.Text);
-            Close();
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(txtLegajo.Text))
+                { 
+                    Legajo = int.Parse(txtLegajo.Text);
+                    Close();
+                }
+                else
+                { 
+                    MessageBox.Show("Ingrese un legajo.");
+                }
+            }
+            catch (FormatException)
+            {
+
+            }
         }
     }
 }

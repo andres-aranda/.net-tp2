@@ -190,9 +190,9 @@ namespace Academia.UI.Desktop
                 }
                 AbrirFormularioHijo(new InscripcionesDesktop(idPersona));
             }
-            catch
+            catch (InvalidOperationException)
             {
-
+                MessageBox.Show("Legajo no encontrado");
             }
 
         }
@@ -269,7 +269,23 @@ namespace Academia.UI.Desktop
 
         private void cursosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            AbrirFormularioHijo(new DocentesCursos());
+            IngresoLegajo il = new IngresoLegajo();
+            il.ShowDialog();
+            int legajo = il.Legajo;
+            int idPersona;
+            try
+            {   
+                using (EntidadesTP2 db = new EntidadesTP2())
+                {
+                    idPersona = db.personas.Where(x => x.legajo == legajo).First().id_persona;
+                }
+                AbrirFormularioHijo(new DocentesCursos(idPersona));
+            }
+            catch (InvalidOperationException)
+            {
+                MessageBox.Show("Legajo no encontrado");
+            }
+            
         }
 
         private void inscripciónAMateriasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -301,9 +317,9 @@ namespace Academia.UI.Desktop
                 }
                 AbrirFormularioHijo(new Alumno(idPersona));
             }
-            catch
+            catch (InvalidOperationException)
             {
-
+                MessageBox.Show("Legajo no encontrado");
             }
         }
     }

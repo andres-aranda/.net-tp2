@@ -28,29 +28,6 @@ namespace Academia.UI.Desktop
 
         private void DocentesCursos_Load(object sender, EventArgs e)
         {
-            if (idPersona == -1)
-            { try
-                {
-                IngresoLegajo il = new IngresoLegajo();
-                il.ShowDialog();
-                int legajo = il.Legajo;
-               
-                    using (EntidadesTP2 db = new EntidadesTP2())
-                    {
-                        idPersona = db.personas.Where(x => x.legajo == legajo).First().id_persona;
-                    }
-                }
-                catch
-                {
-                    MessageBox.Show("Lejago no válido.");
-                    this.Close();
-                }
-            }
-            else
-            {
-                tsmCursosDocente.Visible = false;
-            }
-
             using (EntidadesTP2 db = new EntidadesTP2())
             {
                 var listaDocentesCursos = from d in db.personas
