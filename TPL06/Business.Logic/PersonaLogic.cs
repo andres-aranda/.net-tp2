@@ -49,9 +49,9 @@ namespace Business.Logic
             {
                 return PersonaData.GetByLegajo(legajo);
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                throw e;
+                throw new Exception("El legajo no existe.");
             }
         }
     }

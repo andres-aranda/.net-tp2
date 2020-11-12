@@ -152,6 +152,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Styles\login-styles.css" />
+    <Content Include="Styles\master-styles.css" />
     <Content Include="Styles\no-permitido.css" />
     <Content Include="UsuarioForm.aspx" />
     <Content Include="Usuarios.aspx" />

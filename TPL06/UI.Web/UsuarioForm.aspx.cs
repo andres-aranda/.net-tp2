@@ -15,6 +15,7 @@ namespace Academia.UI.Web
     public partial class UsuarioForm : System.Web.UI.Page
     {
         UsuarioLogic _logic;
+        List<Persona> personas;
         private UsuarioLogic Logic
         {
             get
@@ -47,6 +48,7 @@ namespace Academia.UI.Web
         protected void Page_Load(object sender, EventArgs e)
         {
             Usuario usuarioLog = (Usuario)Session["usuarioLogueado"];
+            personas = (new PersonaLogic()).GetAll();
 
             foreach (Modulo m in usuarioLog.Modulo)
             {
@@ -55,8 +57,6 @@ namespace Academia.UI.Web
             }
             if (!IsPostBack)
             {
-
-
                 if (Session["formMode"] != null)
                 {
                     if (Session["idSeleccionada"] != null)
@@ -64,6 +64,11 @@ namespace Academia.UI.Web
 
                     FormMode = (FormModes)Session["formMode"];
                 }
+            }
+
+            if (FormMode == FormModes.Alta)
+            {
+                txtLegajo.Enabled = true;
             }
 
         }
@@ -84,6 +89,7 @@ namespace Academia.UI.Web
             usuario.Persona.Nombre = this.nombreTextBox.Text;
             usuario.Persona.Apellido = this.apellidoTextBox.Text;
             usuario.Persona.Email = new System.Net.Mail.MailAddress(emailTextBox.Text);
+            usuario.Persona.Legajo = int.Parse(txtLegajo.Text);
             usuario.NombreUsuario = this.nombreUsuarioTextBox.Text;
             usuario.Clave = this.claveTextBox.Text;
         }

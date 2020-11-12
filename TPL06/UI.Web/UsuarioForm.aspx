@@ -5,6 +5,18 @@
     <table class="tabla">
         <tr class="filas">
             <td>
+                <asp:Label ID="lblLegajo" runat="server" Text="Legajo"></asp:Label>
+            </td>
+            <td>
+                <asp:TextBox ID="txtLegajo" runat="server" Enabled="False"></asp:TextBox>
+            </td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr class="filas">
+            <td>
                 <asp:Label ID="nombreLabel" runat="server" Text="Nombre"></asp:Label>
             </td>
             <td>

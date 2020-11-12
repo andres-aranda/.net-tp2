@@ -135,14 +135,16 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdDelete = new SqlCommand("DELETE usuarios WHERE id_usuario = @id", Sqlconn);
+                SqlCommand cmdDelete = new SqlCommand(
+                    "DELETE modulos_usuarios WHERE id_usuario = @id; " +
+                    "DELETE usuarios WHERE id_usuario = @id", Sqlconn);
                 cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = Id;
                 cmdDelete.ExecuteNonQuery();
             }
-            catch (Exception Ex)
+            catch (SqlException Ex)
             {
-                Exception excepcionManejada = new Exception("Error al eliminar usuario", Ex);
-                throw excepcionManejada;
+                
+                throw new Exception("Error al eliminar usuario", Ex);
             }
             finally
             {

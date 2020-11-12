@@ -1,0 +1,181 @@
+﻿:root {
+    --color-claro: #EEF0EB;
+    --color-primario: #1D201F;
+    --color-secundario: #DF928E;
+}
+
+html, body {
+    font-family: 'Noto Sans JP', sans-serif;
+    margin: 0;
+    background: var(--color-claro);
+    height: 100%;
+}
+
+table {
+    border: none;
+    margin: 0;
+}
+
+td {
+    padding: 0rem 2rem 0rem 2rem;
+    border: none;
+    min-width: 15rem;
+}
+
+#sidebar-row, #main-table, #form1, #sidebar {
+    height: 100%;
+}
+
+#sidebar, #site-logo {
+    background: var(--color-primario);
+    color: var(--color-claro);
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    color: var(--color-claro);
+    text-decoration: none;
+    transition: font-size .3s ease-in-out;
+}
+
+li a:hover {
+    color: var(--color-secundario);
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+h1 {
+    font-family: 'Zilla Slab', serif;
+    font-weight: 600;
+}
+
+h3 {
+    font-weight: 900;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+#icon {
+    fill: white;
+    color: white;
+    float: left;
+    margin: .25rem 1rem .25rem 0;
+}
+
+#logo {
+    vertical-align: middle;
+}
+
+
+.tabla {
+    border-spacing: 1px;
+    border-color: transparent;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    margin: 1rem auto;
+    position: relative;
+    table-layout: fixed;
+}
+
+.cabecera {
+    font-size: 15px;
+    color: #808080;
+    height: 60px;
+    background: #36304a;
+    line-height: 1.2;
+    font-weight: unset;
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.2;
+}
+
+.filas {
+    font-size: 15px;
+    color: #808080;
+    line-height: 1.2;
+    font-weight: unset;
+    height: 50px;
+}
+
+.filaSeleccionada {
+    font-size: 15px;
+    background: #2C3258;
+    color: white;
+    line-height: 1.2;
+    font-weight: unset;
+    height: 50px;
+}
+
+.contenedorImprimir {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.filas:hover {
+    color: #555555;
+    background-color: #f5f5f5;
+    cursor: pointer;
+}
+
+input[type="text"], input[type="password"], select {
+    border-radius: 5px !important;
+    border: solid #696675 1px;
+    background-color: transparent;
+    color: black;
+    width: inherit;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+    input[type="text"]:focus, input[type="password"]:focus {
+        border-bottom-color: #36304a;
+        outline: none !important;
+    }
+
+    input[type="text"]:disabled, input[type="password"]:disabled {
+        border-style: none;
+    }
+
+.btn {
+    background-color: #36304a;
+    border: none;
+    color: var(--color-claro) !important;
+    margin-right: 1rem;
+    padding: .25rem .5rem .25rem .5rem;
+    font-weight: 600;
+    box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.42);
+    transition: box-shadow .2s ease-in-out, background-color .2s ease-in-out, color .2s ease-in-out;
+    border-radius: .25rem;
+    margin-bottom: 2rem;
+}
+
+    .btn:hover {
+        background-color: var(--color-primario);
+        box-shadow: 5px 5px 10px -5px rgba(0,0,0,0.42);
+    }
+
+    .btn:active {
+        background-color: var(--color-primario) !important;
+    }
+
+    .btn:focus {
+        background-color: var(--color-primario) !important;
+    }
+
+.filas td a {
+    color: #36304a;
+    max-width: 1px;
+}
+
+.filas td {
+    max-width: 1px;
+}

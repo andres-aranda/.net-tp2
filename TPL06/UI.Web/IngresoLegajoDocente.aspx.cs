@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Business.Entities;
+using System.Windows.Forms;
 
 namespace Academia.UI.Web
 {
@@ -27,9 +28,20 @@ namespace Academia.UI.Web
 
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
+            try
+            { 
             int legajo = int.Parse(txtLegajo.Text);
             Session["docente"] = (new PersonaLogic()).GetByLegajo(legajo);
             Page.Response.Redirect("~/MisCursosDocente.aspx");
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Ingrese el legajo correctamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

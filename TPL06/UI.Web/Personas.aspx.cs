@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 
 namespace Academia.UI.Web
 {
@@ -38,7 +39,11 @@ namespace Academia.UI.Web
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            pl.Delete((int)dgvPersonas.SelectedValue);
+            if (MessageBox.Show("¿Desea eliminar la persona?", "Eliminar persona", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                pl.Delete((int)dgvPersonas.SelectedValue);
+                Page.Response.Redirect(Page.Request.Path);
+            }
         }
 
         protected void btnNuevo_Click(object sender, EventArgs e)
