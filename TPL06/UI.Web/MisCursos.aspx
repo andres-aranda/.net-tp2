@@ -3,6 +3,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="misCursosPage" ContentPlaceHolderID="PageContent" runat="server">
+           <div class="contenedorImprimir">
+               <input id="btnPrint" class="btn" type="button" value="Imprimir" onclick="doPrint()" />
+           </div>
+
+    <!--startprint-->
+           <h1>Cursos</h1>
     <asp:GridView ID="inscripcionesAlu" runat="server" AutoGenerateColumns="False" CssClass="tabla">
         <Columns>
             <asp:BoundField DataField="Materia" HeaderText="Materia">
@@ -21,4 +27,6 @@
         <HeaderStyle CssClass="cabecera" />
         <RowStyle CssClass="filas" Width="100px" />
     </asp:GridView>
+
+              <!--endprint-->
 </asp:Content>
