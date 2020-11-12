@@ -9,6 +9,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 
 namespace Academia.UI.Web
 {
@@ -16,13 +17,13 @@ namespace Academia.UI.Web
     public partial class MiInformacion : System.Web.UI.Page
     {
         private Persona persona;
+        int idPersona;
         private usuarios usuario;
 
         PersonaLogic pl = new PersonaLogic();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            int idPersona;
             if (!Page.IsPostBack)
             {
                 CargarPlanes();
@@ -36,6 +37,7 @@ namespace Academia.UI.Web
                 else if (Session["idSeleccionado"] == null)
                 {
                     idPersona = ((Usuario)Session["usuarioLogueado"]).Persona.Id;
+                    Session["idSeleccionado"] = idPersona;
                     Session["esNuevo"] = false;
                     persona = pl.GetOne(idPersona);
                     LoadForm();
@@ -89,39 +91,94 @@ namespace Academia.UI.Web
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            int idPersona = (int)Session["idSeleccionado"];
-            using (EntidadesTP2 db = new EntidadesTP2())
+            idPersona = (int)Session["idSeleccionado"];
+            if (Validar())
             {
-                personas oPersona;
-                if ((bool)Session["esNuevo"])
+                try
                 {
-                    oPersona = new personas
+                    using (EntidadesTP2 db = new EntidadesTP2())
                     {
-                        apellido = txtApellido.Text,
-                        nombre = txtNombre.Text,
-                        email = txtEmail.Text,
-                        telefono = txtTelefono.Text,
-                        fecha_nac = DateTime.Parse(txtFechaNac.Text),
-                        legajo = int.Parse(txtLegajo.Text),
-                        direccion = txtDireccion.Text,
-                        id_plan = int.Parse(ddlPlanes.SelectedValue)
-                    };
-                    db.personas.Add(oPersona);
+                        personas oPersona;
+                        if ((bool)Session["esNuevo"])
+                        {
+                            oPersona = new personas
+                            {
+                                apellido = txtApellido.Text,
+                                nombre = txtNombre.Text,
+                                email = txtEmail.Text,
+                                telefono = txtTelefono.Text,
+                                fecha_nac = DateTime.Parse(txtFechaNac.Text),
+                                legajo = int.Parse(txtLegajo.Text),
+                                direccion = txtDireccion.Text,
+                                id_plan = int.Parse(ddlPlanes.SelectedValue)
+                            };
+                            db.personas.Add(oPersona);
+                        }
+                        else
+                        {
+                            oPersona = db.personas.Find(idPersona);
+                            oPersona.nombre = txtNombre.Text;
+                            oPersona.apellido = txtApellido.Text;
+                            oPersona.email = txtEmail.Text;
+                            oPersona.telefono = txtTelefono.Text;
+                            oPersona.direccion = txtDireccion.Text;
+                            if (CambiaContraseña())
+                            {
+                                if (txtClave.Text == repetirClave.Text)
+                                {
+                                    try
+                                    {
+                                        usuarios oUsuario = db.usuarios.Where(x => x.id_persona == idPersona).First();
+                                        oUsuario.clave = txtClave.Text;
+                                    }
+                                    catch (Exception)
+                                    {
+                                        MessageBox.Show("El usuario no existe.");
+                                    }
+                                    
+                                }
+                            }
+                        }
+                        db.SaveChanges();
+                        System.Windows.Forms.MessageBox.Show("Datos guardados con éxito.");
+                    }
                 }
-                else
+                catch (FormatException)
                 {
-                    oPersona = db.personas.Find(idPersona);
-                    oPersona.nombre = txtNombre.Text;
-                    oPersona.apellido = txtApellido.Text;
-                    oPersona.email = txtEmail.Text;
-                    oPersona.telefono = txtTelefono.Text;
-                    oPersona.direccion = txtDireccion.Text;
+                    MessageBox.Show("Verifique bien los campos.");
                 }
-                db.SaveChanges();
-                System.Windows.Forms.MessageBox.Show("Datos guardados con exitos");
+                catch (Exception)
+                {
+                    MessageBox.Show("Hubo un error.");
+                }
             }
-            Page.Response.Redirect("~/Personas.aspx");
+        }
 
+        private bool CambiaContraseña()
+        {
+            if (string.IsNullOrWhiteSpace(txtClave.Text) ||
+                string.IsNullOrWhiteSpace(repetirClave.Text))
+            {
+                return false;
+            }
+            return true;
+        }
+
+        private bool Validar()
+        {
+            if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
+                string.IsNullOrWhiteSpace(txtApellido.Text) ||
+                string.IsNullOrWhiteSpace(txtEmail.Text) ||
+                string.IsNullOrWhiteSpace(txtTelefono.Text) ||
+                string.IsNullOrWhiteSpace(txtFechaNac.Text) ||
+                string.IsNullOrWhiteSpace(txtLegajo.Text) ||
+                string.IsNullOrWhiteSpace(txtDireccion.Text) ||
+                ddlPlanes.SelectedValue == null
+                )
+            {
+                return false;
+            }
+            return true;
         }
     }
 }
