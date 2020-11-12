@@ -24,8 +24,6 @@ namespace Academia.Util
             {
                 return true;
             }
-
-
         }
         public static bool IsClaveValida(string a , string b)
         {
@@ -93,6 +91,19 @@ namespace Academia.Util
             {
                 return "Buenas noches, ";
             }
+        }
+
+        public bool IsValidNota(int nota, string condicion)
+        {
+            if (nota < 0 || nota > 10)
+                return false;
+            if (nota < 5 && condicion == "Regular")
+                return false;
+            if (nota < 6 && condicion == "Aprobada")
+                return false;
+            if (nota > 6 && condicion == "Libre")
+                return false;
+            return true;
         }
     }
 }
