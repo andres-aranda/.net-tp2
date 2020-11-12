@@ -51,11 +51,15 @@ namespace Academia.UI.Desktop
             {
                 try
                 {
-                    alumnos_inscripciones aluIns = db.alumnos_inscripciones.Find(IdInscripcion);
-                    aluIns.nota = int.Parse(txtNota.Text);
-                    db.SaveChanges();
-                    MessageBox.Show("Calificacion guardada,");
-                    this.Close();
+                    if (Validations.IsValidNota(int.Parse(txtNota.Text), (string)cmbCondicion.SelectedItem))
+                    { 
+                        alumnos_inscripciones aluIns = db.alumnos_inscripciones.Find(IdInscripcion);
+                        aluIns.nota = int.Parse(txtNota.Text);
+                        aluIns.condicion = (string)cmbCondicion.SelectedItem;
+                        db.SaveChanges();
+                        MessageBox.Show("Calificacion guardada,");
+                        this.Close();
+                    }
                 }
                 catch
                 {
