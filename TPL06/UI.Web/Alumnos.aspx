@@ -5,12 +5,16 @@
 <asp:Content ID="misAlumnosDocentePage" ContentPlaceHolderID="PageContent" runat="server">
 
     <div>
-        <div id="ZonaEdicion" runat="server">
+        <asp:Panel ID="ZonaEdicion" runat="server">
+
             <asp:TextBox ID="txtNota" runat="server"></asp:TextBox>
             <asp:LinkButton ID="btnGuardar" runat="server" CssClass="btn" OnClick="btnGuardar_Click">Guardar</asp:LinkButton>
-        </div>
+
+        </asp:Panel>
+
         <asp:GridView ID="inscripcionesDocente" runat="server" AutoGenerateColumns="False" CssClass="tabla" DataKeyNames="Id" OnSelectedIndexChanged="inscripcionesDocente_SelectedIndexChanged">
             <Columns>
+                <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" />
                 <asp:BoundField DataField="Curso.Materia.Descripcion" HeaderText="Materia" ReadOnly="True" />
                 <asp:BoundField DataField="Curso.Comision.DescripcionComision" HeaderText="Comisión" ReadOnly="True" />
                 <asp:BoundField DataField="Persona.Nombre" HeaderText="Nombre" ReadOnly="True" />

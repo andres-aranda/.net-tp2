@@ -12,7 +12,7 @@ using System.Web.UI.WebControls;
 
 namespace Academia.UI.Web
 {
-    // TODO: replicar css de este amb en los otros
+
     public partial class MiInformacion : System.Web.UI.Page
     {
         private Persona persona;
