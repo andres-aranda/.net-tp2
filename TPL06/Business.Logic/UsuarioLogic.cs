@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Data.Database;
-
+using Academia.Util;
 
 namespace Business.Logic
 {
@@ -35,7 +35,14 @@ namespace Business.Logic
 
         public void Save(Usuario u)
         {
-            UsuarioData.Save(u);
+            if (!Validations.UsernameExists(u.NombreUsuario))
+            {
+                UsuarioData.Save(u);
+            }
+            else
+            {
+                throw new Exception("El nombre de usuario ya existe.");
+            }
         }
 
         public void Delete(int id)

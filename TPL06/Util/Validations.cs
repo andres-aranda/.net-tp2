@@ -43,6 +43,23 @@ namespace Academia.Util
                 return false;
             }
         }
+
+        public static bool UsernameExists(string nombreUsuario)
+        {
+            try
+            {
+                using (EntidadesTP2 db = new EntidadesTP2())
+                {
+                    usuarios u = db.usuarios.Where(x => x.nombre_usuario == nombreUsuario).First();
+                }
+            }
+            catch (ArgumentNullException e)
+            {
+                return false;
+            }
+            return true;
+        }
+
         public static bool IsLegajoUnico(int Legajo)
         {
             try

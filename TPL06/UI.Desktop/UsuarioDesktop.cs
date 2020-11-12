@@ -107,8 +107,6 @@ namespace Academia.UI.Desktop
                     this.UsuarioActual.Clave = this.txtConfirmarClave.Text;
                     this.UsuarioActual.State = BusinessEntity.Estados.Modified;
                     break;
-                default:
-                    break;
             }
         }
 
@@ -116,7 +114,15 @@ namespace Academia.UI.Desktop
         {
             this.MapearADatos();
             UsuarioLogic usuarioLogic = new UsuarioLogic();
-            usuarioLogic.Save(UsuarioActual);
+            try
+            {
+                usuarioLogic.Save(UsuarioActual);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            
         }
 
         public override bool Validar()
@@ -161,7 +167,6 @@ namespace Academia.UI.Desktop
 
         private void txtLegajo_TextChanged(object sender, EventArgs e)
         {
-            
             Persona p = new Persona();
             try
             {
